@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.OpcionesContoller">
+   <children>
+      <Button fx:id="CentroDeportivo_button" layoutX="44.0" layoutY="129.0" mnemonicParsing="false" onAction="#CentroDeportivoClickedButton" text="Centros Deportivos">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="empresa_button" layoutX="386.0" layoutY="123.0" mnemonicParsing="false" onAction="#EmpresaClickedButton" text="Empresas">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Button>
+      <Label fx:id="titulo" layoutX="70.0" layoutY="26.0" text="Seleccione una de las opciones ">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="titulo_abajo" layoutX="184.0" layoutY="73.0" text="para crear un nuevo:">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="titulo1" layoutX="78.0" layoutY="223.0" text="Seleccione una de las opciones ">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="titulo_abajo1" layoutX="192.0" layoutY="270.0" text="para ver ya creados:">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="CentroDeportivo_button1" layoutX="52.0" layoutY="329.0" mnemonicParsing="false" onAction="#CentroDeportivoCreadosClickedButton" text="Centros Deportivos">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="empresa_button1" layoutX="386.0" layoutY="329.0" mnemonicParsing="false" onAction="#EmpresaCreadosClickedButton" text="Empresas">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

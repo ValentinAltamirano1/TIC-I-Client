@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.TablaEmpresaController">
+   <children>
+      <Label fx:id="titulo" layoutX="88.0" layoutY="35.0" text="Centro Deportivo">
+         <font>
+            <Font name="System Bold" size="54.0" />
+         </font>
+      </Label>
+      <ListView fx:id="tabla_CentroDeportivo" layoutX="200.0" layoutY="115.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="Volver_cancelar" layoutX="263.0" layoutY="340.0" mnemonicParsing="false" onAction="#VolverClickedButton" text="Volver">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

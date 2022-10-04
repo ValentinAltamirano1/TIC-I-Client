@@ -1,0 +1,45 @@
+plugins {
+	id 'application'
+	id 'org.openjfx.javafxplugin' version '0.0.10'
+	id 'org.springframework.boot' version '2.7.3'
+	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+	id 'java'
+	id 'org.beryx.jlink' version '2.24.4'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+dependencies {
+	implementation 'com.konghq:unirest-java:3.13.11'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'com.mashape.unirest:unirest-java:1.4.9'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.4'
+	implementation 'io.vertx:vertx-core:4.3.3'
+	implementation 'org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+javafx {
+	version = "17.0.2"
+	modules = [ 'javafx.controls' , 'javafx.fxml' ]
+}
+
+jlink {
+	launcher {
+		name = 'hellofx'
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+
+
+
