@@ -28,22 +28,19 @@ public class LogInController implements Initializable {
     private Scene scene;
 
     @FXML
-    private AnchorPane OkButton;
-
-    @FXML
-    private Button cancel_button;
+    private AnchorPane LogInButton;
 
     @FXML
     private Label contraseña;
 
     @FXML
-    private Label nombre_de_usuario;
+    private Label usuario;
 
     @FXML
-    private Button ok_button;
+    private Button LogIn_button;
 
     @FXML
-    private Label titulo_login;
+    private Label titulo_bienvenidos;
 
     @FXML
     private TextField txt_contraseña;
@@ -53,7 +50,7 @@ public class LogInController implements Initializable {
 
 
     @FXML
-    void OkClickedButton(ActionEvent event) throws IOException {
+    void LogInClickedButton(ActionEvent event) throws IOException {
         if (txt_email.getText().equals("admin") && txt_contraseña.getText().equals("admin")) {
             Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones-view.fxml"));
             String json = "";

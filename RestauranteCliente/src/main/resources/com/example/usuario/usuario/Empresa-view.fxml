@@ -3,38 +3,50 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.EmpresaController">
+<AnchorPane prefHeight="530.0" prefWidth="817.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.EmpresaController">
    <children>
-      <Label fx:id="titulo" layoutX="161.0" layoutY="21.0" text="Empresa">
+      <Label fx:id="titulo" layoutX="288.0" layoutY="43.0" text="Empresa" textFill="#556080">
          <font>
             <Font name="System Bold" size="70.0" />
          </font>
       </Label>
-      <Label fx:id="nombre" layoutX="62.0" layoutY="187.0" text="Nombre:">
+      <Label fx:id="nombre" layoutX="82.0" layoutY="193.0" text="Nombre:" textFill="#556080">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="rut" layoutX="84.0" layoutY="248.0" text="RUT:">
+      <Label fx:id="rut" layoutX="98.0" layoutY="237.0" text="RUT:" textFill="#556080">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_nombre" layoutX="161.0" layoutY="186.0" prefHeight="28.0" prefWidth="212.0" />
-      <TextField fx:id="txt_rut" layoutX="161.0" layoutY="242.0" prefHeight="28.0" prefWidth="212.0" />
-      <Button fx:id="crear_button" layoutX="137.0" layoutY="318.0" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="46.0" prefWidth="113.0" text="Crear">
+      <TextField fx:id="txt_nombre" layoutX="169.0" layoutY="193.0" prefHeight="28.0" prefWidth="212.0" />
+      <TextField fx:id="txt_rut" layoutX="169.0" layoutY="237.0" prefHeight="28.0" prefWidth="212.0" />
+      <Button fx:id="crear_button" layoutX="161.0" layoutY="343.0" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="46.0" prefWidth="113.0" text="Crear" textFill="#556080">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="cancelar_button" layoutX="348.0" layoutY="318.0" mnemonicParsing="false" onAction="#CancelarClickedButton" prefHeight="46.0" prefWidth="113.0" text="Cancelar">
+      <Button fx:id="volver_button" layoutX="371.0" layoutY="432.0" mnemonicParsing="false" onAction="#VolverClickedButton" prefHeight="46.0" prefWidth="113.0" text="Volver" textFill="#556080">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
+      <Button fx:id="creados_button" layoutX="535.0" layoutY="343.0" mnemonicParsing="false" onAction="#CreadosClickedButton" text="Ver ya creadas" textFill="#556080">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="489.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="160.0" fitWidth="310.0" layoutX="478.0" layoutY="157.0">
+         <image>
+            <Image url="@../../../../../../../../../../OneDrive/Escritorio/Facultad/TIC/Fotos/empre.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

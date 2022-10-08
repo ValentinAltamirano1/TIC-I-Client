@@ -33,7 +33,7 @@ public class CentroDeportivoController {
     String direccion_;
 
     @FXML
-    private Button cancelar_button;
+    private Button volver_button;
 
     @FXML
     private Button crear_button;
@@ -65,13 +65,16 @@ public class CentroDeportivoController {
     @FXML
     private TextField txt_telefono;
 
+    @FXML
+    private Button creados_button;
+
     public List<String> getCentrosDeportivos() {return centrosDeportivos;}
 
     public void setCentrosDeportivos(List<String> centrosDeportivos) {this.centrosDeportivos = centrosDeportivos;}
 
     @FXML
-    void CancelarClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+    void VolverClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -111,11 +114,17 @@ public class CentroDeportivoController {
             //centro_deportivo.addNewCentroDeportivo(nuevoCentroDeportivo);
 
     }
-
+    @FXML
+    void CreadosClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/TablaCentroDeportivo-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-
 
 }

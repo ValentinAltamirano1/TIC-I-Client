@@ -34,7 +34,10 @@ public class EmpresaController implements Initializable {
     Long rut_;
 
     @FXML
-    private Button cancelar_button;
+    private Button volver_button;
+
+    @FXML
+    private Button creados_button;
 
     @FXML
     private Button crear_button;
@@ -54,9 +57,10 @@ public class EmpresaController implements Initializable {
     @FXML
     private TextField txt_rut;
 
+
     @FXML
-    void CancelarClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+    void VolverClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -94,8 +98,18 @@ public class EmpresaController implements Initializable {
 
     }
 
+    @FXML
+    void CreadosClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/TablaEmpresa-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
 }
+

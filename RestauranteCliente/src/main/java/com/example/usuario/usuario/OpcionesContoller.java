@@ -16,8 +16,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class OpcionesContoller implements Initializable {
-    private Stage stage;
-    private Scene scene;
 
     @FXML
     private Button CentroDeportivo_button;
@@ -29,16 +27,10 @@ public class OpcionesContoller implements Initializable {
     private Label titulo;
 
     @FXML
-    private Button CentroDeportivo_button1;
-
-    @FXML
-    private Label titulo1;
-
-    @FXML
     private Label titulo_abajo;
 
-    @FXML
-    private Label titulo_abajo1;
+    Scene scene;
+    Stage stage;
 
     @FXML
     void CentroDeportivoClickedButton(ActionEvent event) throws IOException {
@@ -58,26 +50,10 @@ public class OpcionesContoller implements Initializable {
         stage.show();
     }
 
-    @FXML
-    void EmpresaCreadosClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/TablaEmpresa-view.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    void CentroDeportivoCreadosClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/TablaCentroDeportivo-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
 }
 
