@@ -12,6 +12,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+import kong.unirest.GetRequest;
+import kong.unirest.JsonNode;
+import kong.unirest.Unirest;
 
 import java.io.IOException;
 import java.net.URL;
@@ -44,7 +47,13 @@ public class TablaEmpresaController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //tabla_empresa.getItems().addAll(centroDeportivo.getCentrosDeportivos());
-        //myListCentroDeprotivo.getItems().addAll();
+        listarEmpresa();
+    }
+
+    public void listarEmpresa(){
+        GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/empresa")
+                .header("Content-Type", "application/json");
+        JsonNode temp = apiResponse.asJson().getBody();
+
     }
 }

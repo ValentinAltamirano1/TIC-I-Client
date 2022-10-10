@@ -53,15 +53,6 @@ public class LogInController implements Initializable {
     void LogInClickedButton(ActionEvent event) throws IOException {
         if (txt_email.getText().equals("admin") && txt_contraseña.getText().equals("admin")) {
             Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones-view.fxml"));
-            String json = "";
-            ObjectMapper mapper = new ObjectMapper();
-            ObjectNode rest = mapper.createObjectNode();
-            json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
-            try {
-                HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v3/gimnasio")
-                        .header("Content-Type", "application/json").body(json).asJson();
-            } catch (UnirestException ex) {
-            }
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

@@ -86,7 +86,7 @@ public class EmpresaController implements Initializable {
                 }catch (Exception ignored) {
                 }
                 try {
-                    HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/empresa")
+                    HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/empresa")
                             .header("Content-Type", "application/json").body(json).asJson();
                 }catch (UnirestException ex) {}
             }catch (NumberFormatException e){}

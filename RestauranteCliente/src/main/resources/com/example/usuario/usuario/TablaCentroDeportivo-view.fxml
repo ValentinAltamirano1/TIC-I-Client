@@ -21,8 +21,8 @@
       </Button>
       <TableView fx:id="tabla_CentroDeportivo" layoutX="247.0" layoutY="165.0" prefHeight="231.0" prefWidth="152.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn prefWidth="75.0" text="Nombre"/>
+          <TableColumn prefWidth="75.0" text="Rut" />
         </columns>
       </TableView>
    </children>

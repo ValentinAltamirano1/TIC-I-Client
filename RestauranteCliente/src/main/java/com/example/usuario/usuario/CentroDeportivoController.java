@@ -23,7 +23,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class CentroDeportivoController {
-    List<String> centrosDeportivos = new ArrayList<>();
     private Stage stage;
     private Scene scene;
 
@@ -68,10 +67,6 @@ public class CentroDeportivoController {
     @FXML
     private Button creados_button;
 
-    public List<String> getCentrosDeportivos() {return centrosDeportivos;}
-
-    public void setCentrosDeportivos(List<String> centrosDeportivos) {this.centrosDeportivos = centrosDeportivos;}
-
     @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones-view.fxml"));
@@ -93,7 +88,6 @@ public class CentroDeportivoController {
                 try {
                     ObjectMapper mapper = new ObjectMapper();
                     ObjectNode rest = mapper.createObjectNode();
-                    centrosDeportivos.add(nombre_); //para agregarlo a la lista
                     rest.put("nombre", nombre_);
                     rest.put("rut", rut_);
                     rest.put("telefono", telefono_);
@@ -102,7 +96,7 @@ public class CentroDeportivoController {
                 } catch (Exception ignored) {
                 }
                 try {
-                   HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/centroDeportivo")
+                   HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/centroDeportivo")
                            .header("Content-Type", "application/json").body(json).asJson();
                 } catch (UnirestException ex) {}
             }catch (NumberFormatException e){}
