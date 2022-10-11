@@ -7,10 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
 import kong.unirest.JsonNode;
@@ -27,10 +24,16 @@ public class TablaEmpresaController implements Initializable {
     CentroDeportivoController centroDeportivo;
 
     @FXML
-    private Button Volver_button;
+    private TableColumn<?, ?> nombre;
+
+    @FXML
+    private TableColumn<?, ?> rut;
 
     @FXML
     private TableView<?> tabla_empresa;
+
+    @FXML
+    private Button Volver_button;
 
     @FXML
     private Label titulo;

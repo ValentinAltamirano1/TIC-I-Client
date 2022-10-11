@@ -21,8 +21,8 @@
       </Button>
       <TableView fx:id="tabla_empresa" layoutX="225.0" layoutY="175.0" prefHeight="200.0" prefWidth="150.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="nombre" prefWidth="75.0" text="Nombre" />
+          <TableColumn fx:id="rut" prefWidth="75.0" text="Rut" />
         </columns>
       </TableView>
    </children>

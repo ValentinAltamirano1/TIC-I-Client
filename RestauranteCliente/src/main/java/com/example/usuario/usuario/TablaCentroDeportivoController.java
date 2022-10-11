@@ -31,16 +31,17 @@ import static javafx.collections.FXCollections.observableArrayList;
 public class TablaCentroDeportivoController implements Initializable {
     private Scene scene;
     private Stage stage;
-
+    @FXML
     TableView<CentroDeportivo> tableView;
-
+    @FXML
     private TableColumn<CentroDeportivo,String> rut;
-
+    @FXML
     private TableColumn<CentroDeportivo,Long> telefono;
-
+    @FXML
     private TableColumn<CentroDeportivo,String> direccion;
+    @FXML
     private TableColumn<CentroDeportivo,String> nombre;
-
+    @FXML
     private ObservableList<CentroDeportivo> list;
     @FXML
     private Label titulo;

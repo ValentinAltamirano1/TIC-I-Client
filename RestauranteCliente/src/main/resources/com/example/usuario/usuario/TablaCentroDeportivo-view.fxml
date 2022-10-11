@@ -19,10 +19,12 @@
             <Font name="System Bold" size="19.0" />
          </font>
       </Button>
-      <TableView fx:id="tabla_CentroDeportivo" layoutX="247.0" layoutY="165.0" prefHeight="231.0" prefWidth="152.0">
+      <TableView fx:id="tabla_CentroDeportivo" layoutX="124.0" layoutY="155.0" prefHeight="231.0" prefWidth="398.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Nombre"/>
-          <TableColumn prefWidth="75.0" text="Rut" />
+          <TableColumn fx:id="nombre" prefWidth="117.5999755859375" text="Nombre" />
+          <TableColumn fx:id="rut" minWidth="0.0" prefWidth="76.80000305175781" text="Rut" />
+            <TableColumn fx:id="telefono" prefWidth="96.0" text="Telefono" />
+            <TableColumn fx:id="direccion" prefWidth="103.20001220703125" text="Direccion" />
         </columns>
       </TableView>
    </children>
