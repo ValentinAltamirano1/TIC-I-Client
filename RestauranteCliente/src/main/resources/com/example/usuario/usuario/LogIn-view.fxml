@@ -35,13 +35,13 @@
                </font></Button>
             <ImageView fx:id="foto_login" fitHeight="110.0" fitWidth="127.0" layoutX="244.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../OneDrive/Escritorio/Facultad/TIC/Foto/images.png" />
+                  <Image url="/com/example/usuario/usuario/LogoLogin.jpg" />
                </image>
             </ImageView>
             <PasswordField fx:id="txt_contraseña" layoutX="264.0" layoutY="332.0" prefHeight="38.0" prefWidth="248.0" />
             <ImageView fitHeight="135.0" fitWidth="148.0" layoutX="234.0" layoutY="34.0">
                <image>
-                  <Image url="@../../../../../../../../../../OneDrive/Escritorio/Facultad/TIC/Fotos/images.png" />
+                  <Image url="/com/example/usuario/usuario/LogoLogin.jpg"  />
                </image>
             </ImageView>
          </children>

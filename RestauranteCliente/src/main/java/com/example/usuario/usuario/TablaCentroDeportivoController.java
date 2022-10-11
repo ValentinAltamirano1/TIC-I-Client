@@ -1,5 +1,9 @@
 package com.example.usuario.usuario;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,6 +23,7 @@ import kong.unirest.Unirest;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import static javafx.collections.FXCollections.observableArrayList;
@@ -27,15 +32,16 @@ public class TablaCentroDeportivoController implements Initializable {
     private Scene scene;
     private Stage stage;
 
-    TableView<String> tableView;
+    TableView<CentroDeportivo> tableView;
 
-    private TableColumn<String,String> rut;
+    private TableColumn<CentroDeportivo,String> rut;
 
-    private TableColumn<String,Long> telefono;
+    private TableColumn<CentroDeportivo,Long> telefono;
 
-    private TableColumn<String,String> direccion;
-    private TableColumn<String,String> nombre;
+    private TableColumn<CentroDeportivo,String> direccion;
+    private TableColumn<CentroDeportivo,String> nombre;
 
+    private ObservableList<CentroDeportivo> list;
     @FXML
     private Label titulo;
 
@@ -53,27 +59,32 @@ public class TablaCentroDeportivoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            rut.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("Rut"));
+            telefono.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, Long>("Telefono"));
+            direccion.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("Direccion"));
+            nombre.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("Nombre"));
+        }catch (Exception ignored){}
         listarCentroDeportivo();
     }
 
 
     public void listarCentroDeportivo(){
-        GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/centroDeportivo")
-                .header("Content-Type", "application/json");
-        JsonNode temp = apiResponse.asJson().getBody();
-        String tmp2=temp.toString();
+        String json = "";
+        ObservableList<CentroDeportivo> lista=null;
         try {
-            ObservableList<String> list = FXCollections.observableArrayList(tmp2);
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/centroDeportivo")
+                    .header("Content-Type", "application/json");
+            String temp = apiResponse.asJson().getBody().toString();
+
+            ObjectMapper mapper = new ObjectMapper();
+            lista = mapper.readValue(temp, new TypeReference<ObservableList<CentroDeportivo>>() {});
+            list = FXCollections.observableArrayList(lista);
+
+
             tableView = new TableView<>();
             tableView.setItems(list);
-            list.add(tmp2);
-            //rut.setCellValueFactory(new PropertyValueFactory<>("Rut"));
-            //telefono.setCellValueFactory(new PropertyValueFactory<>("Telefono"));
-            //direccion.setCellValueFactory(new PropertyValueFactory<>("Direccion"));
-            //nombre.setCellValueFactory(new PropertyValueFactory<>("Nombre"));
-            System.out.println("HOLAA");
-            System.out.println(rut);
-            tableView.getColumns().addAll(rut, nombre);
+            //tableView.getColumns().addAll(list);
 
         }catch (Exception ignored){}
     }

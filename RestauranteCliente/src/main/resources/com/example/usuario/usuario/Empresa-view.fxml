@@ -45,7 +45,7 @@
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="489.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="160.0" fitWidth="310.0" layoutX="478.0" layoutY="157.0">
          <image>
-            <Image url="@../../../../../../../../../../OneDrive/Escritorio/Facultad/TIC/Fotos/empre.jpg" />
+            <Image url="/com/example/usuario/usuario/EmpresaP.jpg"  />
          </image>
       </ImageView>
    </children>
