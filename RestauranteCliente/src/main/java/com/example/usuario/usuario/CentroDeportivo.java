@@ -52,9 +52,9 @@ public class CentroDeportivo {
 
     @Override
     public String toString() {
-        return "Centro Deportivo{" +
+        return "CentroDeportivo{" +
                 "rut=" + rut +
-                "telefono=" + telefono +
+                ", telefono=" + telefono +
                 ", nombre='" + nombre + '\'' +
                 ", direccion='" + direccion + '\'' +
                 '}';

@@ -1,5 +1,9 @@
 package com.example.usuario.usuario;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
 import kong.unirest.JsonNode;
@@ -15,28 +20,30 @@ import kong.unirest.Unirest;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class TablaEmpresaController implements Initializable {
     private Stage stage;
     private Scene scene;
 
-    CentroDeportivoController centroDeportivo;
+    @FXML
+    private TableColumn<Empresa, String> nombre;
 
     @FXML
-    private TableColumn<?, ?> nombre;
+    private TableColumn<Empresa, String> rut;
 
     @FXML
-    private TableColumn<?, ?> rut;
-
-    @FXML
-    private TableView<?> tabla_empresa;
+    private TableView<Empresa> tableView;
 
     @FXML
     private Button Volver_button;
 
     @FXML
     private Label titulo;
+
+    @FXML
+    private ObservableList<Empresa> list;
 
     @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
@@ -50,13 +57,28 @@ public class TablaEmpresaController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        nombre.setCellValueFactory(new PropertyValueFactory<Empresa,String>("nombre"));
+        rut.setCellValueFactory(new PropertyValueFactory<Empresa,String>("rut"));
         listarEmpresa();
     }
 
     public void listarEmpresa(){
-        GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/empresa")
-                .header("Content-Type", "application/json");
-        JsonNode temp = apiResponse.asJson().getBody();
+        List<Empresa> empresas=null;
+        try{
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/empresa")
+                    .header("Content-Type", "application/json");
+            String temp = apiResponse.asJson().getBody().toString();
+
+            ObjectMapper mapper = new ObjectMapper();
+
+            empresas = mapper.readValue(temp, new TypeReference<List<Empresa>>(){});
+
+            list = FXCollections.observableArrayList(empresas);
+            tableView = new TableView<>();
+            tableView.setItems(list);
+
+        }catch (Exception ignored){}
+
 
     }
 }

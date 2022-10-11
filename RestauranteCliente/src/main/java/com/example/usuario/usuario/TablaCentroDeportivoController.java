@@ -22,6 +22,7 @@ import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -60,32 +61,32 @@ public class TablaCentroDeportivoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            rut.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("Rut"));
-            telefono.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, Long>("Telefono"));
-            direccion.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("Direccion"));
-            nombre.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("Nombre"));
-        }catch (Exception ignored){}
+        rut.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("rut"));
+        direccion.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("direccion"));
+        nombre.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("nombre"));
+        telefono.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, Long>("telefono"));
+
         listarCentroDeportivo();
     }
 
 
     public void listarCentroDeportivo(){
-        String json = "";
-        ObservableList<CentroDeportivo> lista=null;
+        List<CentroDeportivo> centrosDepor=null;
         try {
             GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/centroDeportivo")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
 
             ObjectMapper mapper = new ObjectMapper();
-            lista = mapper.readValue(temp, new TypeReference<ObservableList<CentroDeportivo>>() {});
-            list = FXCollections.observableArrayList(lista);
+            centrosDepor = mapper.readValue(temp, new TypeReference<List<CentroDeportivo>>() {});
 
+            list = FXCollections.observableArrayList(centrosDepor);
+
+            System.out.println(list);
 
             tableView = new TableView<>();
             tableView.setItems(list);
-            //tableView.getColumns().addAll(list);
+
 
         }catch (Exception ignored){}
     }
