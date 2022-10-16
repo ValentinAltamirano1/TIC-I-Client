@@ -60,7 +60,7 @@ public class LogInController implements Initializable {
         }
 
         if (txt_email.getText().equals("usercentro") && txt_contraseña.getText().equals("usercentro")) {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CrearActividades-view.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones2.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
