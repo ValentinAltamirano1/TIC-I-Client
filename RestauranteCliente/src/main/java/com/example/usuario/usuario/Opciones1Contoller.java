@@ -50,7 +50,6 @@ public class Opciones1Contoller implements Initializable {
         stage.show();
     }
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

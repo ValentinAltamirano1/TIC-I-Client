@@ -1,29 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.TablaEmpresaController">
-   <children>
-      <Label fx:id="titulo" layoutX="182.0" layoutY="35.0" text="Empresas:" textFill="#556080">
-         <font>
-            <Font name="System Bold" size="54.0" />
-         </font>
-      </Label>
-      <Button fx:id="Volver_cancelar" layoutX="262.0" layoutY="470.0" mnemonicParsing="false" onAction="#VolverClickedButton" text="Volver" textFill="#556080">
-         <font>
-            <Font name="System Bold" size="21.0" />
-         </font>
-      </Button>
-      <TableView fx:id="tabla_empresa" layoutX="225.0" layoutY="175.0" prefHeight="200.0" prefWidth="150.0">
-        <columns>
-          <TableColumn fx:id="nombre" prefWidth="75.0" text="Nombre" />
-          <TableColumn fx:id="rut" prefWidth="75.0" text="Rut" />
-        </columns>
-      </TableView>
-   </children>
-</AnchorPane>
+<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.TablaEmpresaController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="221.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fx:id="foto" fitHeight="97.0" fitWidth="103.0" layoutX="38.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Foto_Logo.jpg" />
+               </image>
+            </ImageView>
+            <Text fx:id="titulo" fill="#df2d29" layoutX="31.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPRESA" wrappingWidth="141.48089599609375">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <VBox layoutX="14.0" layoutY="202.0" prefHeight="114.0" prefWidth="150.0" spacing="125.0" style="-fx-background-color: #000000;">
+               <children>
+                  <Button fx:id="crear_button" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Crear empresa" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cerrar_sesion_button" mnemonicParsing="false" onAction="#CerrarSesionClickedButton" prefHeight="131.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Cerrar Sesion" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="422.0" style="-fx-background-color: #000000;">
+         <children>
+            <Text fx:id="EmpresasCreadas" fill="WHITE" layoutX="109.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPRESAS CREADAS:">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Button fx:id="volver_button" layoutX="184.0" layoutY="387.0" mnemonicParsing="false" onAction="#VolverClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Volver" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <TableView fx:id="tabla_empresa" layoutX="67.0" layoutY="119.0" prefHeight="251.0" prefWidth="335.0" style="-fx-background-color: #ffffff;">
+               <columns>
+                  <TableColumn fx:id="nombre" prefWidth="177.6000518798828" style="-fx-background-color: #ffffff;" text="Nombre" />
+                  <TableColumn fx:id="rut" prefWidth="155.19993591308594" style="-fx-background-color: #ffffff;" text="Rut" />
+               </columns>
+            </TableView>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
