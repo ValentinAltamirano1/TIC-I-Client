@@ -21,7 +21,7 @@ public class CrearActividadesController {
     ObservableList<String> txt_horario_list= FXCollections.
             observableArrayList("9:00","10:00","11:00","14:00","15:00","16:00","17:00","18:00");
     ObservableList<String> txt_categoria_list= FXCollections.
-            observableArrayList("Deporte acuatico","Cancha","Gimnasio", "Otros");
+            observableArrayList("Cancha","Gimnasio", "Exterior", "Nautico");
     Stage stage;
     Scene scene;
 

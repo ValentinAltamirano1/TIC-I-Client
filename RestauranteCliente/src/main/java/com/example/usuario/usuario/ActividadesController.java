@@ -1,46 +1,45 @@
+
 package com.example.usuario.usuario;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.text.Text;
+import javafx.scene.image.ImageView;
 
-public class ActividadesController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ActividadesController implements Initializable {
+
+    @FXML
+    private ImageView canchas;
 
     @FXML
     private Button canchas_button;
 
     @FXML
-    private Text categoria;
+    private ImageView exterior;
 
     @FXML
-    private Button deportesacuaticos_button;
+    private Button exterior_button;
 
     @FXML
-    private Button gimnasio_button;
+    private ImageView gimnasios;
 
     @FXML
-    private Button otros_button;
+    private Button gimnasios_button;
 
     @FXML
-    void AcuaticosClickedButton(ActionEvent event) {
+    private ImageView logo;
+
+    @FXML
+    private ImageView nautica;
+
+    @FXML
+    private Button nautica_button;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
 
     }
-
-    @FXML
-    void CanchasClickedButton(ActionEvent event) {
-
-    }
-
-    @FXML
-    void GimnasioClickedButton(ActionEvent event) {
-
-    }
-
-    @FXML
-    void OtrosClickedButton(ActionEvent event) {
-
-    }
-
 }
-
