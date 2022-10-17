@@ -52,7 +52,7 @@ public class LogInController implements Initializable {
     @FXML
     void LogInClickedButton(ActionEvent event) throws IOException {
         if (txt_email.getText().equals("admin") && txt_contraseña.getText().equals("admin")) {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones-view.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

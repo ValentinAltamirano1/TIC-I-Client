@@ -4,24 +4,24 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <AnchorPane prefHeight="524.0" prefWidth="472.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.LogInController">
    <children>
-      <Button fx:id="LogIn_button" layoutX="165.0" layoutY="422.0" mnemonicParsing="false" onAction="#LogInClickedButton" prefHeight="20.0" prefWidth="141.0" text="LogIn">
+      <Button fx:id="LogIn_button" layoutX="159.0" layoutY="416.0" mnemonicParsing="false" onAction="#LogInClickedButton" prefHeight="20.0" prefWidth="141.0" style="-fx-border-color: #DF2D29; -fx-background-color: #DF2D29;" text="LogIn" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="titulo_bienvenidos" alignment="CENTER" layoutX="104.0" layoutY="200.0" style="&#10;" text="Bienvenido" textAlignment="CENTER" textFill="WHITE" wrapText="false">
+      <Label fx:id="titulo_bienvenidos" alignment="CENTER" layoutX="98.0" layoutY="194.0" style="&#10;" text="Bienvenido" textAlignment="CENTER" textFill="WHITE" wrapText="false">
          <font>
             <Font name="System Bold" size="50.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_email" layoutX="173.0" layoutY="285.0" prefHeight="26.0" prefWidth="238.0" />
+      <TextField fx:id="txt_email" layoutX="173.0" layoutY="285.0" prefHeight="26.0" prefWidth="238.0" style="-fx-border-color: #DF2D29;" />
       <Label fx:id="contraseña" layoutX="21.0" layoutY="330.0" text="Contraseña: " textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
@@ -32,10 +32,10 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <PasswordField fx:id="txt_contraseña" layoutX="173.0" layoutY="334.0" prefHeight="26.0" prefWidth="238.0" />
+      <PasswordField fx:id="txt_contraseña" layoutX="173.0" layoutY="334.0" prefHeight="26.0" prefWidth="238.0" style="-fx-border-color: #DF2D29;" />
       <ImageView fx:id="FotoLogo" fitHeight="150.0" fitWidth="200.0" layoutX="136.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="/com/example/usuario/usuario/Logo.jpg" />
+            <Image url="/com/example/usuario/usuario/Foto_Logo.jpg" />
          </image>
       </ImageView>
    </children>
