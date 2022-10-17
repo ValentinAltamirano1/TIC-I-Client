@@ -9,42 +9,34 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="409.0" prefWidth="512.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.LogInController">
+<AnchorPane prefHeight="524.0" prefWidth="472.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.LogInController">
    <children>
-      <AnchorPane fx:id="OkButton" layoutX="-14.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#LogInClickedButton" prefHeight="531.0" prefWidth="597.0" style="-fx-background-color: #FFFFFF;">
-         <children>
-            <Label fx:id="titulo_bienvenidos" alignment="CENTER" layoutX="133.0" layoutY="166.0" style="&#10;" text="Bienvenido" textAlignment="CENTER" textFill="#556080" wrapText="false">
-               <font>
-                  <Font name="System Bold" size="68.0" />
-               </font>
-            </Label>
-            <Label fx:id="usuario" layoutX="133.0" layoutY="284.0" text="Usuario:" textFill="#556080">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="contraseña" layoutX="92.0" layoutY="333.0" text="Contraseña: " textFill="#556080">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txt_email" layoutX="264.0" layoutY="283.0" prefHeight="38.0" prefWidth="248.0" />
-            <Button fx:id="LogIn_button" layoutX="153.0" layoutY="432.0" mnemonicParsing="false" onAction="#LogInClickedButton" prefHeight="44.0" prefWidth="318.0" text="LogIn" textFill="#556080">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font></Button>
-            <ImageView fx:id="foto_login" fitHeight="110.0" fitWidth="127.0" layoutX="244.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="/com/example/usuario/usuario/LogoLogin.jpg" />
-               </image>
-            </ImageView>
-            <PasswordField fx:id="txt_contraseña" layoutX="264.0" layoutY="332.0" prefHeight="38.0" prefWidth="248.0" />
-            <ImageView fitHeight="135.0" fitWidth="148.0" layoutX="234.0" layoutY="34.0">
-               <image>
-                  <Image url="/com/example/usuario/usuario/LogoLogin.jpg"  />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
+      <Button fx:id="LogIn_button" layoutX="165.0" layoutY="422.0" mnemonicParsing="false" onAction="#LogInClickedButton" prefHeight="20.0" prefWidth="141.0" text="LogIn">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="titulo_bienvenidos" alignment="CENTER" layoutX="104.0" layoutY="200.0" style="&#10;" text="Bienvenido" textAlignment="CENTER" textFill="WHITE" wrapText="false">
+         <font>
+            <Font name="System Bold" size="50.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txt_email" layoutX="173.0" layoutY="285.0" prefHeight="26.0" prefWidth="238.0" />
+      <Label fx:id="contraseña" layoutX="21.0" layoutY="330.0" text="Contraseña: " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="usuario" layoutX="44.0" layoutY="280.0" text="Usuario:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="txt_contraseña" layoutX="173.0" layoutY="334.0" prefHeight="26.0" prefWidth="238.0" />
+      <ImageView fx:id="FotoLogo" fitHeight="150.0" fitWidth="200.0" layoutX="136.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/com/example/usuario/usuario/Logo.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
