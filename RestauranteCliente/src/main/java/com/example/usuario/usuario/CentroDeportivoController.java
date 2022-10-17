@@ -15,11 +15,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class CentroDeportivoController {
@@ -32,25 +36,37 @@ public class CentroDeportivoController {
     String direccion_;
 
     @FXML
+    private Text CrearNuevaEmpresa;
+
+    @FXML
+    private Button cerrar_sesion_button;
+
+    @FXML
+    private ImageView foto;
+
+    @FXML
     private Button volver_button;
 
     @FXML
     private Button crear_button;
 
     @FXML
-    private Label direccion;
+    private Text direccion;
 
     @FXML
-    private Label nombre;
+    private Text nombre;
 
     @FXML
-    private Label rut;
+    private Text rut;
 
     @FXML
-    private Label telefono;
+    private Text telefono;
 
     @FXML
-    private Label titulo;
+    private Text titulo;
+
+    @FXML
+    private Text titulo1;
 
     @FXML
     private TextField txt_direccion;
@@ -69,7 +85,7 @@ public class CentroDeportivoController {
 
     @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -116,6 +132,15 @@ public class CentroDeportivoController {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    void CerrarSesionClickedButton(ActionEvent event)throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

@@ -16,7 +16,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
-import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import org.w3c.dom.Text;
 
@@ -30,7 +29,6 @@ public class TablaEmpresaController implements Initializable {
     private Scene scene;
     @FXML
     private Text CrearNuevaEmpresa;
-
     @FXML
     private Button cerrar_sesion_button;
 

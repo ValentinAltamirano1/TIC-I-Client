@@ -16,10 +16,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -32,8 +34,9 @@ import static javafx.collections.FXCollections.observableArrayList;
 public class TablaCentroDeportivoController implements Initializable {
     private Scene scene;
     private Stage stage;
+
     @FXML
-    TableView<CentroDeportivo> tableView;
+    private TableView<CentroDeportivo> tableView;
     @FXML
     private TableColumn<CentroDeportivo,String> rut;
     @FXML
@@ -44,21 +47,55 @@ public class TablaCentroDeportivoController implements Initializable {
     private TableColumn<CentroDeportivo,String> nombre;
     @FXML
     private ObservableList<CentroDeportivo> list;
-    @FXML
-    private Label titulo;
 
     @FXML
-    private Button Volver_cancelar;
+    private Text CentrosCreados;
+
+    @FXML
+    private Button cerrar_sesion_button;
+
+    @FXML
+    private Button crear_button;
+
+    @FXML
+    private ImageView foto;
+
+    @FXML
+    private Text titulo;
+
+    @FXML
+    private Text titulo1;
+
+    @FXML
+    private Button volver_button;
+
 
     @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void CerrarSesionClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxmll"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
+    @FXML
+    void CrearClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentroDeportivo-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         rut.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("rut"));
