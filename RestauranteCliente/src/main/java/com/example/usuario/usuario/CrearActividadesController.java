@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -23,8 +24,9 @@ public class CrearActividadesController {
             observableArrayList("Deporte acuatico","Cancha","Gimnasio", "Otros");
     Stage stage;
     Scene scene;
+
     @FXML
-    private Text actividades_titulo;
+    private Text CrearNuevaActividad;
 
     @FXML
     private Text capacidad;
@@ -55,25 +57,46 @@ public class CrearActividadesController {
 
     @FXML
     private TextField txt_precio;
-
-    @FXML
-    private Button volver_button;
     @FXML
     private Button crear_button;
 
     @FXML
-    void volverClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones2.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    private Button cerrar_sesion_button;
+
+    @FXML
+    private Button creados_button;
+
+    @FXML
+    private ImageView foto;
+
+    @FXML
+    private Text titulo;
+
+
+    @FXML
+    void CrearClickedButton(ActionEvent event) {
+
+
+    }
+
+    @FXML
+    void CerrarSesionClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
+
     @FXML
-    void crearClickedButton(ActionEvent event) {
-
+    void CreadosClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/TablaActividades-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
+
     @FXML
     private void initialize(){
         txt_horario.setItems(txt_horario_list);
@@ -83,3 +106,7 @@ public class CrearActividadesController {
     }
 
 }
+
+
+
+

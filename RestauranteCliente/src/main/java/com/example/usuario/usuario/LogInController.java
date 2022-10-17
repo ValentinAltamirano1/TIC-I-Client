@@ -53,15 +53,15 @@ public class LogInController implements Initializable {
             stage.show();
         }
 
-        if (txt_email.getText().equals("usercentro") && txt_contraseña.getText().equals("usercentro")) {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones2.fxml"));
+        if (txt_email.getText().equals("centro") && txt_contraseña.getText().equals("centro")) {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CrearActividades-view.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }
 
-        if (txt_email.getText().equals("userempleado") && txt_contraseña.getText().equals("userempleado")) {
+        if (txt_email.getText().equals("empleado") && txt_contraseña.getText().equals("empleado")) {
             Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades-view.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
