@@ -1,15 +1,10 @@
 package com.example.usuario.usuario;
 
 public class CentroDeportivo {
-
     private Long rut;
-
     private Long telefono;
-
     private String nombre;
-
     private String direccion;
-
 
     public CentroDeportivo(Long telefono, String nombre, String direccion, Long rut) {
         this.telefono = telefono;
@@ -17,7 +12,6 @@ public class CentroDeportivo {
         this.direccion = direccion;
         this.rut = rut;
     }
-
     public CentroDeportivo() {
 
     }

@@ -68,8 +68,6 @@ public class TablaCentroDeportivoController implements Initializable {
 
     @FXML
     private Button volver_button;
-
-
     @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
@@ -105,7 +103,6 @@ public class TablaCentroDeportivoController implements Initializable {
 
         listarCentroDeportivo();
     }
-
 
     public void listarCentroDeportivo(){
         List<CentroDeportivo> centrosDepor=null;

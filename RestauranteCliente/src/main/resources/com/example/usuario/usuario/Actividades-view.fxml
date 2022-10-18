@@ -40,22 +40,22 @@
       </VBox>
       <VBox layoutX="21.0" layoutY="144.0" prefHeight="364.0" prefWidth="167.0" spacing="45.0">
          <children>
-            <Button fx:id="canchas_button" lineSpacing="50.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: #4B9960;" text="Canchas" textFill="WHITE">
+            <Button fx:id="canchas_button" lineSpacing="50.0" mnemonicParsing="false" onAction="#CanchasClickedButton" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: #4B9960;" text="Canchas" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="gimnasios_button" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: #EFEA95;" text="Gimansios" textFill="WHITE">
+            <Button fx:id="gimnasios_button" mnemonicParsing="false" onAction="#GimnasiosClickedButton" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: #EFEA95;" text="Gimansios" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="nautica_button" lineSpacing="50.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: #374C9D;" text="Nautica" textFill="WHITE">
+            <Button fx:id="nautica_button" lineSpacing="50.0" mnemonicParsing="false" onAction="#NauticaClickedButton" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: #374C9D;" text="Nautica" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="exterior_button" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: #FF5F5C;" text="Exterior" textFill="WHITE">
+            <Button fx:id="exterior_button" mnemonicParsing="false" onAction="#ExteriorClickedButton" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: #FF5F5C;" text="Exterior" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.EmpresaController">
+<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.CentroDeportivoController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="221.0" style="-fx-background-color: #000000;">
          <children>
@@ -58,7 +58,7 @@
             </Text>
             <TextField fx:id="txt_nombre" layoutX="236.0" layoutY="123.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese nombre" />
             <TextField fx:id="txt_rut" layoutX="236.0" layoutY="168.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese RUT" />
-            <Text fx:id="CrearNuevaEmpresa" fill="WHITE" layoutX="62.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREAR NUEVO CENTRO:">
+            <Text fx:id="CrearNuevoCentro" fill="WHITE" layoutX="62.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREAR NUEVO CENTRO:">
                <font>
                   <Font name="System Bold" size="33.0" />
                </font>

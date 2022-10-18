@@ -36,7 +36,7 @@ public class CentroDeportivoController {
     String direccion_;
 
     @FXML
-    private Text CrearNuevaEmpresa;
+    private Text CrearNuevoCentro;
 
     @FXML
     private Button cerrar_sesion_button;
@@ -73,7 +73,6 @@ public class CentroDeportivoController {
 
     @FXML
     private TextField txt_nombre;
-
     @FXML
     private TextField txt_rut;
 
@@ -91,7 +90,6 @@ public class CentroDeportivoController {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML
     void CrearClickedButton(ActionEvent event) {
         if(!txt_nombre.getText().isEmpty() && !txt_rut.getText().isEmpty() && !txt_telefono.getText().isEmpty() && !txt_direccion.getText().isEmpty()){
