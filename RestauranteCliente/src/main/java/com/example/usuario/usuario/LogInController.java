@@ -47,7 +47,7 @@ public class LogInController implements Initializable {
 
     @FXML
     void LogInClickedButton(ActionEvent event) throws IOException {
-        if (txt_email.getText().equals("admin") && txt_contraseña.getText().equals("admin")) {
+        if (txt_email.getText().equals("superadmin") && txt_contraseña.getText().equals("superadmin")) {
             Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -55,7 +55,7 @@ public class LogInController implements Initializable {
             stage.show();
         }
 
-        if (txt_email.getText().equals("centro") && txt_contraseña.getText().equals("centro")) {
+        if (txt_email.getText().equals("admincentro") && txt_contraseña.getText().equals("admincentro")) {
             Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CrearActividades-view.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -70,7 +70,7 @@ public class LogInController implements Initializable {
             stage.setScene(scene);
             stage.show();
         }
-        if (txt_email.getText().equals("empresa") && txt_contraseña.getText().equals("empresa")) {
+        if (txt_email.getText().equals("adminempresa") && txt_contraseña.getText().equals("adminempresa")) {
             Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleado-view.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
