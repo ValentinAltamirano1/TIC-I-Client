@@ -1,4 +1,4 @@
-package com.example.usuario.usuario;
+package com.example.usuario.usuario.CentrosDeportivos;
 
 public class CentroDeportivo {
     private Long rut;

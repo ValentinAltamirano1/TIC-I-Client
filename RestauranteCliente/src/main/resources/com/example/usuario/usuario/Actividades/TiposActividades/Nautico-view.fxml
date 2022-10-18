@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="565.0" prefWidth="388.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.NauticaController">
+<AnchorPane prefHeight="565.0" prefWidth="388.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.TiposActividades.NauticaController">
    <children>
       <Button fx:id="nautica_button" layoutY="-14.0" lineSpacing="50.0" mnemonicParsing="false" prefHeight="146.0" prefWidth="388.0" style="-fx-background-color: #374C9D;" text="NAUTICA" textFill="WHITE">
          <font>

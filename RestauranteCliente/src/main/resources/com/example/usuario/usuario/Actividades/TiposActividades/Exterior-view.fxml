@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="565.0" prefWidth="388.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.ExteriorController">
+<AnchorPane prefHeight="565.0" prefWidth="388.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.TiposActividades.ExteriorController">
    <children>
       <Button fx:id="exterior_button" layoutY="-2.0" mnemonicParsing="false" prefHeight="135.0" prefWidth="388.0" style="-fx-background-color: #FF5F5C;" text="EXTERIOR" textFill="WHITE">
          <font>

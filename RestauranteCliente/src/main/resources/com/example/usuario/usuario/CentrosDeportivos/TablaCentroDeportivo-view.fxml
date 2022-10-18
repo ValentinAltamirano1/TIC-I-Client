@@ -11,23 +11,23 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.TablaEmpresaController">
+<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.CentrosDeportivos.TablaCentroDeportivoController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="221.0" style="-fx-background-color: #000000;">
          <children>
             <ImageView fx:id="foto" fitHeight="97.0" fitWidth="103.0" layoutX="38.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Foto_Logo.jpg" />
+                  <Image url="@../Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
-            <Text fx:id="titulo" fill="#df2d29" layoutX="31.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPRESA" wrappingWidth="141.48089599609375">
+            <Text fx:id="titulo" fill="#df2d29" layoutX="38.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CENTRO" wrappingWidth="141.48089599609375">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Text>
             <VBox layoutX="14.0" layoutY="202.0" prefHeight="114.0" prefWidth="150.0" spacing="125.0" style="-fx-background-color: #000000;">
                <children>
-                  <Button fx:id="crear_button" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Crear empresa" textFill="WHITE">
+                  <Button fx:id="crear_button" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Crear nuevo" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -39,23 +39,30 @@
                   </Button>
                </children>
             </VBox>
+            <Text fx:id="titulo1" fill="#df2d29" layoutX="24.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DEPORTIVO" wrappingWidth="141.48089599609375">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="422.0" style="-fx-background-color: #000000;">
          <children>
-            <Text fx:id="EmpresasCreadas" fill="WHITE" layoutX="109.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPRESAS CREADAS:">
+            <Text fx:id="CentrosCreados" fill="WHITE" layoutX="113.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" CENTROS CREADOS:">
                <font>
                   <Font name="System Bold" size="26.0" />
                </font>
             </Text>
-            <Button fx:id="volver_button" layoutX="184.0" layoutY="387.0" mnemonicParsing="false" onAction="#VolverClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Volver" textFill="WHITE">
+            <Button fx:id="volver_button" layoutX="184.0" layoutY="381.0" mnemonicParsing="false" onAction="#VolverClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Volver" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <TableView fx:id="tabla_empresa" layoutX="67.0" layoutY="119.0" prefHeight="251.0" prefWidth="335.0" style="-fx-background-color: #ffffff;">
+            <TableView fx:id="tableView" layoutX="54.0" layoutY="130.0" prefHeight="226.0" prefWidth="398.0">
                <columns>
-                  <TableColumn fx:id="nombre" prefWidth="177.6000518798828" style="-fx-background-color: #ffffff;" text="Nombre" />
-                  <TableColumn fx:id="rut" prefWidth="155.19993591308594" style="-fx-background-color: #ffffff;" text="Rut" />
+                  <TableColumn fx:id="rut" minWidth="0.0" prefWidth="89.60005569458008" text="Rut" />
+                  <TableColumn fx:id="direccion" prefWidth="100.79998779296875" text="Direccion" />
+                  <TableColumn fx:id="nombre" prefWidth="100.79997253417969" text="Nombre" />
+                  <TableColumn fx:id="telefono" prefWidth="103.20001220703125" text="Telefono" />
                </columns>
             </TableView>
          </children></AnchorPane>

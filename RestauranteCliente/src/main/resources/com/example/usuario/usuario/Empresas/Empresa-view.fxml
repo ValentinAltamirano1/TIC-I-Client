@@ -10,23 +10,23 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.CentroDeportivoController">
+<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empresas.EmpresaController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="221.0" style="-fx-background-color: #000000;">
          <children>
             <ImageView fx:id="foto" fitHeight="97.0" fitWidth="103.0" layoutX="38.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Foto_Logo.jpg" />
+                  <Image url="@../Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
-            <Text fx:id="titulo" fill="#df2d29" layoutX="38.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CENTRO" wrappingWidth="141.48089599609375">
+            <Text fx:id="titulo" fill="#df2d29" layoutX="31.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPRESA" wrappingWidth="141.48089599609375">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Text>
             <VBox layoutX="14.0" layoutY="202.0" prefHeight="114.0" prefWidth="150.0" spacing="125.0" style="-fx-background-color: #000000;">
                <children>
-                  <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Ver ya creados" textFill="WHITE">
+                  <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Ver ya creadas" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -38,29 +38,24 @@
                   </Button>
                </children>
             </VBox>
-            <Text fx:id="titulo1" fill="#df2d29" layoutX="24.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DEPORTIVO" wrappingWidth="141.48089599609375">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Text>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="422.0" style="-fx-background-color: #000000;">
          <children>
-            <Text fx:id="nombre" fill="WHITE" layoutX="44.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:">
+            <Text fx:id="nombre" fill="WHITE" layoutX="63.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:">
                <font>
                   <Font name="System Bold" size="29.0" />
                </font>
             </Text>
-            <Text fx:id="rut" fill="WHITE" layoutX="76.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RUT:">
+            <Text fx:id="rut" fill="WHITE" layoutX="91.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RUT:">
                <font>
                   <Font name="System Bold" size="29.0" />
                </font>
             </Text>
-            <TextField fx:id="txt_nombre" layoutX="236.0" layoutY="123.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese nombre" />
-            <TextField fx:id="txt_rut" layoutX="236.0" layoutY="168.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese RUT" />
-            <Text fx:id="CrearNuevoCentro" fill="WHITE" layoutX="62.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREAR NUEVO CENTRO:">
+            <TextField fx:id="txt_nombre" layoutX="236.0" layoutY="177.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese nombre" />
+            <TextField fx:id="txt_rut" layoutX="236.0" layoutY="246.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese RUT" />
+            <Text fx:id="CrearNuevaEmpresa" fill="WHITE" layoutX="91.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREAR NUEVA EMPRESA:">
                <font>
-                  <Font name="System Bold" size="33.0" />
+                  <Font name="System Bold" size="26.0" />
                </font>
             </Text>
             <Button fx:id="crear_button" layoutX="108.0" layoutY="345.0" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Crear" textFill="WHITE">
@@ -73,18 +68,6 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Text fx:id="telefono" fill="WHITE" layoutX="48.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono:">
-               <font>
-                  <Font name="System Bold" size="29.0" />
-               </font>
-            </Text>
-            <Text fx:id="direccion" fill="WHITE" layoutX="44.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Direccion:">
-               <font>
-                  <Font name="System Bold" size="29.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txt_telefono" layoutX="236.0" layoutY="216.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese telefono" />
-            <TextField fx:id="txt_direccion" layoutX="236.0" layoutY="259.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese direccion" />
          </children></AnchorPane>
   </items>
 </SplitPane>

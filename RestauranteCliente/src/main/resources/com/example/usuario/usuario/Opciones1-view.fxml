@@ -10,12 +10,12 @@
    <children>
       <ImageView fitHeight="145.0" fitWidth="261.0" layoutX="127.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="/com/example/usuario/usuario/Foto_Logo.jpg" />
+            <Image url="/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="173.0" fitWidth="511.0" layoutX="13.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="/com/example/usuario/usuario/Foto_mancuerna.jpg"/>
+            <Image url="/com/example/usuario/usuario/Fotos/Foto_mancuerna.jpg"/>
          </image>
       </ImageView>
       <Button fx:id="Empresa" layoutX="51.0" layoutY="290.0" mnemonicParsing="false" onAction="#EmpresaClickedButton" prefHeight="55.0" prefWidth="178.0" style="-fx-background-color: #DF2D29; -fx-border-color: #DF2D29;" text="Empresas" textFill="WHITE">

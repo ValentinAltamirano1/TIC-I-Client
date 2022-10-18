@@ -1,6 +1,5 @@
-package com.example.usuario.usuario;
+package com.example.usuario.usuario.Empresas;
 
-import com.example.usuario.usuario.CentroDeportivo;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.collections.FXCollections;
@@ -25,28 +24,11 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import static javafx.collections.FXCollections.observableArrayList;
-
-public class TablaCentroDeportivoController implements Initializable {
-    private Scene scene;
+public class TablaEmpresaController implements Initializable {
     private Stage stage;
-
+    private Scene scene;
     @FXML
-    private TableView<CentroDeportivo> tableView;
-    @FXML
-    private TableColumn<CentroDeportivo,String> rut;
-    @FXML
-    private TableColumn<CentroDeportivo,Long> telefono;
-    @FXML
-    private TableColumn<CentroDeportivo,String> direccion;
-    @FXML
-    private TableColumn<CentroDeportivo,String> nombre;
-    @FXML
-    private ObservableList<CentroDeportivo> list;
-
-    @FXML
-    private Text CentrosCreados;
-
+    private Text CrearNuevaEmpresa;
     @FXML
     private Button cerrar_sesion_button;
 
@@ -55,15 +37,21 @@ public class TablaCentroDeportivoController implements Initializable {
 
     @FXML
     private ImageView foto;
+    @FXML
+    private TableColumn<Empresa, String> nombre;
 
     @FXML
-    private Text titulo;
+    private TableColumn<Empresa, String> rut;
 
     @FXML
-    private Text titulo1;
+    private TableView<Empresa> tableView;
 
     @FXML
     private Button volver_button;
+
+    @FXML
+    private ObservableList<Empresa> list;
+
     @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
@@ -74,7 +62,7 @@ public class TablaCentroDeportivoController implements Initializable {
     }
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxmll"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -83,43 +71,37 @@ public class TablaCentroDeportivoController implements Initializable {
 
     @FXML
     void CrearClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentroDeportivo-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/Empresa-view.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        rut.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("rut"));
-        direccion.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("direccion"));
-        nombre.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("nombre"));
-        telefono.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, Long>("telefono"));
-
-        listarCentroDeportivo();
+        nombre.setCellValueFactory(new PropertyValueFactory<Empresa,String>("nombre"));
+        rut.setCellValueFactory(new PropertyValueFactory<Empresa,String>("rut"));
+        listarEmpresa();
     }
 
-    public void listarCentroDeportivo(){
-        List<CentroDeportivo> centrosDepor=null;
-        try {
-            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/centroDeportivo")
+    public void listarEmpresa(){
+        List<Empresa> empresas=null;
+        try{
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/empresa")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
 
             ObjectMapper mapper = new ObjectMapper();
-            centrosDepor = mapper.readValue(temp, new TypeReference<List<CentroDeportivo>>() {});
 
-            list = FXCollections.observableArrayList(centrosDepor);
+            empresas = mapper.readValue(temp, new TypeReference<List<Empresa>>(){});
 
-            System.out.println(list);
+            list = FXCollections.observableArrayList(empresas);
 
-            tableView = new TableView<>();
             tableView.setItems(list);
 
-
         }catch (Exception ignored){}
+
+
     }
-
 }
-

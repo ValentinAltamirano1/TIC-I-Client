@@ -11,13 +11,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2875523638539796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.CrearActividadesController">
+<SplitPane dividerPositions="0.2875523638539796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.CrearActividadesController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="221.0" style="-fx-background-color: #000000;">
          <children>
             <ImageView fx:id="foto" fitHeight="97.0" fitWidth="103.0" layoutX="43.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Foto_Logo.jpg" />
+                  <Image url="@../Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
             <Text fx:id="titulo" fill="#df2d29" layoutX="19.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACTIVIDADES" wrappingWidth="170.39999999999986">
