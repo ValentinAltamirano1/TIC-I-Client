@@ -1,10 +1,8 @@
 package com.example.usuario.usuario;
 
+import com.example.usuario.usuario.CentroDeportivo;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,12 +17,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
-import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import org.w3c.dom.Text;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;

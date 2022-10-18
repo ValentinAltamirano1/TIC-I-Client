@@ -1,5 +1,6 @@
 package com.example.usuario.usuario;
 
+import com.example.usuario.usuario.Empresa;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.collections.FXCollections;

@@ -1,5 +1,6 @@
 package com.example.usuario.usuario;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +20,7 @@ import java.util.ResourceBundle;
 
 public class LogInController implements Initializable {
     private Stage stage;
+
     private Scene scene;
 
     @FXML
@@ -61,7 +63,7 @@ public class LogInController implements Initializable {
             stage.show();
         }
 
-        if (txt_email.getText().equals("empleado") && txt_contraseña.getText().equals("empleado")) {
+        if (txt_email.getText().equals("usuario") && txt_contraseña.getText().equals("usuario")) {
             Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades-view.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
