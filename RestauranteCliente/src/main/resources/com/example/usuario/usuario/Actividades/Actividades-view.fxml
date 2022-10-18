@@ -18,22 +18,22 @@
          <children>
             <ImageView fx:id="canchas" fitHeight="92.0" fitWidth="169.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../OneDrive/Escritorio/Facultad/TIC/Canchas.jpg" />
+                  <Image url="/com/example/usuario/usuario/Fotos/Foto_Canchas.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="gimnasios" fitHeight="102.0" fitWidth="169.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../OneDrive/Escritorio/Facultad/TIC/Gimnasios.jpg" />
+                  <Image url="/com/example/usuario/usuario/Fotos/Foto_Gimnasios.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="nautica" fitHeight="82.0" fitWidth="170.0" layoutX="10.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../OneDrive/Escritorio/Facultad/TIC/Nautica.jpg" />
+                  <Image url="/com/example/usuario/usuario/Fotos/Foto_Nautica.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="exterior" fitHeight="99.0" fitWidth="168.0" layoutX="10.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../OneDrive/Escritorio/Facultad/TIC/alta-intensidad-ciclismo-entrenar-1000.jpg" />
+                  <Image url="/com/example/usuario/usuario/Fotos/Foto_Exterior.jpg" />
                </image>
             </ImageView>
          </children>
