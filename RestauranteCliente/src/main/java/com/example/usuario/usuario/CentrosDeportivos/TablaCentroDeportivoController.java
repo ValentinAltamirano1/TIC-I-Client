@@ -87,7 +87,6 @@ public class TablaCentroDeportivoController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -95,7 +94,6 @@ public class TablaCentroDeportivoController implements Initializable {
         direccion.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("direccion"));
         nombre.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("nombre"));
         telefono.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, Long>("telefono"));
-
         listarCentroDeportivo();
     }
 
