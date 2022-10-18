@@ -61,7 +61,6 @@ public class TablaEmpleadosController implements Initializable {
         stage.show();
     }
 
-
     @FXML
     void CrearClickedButton(ActionEvent event) {
 
