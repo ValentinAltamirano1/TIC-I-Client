@@ -55,7 +55,8 @@ public class CanchasController implements Initializable {
     private Label precio3;
     @FXML
     private Button canchas_button;
-
+    @FXML
+    private Button siguiente_button;
     @FXML
     private Button volver_button;
 
@@ -66,6 +67,10 @@ public class CanchasController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    @FXML
+    void SiguienteButtonClicked(ActionEvent event){
+
     }
 
     @Override
