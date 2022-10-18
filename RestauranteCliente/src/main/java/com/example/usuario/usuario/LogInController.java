@@ -1,8 +1,10 @@
 package com.example.usuario.usuario;
 
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.type.ReferenceType;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import kong.unirest.HttpResponse;
+import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 
 import java.io.IOException;
@@ -71,12 +74,13 @@ public class LogInController implements Initializable {
             json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
 
 
-            HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/usuarios")
+            HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/usuarios")
                     .header("Content-Type", "application/json").body(json).asJson();
             int response = apiResponse.getStatus();
 
             if (response != 400) {
-                if (usuarios.get(response).getTipoUsuario().equals("superAdmin")) {
+                Usuarios listUser = mapper.readValue(apiResponse.getBody().toString(), new TypeReference<Usuarios>() {});
+                if (listUser.getTipoUsuario().equals("superAdmin")) {
                     Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
@@ -84,7 +88,7 @@ public class LogInController implements Initializable {
                     stage.show();
                 }
 
-                if (usuarios.get(response).getTipoUsuario().equals("adminCentroDeportivo")) {
+                if (listUser.getTipoUsuario().equals("adminCentroDeportivo")) {
                     Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividades-view.fxml"));
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
