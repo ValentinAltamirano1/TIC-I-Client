@@ -55,10 +55,10 @@
             <TableView fx:id="tableView" layoutX="14.0" layoutY="112.0" prefHeight="282.0" prefWidth="452.0" style="-fx-background-color: #ffffff;">
                <columns>
                   <TableColumn fx:id="nombre" prefWidth="114.40003395080566" style="-fx-background-color: #ffffff;" text="Nombre" />
-                  <TableColumn fx:id="rut" prefWidth="119.199951171875" style="-fx-background-color: #ffffff;" text="Categoria" />
-                  <TableColumn fx:id="nombre1" prefWidth="65.60003662109375" style="-fx-background-color: #ffffff;" text="Capacidad" />
-                  <TableColumn fx:id="nombre2" prefWidth="59.20001220703125" style="-fx-background-color: #ffffff;" text="Precio" />
-                  <TableColumn fx:id="nombre21" prefWidth="92.7999267578125" style="-fx-background-color: #ffffff;" text="Horario" />
+                  <TableColumn fx:id="categoria" prefWidth="119.199951171875" style="-fx-background-color: #ffffff;" text="Categoria" />
+                  <TableColumn fx:id="capacidad" prefWidth="65.60003662109375" style="-fx-background-color: #ffffff;" text="Capacidad" />
+                  <TableColumn fx:id="precio" prefWidth="59.20001220703125" style="-fx-background-color: #ffffff;" text="Precio" />
+                  <TableColumn fx:id="horario" prefWidth="92.7999267578125" style="-fx-background-color: #ffffff;" text="Horario" />
                </columns>
             </TableView>
          </children></AnchorPane>

@@ -44,7 +44,6 @@ public class LogInController implements Initializable {
     @FXML
     private TextField txt_email;
 
-
     @FXML
     void LogInClickedButton(ActionEvent event) throws IOException {
         if (txt_email.getText().equals("superadmin") && txt_contraseña.getText().equals("superadmin")) {

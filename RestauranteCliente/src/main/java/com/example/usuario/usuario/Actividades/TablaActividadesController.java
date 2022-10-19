@@ -33,6 +33,11 @@ public class TablaActividadesController implements Initializable {
     private TableView<Actividades> tableView;
     @FXML
     private Text EmpresasCreadas;
+    @FXML
+    private TableColumn<?, ?> capacidad;
+
+    @FXML
+    private TableColumn<?, ?> categoria;
 
     @FXML
     private Button cerrar_sesion_button;
@@ -47,24 +52,20 @@ public class TablaActividadesController implements Initializable {
     private TableColumn<Actividades, ?> nombre;
 
     @FXML
-    private TableColumn<Actividades, ?> nombre1;
+    private TableColumn<?, ?> horario;
 
     @FXML
-    private TableColumn<Actividades, ?> nombre2;
-
-    @FXML
-    private TableColumn<Actividades, ?> nombre21;
-
-    @FXML
-    private TableColumn<Actividades, ?> rut;
+    private TableColumn<?, ?> precio;
 
     @FXML
     private Text titulo1;
 
     @FXML
     private Button volver_button;
+
     @FXML
     private ObservableList<Actividades> list;
+
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
@@ -92,7 +93,6 @@ public class TablaActividadesController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
     public void listarActividades(){

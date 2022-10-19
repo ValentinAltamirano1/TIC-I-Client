@@ -37,10 +37,10 @@
                <children>
                   <VBox layoutX="112.0" layoutY="12.0" prefHeight="97.0" prefWidth="226.0">
                      <children>
-                        <Label fx:id="nombre2" prefHeight="23.0" prefWidth="143.0" text="Label" />
-                        <Label fx:id="capacidad2" prefHeight="28.0" prefWidth="143.0" text="Label" />
-                        <Label fx:id="precio2" prefHeight="27.0" prefWidth="142.0" text="Label" />
-                        <Label fx:id="horario2" layoutX="10.0" layoutY="61.0" prefHeight="27.0" prefWidth="142.0" text="Label" />
+                        <Label fx:id="nombre2" prefHeight="23.0" prefWidth="143.0" text="nombre2" />
+                        <Label fx:id="capacidad2" prefHeight="28.0" prefWidth="143.0" text="capacidad2" />
+                        <Label fx:id="precio2" prefHeight="27.0" prefWidth="142.0" text="precio2" />
+                        <Label fx:id="horario2" layoutX="10.0" layoutY="61.0" prefHeight="27.0" prefWidth="142.0" text="horarios2" />
                      </children>
                   </VBox>
                </children>
@@ -49,10 +49,10 @@
                <children>
                   <VBox layoutX="110.0" layoutY="14.0" prefHeight="97.0" prefWidth="226.0">
                      <children>
-                        <Label fx:id="nombre3" prefHeight="23.0" prefWidth="143.0" text="Label" />
-                        <Label fx:id="capacidad3" prefHeight="28.0" prefWidth="143.0" text="Label" />
-                        <Label fx:id="precio3" prefHeight="27.0" prefWidth="142.0" text="Label" />
-                        <Label fx:id="horario3" layoutX="10.0" layoutY="61.0" prefHeight="27.0" prefWidth="142.0" text="Label" />
+                        <Label fx:id="nombre3" prefHeight="23.0" prefWidth="143.0" text="nombre3" />
+                        <Label fx:id="capacidad3" prefHeight="28.0" prefWidth="143.0" text="capacidad3" />
+                        <Label fx:id="precio3" prefHeight="27.0" prefWidth="142.0" text="precio3" />
+                        <Label fx:id="horario3" layoutX="10.0" layoutY="61.0" prefHeight="27.0" prefWidth="142.0" text="horarios3" />
                      </children>
                   </VBox>
                </children>

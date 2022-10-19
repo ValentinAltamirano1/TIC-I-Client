@@ -72,11 +72,8 @@ public class CrearActividadesController {
     @FXML
     private Text titulo;
 
-
     @FXML
     void CrearClickedButton(ActionEvent event) {
-
-
     }
 
     @FXML

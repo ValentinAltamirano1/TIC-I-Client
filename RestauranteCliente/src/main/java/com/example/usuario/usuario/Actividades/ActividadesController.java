@@ -44,6 +44,9 @@ public class ActividadesController {
     private Button nautica_button;
 
     @FXML
+    private Button cerrar_sesion;
+
+    @FXML
     void CanchasClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/TiposActividades/Canchas-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -60,7 +63,14 @@ public class ActividadesController {
         stage.setScene(scene);
         stage.show();
     }
-
+    @FXML
+    void CerrarSesionClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     void GimnasiosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/TiposActividades/Gimnasios-view.fxml"));
