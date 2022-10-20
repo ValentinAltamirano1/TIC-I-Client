@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -24,6 +25,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class EmpleadoController implements Initializable {
@@ -36,8 +39,9 @@ public class EmpleadoController implements Initializable {
     int telefono_;
     String tipo_;
 
+    String contraseña_;
 
-
+    LocalDate fichaMedica_;
     @FXML
     private Text CrearNuevoEmpleado;
 
@@ -77,6 +81,10 @@ public class EmpleadoController implements Initializable {
     @FXML
     private TextField txt_telefono;
     @FXML
+    private TextField txt_contraseña;
+    @FXML
+    private DatePicker txt_fichamedica;
+    @FXML
     private ChoiceBox<String> txt_tipo;
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
@@ -100,12 +108,14 @@ public class EmpleadoController implements Initializable {
 
     @FXML
     void CrearClickedButton(ActionEvent event) {
-        if(!txt_nombre.getText().isEmpty() && !txt_mail.getText().isEmpty() && !txt_pasaporte.getText().isEmpty() && !txt_telefono.getText().isEmpty()){
+        if(!txt_nombre.getText().isEmpty() && !txt_mail.getText().isEmpty() && !txt_pasaporte.getText().isEmpty() && !txt_telefono.getText().isEmpty() && !txt_contraseña.getText().isEmpty()){
             try {
                 nombre_ = txt_nombre.getText();
                 mail_ = txt_mail.getText();
                 pasaporte_ = txt_pasaporte.getText();
                 telefono_ = Integer.parseInt(txt_telefono.getText());
+                contraseña_= txt_contraseña.getText();
+                fichaMedica_ = txt_fichamedica.getValue();
                 tipo_ = txt_tipo.getValue();
                 String json = "";
                 try {

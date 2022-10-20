@@ -78,12 +78,6 @@ public class CrearActividadesController {
     private TextField txt_precio;
 
     @FXML
-    private TextField txt_contraseña;
-
-    @FXML
-    private DatePicker txt_fichamedica;
-
-    @FXML
     private Button crear_button;
 
     @FXML
