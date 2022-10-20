@@ -9,8 +9,6 @@ public class Actividades {
     private String categoria;
     private int capacidad;
 
-
-
     public Actividades() {
     }
 
