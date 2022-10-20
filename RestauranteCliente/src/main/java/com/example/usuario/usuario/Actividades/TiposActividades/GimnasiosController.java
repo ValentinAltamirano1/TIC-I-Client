@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,6 +18,41 @@ import java.util.ResourceBundle;
 public class GimnasiosController implements Initializable {
     Scene scene;
     Stage stage;
+    @FXML
+    private Label capacidad1;
+
+    @FXML
+    private Label capacidad2;
+
+    @FXML
+    private Label capacidad3;
+
+    @FXML
+    private Label horario1;
+
+    @FXML
+    private Label horario2;
+
+    @FXML
+    private Label horario3;
+
+    @FXML
+    private Label nombre1;
+
+    @FXML
+    private Label nombre2;
+
+    @FXML
+    private Label nombre3;
+
+    @FXML
+    private Label precio1;
+
+    @FXML
+    private Label precio2;
+
+    @FXML
+    private Label precio3;
 
     @FXML
     private Button gimnasios_button;
