@@ -44,7 +44,7 @@ public class TablaCentroDeportivoController implements Initializable {
     private ObservableList<CentroDeportivo> list;
 
     @FXML
-    private Text CentrosCreados;
+    private Text centroscreados;
 
     @FXML
     private Button cerrar_sesion_button;
@@ -56,10 +56,10 @@ public class TablaCentroDeportivoController implements Initializable {
     private ImageView foto;
 
     @FXML
-    private Text titulo;
+    private Text titulo1;
 
     @FXML
-    private Text titulo1;
+    private Text titulo2;
 
     @FXML
     private Button volver_button;
