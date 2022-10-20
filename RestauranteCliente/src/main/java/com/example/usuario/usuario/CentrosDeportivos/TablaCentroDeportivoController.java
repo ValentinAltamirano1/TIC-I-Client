@@ -60,6 +60,8 @@ public class TablaCentroDeportivoController implements Initializable {
 
     @FXML
     private Text titulo2;
+    @FXML
+    private Button crearadmin_button;
 
     @FXML
     private Button volver_button;
@@ -73,13 +75,20 @@ public class TablaCentroDeportivoController implements Initializable {
     }
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxmll"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-
+    @FXML
+    void CrearAdminClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CrearAdminCentroDeportivo-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     void CrearClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CentroDeportivo-view.fxml"));
