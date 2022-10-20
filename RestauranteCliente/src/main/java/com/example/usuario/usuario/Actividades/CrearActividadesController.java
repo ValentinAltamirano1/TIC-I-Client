@@ -16,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -53,6 +54,12 @@ public class CrearActividadesController {
     private Text nombre;
 
     @FXML
+    private Text fichamedica;
+
+    @FXML
+    private Text contraseña;
+
+    @FXML
     private Text precio;
 
     @FXML
@@ -69,6 +76,13 @@ public class CrearActividadesController {
 
     @FXML
     private TextField txt_precio;
+
+    @FXML
+    private TextField txt_contraseña;
+
+    @FXML
+    private DatePicker txt_fichamedica;
+
     @FXML
     private Button crear_button;
 

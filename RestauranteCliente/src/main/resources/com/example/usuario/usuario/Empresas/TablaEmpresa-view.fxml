@@ -39,6 +39,39 @@
                   </Button>
                </children>
             </VBox>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="221.0" style="-fx-background-color: #000000;">
+               <children>
+                  <ImageView fx:id="foto1" fitHeight="97.0" fitWidth="103.0" layoutX="38.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Fotos/Foto_Logo.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="titulo1" fill="#df2d29" layoutX="31.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPRESA" wrappingWidth="141.48089599609375">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <VBox layoutX="15.0" layoutY="187.0" prefHeight="114.0" prefWidth="150.0" spacing="50.0" style="-fx-background-color: #000000;">
+                     <children>
+                        <Button fx:id="crearempresa_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearEmpresaClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Crear empresa" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="crearadmin_button" mnemonicParsing="false" onAction="#CrearAdminClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Crear admin" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="cerrar_sesion_button1" mnemonicParsing="false" onAction="#CerrarSesionClickedButton" prefHeight="131.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Cerrar Sesion" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="422.0" style="-fx-background-color: #000000;">
          <children>

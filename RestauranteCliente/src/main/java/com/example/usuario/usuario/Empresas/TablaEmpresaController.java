@@ -31,7 +31,8 @@ public class TablaEmpresaController implements Initializable {
     private Text CrearNuevaEmpresa;
     @FXML
     private Button cerrar_sesion_button;
-
+    @FXML
+    private Button crearadmin_button;
     @FXML
     private Button crear_button;
 
@@ -61,6 +62,14 @@ public class TablaEmpresaController implements Initializable {
         stage.show();
     }
     @FXML
+    void CrearEmpresaClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -69,6 +78,14 @@ public class TablaEmpresaController implements Initializable {
         stage.show();
     }
 
+    @FXML
+    void CrearAdminClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/CrearAdminEmpresa-view.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     void CrearClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/Empresa-view.fxml"));

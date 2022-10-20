@@ -34,6 +34,9 @@ public class CentroDeportivoController {
     private Text CrearNuevoCentro;
 
     @FXML
+    private Button crearadmin_button;
+
+    @FXML
     private Button cerrar_sesion_button;
 
     @FXML
@@ -76,6 +79,14 @@ public class CentroDeportivoController {
 
     @FXML
     private Button creados_button;
+    @FXML
+    void CrearAdminClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
