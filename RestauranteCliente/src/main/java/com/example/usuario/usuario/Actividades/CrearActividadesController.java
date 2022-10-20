@@ -1,5 +1,11 @@
 package com.example.usuario.usuario.Actividades;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.JsonNode;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,6 +30,12 @@ public class CrearActividadesController {
             observableArrayList("Cancha","Gimnasio", "Exterior", "Nautico");
     Stage stage;
     Scene scene;
+
+    int capacidad_;
+    String categoria_;
+    String horario_;
+    String nombre_;
+    int precio_;
 
     @FXML
     private Text CrearNuevaActividad;
@@ -74,8 +86,37 @@ public class CrearActividadesController {
 
     @FXML
     void CrearClickedButton(ActionEvent event) {
-    }
+        if(!txt_nombre.getText().isEmpty() && !txt_capacidad.getText().isEmpty() && !txt_precio.getText().isEmpty()){
+            try {
+                nombre_ = txt_nombre.getText();
+                capacidad_ = Integer.parseInt(txt_capacidad.getText());
+                precio_= Integer.parseInt(txt_precio.getText());
+                horario_ = txt_horario.getValue().toString();
+                categoria_ = txt_categoria.getValue().toString();
+                String json = "";
+                try {
+                    ObjectMapper mapper = new ObjectMapper();
+                    ObjectNode rest = mapper.createObjectNode();
+                    rest.put("nombre", nombre_);
+                    rest.put("horario",horario_ );
+                    rest.put("precio", precio_);
+                    rest.put("categoria",categoria_ );
+                    rest.put("capacidad",capacidad_ );
+                    json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
+                }catch (Exception ignored) {
+                }
+                try {
+                    HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/actividades")
+                            .header("Content-Type", "application/json").body(json).asJson();
 
+                }catch (UnirestException ex) {}
+            }catch (NumberFormatException e){}
+            //Empresa nuevaEmpresa = new Empresa(nombre, rut);
+            //empresa.addNewEmpresa(nuevaEmpresa);
+        }else{
+            System.out.println("Ingrese correctamente todos los datos para guardar una nueva Empresa");
+        }
+    }
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));

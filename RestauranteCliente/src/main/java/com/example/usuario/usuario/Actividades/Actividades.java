@@ -1,10 +1,10 @@
 package com.example.usuario.usuario.Actividades;
 
-import java.util.Date;
+
 
 public class Actividades {
     private String nombre;
-    private Date horario;
+    private String horario;
     private int precio;
     private String categoria;
     private int capacidad;
@@ -14,7 +14,7 @@ public class Actividades {
     public Actividades() {
     }
 
-    public Actividades(String nombre, Date horario, int precio, String categoria, int capacidad) {
+    public Actividades(String nombre, String horario, int precio, String categoria, int capacidad) {
         this.nombre = nombre;
         this.horario = horario;
         this.precio = precio;
@@ -30,11 +30,11 @@ public class Actividades {
         this.nombre = nombre;
     }
 
-    public Date getHorario() {
+    public String getHorario() {
         return horario;
     }
 
-    public void setHorario(Date horario) {
+    public void setHorario(String horario) {
         this.horario = horario;
     }
 

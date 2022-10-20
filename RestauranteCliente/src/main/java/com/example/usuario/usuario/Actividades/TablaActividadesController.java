@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -33,11 +34,6 @@ public class TablaActividadesController implements Initializable {
     private TableView<Actividades> tableView;
     @FXML
     private Text EmpresasCreadas;
-    @FXML
-    private TableColumn<?, ?> capacidad;
-
-    @FXML
-    private TableColumn<?, ?> categoria;
 
     @FXML
     private Button cerrar_sesion_button;
@@ -49,13 +45,19 @@ public class TablaActividadesController implements Initializable {
     private ImageView foto;
 
     @FXML
-    private TableColumn<Actividades, ?> nombre;
+    private TableColumn<Actividades, String> nombre;
 
     @FXML
-    private TableColumn<?, ?> horario;
+    private TableColumn<Actividades, String> categoria;
 
     @FXML
-    private TableColumn<?, ?> precio;
+    private TableColumn<Actividades, String> capacidad;
+
+    @FXML
+    private TableColumn<Actividades, String> precio;
+
+    @FXML
+    private TableColumn<Actividades, String> horario;
 
     @FXML
     private Text titulo1;
@@ -93,6 +95,11 @@ public class TablaActividadesController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        nombre.setCellValueFactory(new PropertyValueFactory<Actividades,String>("nombre"));
+        categoria.setCellValueFactory(new PropertyValueFactory<Actividades,String>("categoria"));
+        capacidad.setCellValueFactory(new PropertyValueFactory<Actividades,String>("capacidad"));
+        precio.setCellValueFactory(new PropertyValueFactory<Actividades,String>("precio"));
+        horario.setCellValueFactory(new PropertyValueFactory<Actividades,String>("horario"));
     }
 
     public void listarActividades(){
