@@ -29,7 +29,6 @@ import static javafx.collections.FXCollections.observableArrayList;
 public class TablaCentroDeportivoController implements Initializable {
     private Scene scene;
     private Stage stage;
-
     @FXML
     private TableView<CentroDeportivo> tableView;
     @FXML
@@ -42,27 +41,20 @@ public class TablaCentroDeportivoController implements Initializable {
     private TableColumn<CentroDeportivo,String> nombre;
     @FXML
     private ObservableList<CentroDeportivo> list;
-
     @FXML
     private Text centroscreados;
-
     @FXML
     private Button cerrar_sesion_button;
-
     @FXML
     private Button crear_button;
-
     @FXML
     private ImageView foto;
-
     @FXML
     private Text titulo1;
-
     @FXML
     private Text titulo2;
     @FXML
     private Button crearadmin_button;
-
     @FXML
     private Button volver_button;
     @FXML
@@ -105,7 +97,6 @@ public class TablaCentroDeportivoController implements Initializable {
         telefono.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, Long>("telefono"));
         listarCentroDeportivo();
     }
-
     public void listarCentroDeportivo(){
         List<CentroDeportivo> centrosDepor=null;
         try {
@@ -120,9 +111,7 @@ public class TablaCentroDeportivoController implements Initializable {
 
             tableView.setItems(list);
 
-
         }catch (Exception ignored){}
     }
-
 }
 
