@@ -100,6 +100,7 @@ public class TablaActividadesController implements Initializable {
         capacidad.setCellValueFactory(new PropertyValueFactory<Actividades,String>("capacidad"));
         precio.setCellValueFactory(new PropertyValueFactory<Actividades,String>("precio"));
         horario.setCellValueFactory(new PropertyValueFactory<Actividades,String>("horario"));
+        listarActividades();
     }
 
     public void listarActividades(){
