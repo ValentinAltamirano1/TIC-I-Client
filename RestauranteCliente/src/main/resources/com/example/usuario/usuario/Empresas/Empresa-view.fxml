@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -24,14 +25,9 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Text>
-            <VBox layoutX="15.0" layoutY="187.0" prefHeight="114.0" prefWidth="150.0" spacing="50.0" style="-fx-background-color: #000000;">
+            <VBox layoutX="15.0" layoutY="187.0" prefHeight="114.0" prefWidth="150.0" spacing="150.0" style="-fx-background-color: #000000;">
                <children>
                   <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Ver ya creadas" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="crearadmin_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearAdminClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Crear admin" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -46,33 +42,59 @@
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="422.0" style="-fx-background-color: #000000;">
          <children>
-            <Text fx:id="nombre" fill="WHITE" layoutX="63.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:">
-               <font>
-                  <Font name="System Bold" size="29.0" />
-               </font>
-            </Text>
-            <Text fx:id="rut" fill="WHITE" layoutX="91.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RUT:">
-               <font>
-                  <Font name="System Bold" size="29.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txt_nombre" layoutX="236.0" layoutY="177.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese nombre" />
-            <TextField fx:id="txt_rut" layoutX="236.0" layoutY="246.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese RUT" />
             <Text fx:id="CrearNuevaEmpresa" fill="WHITE" layoutX="91.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREAR NUEVA EMPRESA:">
                <font>
                   <Font name="System Bold" size="26.0" />
                </font>
             </Text>
-            <Button fx:id="crear_button" layoutX="108.0" layoutY="345.0" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Crear" textFill="WHITE">
+            <Button fx:id="crear_button" layoutX="91.0" layoutY="380.0" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Crear" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="volver_button" layoutX="287.0" layoutY="345.0" mnemonicParsing="false" onAction="#VolverClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Volver" textFill="WHITE">
+            <Button fx:id="volver_button" layoutX="287.0" layoutY="380.0" mnemonicParsing="false" onAction="#VolverClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Volver" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
+            <VBox layoutX="51.0" layoutY="128.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text fx:id="nombre" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="rut" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="RUT:">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="rut1" fill="WHITE" layoutX="10.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mail:">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="rut11" fill="WHITE" layoutX="10.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="rut111" fill="WHITE" layoutX="10.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo:">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox layoutX="294.0" layoutY="128.0" prefHeight="200.0" prefWidth="162.0" spacing="15.0">
+               <children>
+                  <TextField fx:id="txt_nombre" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese nombre" />
+                  <TextField fx:id="txt_rut" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese RUT" />
+                  <TextField fx:id="txt_mail" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese mail" />
+                  <TextField fx:id="txt_contrasena" layoutX="10.0" layoutY="63.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese contraseña" />
+                  <ChoiceBox fx:id="txt_tipo" prefHeight="26.0" prefWidth="166.0" />
+               </children>
+            </VBox>
          </children></AnchorPane>
   </items>
 </SplitPane>

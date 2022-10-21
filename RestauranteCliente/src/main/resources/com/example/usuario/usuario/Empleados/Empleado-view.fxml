@@ -43,18 +43,6 @@
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="422.0" style="-fx-background-color: #000000;">
          <children>
-            <Text fx:id="nombre" fill="WHITE" layoutX="53.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Text>
-            <Text fx:id="telefono" fill="WHITE" layoutX="54.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono:">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txt_nombre" layoutX="236.0" layoutY="128.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese nombre" />
-            <TextField fx:id="txt_mail" layoutX="236.0" layoutY="253.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese Mail" />
             <Text fx:id="CrearNuevoEmpleado" fill="WHITE" layoutX="70.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREAR NUEVO EMPELADO:">
                <font>
                   <Font name="System Bold" size="26.0" />
@@ -65,36 +53,56 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Text fx:id="mail" fill="WHITE" layoutX="79.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mail:">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txt_telefono" layoutX="236.0" layoutY="215.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese Telefono" />
-            <Text fx:id="tipo" fill="WHITE" layoutX="84.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo:">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Text>
-            <ChoiceBox fx:id="txt_tipo" layoutX="238.0" layoutY="361.0" prefHeight="26.0" prefWidth="170.0" />
-            <Text fx:id="pasaporte" fill="WHITE" layoutX="53.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pasaporte:">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txt_pasaporte" layoutX="236.0" layoutY="172.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese pasaporte" />
-            <Text fx:id="contraseña" fill="WHITE" layoutX="46.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Text>
-            <Text fx:id="fichamedica" fill="WHITE" layoutX="36.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ficha medica:">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txt_contraseña" layoutX="236.0" layoutY="289.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese contraseña" />
-            <DatePicker fx:id="txt_fichamedica" layoutX="238.0" layoutY="325.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese fecha de vencimiento" />
+            <VBox layoutX="48.0" layoutY="129.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+               <children>
+                  <Text fx:id="nombre" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="pasaporte" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Pasaporte:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="telefono" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="mail" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Mail:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="contraseña" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="fichamedica" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Ficha medica:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="tipo" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox layoutX="248.0" layoutY="128.0" prefHeight="200.0" prefWidth="193.0" spacing="12.0">
+               <children>
+                  <TextField fx:id="txt_nombre" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese nombre" />
+                  <TextField fx:id="txt_pasaporte" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese pasaporte" />
+                  <TextField fx:id="txt_telefono" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese Telefono" />
+                  <TextField fx:id="txt_mail" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese Mail" />
+                  <TextField fx:id="txt_contraseña" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese contraseña" />
+                  <DatePicker fx:id="txt_fichamedica" prefHeight="26.0" prefWidth="198.0" promptText="Ingrese fecha de vencimiento" />
+                  <ChoiceBox fx:id="txt_tipo" prefHeight="26.0" prefWidth="199.0" />
+               </children>
+            </VBox>
          </children></AnchorPane>
   </items>
 </SplitPane>
