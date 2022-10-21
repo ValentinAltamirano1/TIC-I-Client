@@ -29,34 +29,55 @@ import static javafx.collections.FXCollections.observableArrayList;
 public class TablaCentroDeportivoController implements Initializable {
     private Scene scene;
     private Stage stage;
+
     @FXML
     private TableView<CentroDeportivo> tableView;
+
     @FXML
     private TableColumn<CentroDeportivo,String> rut;
+
+    @FXML
+    private TableColumn<CentroDeportivo,String> mail;
+
+    @FXML
+    private TableColumn<CentroDeportivo,String> contrasena;
+
+    @FXML
+    private TableColumn<CentroDeportivo,String> tipo;
+
     @FXML
     private TableColumn<CentroDeportivo,Long> telefono;
+
     @FXML
     private TableColumn<CentroDeportivo,String> direccion;
+
     @FXML
     private TableColumn<CentroDeportivo,String> nombre;
+
     @FXML
     private ObservableList<CentroDeportivo> list;
+
     @FXML
     private Text centroscreados;
+
     @FXML
     private Button cerrar_sesion_button;
+
     @FXML
     private Button crear_button;
+
     @FXML
     private ImageView foto;
+
     @FXML
     private Text titulo1;
+
     @FXML
     private Text titulo2;
-    @FXML
-    private Button crearadmin_button;
+
     @FXML
     private Button volver_button;
+
     @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
@@ -68,14 +89,6 @@ public class TablaCentroDeportivoController implements Initializable {
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-    @FXML
-    void CrearAdminClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CrearAdminCentroDeportivo-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

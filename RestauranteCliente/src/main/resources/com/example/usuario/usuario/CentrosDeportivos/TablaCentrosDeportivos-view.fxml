@@ -11,23 +11,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.CentrosDeportivos.TablaCentroDeportivoController">
+<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="803.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.CentrosDeportivos.TablaCentroDeportivoController">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="221.0" style="-fx-background-color: #000000;">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="484.0" prefWidth="227.0" style="-fx-background-color: #000000;">
          <children>
-            <ImageView fx:id="foto" fitHeight="97.0" fitWidth="103.0" layoutX="38.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="foto" fitHeight="97.0" fitWidth="103.0" layoutX="57.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
-            <VBox layoutX="14.0" layoutY="202.0" prefHeight="114.0" prefWidth="150.0" spacing="50.0" style="-fx-background-color: #000000;">
+            <VBox layoutX="32.0" layoutY="218.0" prefHeight="114.0" prefWidth="150.0" spacing="150.0" style="-fx-background-color: #000000;">
                <children>
                   <Button fx:id="crear_button" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Crear nuevo" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="crearadmin_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearAdminClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Crear admin" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -39,33 +34,36 @@
                   </Button>
                </children>
             </VBox>
-            <Label fx:id="titulo_uno" layoutX="38.0" layoutY="116.0" text="CENTRO" textFill="#df2d29">
+            <Label fx:id="titulo_uno" layoutX="56.0" layoutY="117.0" text="CENTRO" textFill="#df2d29">
                <font>
                   <Font name="System Bold" size="26.0" />
                </font>
             </Label>
-            <Label fx:id="titulo_dos" layoutX="16.0" layoutY="145.0" text="DEPORTIVO" textFill="#df2d29">
+            <Label fx:id="titulo_dos" layoutX="35.0" layoutY="147.0" text="DEPORTIVO" textFill="#df2d29">
                <font>
                   <Font name="System Bold" size="26.0" />
                </font>
             </Label>
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="422.0" style="-fx-background-color: #000000;">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="485.0" prefWidth="543.0" style="-fx-background-color: #000000;">
          <children>
-            <Button fx:id="volver_button" layoutX="184.0" layoutY="381.0" mnemonicParsing="false" onAction="#VolverClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Volver" textFill="WHITE">
+            <Button fx:id="volver_button" layoutX="232.0" layoutY="422.0" mnemonicParsing="false" onAction="#VolverClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Volver" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <TableView fx:id="tableView" layoutX="54.0" layoutY="130.0" prefHeight="226.0" prefWidth="398.0">
+            <TableView fx:id="tableView" layoutX="26.0" layoutY="108.0" prefHeight="280.0" prefWidth="526.0">
                <columns>
-                  <TableColumn fx:id="rut" minWidth="0.0" prefWidth="89.60005569458008" text="Rut" />
-                  <TableColumn fx:id="direccion" prefWidth="100.79998779296875" text="Direccion" />
-                  <TableColumn fx:id="nombre" prefWidth="100.79997253417969" text="Nombre" />
-                  <TableColumn fx:id="telefono" prefWidth="103.20001220703125" text="Telefono" />
+                  <TableColumn fx:id="rut" minWidth="0.0" prefWidth="69.60005474090576" text="Rut" />
+                  <TableColumn fx:id="direccion" prefWidth="63.20001220703125" text="Direccion" />
+                  <TableColumn fx:id="nombre" prefWidth="80.00006103515625" text="Nombre" />
+                  <TableColumn fx:id="telefono" prefWidth="80.79994201660156" text="Telefono" />
+                  <TableColumn fx:id="mail" prefWidth="73.5999755859375" text="Mail" />
+                  <TableColumn fx:id="contraseña" prefWidth="73.59991455078125" text="Contraseña" />
+                  <TableColumn fx:id="tipo" prefWidth="82.40006103515623" text="Tipo" />
                </columns>
             </TableView>
-            <Label fx:id="centrosdeportivos" layoutX="83.0" layoutY="48.0" text="CENTROS DEPORTIVOS" textFill="WHITE">
+            <Label fx:id="centrosdeportivos" layoutX="120.0" layoutY="42.0" text="CENTROS DEPORTIVOS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="31.0" />
                </font>

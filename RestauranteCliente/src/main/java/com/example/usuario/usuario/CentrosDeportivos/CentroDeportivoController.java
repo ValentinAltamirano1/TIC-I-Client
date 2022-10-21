@@ -5,6 +5,8 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +14,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
@@ -22,6 +25,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CentroDeportivoController {
+    ObservableList<String> txt_tipo_list= FXCollections.
+            observableArrayList("Centro Deportivo");
     private Stage stage;
     private Scene scene;
 
@@ -53,7 +58,12 @@ public class CentroDeportivoController {
 
     @FXML
     private Text nombre;
-
+    @FXML
+    private Text contrasena;
+    @FXML
+    private Text tipo;
+    @FXML
+    private Text mail;
     @FXML
     private Text rut;
 
@@ -78,15 +88,16 @@ public class CentroDeportivoController {
     private TextField txt_telefono;
 
     @FXML
-    private Button creados_button;
+    private TextField txt_mail;
+
     @FXML
-    void CrearAdminClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CrearAdminCentroDeportivo-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
+    private TextField txt_contrasena;
+
+    @FXML
+    private ChoiceBox txt_tipo;
+
+    @FXML
+    private Button creados_button;
 
     @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
@@ -147,7 +158,8 @@ public class CentroDeportivoController {
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        txt_tipo.setItems(txt_tipo_list);
+        txt_tipo.setValue("Tipo");
     }
 
 }
