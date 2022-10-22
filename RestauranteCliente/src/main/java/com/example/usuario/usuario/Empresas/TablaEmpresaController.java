@@ -27,9 +27,6 @@ import java.util.ResourceBundle;
 public class TablaEmpresaController implements Initializable {
     private Stage stage;
     private Scene scene;
-
-    @FXML
-    private Text CrearNuevaEmpresa;
     @FXML
     private Button cerrar_sesion_button;
 
