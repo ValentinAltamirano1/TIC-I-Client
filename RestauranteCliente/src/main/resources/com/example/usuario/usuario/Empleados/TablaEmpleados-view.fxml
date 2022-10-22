@@ -55,8 +55,12 @@
             <TableView fx:id="tableView" layoutX="109.0" layoutY="102.0" prefHeight="251.0" prefWidth="308.0" style="-fx-background-color: #ffffff;">
                <columns>
                   <TableColumn fx:id="nombre" prefWidth="104.00001525878906" style="-fx-background-color: #ffffff;" text="Nombre" />
-                  <TableColumn fx:id="email" prefWidth="95.99998474121094" style="-fx-background-color: #ffffff;" text="Email" />
+                  <TableColumn fx:id="pasaporte" prefWidth="104.00001525878906" style="-fx-background-color: #ffffff;" text="Pasaporte" />
                   <TableColumn fx:id="telefono" prefWidth="104.00001525878906" style="-fx-background-color: #ffffff;" text="Telefono" />
+                  <TableColumn fx:id="mail" prefWidth="95.99998474121094" style="-fx-background-color: #ffffff;" text="Email" />
+                  <TableColumn fx:id="contraseña" prefWidth="104.00001525878906" style="-fx-background-color: #ffffff;" text="Contraseña" />
+                  <TableColumn fx:id="fichaMedica" prefWidth="104.00001525878906" style="-fx-background-color: #ffffff;" text="Ficha medica" />
+                  <TableColumn fx:id="tipo" prefWidth="104.00001525878906" style="-fx-background-color: #ffffff;" text="Tipo" />
                </columns>
             </TableView>
          </children></AnchorPane>

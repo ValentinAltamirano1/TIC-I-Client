@@ -121,10 +121,12 @@ public class EmpleadoController implements Initializable {
                 try {
                     ObjectMapper mapper = new ObjectMapper();
                     ObjectNode rest = mapper.createObjectNode();
-                    rest.put("nombre", nombre_);
-                    rest.put("mail",mail_ );
                     rest.put("pasaporte", pasaporte_);
+                    rest.put("nombre", nombre_);
                     rest.put("telefono",telefono_);
+                    rest.put("mail",mail_ );
+                    rest.put("contraseña", contraseña_);
+                    rest.put("fichaMedica", String.valueOf(fichaMedica_));
                     rest.put("tipo",tipo_ );
                     json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
                 }catch (Exception ignored) {
