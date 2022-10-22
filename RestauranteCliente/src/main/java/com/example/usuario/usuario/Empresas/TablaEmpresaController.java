@@ -45,13 +45,13 @@ public class TablaEmpresaController implements Initializable {
     private TableColumn<Empresa, String> rut;
 
     @FXML
-    private TableColumn<Empresa, String> mail;
+    private TableColumn<Empresa, String> mailAdmin;
 
     @FXML
-    private TableColumn<Empresa, String> contrasena;
+    private TableColumn<Empresa, String> contraseñaAdmin;
 
     @FXML
-    private TableColumn<Empresa, String> tipo;
+    private TableColumn<Empresa, String> tipoAdmin;
 
     @FXML
     private TableView<Empresa> tableView;
@@ -98,8 +98,11 @@ public class TablaEmpresaController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        nombre.setCellValueFactory(new PropertyValueFactory<Empresa,String>("nombre"));
         rut.setCellValueFactory(new PropertyValueFactory<Empresa,String>("rut"));
+        nombre.setCellValueFactory(new PropertyValueFactory<Empresa,String>("nombre"));
+        mailAdmin.setCellValueFactory(new PropertyValueFactory<Empresa, String>("mailAdmin"));
+        contraseñaAdmin.setCellValueFactory(new PropertyValueFactory<Empresa, String>("contraseñaAdmin"));
+        tipoAdmin.setCellValueFactory(new PropertyValueFactory<Empresa, String>("tipoAdmin"));
         listarEmpresa();
     }
 
@@ -111,9 +114,9 @@ public class TablaEmpresaController implements Initializable {
             String temp = apiResponse.asJson().getBody().toString();
 
             ObjectMapper mapper = new ObjectMapper();
-
+            System.out.println(temp);
             empresas = mapper.readValue(temp, new TypeReference<List<Empresa>>(){});
-
+            System.out.println(empresas);
             list = FXCollections.observableArrayList(empresas);
 
             tableView.setItems(list);

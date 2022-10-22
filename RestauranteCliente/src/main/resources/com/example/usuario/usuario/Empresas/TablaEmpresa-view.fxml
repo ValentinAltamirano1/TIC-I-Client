@@ -82,11 +82,11 @@
             </Button>
             <TableView fx:id="tableView" layoutX="21.0" layoutY="109.0" prefHeight="251.0" prefWidth="450.0" style="-fx-background-color: #ffffff;">
                <columns>
-                  <TableColumn fx:id="nombre" prefWidth="92.00007629394531" style="-fx-background-color: #ffffff;" text="Nombre" />
                   <TableColumn fx:id="rut" prefWidth="82.40008544921875" style="-fx-background-color: #ffffff;" text="Rut" />
-                  <TableColumn fx:id="mail" prefWidth="104.79997253417969" style="-fx-background-color: #ffffff;" text="Mail" />
-                  <TableColumn fx:id="contrasena" prefWidth="86.39996337890625" style="-fx-background-color: #ffffff;" text="Contraseña" />
-                  <TableColumn fx:id="tipo" prefWidth="83.20001220703125" style="-fx-background-color: #ffffff;" text="Tipo" />
+                  <TableColumn fx:id="nombre" prefWidth="92.00007629394531" style="-fx-background-color: #ffffff;" text="Nombre" />
+                  <TableColumn fx:id="mailAdmin" prefWidth="104.79997253417969" style="-fx-background-color: #ffffff;" text="Mail" />
+                  <TableColumn fx:id="contraseñaAdmin" prefWidth="86.39996337890625" style="-fx-background-color: #ffffff;" text="Contraseña" />
+                  <TableColumn fx:id="tipoAdmin" prefWidth="83.20001220703125" style="-fx-background-color: #ffffff;" text="Tipo" />
                </columns>
             </TableView>
          </children></AnchorPane>

@@ -123,11 +123,11 @@ public class LogInController implements Initializable {
     void CancelClickedButton(ActionEvent event) {
         System.out.println("Ingrese correctamente todos los datos para acceder");
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
 }
 
 

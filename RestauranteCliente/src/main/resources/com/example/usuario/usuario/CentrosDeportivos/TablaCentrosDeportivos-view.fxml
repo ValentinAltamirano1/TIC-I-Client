@@ -55,9 +55,9 @@
             <TableView fx:id="tableView" layoutX="26.0" layoutY="108.0" prefHeight="280.0" prefWidth="526.0">
                <columns>
                   <TableColumn fx:id="rut" minWidth="0.0" prefWidth="69.60005474090576" text="Rut" />
-                  <TableColumn fx:id="direccion" prefWidth="63.20001220703125" text="Direccion" />
-                  <TableColumn fx:id="nombre" prefWidth="80.00006103515625" text="Nombre" />
                   <TableColumn fx:id="telefono" prefWidth="80.79994201660156" text="Telefono" />
+                  <TableColumn fx:id="nombre" prefWidth="80.00006103515625" text="Nombre" />
+                  <TableColumn fx:id="direccion" prefWidth="63.20001220703125" text="Direccion" />
                   <TableColumn fx:id="mailAdmin" prefWidth="73.5999755859375" text="Mail" />
                   <TableColumn fx:id="contraseñaAdmin" prefWidth="73.59991455078125" text="Contraseña" />
                   <TableColumn fx:id="tipoAdmin" prefWidth="82.40006103515623" text="Tipo" />

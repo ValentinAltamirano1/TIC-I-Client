@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
-public class EmpresaController implements Initializable {
+public class EmpresaController {
     ObservableList<String> txt_list_tipos= FXCollections.
             observableArrayList("adminEmpresa");
     private Stage stage;
@@ -125,8 +125,8 @@ public class EmpresaController implements Initializable {
                 try {
                     ObjectMapper mapper = new ObjectMapper();
                     ObjectNode rest = mapper.createObjectNode();
-                    rest.put("nombre", nombre_);
                     rest.put("rut", rut_);
+                    rest.put("nombre", nombre_);
                     rest.put("mailAdmin", mailAdmin_);
                     rest.put("contraseñaAdmin",contraseñaAdmin_);
                     rest.put("tipoAdmin", tipoAdmin_);
@@ -138,8 +138,6 @@ public class EmpresaController implements Initializable {
                             .header("Content-Type", "application/json").body(json).asJson();
                 }catch (UnirestException ex) {}
             }catch (NumberFormatException e){}
-            //Empresa nuevaEmpresa = new Empresa(nombre, rut);
-            //empresa.addNewEmpresa(nuevaEmpresa);
         }else{
             System.out.println("Ingrese correctamente todos los datos para guardar una nueva Empresa");
         }
@@ -153,8 +151,8 @@ public class EmpresaController implements Initializable {
         stage.show();
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    @FXML
+    public void initialize() {
         txt_tipo.setItems(txt_list_tipos);
         txt_tipo.setValue("Tipo");
     }

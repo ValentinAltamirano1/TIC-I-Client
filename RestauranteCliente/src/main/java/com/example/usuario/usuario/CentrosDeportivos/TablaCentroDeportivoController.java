@@ -114,12 +114,13 @@ public class TablaCentroDeportivoController implements Initializable {
         listarCentroDeportivo();
     }
     public void listarCentroDeportivo(){
-        List<CentroDeportivo> centrosDepor=null;
+        List<CentroDeportivo> centrosDepor;
         try {
             GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/centroDeportivo")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             ObjectMapper mapper = new ObjectMapper();
+            System.out.println(temp);
             centrosDepor = mapper.readValue(temp, new TypeReference<List<CentroDeportivo>>() {});
             System.out.println(centrosDepor);
             list = FXCollections.observableArrayList(centrosDepor);
