@@ -69,17 +69,17 @@
                         <Font name="System Bold" size="29.0" />
                      </font>
                   </Text>
-                  <Text fx:id="rut1" fill="WHITE" layoutX="10.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mail:">
+                  <Text fx:id="mail" fill="WHITE" layoutX="10.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MailAdmin:">
                      <font>
                         <Font name="System Bold" size="29.0" />
                      </font>
                   </Text>
-                  <Text fx:id="rut11" fill="WHITE" layoutX="10.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:">
+                  <Text fx:id="contrasena" fill="WHITE" layoutX="10.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ContraAdmin:">
                      <font>
                         <Font name="System Bold" size="29.0" />
                      </font>
                   </Text>
-                  <Text fx:id="rut111" fill="WHITE" layoutX="10.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo:">
+                  <Text fx:id="tipo" fill="WHITE" layoutX="10.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo:">
                      <font>
                         <Font name="System Bold" size="29.0" />
                      </font>
@@ -90,8 +90,8 @@
                <children>
                   <TextField fx:id="txt_nombre" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese nombre" />
                   <TextField fx:id="txt_rut" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese RUT" />
-                  <TextField fx:id="txt_mail" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese mail" />
-                  <TextField fx:id="txt_contrasena" layoutX="10.0" layoutY="63.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese contraseña" />
+                  <TextField fx:id="txt_mail" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese mail del administrador" />
+                  <TextField fx:id="txt_contrasena" layoutX="10.0" layoutY="63.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese contraseña del administrador" />
                   <ChoiceBox fx:id="txt_tipo" prefHeight="26.0" prefWidth="166.0" />
                </children>
             </VBox>
