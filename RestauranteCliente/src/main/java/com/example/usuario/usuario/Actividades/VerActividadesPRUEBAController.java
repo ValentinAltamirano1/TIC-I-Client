@@ -1,5 +1,8 @@
 package com.example.usuario.usuario.Actividades;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +13,8 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
+import kong.unirest.GetRequest;
+import kong.unirest.Unirest;
 
 import java.io.IOException;
 import java.net.URL;
@@ -48,18 +53,16 @@ public class VerActividadesPRUEBAController implements Initializable {
     }
 
     private List<Actividades> getData() {
-        List<Actividades> actividadesList = new ArrayList<>();
-        Actividades actividad;
+        List<Actividades> actividadesList =null;
+        try{
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades")
+                    .header("Content-Type", "application/json");
+            String temp = apiResponse.asJson().getBody().toString();
 
-        for (int i = 0; i < 100000; i++) {
-            actividad = new Actividades();
-            actividad.setNombre("Cancha de Futbol 5");
-            actividad.setCapacidad(10);
-            actividad.setHorario("9:00");
-            actividad.setPrecio(500);
-            actividad.setCategoria("Canchas");
-            actividadesList.add(actividad);
-        }
+            ObjectMapper mapper = new ObjectMapper();
+
+            actividadesList = mapper.readValue(temp, new TypeReference<List<Actividades>>(){});
+        }catch (Exception ignored){}
         return actividadesList;
     }
 
