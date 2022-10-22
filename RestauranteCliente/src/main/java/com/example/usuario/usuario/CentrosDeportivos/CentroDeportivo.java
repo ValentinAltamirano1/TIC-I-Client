@@ -6,14 +6,25 @@ public class CentroDeportivo {
     private String nombre;
     private String direccion;
 
-    public CentroDeportivo(Long telefono, String nombre, String direccion, Long rut) {
+    private String mailAdmin;
+
+    private String contraseñaAdmin;
+
+    private String tipoAdmin;
+
+
+    public CentroDeportivo() {
+
+    }
+
+    public CentroDeportivo(Long rut, Long telefono, String nombre, String direccion, String mailAdmin, String contraseñaAdmin, String tipoAdmin) {
+        this.rut = rut;
         this.telefono = telefono;
         this.nombre = nombre;
         this.direccion = direccion;
-        this.rut = rut;
-    }
-    public CentroDeportivo() {
-
+        this.mailAdmin = mailAdmin;
+        this.contraseñaAdmin = contraseñaAdmin;
+        this.tipoAdmin = tipoAdmin;
     }
 
     public Long getTelefono() {

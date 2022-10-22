@@ -28,12 +28,17 @@ import java.util.ResourceBundle;
 
 
 public class EmpresaController implements Initializable {
-    List<String> empresas = new ArrayList<>();
     private Stage stage;
     private Scene scene;
 
     String nombre_;
     Long rut_;
+
+    String mailAdmin_;
+
+    String contraseñaAdmin_;
+
+    String tipoAdmin_;
     @FXML
     private Text CrearNuevaEmpresa;
 
@@ -105,19 +110,22 @@ public class EmpresaController implements Initializable {
 
     @FXML
     void CrearClickedButton(ActionEvent event) {
-        if(!txt_nombre.getText().isEmpty() && !txt_rut.getText().isEmpty()){
+        if(!txt_nombre.getText().isEmpty() && !txt_rut.getText().isEmpty() && !txt_mail.getText().isEmpty() && !txt_contrasena.getText().isEmpty()){
             try {
                 nombre_ = txt_nombre.getText();
                 rut_ = Long.parseLong(txt_rut.getText());
+                mailAdmin_ = txt_mail.getText();
+                contraseñaAdmin_= txt_contrasena.getText();
+                tipoAdmin_ = txt_tipo.getValue().toString();
                 String json = "";
                 try {
                     ObjectMapper mapper = new ObjectMapper();
                     ObjectNode rest = mapper.createObjectNode();
-
-                    empresas.add(nombre_); //agregar a la lista
-
                     rest.put("nombre", nombre_);
                     rest.put("rut", rut_);
+                    rest.put("mailAdmin", mailAdmin_);
+                    rest.put("contraseñaAdmin",contraseñaAdmin_);
+                    rest.put("tipoAdmin", tipoAdmin_);
                     json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
                 }catch (Exception ignored) {
                 }

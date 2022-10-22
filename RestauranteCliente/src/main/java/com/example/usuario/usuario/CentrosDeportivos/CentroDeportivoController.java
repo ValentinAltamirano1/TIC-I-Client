@@ -35,6 +35,12 @@ public class CentroDeportivoController {
     Long telefono_;
     String direccion_;
 
+    String mailAdmin_;
+
+    String contraseñaAdmin_;
+
+    String tipoAdmin_;
+
     @FXML
     private Text CrearNuevoCentro;
 
@@ -109,12 +115,16 @@ public class CentroDeportivoController {
     }
     @FXML
     void CrearClickedButton(ActionEvent event) {
-        if(!txt_nombre.getText().isEmpty() && !txt_rut.getText().isEmpty() && !txt_telefono.getText().isEmpty() && !txt_direccion.getText().isEmpty()){
+        if(!txt_nombre.getText().isEmpty() && !txt_rut.getText().isEmpty() && !txt_telefono.getText().isEmpty() && !txt_direccion.getText().isEmpty() && !txt_mail.getText().isEmpty()
+        && !txt_contrasena.getText().isEmpty()){
             try {
                 nombre_ = txt_nombre.getText();
                 rut_ = Long.parseLong(txt_rut.getText());
                 telefono_ = Long.parseLong(txt_telefono.getText());
                 direccion_ = txt_direccion.getText();
+                mailAdmin_ = txt_mail.getText();
+                contraseñaAdmin_= txt_contrasena.getText();
+                tipoAdmin_ = txt_tipo.getValue().toString();
                 String json = "";
                 try {
                     ObjectMapper mapper = new ObjectMapper();
@@ -123,6 +133,9 @@ public class CentroDeportivoController {
                     rest.put("rut", rut_);
                     rest.put("telefono", telefono_);
                     rest.put("direccion", direccion_);
+                    rest.put("mailAdmin", mailAdmin_);
+                    rest.put("contraseñaAdmin",contraseñaAdmin_);
+                    rest.put("tipoAdmin", tipoAdmin_);
                     json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
                 } catch (Exception ignored) {
                 }
