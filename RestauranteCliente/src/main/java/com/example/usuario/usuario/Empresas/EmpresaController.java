@@ -6,6 +6,8 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +30,8 @@ import java.util.ResourceBundle;
 
 
 public class EmpresaController implements Initializable {
+    ObservableList<String> txt_list_tipos= FXCollections.
+            observableArrayList("adminEmpresa");
     private Stage stage;
     private Scene scene;
 
@@ -151,7 +155,8 @@ public class EmpresaController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        txt_tipo.setItems(txt_list_tipos);
+        txt_tipo.setValue("Tipo");
     }
 }
 

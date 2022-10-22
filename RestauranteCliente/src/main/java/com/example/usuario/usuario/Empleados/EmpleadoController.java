@@ -30,6 +30,8 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 public class EmpleadoController implements Initializable {
+    ObservableList<String> txt_tipo_list= FXCollections.
+            observableArrayList("Usuario");
     Stage stage;
     Scene scene;
 
@@ -94,8 +96,6 @@ public class EmpleadoController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    ObservableList<String> txt_tipo_list= FXCollections.
-            observableArrayList("Usuario");
 
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {

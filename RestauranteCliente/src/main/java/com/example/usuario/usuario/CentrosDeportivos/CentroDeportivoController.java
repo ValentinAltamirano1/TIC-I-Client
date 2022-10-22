@@ -26,7 +26,7 @@ import java.util.ResourceBundle;
 
 public class CentroDeportivoController {
     ObservableList<String> txt_tipo_list= FXCollections.
-            observableArrayList("Centro Deportivo");
+            observableArrayList("adminCentro");
     private Stage stage;
     private Scene scene;
 
@@ -169,10 +169,11 @@ public class CentroDeportivoController {
         stage.show();
     }
 
-
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    @FXML
+    public void initialize() {
         txt_tipo.setItems(txt_tipo_list);
         txt_tipo.setValue("Tipo");
     }
+
 
 }
