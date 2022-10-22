@@ -58,9 +58,9 @@
                   <TableColumn fx:id="direccion" prefWidth="63.20001220703125" text="Direccion" />
                   <TableColumn fx:id="nombre" prefWidth="80.00006103515625" text="Nombre" />
                   <TableColumn fx:id="telefono" prefWidth="80.79994201660156" text="Telefono" />
-                  <TableColumn fx:id="mail" prefWidth="73.5999755859375" text="Mail" />
-                  <TableColumn fx:id="contraseña" prefWidth="73.59991455078125" text="Contraseña" />
-                  <TableColumn fx:id="tipo" prefWidth="82.40006103515623" text="Tipo" />
+                  <TableColumn fx:id="mailAdmin" prefWidth="73.5999755859375" text="Mail" />
+                  <TableColumn fx:id="contraseñaAdmin" prefWidth="73.59991455078125" text="Contraseña" />
+                  <TableColumn fx:id="tipoAdmin" prefWidth="82.40006103515623" text="Tipo" />
                </columns>
             </TableView>
             <Label fx:id="centrosdeportivos" layoutX="120.0" layoutY="42.0" text="CENTROS DEPORTIVOS" textFill="WHITE">

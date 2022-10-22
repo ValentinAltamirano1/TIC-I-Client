@@ -37,13 +37,13 @@ public class TablaCentroDeportivoController implements Initializable {
     private TableColumn<CentroDeportivo,String> rut;
 
     @FXML
-    private TableColumn<CentroDeportivo,String> mail;
+    private TableColumn<CentroDeportivo,String> mailAdmin;
 
     @FXML
-    private TableColumn<CentroDeportivo,String> contrasena;
+    private TableColumn<CentroDeportivo,String> contraseñaAdmin;
 
     @FXML
-    private TableColumn<CentroDeportivo,String> tipo;
+    private TableColumn<CentroDeportivo,String> tipoAdmin;
 
     @FXML
     private TableColumn<CentroDeportivo,Long> telefono;
@@ -108,6 +108,9 @@ public class TablaCentroDeportivoController implements Initializable {
         direccion.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("direccion"));
         nombre.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("nombre"));
         telefono.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, Long>("telefono"));
+        mailAdmin.setCellValueFactory(new PropertyValueFactory<CentroDeportivo,String>("mailAdmin"));
+        contraseñaAdmin.setCellValueFactory(new PropertyValueFactory<CentroDeportivo,String>("contraseñaAdmin"));
+        tipoAdmin.setCellValueFactory(new PropertyValueFactory<CentroDeportivo,String>("tipoAdmin"));
         listarCentroDeportivo();
     }
     public void listarCentroDeportivo(){
@@ -116,12 +119,11 @@ public class TablaCentroDeportivoController implements Initializable {
             GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/centroDeportivo")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
-
             ObjectMapper mapper = new ObjectMapper();
             centrosDepor = mapper.readValue(temp, new TypeReference<List<CentroDeportivo>>() {});
-
+            System.out.println(centrosDepor);
             list = FXCollections.observableArrayList(centrosDepor);
-
+            System.out.println(list);
             tableView.setItems(list);
 
         }catch (Exception ignored){}
