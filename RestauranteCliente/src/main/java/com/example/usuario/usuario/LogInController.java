@@ -74,7 +74,6 @@ public class LogInController implements Initializable {
             HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/usuarios")
                     .header("Content-Type", "application/json").body(json).asJson();
             String prueba = apiResponse.getBody().toString();
-
             System.out.println(prueba);
             System.out.println(apiResponse.getStatus());
             if (apiResponse.getStatus() != 400) {
@@ -104,7 +103,7 @@ public class LogInController implements Initializable {
                     stage.show();
                 }
 
-                if (listUser.getTipoUsuario().equals("Usuario")) {
+                if (listUser.getTipoUsuario().equals("usuario")) {
                     Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Actividades-view.fxml"));
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
