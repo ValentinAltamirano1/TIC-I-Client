@@ -62,7 +62,6 @@ public class LogInController implements Initializable {
     @FXML
     void LogInClickedButton(ActionEvent event) throws IOException {
         if(!txt_contraseña.getText().isEmpty() && !txt_email.getText().isEmpty()) {
-
             email_ = txt_email.getText();
             contraseña_ = txt_contraseña.getText();
             String json = "";

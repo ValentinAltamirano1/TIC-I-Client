@@ -42,13 +42,13 @@ public class TablaEmpresaController implements Initializable {
     private TableColumn<Empresa, String> rut;
 
     @FXML
-    private TableColumn<Empresa, String> mailAdmin;
+    private TableColumn<Empresa, String> mail;
 
     @FXML
-    private TableColumn<Empresa, String> contraseñaAdmin;
+    private TableColumn<Empresa, String> contra;
 
     @FXML
-    private TableColumn<Empresa, String> tipoAdmin;
+    private TableColumn<Empresa, String> tipo;
 
     @FXML
     private TableView<Empresa> tableView;
@@ -97,9 +97,9 @@ public class TablaEmpresaController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         rut.setCellValueFactory(new PropertyValueFactory<Empresa,String>("rut"));
         nombre.setCellValueFactory(new PropertyValueFactory<Empresa,String>("nombre"));
-        mailAdmin.setCellValueFactory(new PropertyValueFactory<Empresa, String>("mailAdmin"));
-        contraseñaAdmin.setCellValueFactory(new PropertyValueFactory<Empresa, String>("contraseñaAdmin"));
-        tipoAdmin.setCellValueFactory(new PropertyValueFactory<Empresa, String>("tipoAdmin"));
+        mail.setCellValueFactory(new PropertyValueFactory<Empresa, String>("mail"));
+        contra.setCellValueFactory(new PropertyValueFactory<Empresa, String>("contra"));
+        tipo.setCellValueFactory(new PropertyValueFactory<Empresa, String>("tipoA"));
         listarEmpresa();
     }
 

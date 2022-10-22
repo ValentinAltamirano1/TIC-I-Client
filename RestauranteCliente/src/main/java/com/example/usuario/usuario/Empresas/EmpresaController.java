@@ -127,9 +127,9 @@ public class EmpresaController {
                     ObjectNode rest = mapper.createObjectNode();
                     rest.put("rut", rut_);
                     rest.put("nombre", nombre_);
-                    rest.put("mailAdmin", mailAdmin_);
-                    rest.put("contraseñaAdmin",contraseñaAdmin_);
-                    rest.put("tipoAdmin", tipoAdmin_);
+                    rest.put("mail", mailAdmin_);
+                    rest.put("contra",contraseñaAdmin_);
+                    rest.put("tipo", tipoAdmin_);
                     json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
                 }catch (Exception ignored) {
                 }
