@@ -29,7 +29,8 @@ import static javafx.collections.FXCollections.observableArrayList;
 public class TablaCentroDeportivoController implements Initializable {
     private Scene scene;
     private Stage stage;
-
+    @FXML
+    private Label centrosdeportivos;
     @FXML
     private TableView<CentroDeportivo> tableView;
 
@@ -40,7 +41,7 @@ public class TablaCentroDeportivoController implements Initializable {
     private TableColumn<CentroDeportivo,String> mailAdmin;
 
     @FXML
-    private TableColumn<CentroDeportivo,String> contraseñaAdmin;
+    private TableColumn<CentroDeportivo,String> contrasenaAdmin;
 
     @FXML
     private TableColumn<CentroDeportivo,String> tipoAdmin;
@@ -58,9 +59,6 @@ public class TablaCentroDeportivoController implements Initializable {
     private ObservableList<CentroDeportivo> list;
 
     @FXML
-    private Text centroscreados;
-
-    @FXML
     private Button cerrar_sesion_button;
 
     @FXML
@@ -70,10 +68,10 @@ public class TablaCentroDeportivoController implements Initializable {
     private ImageView foto;
 
     @FXML
-    private Text titulo1;
+    private Label titulo_uno;
 
     @FXML
-    private Text titulo2;
+    private Label titulo_dos;
 
     @FXML
     private Button volver_button;
@@ -109,7 +107,7 @@ public class TablaCentroDeportivoController implements Initializable {
         nombre.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("nombre"));
         telefono.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, Long>("telefono"));
         mailAdmin.setCellValueFactory(new PropertyValueFactory<CentroDeportivo,String>("mailAdmin"));
-        contraseñaAdmin.setCellValueFactory(new PropertyValueFactory<CentroDeportivo,String>("contraseñaAdmin"));
+        contrasenaAdmin.setCellValueFactory(new PropertyValueFactory<CentroDeportivo,String>("contraseñaAdmin"));
         tipoAdmin.setCellValueFactory(new PropertyValueFactory<CentroDeportivo,String>("tipoAdmin"));
         listarCentroDeportivo();
     }

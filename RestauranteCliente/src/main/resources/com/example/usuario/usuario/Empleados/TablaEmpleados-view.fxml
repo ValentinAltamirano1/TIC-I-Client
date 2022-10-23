@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empleados.TablaEmpleadosController">
+<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empleados.TablaEmpleadosController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="221.0" style="-fx-background-color: #000000;">
          <children>
@@ -40,27 +40,27 @@
                </children>
             </VBox>
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="422.0" style="-fx-background-color: #000000;">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="486.0" prefWidth="538.0" style="-fx-background-color: #000000;">
          <children>
             <Text fx:id="EmpleadosCreados" fill="WHITE" layoutX="109.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLEADOS CREADAS:">
                <font>
                   <Font name="System Bold" size="26.0" />
                </font>
             </Text>
-            <Button fx:id="volver_button" layoutX="184.0" layoutY="387.0" mnemonicParsing="false" onAction="#VolverClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Volver" textFill="WHITE">
+            <Button fx:id="volver_button" layoutX="206.0" layoutY="396.0" mnemonicParsing="false" onAction="#VolverClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Volver" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <TableView fx:id="tableView" layoutX="109.0" layoutY="102.0" prefHeight="251.0" prefWidth="308.0" style="-fx-background-color: #ffffff;">
+            <TableView fx:id="tableView" layoutX="15.0" layoutY="114.0" prefHeight="259.0" prefWidth="495.0" style="-fx-background-color: #ffffff;">
                <columns>
-                  <TableColumn fx:id="nombre" prefWidth="104.00001525878906" style="-fx-background-color: #ffffff;" text="Nombre" />
-                  <TableColumn fx:id="pasaporte" prefWidth="104.00001525878906" style="-fx-background-color: #ffffff;" text="Pasaporte" />
-                  <TableColumn fx:id="telefono" prefWidth="104.00001525878906" style="-fx-background-color: #ffffff;" text="Telefono" />
-                  <TableColumn fx:id="mail" prefWidth="95.99998474121094" style="-fx-background-color: #ffffff;" text="Email" />
-                  <TableColumn fx:id="contraseña" prefWidth="104.00001525878906" style="-fx-background-color: #ffffff;" text="Contraseña" />
-                  <TableColumn fx:id="fichaMedica" prefWidth="104.00001525878906" style="-fx-background-color: #ffffff;" text="Ficha medica" />
-                  <TableColumn fx:id="tipo" prefWidth="104.00001525878906" style="-fx-background-color: #ffffff;" text="Tipo" />
+                  <TableColumn fx:id="nombre" prefWidth="65.60003662109375" style="-fx-background-color: #ffffff;" text="Nombre" />
+                  <TableColumn fx:id="pasaporte" prefWidth="72.0" style="-fx-background-color: #ffffff;" text="Pasaporte" />
+                  <TableColumn fx:id="telefono" prefWidth="64.79997253417969" style="-fx-background-color: #ffffff;" text="Telefono" />
+                  <TableColumn fx:id="mail" prefWidth="62.4000244140625" style="-fx-background-color: #ffffff;" text="Email" />
+                  <TableColumn fx:id="contraseña" prefWidth="79.2000732421875" style="-fx-background-color: #ffffff;" text="Contraseña" />
+                  <TableColumn fx:id="fichaMedica" prefWidth="96.0" style="-fx-background-color: #ffffff;" text="Ficha medica" />
+                  <TableColumn fx:id="tipo" prefWidth="51.999957275390614" style="-fx-background-color: #ffffff;" text="Tipo" />
                </columns>
             </TableView>
          </children></AnchorPane>
