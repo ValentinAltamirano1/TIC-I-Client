@@ -92,6 +92,7 @@ public class CanchasController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         List<Actividades> desplegar = getData();
+        System.out.println(desplegar);
        /* int row=0;
         for (int i= 0; i<desplegar.size(); i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -103,22 +104,18 @@ public class CanchasController implements Initializable {
                 grid.add(anchorPane, 0,0 );
                 GridPane.setMargin(anchorPane,new Insets(10));
             } catch (IOException e) {}
-        }
-*/
+        }*/
+
     }
 
     private List<Actividades> getData() {
         List<Actividades> actividadesList =null;
         try{
-            System.out.println("HOLA");
             GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
-            System.out.println(temp);
-            System.out.println("HOLA");
             ObjectMapper mapper = new ObjectMapper();
             actividadesList = mapper.readValue(temp, new TypeReference<List<Actividades>>(){});
-            System.out.println(actividadesList);
             for(int i=0; i<actividadesList.size(); i++){
                 if(actividadesList.get(i).getCategoria().equals("Cancha")){
                     actividadesCancha.add(actividadesList.get(i));
