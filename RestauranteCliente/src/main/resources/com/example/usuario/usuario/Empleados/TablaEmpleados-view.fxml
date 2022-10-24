@@ -58,7 +58,7 @@
                   <TableColumn fx:id="pasaporte" prefWidth="72.0" style="-fx-background-color: #ffffff;" text="Pasaporte" />
                   <TableColumn fx:id="telefono" prefWidth="64.79997253417969" style="-fx-background-color: #ffffff;" text="Telefono" />
                   <TableColumn fx:id="mail" prefWidth="62.4000244140625" style="-fx-background-color: #ffffff;" text="Email" />
-                  <TableColumn fx:id="contraseña" prefWidth="79.2000732421875" style="-fx-background-color: #ffffff;" text="Contraseña" />
+                  <TableColumn fx:id="contrasena" prefWidth="79.2000732421875" style="-fx-background-color: #ffffff;" text="Contraseña" />
                   <TableColumn fx:id="fichaMedica" prefWidth="96.0" style="-fx-background-color: #ffffff;" text="Ficha medica" />
                   <TableColumn fx:id="tipo" prefWidth="51.999957275390614" style="-fx-background-color: #ffffff;" text="Tipo" />
                </columns>

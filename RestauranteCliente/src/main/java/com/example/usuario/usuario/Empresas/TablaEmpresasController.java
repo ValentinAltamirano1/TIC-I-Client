@@ -17,14 +17,13 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
 import kong.unirest.Unirest;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class TablaEmpresaController implements Initializable {
+public class TablaEmpresasController implements Initializable {
     private Stage stage;
     private Scene scene;
     @FXML

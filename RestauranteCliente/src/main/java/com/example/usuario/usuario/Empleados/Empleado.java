@@ -9,7 +9,7 @@ public class Empleado {
 
     private String mail;
 
-    private String contraseña;
+    private String contrasena;
 
     private LocalDate fichaMedica;
     private String tipo;
@@ -22,7 +22,7 @@ public class Empleado {
         this.nombre = nombre;
         this.telefono = telefono;
         this.mail = mail;
-        this.contraseña = contraseña;
+        this.contrasena = contraseña;
         this.fichaMedica = fichaMedica;
         this.tipo = tipo;
     }
@@ -68,11 +68,11 @@ public class Empleado {
     }
 
     public String getContraseña() {
-        return contraseña;
+        return contrasena;
     }
 
     public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+        this.contrasena = contraseña;
     }
 
     public LocalDate getFichaMedica() {
@@ -90,7 +90,7 @@ public class Empleado {
                 ", nombre='" + nombre + '\'' +
                 ", telefono=" + telefono +
                 ", mail='" + mail + '\'' +
-                ", contraseña='" + contraseña + '\'' +
+                ", contraseña='" + contrasena + '\'' +
                 ", fichaMedica=" + fichaMedica +
                 ", tipo='" + tipo + '\'' +
                 '}';

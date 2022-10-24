@@ -57,7 +57,7 @@ public class TablaEmpleadosController implements Initializable {
     private TableColumn<Empleado, String> telefono;
 
     @FXML
-    private TableColumn<Empleado, String> contraseña;
+    private TableColumn<Empleado, String> contrasena;
 
     @FXML
     private TableColumn<Empleado, String> fichaMedica;
@@ -108,7 +108,7 @@ public class TablaEmpleadosController implements Initializable {
         nombre.setCellValueFactory(new PropertyValueFactory<Empleado, String>("nombre"));
         pasaporte.setCellValueFactory(new PropertyValueFactory<Empleado, String>("pasaporte"));
         telefono.setCellValueFactory(new PropertyValueFactory<Empleado,String>("telefono"));
-        contraseña.setCellValueFactory(new PropertyValueFactory<Empleado,String>("contraseña"));
+        contrasena.setCellValueFactory(new PropertyValueFactory<Empleado,String>("contraseña"));
         fichaMedica.setCellValueFactory(new PropertyValueFactory<Empleado, String>("fichaMedica"));
         tipo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("tipo"));
         listarEmpleados();
