@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
@@ -90,9 +91,9 @@ public class CanchasController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        /*List<Actividades> desplegar = getData();
-        int row=0;
-        for (int i= 0; i<actividadesCancha.size(); i++){
+        List<Actividades> desplegar = getData();
+       /* int row=0;
+        for (int i= 0; i<desplegar.size(); i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("com.example.usuario.usuario.Actividades.Actividades-view.fxml"));
             try {
@@ -109,9 +110,12 @@ public class CanchasController implements Initializable {
     private List<Actividades> getData() {
         List<Actividades> actividadesList =null;
         try{
+            System.out.println("HOLA");
             GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
+            System.out.println(temp);
+            System.out.println("HOLA");
             ObjectMapper mapper = new ObjectMapper();
             actividadesList = mapper.readValue(temp, new TypeReference<List<Actividades>>(){});
             System.out.println(actividadesList);

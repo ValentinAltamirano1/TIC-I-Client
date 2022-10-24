@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
-public class EmpresaController {
+public class EmpresaController implements Initializable{
     ObservableList<String> txt_list_tipos= FXCollections.
             observableArrayList("adminEmpresa");
     private Stage stage;
@@ -151,8 +151,8 @@ public class EmpresaController {
         stage.show();
     }
 
-    @FXML
-    public void initialize() {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         txt_tipo.setItems(txt_list_tipos);
         txt_tipo.setValue("Tipo");
     }
