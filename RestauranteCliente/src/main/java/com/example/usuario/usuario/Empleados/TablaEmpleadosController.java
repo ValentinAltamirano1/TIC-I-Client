@@ -57,10 +57,10 @@ public class TablaEmpleadosController implements Initializable {
     private TableColumn<Empleado, String> telefono;
 
     @FXML
-    private TableColumn<Empleado, String> contrasena;
+    private TableColumn<Empleado, String> contraseña;
 
     @FXML
-    private TableColumn<Empleado, String> fichaMedica;
+    private TableColumn<Empleado, String> ficha_medica;
 
     @FXML
     private TableColumn<Empleado, String> tipo;
@@ -108,19 +108,21 @@ public class TablaEmpleadosController implements Initializable {
         nombre.setCellValueFactory(new PropertyValueFactory<Empleado, String>("nombre"));
         pasaporte.setCellValueFactory(new PropertyValueFactory<Empleado, String>("pasaporte"));
         telefono.setCellValueFactory(new PropertyValueFactory<Empleado,String>("telefono"));
-        contrasena.setCellValueFactory(new PropertyValueFactory<Empleado,String>("contraseña"));
-        fichaMedica.setCellValueFactory(new PropertyValueFactory<Empleado, String>("fichaMedica"));
+        contraseña.setCellValueFactory(new PropertyValueFactory<Empleado,String>("contraseña"));
+        ficha_medica.setCellValueFactory(new PropertyValueFactory<Empleado, String>("ficha_medica"));
         tipo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("tipo"));
         listarEmpleados();
     }
     public void listarEmpleados(){
         List<Empleado> empleados;
         try {
-            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/centroDeportivo")
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/empleado")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             ObjectMapper mapper = new ObjectMapper();
+            System.out.println(temp);
             empleados = mapper.readValue(temp, new TypeReference<List<Empleado>>() {});
+            System.out.println("HOLA");
             list = FXCollections.observableArrayList(empleados);
             System.out.println(list);
             tableView.setItems(list);

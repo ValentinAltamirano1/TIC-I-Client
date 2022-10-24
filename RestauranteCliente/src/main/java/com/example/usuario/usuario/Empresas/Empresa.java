@@ -6,20 +6,20 @@ public class Empresa {
 
     private String nombre;
 
-    private String mailAdmin;
+    private String mail;
 
-    private String contraseñaAdmin;
+    private String contra;
 
-    private String tipoAdmin;
+    private String tipo;
     public Empresa() {
     }
 
-    public Empresa(Long rut, String nombre, String mailAdmin, String contraseñaAdmin, String tipoAdmin) {
+    public Empresa(Long rut, String nombre, String mail, String contra, String tipo) {
         this.rut = rut;
         this.nombre = nombre;
-        this.mailAdmin = mailAdmin;
-        this.contraseñaAdmin = contraseñaAdmin;
-        this.tipoAdmin = tipoAdmin;
+        this.mail = mail;
+        this.contra = contra;
+        this.tipo = tipo;
     }
 
     public String getNombre() {return nombre;}
@@ -30,15 +30,38 @@ public class Empresa {
 
     public void setRut(Long rut) {this.rut = rut;}
 
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getContra() {
+        return contra;
+    }
+
+    public void setContra(String contra) {
+        this.contra = contra;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 
     @Override
     public String toString() {
         return "Empresa{" +
                 "rut=" + rut +
                 ", nombre='" + nombre + '\'' +
-                ", mailAdmin='" + mailAdmin + '\'' +
-                ", contraseñaAdmin='" + contraseñaAdmin + '\'' +
-                ", tipoAdmin='" + tipoAdmin + '\'' +
+                ", mail='" + mail + '\'' +
+                ", contra='" + contra + '\'' +
+                ", tipo='" + tipo + '\'' +
                 '}';
     }
 }

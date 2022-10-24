@@ -59,8 +59,10 @@ public class ActividadesController implements Initializable {
 
     @FXML
     private Button cerrar_sesion;
+
     @FXML
     private GridPane grid;
+
     List<Actividades> actividades= new ArrayList<>();
 
     private List<Actividades> getData() {

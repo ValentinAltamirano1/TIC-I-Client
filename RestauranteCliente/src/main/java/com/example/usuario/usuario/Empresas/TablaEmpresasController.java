@@ -98,7 +98,7 @@ public class TablaEmpresasController implements Initializable {
         nombre.setCellValueFactory(new PropertyValueFactory<Empresa,String>("nombre"));
         mail.setCellValueFactory(new PropertyValueFactory<Empresa, String>("mail"));
         contra.setCellValueFactory(new PropertyValueFactory<Empresa, String>("contra"));
-        tipo.setCellValueFactory(new PropertyValueFactory<Empresa, String>("tipoA"));
+        tipo.setCellValueFactory(new PropertyValueFactory<Empresa, String>("tipo"));
         listarEmpresa();
     }
 
@@ -112,6 +112,7 @@ public class TablaEmpresasController implements Initializable {
             ObjectMapper mapper = new ObjectMapper();
             System.out.println(temp);
             empresas = mapper.readValue(temp, new TypeReference<List<Empresa>>(){});
+            System.out.println("HOLA");
             System.out.println(empresas);
             list = FXCollections.observableArrayList(empresas);
 

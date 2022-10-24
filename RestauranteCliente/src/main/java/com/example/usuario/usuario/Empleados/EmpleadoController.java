@@ -126,7 +126,7 @@ public class EmpleadoController implements Initializable {
                     rest.put("telefono",telefono_);
                     rest.put("mail",mail_ );
                     rest.put("contraseña", contraseña_);
-                    rest.put("fichaMedica", String.valueOf(fichaMedica_));
+                    rest.put("ficha_medica", String.valueOf(fichaMedica_));
                     rest.put("tipo",tipo_ );
                     json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
                 }catch (Exception ignored) {

@@ -9,21 +9,21 @@ public class Empleado {
 
     private String mail;
 
-    private String contrasena;
+    private String contraseña;
 
-    private LocalDate fichaMedica;
+    private String ficha_medica;
     private String tipo;
 
     public Empleado() {
     }
 
-    public Empleado(String pasaporte, String nombre, int telefono, String mail, String contraseña, LocalDate fichaMedica, String tipo) {
+    public Empleado(String pasaporte, String nombre, int telefono, String mail, String contraseña, String ficha_medica, String tipo) {
         this.pasaporte = pasaporte;
         this.nombre = nombre;
         this.telefono = telefono;
         this.mail = mail;
-        this.contrasena = contraseña;
-        this.fichaMedica = fichaMedica;
+        this.contraseña = contraseña;
+        this.ficha_medica = ficha_medica;
         this.tipo = tipo;
     }
 
@@ -68,19 +68,19 @@ public class Empleado {
     }
 
     public String getContraseña() {
-        return contrasena;
+        return contraseña;
     }
 
     public void setContraseña(String contraseña) {
-        this.contrasena = contraseña;
+        this.contraseña = contraseña;
     }
 
-    public LocalDate getFichaMedica() {
-        return fichaMedica;
+    public String getFicha_medica() {
+        return ficha_medica;
     }
 
-    public void setFichaMedica(LocalDate fichaMedica) {
-        this.fichaMedica = fichaMedica;
+    public void setFicha_medica(String ficha_medica) {
+        this.ficha_medica = ficha_medica;
     }
 
     @Override
@@ -90,8 +90,8 @@ public class Empleado {
                 ", nombre='" + nombre + '\'' +
                 ", telefono=" + telefono +
                 ", mail='" + mail + '\'' +
-                ", contraseña='" + contrasena + '\'' +
-                ", fichaMedica=" + fichaMedica +
+                ", contraseña='" + contraseña + '\'' +
+                ", fichaMedica=" + ficha_medica +
                 ", tipo='" + tipo + '\'' +
                 '}';
     }

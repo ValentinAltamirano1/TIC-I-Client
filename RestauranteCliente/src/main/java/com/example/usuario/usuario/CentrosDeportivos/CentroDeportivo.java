@@ -6,25 +6,25 @@ public class CentroDeportivo {
     private String nombre;
     private String direccion;
 
-    private String mailAdmin;
+    private String mail;
 
-    private String contraseñaAdmin;
+    private String contra;
 
-    private String tipoAdmin;
+    private String tipo;
 
 
     public CentroDeportivo() {
 
     }
 
-    public CentroDeportivo(Long rut, Long telefono, String nombre, String direccion, String mailAdmin, String contraseñaAdmin, String tipoAdmin) {
+    public CentroDeportivo(Long rut, Long telefono, String nombre, String direccion, String mail, String contra, String tipo) {
         this.rut = rut;
         this.telefono = telefono;
         this.nombre = nombre;
         this.direccion = direccion;
-        this.mailAdmin = mailAdmin;
-        this.contraseñaAdmin = contraseñaAdmin;
-        this.tipoAdmin = tipoAdmin;
+        this.mail = mail;
+        this.contra = contra;
+        this.tipo = tipo;
     }
 
     public Long getTelefono() {
@@ -55,6 +55,30 @@ public class CentroDeportivo {
 
     public void setRut(Long rut) {this.rut = rut;}
 
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getContra() {
+        return contra;
+    }
+
+    public void setContra(String contra) {
+        this.contra = contra;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     @Override
     public String toString() {
         return "CentroDeportivo{" +
@@ -62,6 +86,9 @@ public class CentroDeportivo {
                 ", telefono=" + telefono +
                 ", nombre='" + nombre + '\'' +
                 ", direccion='" + direccion + '\'' +
+                ", mail='" + mail + '\'' +
+                ", contra='" + contra + '\'' +
+                ", tipo='" + tipo + '\'' +
                 '}';
     }
 }

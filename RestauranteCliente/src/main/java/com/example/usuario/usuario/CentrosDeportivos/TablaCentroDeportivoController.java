@@ -38,13 +38,13 @@ public class TablaCentroDeportivoController implements Initializable {
     private TableColumn<CentroDeportivo,String> rut;
 
     @FXML
-    private TableColumn<CentroDeportivo,String> mailAdmin;
+    private TableColumn<CentroDeportivo,String> mail;
 
     @FXML
-    private TableColumn<CentroDeportivo,String> contrasenaAdmin;
+    private TableColumn<CentroDeportivo,String> contra;
 
     @FXML
-    private TableColumn<CentroDeportivo,String> tipoAdmin;
+    private TableColumn<CentroDeportivo,String> tipo;
 
     @FXML
     private TableColumn<CentroDeportivo,Long> telefono;
@@ -106,9 +106,9 @@ public class TablaCentroDeportivoController implements Initializable {
         direccion.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("direccion"));
         nombre.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, String>("nombre"));
         telefono.setCellValueFactory(new PropertyValueFactory<CentroDeportivo, Long>("telefono"));
-        mailAdmin.setCellValueFactory(new PropertyValueFactory<CentroDeportivo,String>("mailAdmin"));
-        contrasenaAdmin.setCellValueFactory(new PropertyValueFactory<CentroDeportivo,String>("contraseñaAdmin"));
-        tipoAdmin.setCellValueFactory(new PropertyValueFactory<CentroDeportivo,String>("tipoAdmin"));
+        mail.setCellValueFactory(new PropertyValueFactory<CentroDeportivo,String>("mail"));
+        contra.setCellValueFactory(new PropertyValueFactory<CentroDeportivo,String>("contra"));
+        tipo.setCellValueFactory(new PropertyValueFactory<CentroDeportivo,String>("tipo"));
         listarCentroDeportivo();
     }
     public void listarCentroDeportivo(){
