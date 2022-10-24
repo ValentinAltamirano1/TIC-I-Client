@@ -103,7 +103,7 @@ public class LogInController implements Initializable {
                     stage.show();
                 }
 
-                if (listUser.getTipoUsuario().equals("usuario")) {
+                if (listUser.getTipoUsuario().equals("Usuario")) {
                     Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Actividades-view.fxml"));
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
