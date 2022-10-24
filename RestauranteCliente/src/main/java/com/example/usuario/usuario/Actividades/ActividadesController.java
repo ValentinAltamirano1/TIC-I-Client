@@ -31,35 +31,7 @@ public class ActividadesController implements Initializable {
 
     Stage stage;
     @FXML
-    private ImageView canchas;
-
-    @FXML
-    private Button canchas_button;
-
-    @FXML
-    private ImageView exterior;
-
-    @FXML
-    private Button exterior_button;
-
-    @FXML
-    private ImageView gimnasios;
-
-    @FXML
-    private Button gimnasios_button;
-
-    @FXML
-    private ImageView logo;
-
-    @FXML
-    private ImageView nautica;
-
-    @FXML
-    private Button nautica_button;
-
-    @FXML
-    private Button cerrar_sesion;
-
+    private AnchorPane anchorPane;
     @FXML
     private GridPane grid;
 
@@ -100,6 +72,7 @@ public class ActividadesController implements Initializable {
                  }
 
                  grid.add(anchorPane, colum++, row);
+
                  GridPane.setMargin(anchorPane,new Insets(10));
 
 
