@@ -1,23 +1,17 @@
 package com.example.usuario.usuario.Actividades.TiposActividades;
 
 import com.example.usuario.usuario.Actividades.Actividades;
-import com.example.usuario.usuario.Actividades.UnaActividadPRUEBAController;
-import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
-import com.example.usuario.usuario.Usuarios;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
@@ -68,10 +62,13 @@ public class CanchasController implements Initializable {
 
     @FXML
     private Label precio3;
+
     @FXML
     private Button canchas_button;
+
     @FXML
     private Button siguiente_button;
+
     @FXML
     private Button volver_button;
 
