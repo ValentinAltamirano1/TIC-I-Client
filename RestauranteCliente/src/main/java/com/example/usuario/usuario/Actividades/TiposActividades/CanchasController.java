@@ -1,6 +1,7 @@
 package com.example.usuario.usuario.Actividades.TiposActividades;
 
 import com.example.usuario.usuario.Actividades.Actividades;
+import com.example.usuario.usuario.Actividades.DesplegarController;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
@@ -9,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,6 +19,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -29,8 +32,6 @@ public class CanchasController implements Initializable {
 
     Scene scene;
     Stage stage;
-
-    List<Actividades> actividadesCancha= new ArrayList<>();
 
     @FXML
     private AnchorPane anchorpane;
@@ -56,6 +57,7 @@ public class CanchasController implements Initializable {
     @FXML
     private Button ver_todas_button;
 
+    List<Actividades> actividades= new ArrayList<>();
     @FXML
     void CerrrSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
@@ -87,34 +89,49 @@ public class CanchasController implements Initializable {
     private List<Actividades> getData() {
         List<Actividades> actividadesList =null;
         try{
-            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades")
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/Cancha")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             ObjectMapper mapper = new ObjectMapper();
             actividadesList = mapper.readValue(temp, new TypeReference<List<Actividades>>(){});
-            for(int i=0; i<actividadesList.size(); i++){
-                if(actividadesList.get(i).getCategoria().equals("Cancha")){
-                    actividadesCancha.add(actividadesList.get(i));
-                }
-            }
         }catch (Exception ignored){}
-        return actividadesCancha;
+        return actividadesList;
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        List<Actividades> desplegar = getData();
-        System.out.println(desplegar);
-       /* int row=0;
-        for (int i= 0; i<desplegar.size(); i++){
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("com.example.usuario.usuario.Actividades.Actividades-view.fxml"));
-            try {
+        actividades.addAll(getData());
+        int row=1;
+        int colum =0;
+
+        try {
+            for (int i = 0; i < actividades.size(); i++) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Actividades/Desplegar.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
-                UnaActividadPRUEBAController controller = fxmlLoader.getController();
-                controller.setData(desplegar.get(i));
-                grid.add(anchorPane, 0,0 );
+
+
+                DesplegarController desplegarController = fxmlLoader.getController();
+                desplegarController.setData(actividades.get(i));
+
+                if (colum == 1) {
+                    colum = 0;
+                    row++;
+                }
+
+                grid.add(anchorPane, colum++, row);
+
+                grid.setMinHeight(Region.USE_COMPUTED_SIZE);
+                grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                grid.setMaxHeight(Region.USE_COMPUTED_SIZE);
+
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+
                 GridPane.setMargin(anchorPane,new Insets(10));
-            } catch (IOException e) {}
-        }*/
+
+            }
+        }catch (Exception ignored){}
+
     }
 }
