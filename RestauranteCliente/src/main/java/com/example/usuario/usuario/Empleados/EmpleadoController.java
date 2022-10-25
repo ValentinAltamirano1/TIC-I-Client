@@ -15,10 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -88,6 +85,9 @@ public class EmpleadoController implements Initializable {
     private DatePicker txt_fichamedica;
     @FXML
     private ChoiceBox<String> txt_tipo;
+
+    @FXML
+    private Label label;
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
@@ -135,6 +135,7 @@ public class EmpleadoController implements Initializable {
                     HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/empleado")
                             .header("Content-Type", "application/json").body(json).asJson();
 
+                    label.setText("EMPRESO CREADO CORRECTAMENTE!");
                     txt_pasaporte.setText("");
                     txt_nombre.setText("");
                     txt_telefono.setText("");

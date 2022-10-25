@@ -14,10 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -45,6 +42,9 @@ public class CentroDeportivoController implements Initializable {
 
     @FXML
     private Text CrearNuevoCentro;
+
+    @FXML
+    private Label label;
 
     @FXML
     private Button crearadmin_button;
@@ -146,6 +146,7 @@ public class CentroDeportivoController implements Initializable {
                    HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/centroDeportivo")
                            .header("Content-Type", "application/json").body(json).asJson();
 
+                   label.setText("CENTRO CREADO CORRECTAMENTE!");
                    txt_contrasena.setText("");
                    txt_mail.setText("");
                    txt_rut.setText("");

@@ -14,10 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
@@ -99,7 +96,8 @@ public class CrearActividadesController {
     @FXML
     private Text titulo;
 
-
+    @FXML
+    private Label label;
     @FXML
     void FileChooserClickedButton(ActionEvent event) {
         FileChooser fc = new FileChooser();
@@ -136,7 +134,7 @@ public class CrearActividadesController {
                 try {
                     HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/actividades")
                             .header("Content-Type", "application/json").body(json).asJson();
-
+                    label.setText("ACTIVIDAD CREADA CORRECTAMENTE!");
                     txt_nombre.setText("");
                     txt_precio.setText("");
                     txt_capacidad.setText("");

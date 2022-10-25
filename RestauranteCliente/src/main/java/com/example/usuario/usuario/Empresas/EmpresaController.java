@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -66,7 +67,8 @@ public class EmpresaController implements Initializable{
 
     @FXML
     private Text mail;
-
+    @FXML
+    private Label label;
     @FXML
     private Text contrasena;
 
@@ -137,6 +139,7 @@ public class EmpresaController implements Initializable{
                     HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/empresa")
                             .header("Content-Type", "application/json").body(json).asJson();
 
+                    label.setText("EMPRESA CREADA CORRECTAMENTE!");
                     txt_rut.setText("");
                     txt_nombre.setText("");
                     txt_mail.setText("");
@@ -145,7 +148,7 @@ public class EmpresaController implements Initializable{
                 }catch (UnirestException ex) {}
             }catch (NumberFormatException e){}
         }else{
-            System.out.println("Ingrese correctamente todos los datos para guardar una nueva Empresa");
+            System.out.println("Ingrese correctamente los datos para guardar una nueva Empresa");
         }
     }
     @FXML
@@ -159,6 +162,8 @@ public class EmpresaController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+
         txt_tipo.setItems(txt_list_tipos);
         txt_tipo.setValue("Tipo");
     }
