@@ -21,6 +21,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
 import kong.unirest.Unirest;
@@ -73,8 +74,12 @@ public class ActividadesController implements Initializable {
     }
 
     @FXML
-    void FiltrarClickedButton(ActionEvent event) {
-
+    void FiltrarClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Categorias-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     List<Actividades> actividades= new ArrayList<>();
@@ -118,6 +123,15 @@ public class ActividadesController implements Initializable {
                  }
 
                  grid.add(anchorPane, colum++, row);
+
+                 grid.setMinHeight(Region.USE_COMPUTED_SIZE);
+                 grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                 grid.setMaxHeight(Region.USE_COMPUTED_SIZE);
+
+                 grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                 grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                 grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+
                  GridPane.setMargin(anchorPane,new Insets(10));
 
              }
