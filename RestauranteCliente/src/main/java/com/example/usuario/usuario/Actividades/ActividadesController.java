@@ -3,6 +3,8 @@ package com.example.usuario.usuario.Actividades;
 import com.example.usuario.usuario.Application;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +14,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -28,17 +32,50 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ActividadesController implements Initializable {
+
+    ObservableList<String> txt_categoria_list= FXCollections.
+            observableArrayList("Cancha","Gimnasio", "Exterior", "Nautico");
     Scene scene;
 
     Stage stage;
+
+    @FXML
+    private Button cerrar_sesion;
+
+    @FXML
+    private Button filtrar;
     @FXML
     private AnchorPane anchorpane;
+
+    @FXML
+    private Label titulo;
+
+    @FXML
+    private ImageView foto_logo;
 
     @FXML
     private GridPane grid;
 
     @FXML
     private ScrollPane scroll;
+
+    @FXML
+    private ChoiceBox txt_categoria;
+
+
+    @FXML
+    void CerrrSesionClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void FiltrarClickedButton(ActionEvent event) {
+
+    }
 
     List<Actividades> actividades= new ArrayList<>();
 
@@ -57,6 +94,10 @@ public class ActividadesController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        txt_categoria.setItems(txt_categoria_list);
+        txt_categoria.setValue("Categoria");
+
         actividades.addAll(getData());
          int row=1;
          int colum =0;

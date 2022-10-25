@@ -1,7 +1,5 @@
 package com.example.usuario.usuario.Actividades;
 
-
-
 public class Actividades {
     private String nombre;
     private String horario;
