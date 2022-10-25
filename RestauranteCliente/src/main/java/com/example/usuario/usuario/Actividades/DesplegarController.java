@@ -9,7 +9,7 @@ import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class DesplegarController implements Initializable {
+public class DesplegarController {
 
     @FXML
     private Label capacidad1;
@@ -23,13 +23,10 @@ public class DesplegarController implements Initializable {
     @FXML
     private Label precio1;
 
-    @FXML
-    private ImageView imageView;
 
     private Actividades actividades;
 
     public void setData(Actividades actividades){
-        System.out.println("HOLA!");
         this.actividades = actividades;
         nombre1.setText(actividades.getNombre());
         precio1.setText(String.valueOf(actividades.getPrecio()));
@@ -37,7 +34,4 @@ public class DesplegarController implements Initializable {
         capacidad1.setText(String.valueOf(actividades.getCapacidad()));
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-    }
 }

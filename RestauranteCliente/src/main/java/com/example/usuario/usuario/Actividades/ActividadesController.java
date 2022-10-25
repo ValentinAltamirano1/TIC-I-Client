@@ -31,37 +31,8 @@ public class ActividadesController implements Initializable {
 
     Stage stage;
     @FXML
-    private ImageView canchas;
-
-    @FXML
-    private Button canchas_button;
-
-    @FXML
-    private ImageView exterior;
-
-    @FXML
-    private Button exterior_button;
-
-    @FXML
-    private ImageView gimnasios;
-
-    @FXML
-    private Button gimnasios_button;
-
-    @FXML
-    private ImageView logo;
-
-    @FXML
-    private ImageView nautica;
-
-    @FXML
-    private Button nautica_button;
-
-    @FXML
-    private Button cerrar_sesion;
-
-    @FXML
     private GridPane grid;
+
 
     List<Actividades> actividades= new ArrayList<>();
 
@@ -81,13 +52,13 @@ public class ActividadesController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         actividades.addAll(getData());
-        System.out.println(getData());
          int row=1;
          int colum =0;
+
          try {
              for (int i = 0; i < actividades.size(); i++) {
                  FXMLLoader fxmlLoader = new FXMLLoader();
-                 fxmlLoader.setLocation(getClass().getResource("com.example.usuario.usuario.Actividades.Desplegar.fxml"));
+                 fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Actividades/Desplegar.fxml"));
                  AnchorPane anchorPane = fxmlLoader.load();
 
 
@@ -102,10 +73,8 @@ public class ActividadesController implements Initializable {
                  grid.add(anchorPane, colum++, row);
                  GridPane.setMargin(anchorPane,new Insets(10));
 
-
              }
-         }catch (Exception ignored){
+         }catch (Exception ignored){}
 
-         }
     }
 }

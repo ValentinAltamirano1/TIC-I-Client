@@ -8,7 +8,7 @@
    <children>
       <AnchorPane layoutX="128.0" layoutY="122.0" prefHeight="396.0" prefWidth="453.0" style="-fx-background-color: #ffffff;">
          <children>
-            <GridPane layoutX="27.0" layoutY="23.0" prefHeight="129.0" prefWidth="405.0">
+            <GridPane layoutX="25.0" layoutY="38.0" prefHeight="129.0" prefWidth="405.0">
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
