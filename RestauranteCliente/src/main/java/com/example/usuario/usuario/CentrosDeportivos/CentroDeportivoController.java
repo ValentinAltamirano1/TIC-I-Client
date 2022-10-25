@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
@@ -106,6 +107,7 @@ public class CentroDeportivoController implements Initializable {
     @FXML
     private Button creados_button;
 
+
     @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
@@ -143,15 +145,21 @@ public class CentroDeportivoController implements Initializable {
                 try {
                    HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/centroDeportivo")
                            .header("Content-Type", "application/json").body(json).asJson();
+
+                   txt_contrasena.setText("");
+                   txt_mail.setText("");
+                   txt_rut.setText("");
+                   txt_nombre.setText("");
+                   txt_direccion.setText("");
+                   txt_telefono.setText("");
+
                 } catch (UnirestException ex) {}
             }catch (NumberFormatException e){}
             }
+
             else {
                 System.out.println("Ingrese correctamente todos los datos para guardar un nuevo Centro Deportivo");
             }
-            //CentroDeportivo nuevoCentroDeportivo = new CentroDeportivo(nombre, rut, direccion, telefono);
-            //centro_deportivo.addNewCentroDeportivo(nuevoCentroDeportivo);
-
     }
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {

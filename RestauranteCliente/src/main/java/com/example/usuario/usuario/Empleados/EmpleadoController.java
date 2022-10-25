@@ -135,10 +135,14 @@ public class EmpleadoController implements Initializable {
                     HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/empleado")
                             .header("Content-Type", "application/json").body(json).asJson();
 
+                    txt_pasaporte.setText("");
+                    txt_nombre.setText("");
+                    txt_telefono.setText("");
+                    txt_mail.setText("");
+                    txt_contraseña.setText("");
+
                 }catch (UnirestException ex) {}
             }catch (NumberFormatException e){}
-            //Empresa nuevaEmpresa = new Empresa(nombre, rut);
-            //empresa.addNewEmpresa(nuevaEmpresa);
         }else{
             System.out.println("Ingrese correctamente todos los datos para guardar una nueva Empresa");
         }

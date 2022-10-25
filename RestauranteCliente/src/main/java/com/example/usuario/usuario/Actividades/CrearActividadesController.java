@@ -137,10 +137,12 @@ public class CrearActividadesController {
                     HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/actividades")
                             .header("Content-Type", "application/json").body(json).asJson();
 
+                    txt_nombre.setText("");
+                    txt_precio.setText("");
+                    txt_capacidad.setText("");
+
                 }catch (UnirestException ex) {}
             }catch (NumberFormatException e){}
-            //Empresa nuevaEmpresa = new Empresa(nombre, rut);
-            //empresa.addNewEmpresa(nuevaEmpresa);
         }else{
             System.out.println("Ingrese correctamente todos los datos para guardar una nueva Empresa");
         }
