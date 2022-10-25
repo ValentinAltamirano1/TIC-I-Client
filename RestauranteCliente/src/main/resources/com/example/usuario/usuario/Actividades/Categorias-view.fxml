@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFE5B9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.CategoriasController">
    <children>
       <AnchorPane layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="855.0" style="-fx-background-color: #FFE5B9;">
@@ -55,7 +54,7 @@
             </VBox>
             <VBox layoutX="509.0" layoutY="145.0" prefHeight="445.0" prefWidth="224.0" spacing="45.0">
                <children>
-                  <Button fx:id="cancha_button" mnemonicParsing="false" prefHeight="78.0" prefWidth="224.0" style="-fx-background-color: #F85A50;" text="Canchas" textFill="WHITE">
+                  <Button fx:id="cancha_button" mnemonicParsing="false" onAction="#CanchasClickedButton" prefHeight="78.0" prefWidth="224.0" style="-fx-background-color: #F85A50;" text="Canchas" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
