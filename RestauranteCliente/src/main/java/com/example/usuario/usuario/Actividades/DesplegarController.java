@@ -1,13 +1,9 @@
 package com.example.usuario.usuario.Actividades;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-
-import javax.swing.text.html.ImageView;
-import java.awt.*;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class DesplegarController {
 
@@ -24,6 +20,9 @@ public class DesplegarController {
     private Label precio1;
 
     @FXML
+    private Button reserva_button;
+
+    @FXML
     private Label titulo_capacidad;
 
     @FXML
@@ -35,8 +34,10 @@ public class DesplegarController {
     @FXML
     private Label titulo_precio;
 
+    @FXML
+    void ReservarClickedButton(ActionEvent event) {
 
-
+    }
     private Actividades actividades;
 
     public void setData(Actividades actividades){
@@ -48,3 +49,4 @@ public class DesplegarController {
     }
 
 }
+
