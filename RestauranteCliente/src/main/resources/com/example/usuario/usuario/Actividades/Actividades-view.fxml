@@ -14,7 +14,7 @@
    <children>
       <ScrollPane fx:id="scroll" layoutX="293.0" layoutY="176.0" prefHeight="387.0" prefWidth="538.0" style="-fx-background-color: #FFCA6F;">
         <content>
-          <AnchorPane fx:id="anchorpane" minHeight="0.0" minWidth="0.0" prefHeight="388.0" prefWidth="539.0" style="-fx-background-color: #FFCA6F;">
+          <AnchorPane fx:id="anchorpane" minHeight="0.0" minWidth="0.0" prefHeight="378.0" prefWidth="534.0" style="-fx-background-color: #FFCA6F;">
                <children>
                   <GridPane fx:id="grid" layoutY="8.0" prefHeight="7.0" prefWidth="14.0">
                     <rowConstraints>
