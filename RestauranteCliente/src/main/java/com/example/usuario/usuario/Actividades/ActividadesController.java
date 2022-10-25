@@ -34,8 +34,6 @@ import java.util.ResourceBundle;
 
 public class ActividadesController implements Initializable {
 
-    ObservableList<String> txt_categoria_list= FXCollections.
-            observableArrayList("Cancha","Gimnasio", "Exterior", "Nautico");
     Scene scene;
 
     Stage stage;
@@ -59,10 +57,6 @@ public class ActividadesController implements Initializable {
 
     @FXML
     private ScrollPane scroll;
-
-    @FXML
-    private ChoiceBox txt_categoria;
-
 
     @FXML
     void CerrrSesionClickedButton(ActionEvent event) throws IOException {
@@ -99,10 +93,6 @@ public class ActividadesController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        txt_categoria.setItems(txt_categoria_list);
-        txt_categoria.setValue("Categoria");
-
         actividades.addAll(getData());
          int row=1;
          int colum =0;
