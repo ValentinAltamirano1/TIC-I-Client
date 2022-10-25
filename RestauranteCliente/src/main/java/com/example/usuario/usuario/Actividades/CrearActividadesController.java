@@ -20,8 +20,10 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class CrearActividadesController {
@@ -40,6 +42,11 @@ public class CrearActividadesController {
 
     @FXML
     private Text CrearNuevaActividad;
+    @FXML
+    private Button fileChooser;
+
+    @FXML
+    private Text imagen;
 
     @FXML
     private Text capacidad;
@@ -91,6 +98,19 @@ public class CrearActividadesController {
 
     @FXML
     private Text titulo;
+
+
+    @FXML
+    void FileChooserClickedButton(ActionEvent event) {
+        FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imagenes", "png"));
+        File f = fc.showOpenDialog(null);
+
+        if(f != null){
+            fileChooser.setText("Selected Image:" + f.getAbsolutePath());
+        }
+
+    }
 
     @FXML
     void CrearClickedButton(ActionEvent event) {

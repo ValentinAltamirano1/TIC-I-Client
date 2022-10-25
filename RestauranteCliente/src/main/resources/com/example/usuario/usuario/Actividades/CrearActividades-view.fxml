@@ -58,7 +58,7 @@
                   <Font name="System Bold" size="33.0" />
                </font>
             </Text>
-            <Button fx:id="crear_button" layoutX="180.0" layoutY="379.0" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Crear" textFill="WHITE">
+            <Button fx:id="crear_button" layoutX="179.0" layoutY="407.0" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Crear" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -82,6 +82,12 @@
             </Text>
             <ChoiceBox fx:id="txt_horario" layoutX="237.0" layoutY="302.0" prefHeight="26.0" prefWidth="170.0" />
             <ChoiceBox fx:id="txt_categoria" layoutX="236.0" layoutY="167.0" prefHeight="26.0" prefWidth="170.0" />
+            <Text fx:id="imagen" fill="WHITE" layoutX="58.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imagen:">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Text>
+            <Button fx:id="fileChooser" layoutX="236.0" layoutY="352.0" mnemonicParsing="false" onAction="#FileChooserClickedButton" prefHeight="26.0" prefWidth="170.0" text="Seleccionar imagen" />
          </children></AnchorPane>
   </items>
 </SplitPane>

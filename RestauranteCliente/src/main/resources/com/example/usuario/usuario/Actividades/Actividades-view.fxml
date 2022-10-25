@@ -7,24 +7,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="855.0" style="-fx-background-color: #FFE5B9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.ActividadesController">
    <children>
-      <ScrollPane fx:id="scroll" layoutX="293.0" layoutY="176.0" prefHeight="387.0" prefWidth="538.0" style="-fx-background-color: #FFCA6F;">
-        <content>
-          <AnchorPane fx:id="anchorpane" minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="518.0" style="-fx-background-color: #FFCA6F;">
-               <children>
-                  <GridPane fx:id="grid" layoutY="8.0" prefHeight="7.0" prefWidth="14.0">
-                    <rowConstraints>
-                      <RowConstraints maxHeight="8.600012207031249" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                  </GridPane>
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
       <Label fx:id="titulo" layoutX="333.0" layoutY="33.0" prefHeight="99.0" prefWidth="458.0" text="ACTIVIDADES">
          <font>
             <Font name="System Bold" size="67.0" />
@@ -46,5 +34,15 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Button>
+      <HBox fx:id="hbox" layoutX="73.0" layoutY="244.0" prefHeight="100.0" prefWidth="200.0" />
+      <ScrollPane fx:id="scroll" layoutX="285.0" layoutY="140.0" prefHeight="427.0" prefWidth="536.0" style="-fx-background-color: #FFCA6F;">
+         <content>
+            <GridPane fx:id="grid" prefHeight="7.0" prefWidth="14.0">
+              <rowConstraints>
+                <RowConstraints maxHeight="8.600012207031249" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

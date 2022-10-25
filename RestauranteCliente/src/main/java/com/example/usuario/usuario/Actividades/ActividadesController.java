@@ -18,10 +18,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Region;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
 import kong.unirest.Unirest;
@@ -38,6 +35,8 @@ public class ActividadesController implements Initializable {
 
     Stage stage;
 
+    @FXML
+    private HBox hbox;
     @FXML
     private Button cerrar_sesion;
 
