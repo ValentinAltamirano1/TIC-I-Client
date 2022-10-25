@@ -59,6 +59,13 @@ public class GimnasiosController implements Initializable {
     List<Actividades> actividades= new ArrayList<>();
 
     @FXML
+    private Button reservas;
+
+    @FXML
+    void MisReservasClickedButton(ActionEvent event) {
+
+    }
+    @FXML
     void CerrrSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

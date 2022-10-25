@@ -41,7 +41,7 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Button>
-      <Button fx:id="ver_todas_button" layoutX="37.0" layoutY="305.0" mnemonicParsing="false" onAction="#VerTodasClickedButton" prefHeight="35.0" prefWidth="187.0" style="-fx-background-color: #FFCA6F;" text="Ver todas">
+      <Button fx:id="ver_todas_button" layoutX="37.0" layoutY="370.0" mnemonicParsing="false" onAction="#VerTodasClickedButton" prefHeight="35.0" prefWidth="187.0" style="-fx-background-color: #FFCA6F;" text="Ver todas">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
@@ -49,6 +49,11 @@
       <Button fx:id="gimnasio_button" layoutX="377.0" layoutY="41.0" mnemonicParsing="false" onAction="#GimnasioClickedButton" prefHeight="111.0" prefWidth="370.0" style="-fx-background-color: #FF91D4;" text="Gimnasios" textFill="WHITE">
          <font>
             <Font name="System Bold" size="48.0" />
+         </font>
+      </Button>
+      <Button fx:id="reservas" layoutX="37.0" layoutY="297.0" mnemonicParsing="false" onAction="#MisReservasClickedButton" prefHeight="35.0" prefWidth="187.0" style="-fx-background-color: #FFCA6F;" text="Mis reservas">
+         <font>
+            <Font name="System Bold" size="23.0" />
          </font>
       </Button>
    </children>

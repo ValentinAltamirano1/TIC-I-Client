@@ -29,20 +29,28 @@
          </font>
       </Button>
       <Label layoutX="57.0" layoutY="220.0" />
-      <Button fx:id="filtrar" layoutX="37.0" layoutY="212.0" mnemonicParsing="false" onAction="#FiltrarClickedButton" prefHeight="35.0" prefWidth="187.0" style="-fx-background-color: #FFCA6F;" text="Filtrar por:">
+      <Button fx:id="filtrar" layoutX="37.0" layoutY="212.0" mnemonicParsing="false" onAction="#FiltrarClickedButton" prefHeight="35.0" prefWidth="187.0" style="-fx-background-color: #FFCA6F;" text="Filtrar por">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Button>
-      <HBox fx:id="hbox" layoutX="73.0" layoutY="244.0" prefHeight="100.0" prefWidth="200.0" />
-      <ScrollPane fx:id="scroll" layoutX="285.0" layoutY="140.0" prefHeight="427.0" prefWidth="536.0" style="-fx-background-color: #FFCA6F;">
-         <content>
-            <GridPane fx:id="grid" prefHeight="7.0" prefWidth="14.0">
-              <rowConstraints>
-                <RowConstraints maxHeight="8.600012207031249" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-         </content>
-      </ScrollPane>
+      <HBox layoutX="306.0" layoutY="162.0" prefHeight="409.0" prefWidth="511.0">
+         <children>
+            <ScrollPane fx:id="scroll" prefHeight="410.0" prefWidth="514.0" style="-fx-background-color: #FFCA6F;">
+               <content>
+                  <GridPane fx:id="grid" prefHeight="7.0" prefWidth="14.0">
+                    <rowConstraints>
+                      <RowConstraints maxHeight="8.600012207031249" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
+      <Button fx:id="reservas" layoutX="37.0" layoutY="305.0" mnemonicParsing="false" onAction="#MisReservasClickedButton" prefHeight="35.0" prefWidth="187.0" style="-fx-background-color: #FFCA6F;" text="Mis reservas">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
