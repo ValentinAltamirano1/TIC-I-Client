@@ -23,6 +23,19 @@ public class DesplegarController {
     @FXML
     private Label precio1;
 
+    @FXML
+    private Label titulo_capacidad;
+
+    @FXML
+    private Label titulo_horario;
+
+    @FXML
+    private Label titulo_nombre;
+
+    @FXML
+    private Label titulo_precio;
+
+
 
     private Actividades actividades;
 
