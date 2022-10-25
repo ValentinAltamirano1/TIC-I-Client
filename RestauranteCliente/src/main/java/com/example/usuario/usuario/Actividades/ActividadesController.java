@@ -12,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -31,8 +32,13 @@ public class ActividadesController implements Initializable {
 
     Stage stage;
     @FXML
+    private AnchorPane anchorpane;
+
+    @FXML
     private GridPane grid;
 
+    @FXML
+    private ScrollPane scroll;
 
     List<Actividades> actividades= new ArrayList<>();
 

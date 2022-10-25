@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="596.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.ActividadesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="596.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.ActividadesController">
    <children>
-      <AnchorPane layoutX="128.0" layoutY="122.0" prefHeight="396.0" prefWidth="453.0" style="-fx-background-color: #ffffff;">
-         <children>
-            <GridPane layoutX="25.0" layoutY="38.0" prefHeight="129.0" prefWidth="405.0">
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-         </children></AnchorPane>
+      <ScrollPane fx:id="scroll" layoutX="127.0" layoutY="128.0" prefHeight="386.0" prefWidth="454.0">
+        <content>
+          <AnchorPane fx:id="anchorpane" minHeight="0.0" minWidth="0.0" prefHeight="386.0" prefWidth="455.0">
+               <children>
+                  <GridPane fx:id="grid" layoutY="8.0" prefHeight="7.0" prefWidth="14.0">
+                    <rowConstraints>
+                      <RowConstraints maxHeight="8.600012207031249" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
