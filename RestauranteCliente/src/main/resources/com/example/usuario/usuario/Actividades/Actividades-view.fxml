@@ -36,7 +36,7 @@
       </Button>
       <HBox layoutX="306.0" layoutY="162.0" prefHeight="409.0" prefWidth="511.0">
          <children>
-            <ScrollPane fx:id="scroll" prefHeight="410.0" prefWidth="514.0" style="-fx-background-color: #FFCA6F;">
+            <ScrollPane fx:id="scroll" prefHeight="410.0" prefWidth="550.0" style="-fx-background-color: #FFCA6F;">
                <content>
                   <GridPane fx:id="grid" prefHeight="7.0" prefWidth="14.0">
                     <rowConstraints>
