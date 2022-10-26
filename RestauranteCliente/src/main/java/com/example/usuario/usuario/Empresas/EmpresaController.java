@@ -68,8 +68,6 @@ public class EmpresaController implements Initializable{
     @FXML
     private Text mail;
     @FXML
-    private Label label;
-    @FXML
     private Text contrasena;
 
     @FXML
@@ -95,6 +93,9 @@ public class EmpresaController implements Initializable{
 
     @FXML
     private Button volver_button;
+
+    @FXML
+    private Label label;
 
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
@@ -162,8 +163,6 @@ public class EmpresaController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-
         txt_tipo.setItems(txt_list_tipos);
         txt_tipo.setValue("Tipo");
     }
