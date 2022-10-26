@@ -89,7 +89,7 @@
                </font>
             </Text>
             <Button fx:id="fileChooser" layoutX="236.0" layoutY="352.0" mnemonicParsing="false" onAction="#FileChooserClickedButton" prefHeight="26.0" prefWidth="170.0" text="Seleccionar imagen" />
-            <Label fx:id="label" layoutX="95.0" layoutY="14.0" prefHeight="27.0" prefWidth="319.0" text=" " textAlignment="CENTER" textFill="#df2d29">
+            <Label fx:id="label" layoutX="29.0" layoutY="14.0" prefHeight="27.0" prefWidth="422.0" text=" " textAlignment="CENTER" textFill="#df2d29">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

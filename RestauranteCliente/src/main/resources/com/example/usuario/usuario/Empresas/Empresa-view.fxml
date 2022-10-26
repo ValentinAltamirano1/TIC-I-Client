@@ -96,7 +96,7 @@
                   <ChoiceBox fx:id="txt_tipo" prefHeight="26.0" prefWidth="166.0" />
                </children>
             </VBox>
-            <Label fx:id="label" layoutX="91.0" layoutY="14.0" prefHeight="27.0" prefWidth="319.0" text=" " textAlignment="CENTER" textFill="#df2d29">
+            <Label fx:id="label" layoutX="22.0" layoutY="14.0" prefHeight="27.0" prefWidth="444.0" text=" " textAlignment="CENTER" textFill="#df2d29">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
