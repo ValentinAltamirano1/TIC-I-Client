@@ -64,6 +64,11 @@ public class CrearActividadesController {
     private Text contraseña;
 
     @FXML
+    private Text descripcion;
+    @FXML
+    private Text cupo;
+
+    @FXML
     private Text precio;
 
     @FXML
@@ -77,7 +82,10 @@ public class CrearActividadesController {
 
     @FXML
     private TextField txt_nombre;
-
+    @FXML
+    private TextField txt_cupo;
+    @FXML
+    private TextField txt_descripcion;
     @FXML
     private ChoiceBox txt_categoria;
 
