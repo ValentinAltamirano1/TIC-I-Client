@@ -135,7 +135,7 @@ public class EmpleadoController implements Initializable {
                     HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/empleado")
                             .header("Content-Type", "application/json").body(json).asJson();
 
-                    label.setText("EMPRESO CREADO CORRECTAMENTE!");
+                    label.setText("EMPLEADO CREADO CORRECTAMENTE!");
                     txt_pasaporte.setText("");
                     txt_nombre.setText("");
                     txt_telefono.setText("");
