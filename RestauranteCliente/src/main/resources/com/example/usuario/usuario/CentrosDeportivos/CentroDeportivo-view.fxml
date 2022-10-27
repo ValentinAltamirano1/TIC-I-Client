@@ -27,7 +27,7 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Text>
-            <VBox layoutX="19.0" layoutY="198.0" prefHeight="240.0" prefWidth="150.0" spacing="150.0" style="-fx-background-color: #000000;">
+            <VBox layoutX="19.0" layoutY="199.0" prefHeight="240.0" prefWidth="150.0" spacing="150.0" style="-fx-background-color: #000000;">
                <children>
                   <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Ver ya creados" textFill="WHITE">
                      <font>

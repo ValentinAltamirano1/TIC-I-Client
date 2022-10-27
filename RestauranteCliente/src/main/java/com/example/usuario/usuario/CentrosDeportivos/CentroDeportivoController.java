@@ -47,9 +47,6 @@ public class CentroDeportivoController implements Initializable {
     private Label label;
 
     @FXML
-    private Button crearadmin_button;
-
-    @FXML
     private Button cerrar_sesion_button;
 
     @FXML
@@ -170,6 +167,7 @@ public class CentroDeportivoController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
     @FXML
     void CerrarSesionClickedButton(ActionEvent event)throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
