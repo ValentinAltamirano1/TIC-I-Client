@@ -36,6 +36,10 @@ public class CrearActividadesController {
     String horario_;
     String nombre_;
     int precio_;
+    String descripcion_;
+    int cupo_;
+
+    ImageView foto_;
 
     @FXML
     private Text CrearNuevaActividad;
@@ -130,7 +134,10 @@ public class CrearActividadesController {
                 precio_= Integer.parseInt(txt_precio.getText());
                 horario_ = txt_horario.getValue().toString();
                 categoria_ = txt_categoria.getValue().toString();
+                descripcion_ = txt_descripcion.getText();
+                cupo_ = Integer.parseInt(txt_cupo.getText());
                 String json = "";
+
                 try {
                     ObjectMapper mapper = new ObjectMapper();
                     ObjectNode rest = mapper.createObjectNode();
@@ -139,16 +146,21 @@ public class CrearActividadesController {
                     rest.put("precio", precio_);
                     rest.put("categoria",categoria_ );
                     rest.put("capacidad",capacidad_ );
+                    rest.put("descripcion", descripcion_);
+                    rest.put("cupo", cupo_);
                     json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
                 }catch (Exception ignored) {
                 }
                 try {
                     HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/actividades")
                             .header("Content-Type", "application/json").body(json).asJson();
+
                     label.setText("ACTIVIDAD CREADA CORRECTAMENTE!");
                     txt_nombre.setText("");
                     txt_precio.setText("");
                     txt_capacidad.setText("");
+                    txt_descripcion.setText("");
+                    txt_cupo.setText("");
 
                 }catch (UnirestException ex) {}
             }catch (NumberFormatException e){}
