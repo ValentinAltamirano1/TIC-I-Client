@@ -23,6 +23,9 @@ import javafx.stage.Stage;
 import kong.unirest.GetRequest;
 import kong.unirest.Unirest;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -89,13 +92,31 @@ public class ActividadesController implements Initializable {
             GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
+            System.out.println(temp);
             ObjectMapper mapper = new ObjectMapper();
             actividadesList = mapper.readValue(temp, new TypeReference<List<Actividades>>(){});
+            System.out.println(actividadesList);
             }
         catch (Exception ignored){}
         return actividadesList;
     }
 
+    /*private byte[] getImageData(){
+        GetRequest apiResponde = Unirest.get("http://localhost:8080/api/v1/gimnasio/imagen")
+                .header("Content-Type", "application/json");
+        byte[] arrayByte = apiResponde.asBytes().getBody();
+        ByteArrayInputStream inStreambj = new ByteArrayInputStream(arrayByte);
+
+        // read image from byte array
+        BufferedImage newImage = null;
+        try {
+            newImage = ImageIO.read(inStreambj);
+        } catch (IOException e) {}
+
+        // write output image
+        return ImageIO.write(newImage, "jpg", arrayByte);
+
+    }*/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         actividades.addAll(getData());

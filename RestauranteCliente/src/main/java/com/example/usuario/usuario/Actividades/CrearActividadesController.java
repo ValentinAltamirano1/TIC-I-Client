@@ -6,6 +6,7 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import com.mashape.unirest.request.body.RawBody;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,13 +16,22 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.io.FileUtils;
 
-import java.io.File;
-import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.imageio.stream.ImageInputStream;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class CrearActividadesController {
     ObservableList<String> txt_horario_list= FXCollections.
@@ -39,7 +49,7 @@ public class CrearActividadesController {
     String descripcion_;
     int cupo_;
 
-    ImageView foto_;
+    String data_;
 
     @FXML
     private Text CrearNuevaActividad;
@@ -114,16 +124,27 @@ public class CrearActividadesController {
     @FXML
     private Label label;
     @FXML
-    void FileChooserClickedButton(ActionEvent event) {
+    void FileChooserClickedButton(ActionEvent event) throws IOException {
         FileChooser fc = new FileChooser();
-        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imagenes", "png"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imagenes","*.jpg", "*.png"));
         File f = fc.showOpenDialog(null);
 
         if(f != null){
             fileChooser.setText("Selected Image:" + f.getAbsolutePath());
         }
 
-    }
+        FileInputStream fileInputStream = null;
+        try {
+            byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray(f));
+            data_ = new String(encoded, StandardCharsets.US_ASCII);
+
+            System.out.println(data_);
+        } catch (FileNotFoundException e) {}
+
+        }
+
+
+
 
     @FXML
     void CrearClickedButton(ActionEvent event) {
@@ -136,6 +157,7 @@ public class CrearActividadesController {
                 categoria_ = txt_categoria.getValue().toString();
                 descripcion_ = txt_descripcion.getText();
                 cupo_ = Integer.parseInt(txt_cupo.getText());
+
                 String json = "";
 
                 try {
@@ -148,13 +170,15 @@ public class CrearActividadesController {
                     rest.put("capacidad",capacidad_ );
                     rest.put("descripcion", descripcion_);
                     rest.put("cupo", cupo_);
+                    rest.put("imagen",data_);
+
                     json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
-                }catch (Exception ignored) {
-                }
+                    System.out.println(json);
+                }catch (Exception ignored) {}
+
                 try {
                     HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/actividades")
                             .header("Content-Type", "application/json").body(json).asJson();
-
 
                     label.setText("ACTIVIDAD CREADA CORRECTAMENTE!");
                     txt_nombre.setText("");

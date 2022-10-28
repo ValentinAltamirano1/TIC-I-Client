@@ -19,6 +19,9 @@ dependencies {
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.4'
 	implementation 'io.vertx:vertx-core:4.3.3'
 	implementation 'org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0'
+	implementation 'commons-codec:commons-codec:1.15'
+	implementation 'commons-io:commons-io:2.5'
+
 }
 
 tasks.named('test') {
