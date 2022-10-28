@@ -51,6 +51,7 @@ public class CrearActividadesController {
 
     String data_;
 
+
     @FXML
     private Text CrearNuevaActividad;
     @FXML
@@ -138,7 +139,7 @@ public class CrearActividadesController {
             byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray(f));
             data_ = new String(encoded, StandardCharsets.US_ASCII);
 
-            System.out.println(data_);
+            System.out.println(encoded);
         } catch (FileNotFoundException e) {}
 
         }
