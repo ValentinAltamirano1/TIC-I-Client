@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.29054458408138834" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.TablaActividadesController">
+<SplitPane dividerPositions="0.22169587873045946" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="896.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.TablaActividadesController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="221.0" style="-fx-background-color: #000000;">
          <children>
@@ -40,7 +40,7 @@
                </font>
             </Text>
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="497.0" prefWidth="536.0" style="-fx-background-color: #000000;">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="536.0" prefWidth="605.0" style="-fx-background-color: #000000;">
          <children>
             <Text fx:id="EmpresasCreadas" fill="WHITE" layoutX="109.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACTIVIDADES CREADAS:">
                <font>
@@ -52,13 +52,15 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <TableView fx:id="tableView" layoutX="14.0" layoutY="112.0" prefHeight="282.0" prefWidth="452.0" style="-fx-background-color: #ffffff;">
+            <TableView fx:id="tableView" layoutX="14.0" layoutY="112.0" prefHeight="282.0" prefWidth="670.0" style="-fx-background-color: #ffffff;">
                <columns>
-                  <TableColumn fx:id="nombre" prefWidth="114.40003395080566" style="-fx-background-color: #ffffff;" text="Nombre" />
-                  <TableColumn fx:id="categoria" prefWidth="119.199951171875" style="-fx-background-color: #ffffff;" text="Categoria" />
-                  <TableColumn fx:id="capacidad" prefWidth="65.60003662109375" style="-fx-background-color: #ffffff;" text="Capacidad" />
+                  <TableColumn fx:id="nombre" prefWidth="90.39990425109863" style="-fx-background-color: #ffffff;" text="Nombre" />
+                  <TableColumn fx:id="categoria" prefWidth="114.39995574951172" style="-fx-background-color: #ffffff;" text="Categoria" />
+                  <TableColumn fx:id="capacidad" prefWidth="96.800048828125" style="-fx-background-color: #ffffff;" text="Capacidad" />
                   <TableColumn fx:id="precio" prefWidth="59.20001220703125" style="-fx-background-color: #ffffff;" text="Precio" />
                   <TableColumn fx:id="horario" prefWidth="92.7999267578125" style="-fx-background-color: #ffffff;" text="Horario" />
+                  <TableColumn fx:id="cupos" prefWidth="92.7999267578125" style="-fx-background-color: #ffffff;" text="Cupos" />
+                  <TableColumn fx:id="descripcion" prefWidth="120.7999267578125" style="-fx-background-color: #ffffff;" text="Descripcion" />
                </columns>
             </TableView>
          </children></AnchorPane>

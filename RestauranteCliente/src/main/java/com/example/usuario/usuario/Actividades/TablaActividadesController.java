@@ -60,6 +60,12 @@ public class TablaActividadesController implements Initializable {
     private TableColumn<Actividades, String> horario;
 
     @FXML
+    private TableColumn<Actividades, String> cupos;
+
+    @FXML
+    private TableColumn<Actividades, String> descripcion;
+
+    @FXML
     private Text titulo1;
 
     @FXML
@@ -100,6 +106,8 @@ public class TablaActividadesController implements Initializable {
         capacidad.setCellValueFactory(new PropertyValueFactory<Actividades,String>("capacidad"));
         precio.setCellValueFactory(new PropertyValueFactory<Actividades,String>("precio"));
         horario.setCellValueFactory(new PropertyValueFactory<Actividades,String>("horario"));
+        cupos.setCellValueFactory(new PropertyValueFactory<Actividades,String>("cupos"));
+        descripcion.setCellValueFactory(new PropertyValueFactory<Actividades,String>("descripcion"));
         listarActividades();
     }
 
