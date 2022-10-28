@@ -175,12 +175,13 @@ public class CrearActividadesController {
                     rest.put("categoria",categoria_ );
                     rest.put("capacidad",capacidad_ );
                     rest.put("descripcion", descripcion_);
-                    rest.put("cupo", cupo_);
+                    rest.put("cupos", cupo_);
                     //rest.put("imagen",data_);
 
                     rest1.put("imagen", data_);
 
                     json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
+                    System.out.println(json);
                     json1= mapper1.writerWithDefaultPrettyPrinter().writeValueAsString(rest1);
 
                     System.out.println(json);
