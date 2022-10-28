@@ -160,10 +160,15 @@ public class CrearActividadesController {
                 cupo_ = Integer.parseInt(txt_cupo.getText());
 
                 String json = "";
+                String json1 = "";
 
                 try {
                     ObjectMapper mapper = new ObjectMapper();
                     ObjectNode rest = mapper.createObjectNode();
+
+                    ObjectMapper mapper1 = new ObjectMapper();
+                    ObjectNode rest1 = mapper1.createObjectNode();
+
                     rest.put("nombre", nombre_);
                     rest.put("horario",horario_ );
                     rest.put("precio", precio_);
@@ -171,15 +176,22 @@ public class CrearActividadesController {
                     rest.put("capacidad",capacidad_ );
                     rest.put("descripcion", descripcion_);
                     rest.put("cupo", cupo_);
-                    rest.put("imagen",data_);
+                    //rest.put("imagen",data_);
+
+                    rest1.put("imagen", data_);
 
                     json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
+                    json1= mapper1.writerWithDefaultPrettyPrinter().writeValueAsString(rest1);
+
                     System.out.println(json);
                 }catch (Exception ignored) {}
 
                 try {
                     HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/actividades")
                             .header("Content-Type", "application/json").body(json).asJson();
+
+                    HttpResponse<JsonNode> apiResponse1 = Unirest.post("http://localhost:8080/api/v1/gimnasio/imagen/upload")
+                            .header("Content-Type", "application/json").body(json1).asJson();
 
                     label.setText("ACTIVIDAD CREADA CORRECTAMENTE!");
                     txt_nombre.setText("");

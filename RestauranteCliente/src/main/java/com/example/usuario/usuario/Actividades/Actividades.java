@@ -7,15 +7,21 @@ public class Actividades {
     private String categoria;
     private int capacidad;
 
+    private int cupos;
+
+    private String descripcion;
+
     public Actividades() {
     }
 
-    public Actividades(String nombre, String horario, int precio, String categoria, int capacidad) {
+    public Actividades(String nombre, String horario, int precio, String categoria, int capacidad, int cupos, String descripcion) {
         this.nombre = nombre;
         this.horario = horario;
         this.precio = precio;
         this.categoria = categoria;
         this.capacidad = capacidad;
+        this.cupos = cupos;
+        this.descripcion = descripcion;
     }
 
     public String getNombre() {
@@ -58,14 +64,32 @@ public class Actividades {
         this.capacidad = capacidad;
     }
 
+    public int getCupos() {
+        return cupos;
+    }
+
+    public void setCupos(int cupos) {
+        this.cupos = cupos;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     @Override
     public String toString() {
         return "Actividades{" +
                 "nombre='" + nombre + '\'' +
-                ", horario=" + horario +
+                ", horario='" + horario + '\'' +
                 ", precio=" + precio +
                 ", categoria='" + categoria + '\'' +
                 ", capacidad=" + capacidad +
+                ", cupos=" + cupos +
+                ", descripcion='" + descripcion + '\'' +
                 '}';
     }
 }
