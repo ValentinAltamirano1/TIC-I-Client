@@ -155,6 +155,7 @@ public class CrearActividadesController {
                     HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/actividades")
                             .header("Content-Type", "application/json").body(json).asJson();
 
+
                     label.setText("ACTIVIDAD CREADA CORRECTAMENTE!");
                     txt_nombre.setText("");
                     txt_precio.setText("");
