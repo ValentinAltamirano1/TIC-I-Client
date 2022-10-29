@@ -5,34 +5,22 @@ import com.example.usuario.usuario.Actividades.Actividades;
 import java.util.Arrays;
 
 public class Imagen {
-    private Long id;
 
-    private String nombre;
-
-    private String tipo;
+    private Actividades actividades;
 
     private byte[] imageData;
 
-    public Imagen(String nombre, String tipo, byte[] imageData) {
-        this.nombre = nombre;
-        this.tipo = tipo;
+    public Imagen(Actividades actividades, byte[] imageData) {
+        this.actividades = actividades;
         this.imageData = imageData;
     }
 
-    public String getNombre() {
-        return nombre;
+    public Actividades getActividades() {
+        return actividades;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setActividades(Actividades actividades) {
+        this.actividades = actividades;
     }
 
     public byte[] getImageData() {
@@ -46,8 +34,7 @@ public class Imagen {
     @Override
     public String toString() {
         return "Imagen{" +
-                "nombre='" + nombre + '\'' +
-                ", tipo='" + tipo + '\'' +
+                "actividades=" + actividades +
                 ", imageData=" + Arrays.toString(imageData) +
                 '}';
     }

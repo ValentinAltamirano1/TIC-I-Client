@@ -1,9 +1,7 @@
 package com.example.usuario.usuario.CentrosDeportivos;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
-import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,6 +16,8 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
 
 import java.io.IOException;
 import java.net.URL;
@@ -115,50 +115,29 @@ public class CentroDeportivoController implements Initializable {
     }
     @FXML
     void CrearClickedButton(ActionEvent event) {
-        if(!txt_nombre.getText().isEmpty() && !txt_rut.getText().isEmpty() && !txt_telefono.getText().isEmpty() && !txt_direccion.getText().isEmpty() && !txt_mail.getText().isEmpty()
-        && !txt_contrasena.getText().isEmpty()){
-            try {
-                nombre_ = txt_nombre.getText();
-                rut_ = Long.parseLong(txt_rut.getText());
-                telefono_ = Long.parseLong(txt_telefono.getText());
-                direccion_ = txt_direccion.getText();
-                mailAdmin_ = txt_mail.getText();
-                contraseñaAdmin_= txt_contrasena.getText();
-                tipoAdmin_ = txt_tipo.getValue().toString();
-                String json = "";
-                try {
-                    ObjectMapper mapper = new ObjectMapper();
-                    ObjectNode rest = mapper.createObjectNode();
-                    rest.put("nombre", nombre_);
-                    rest.put("rut", rut_);
-                    rest.put("telefono", telefono_);
-                    rest.put("direccion", direccion_);
-                    rest.put("mail", mailAdmin_);
-                    rest.put("contra",contraseñaAdmin_);
-                    rest.put("tipo", tipoAdmin_);
-                    json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
-                } catch (Exception ignored) {
-                }
-                try {
-                   HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/centroDeportivo")
-                           .header("Content-Type", "application/json").body(json).asJson();
+        if (!txt_nombre.getText().isEmpty() && !txt_rut.getText().isEmpty() && !txt_telefono.getText().isEmpty() && !txt_direccion.getText().isEmpty() && !txt_mail.getText().isEmpty()
+                && !txt_contrasena.getText().isEmpty()) {
+            rut_ = Long.valueOf(txt_rut.getText());
+            telefono_ = Long.valueOf(txt_telefono.getText());
+            CentroDeportivo centroDeportivo = new CentroDeportivo(rut_, telefono_, txt_nombre.getText(), txt_direccion.getText(), txt_mail.getText(), txt_contrasena.getText(), txt_tipo.getValue().toString());
+            HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/centroDeportivo")
+                    .header("accept", "application/json")
+                    .header("Content-Type", "application/json")
+                    .body(centroDeportivo).asEmpty();
 
-                   label.setText("CENTRO CREADO CORRECTAMENTE!");
-                   txt_contrasena.setText("");
-                   txt_mail.setText("");
-                   txt_rut.setText("");
-                   txt_nombre.setText("");
-                   txt_direccion.setText("");
-                   txt_telefono.setText("");
+            label.setText("CENTRO CREADO CORRECTAMENTE!");
+            txt_contrasena.setText("");
+            txt_mail.setText("");
+            txt_rut.setText("");
+            txt_nombre.setText("");
+            txt_direccion.setText("");
+            txt_telefono.setText("");
 
-                } catch (UnirestException ex) {}
-            }catch (NumberFormatException e){}
-            }
-
-            else {
+        }else {
                 System.out.println("Ingrese correctamente todos los datos para guardar un nuevo Centro Deportivo");
             }
-    }
+        }
+
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/TablaCentrosDeportivos-view.fxml"));

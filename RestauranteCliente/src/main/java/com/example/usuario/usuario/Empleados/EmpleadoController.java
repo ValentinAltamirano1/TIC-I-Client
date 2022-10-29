@@ -1,10 +1,9 @@
 package com.example.usuario.usuario.Empleados;
 
+import com.example.usuario.usuario.Empresas.Empresa;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
-import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,6 +18,8 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
 
 import java.io.IOException;
 import java.net.URL;
@@ -108,42 +109,24 @@ public class EmpleadoController implements Initializable {
 
     @FXML
     void CrearClickedButton(ActionEvent event) {
+
+
         if(!txt_nombre.getText().isEmpty() && !txt_mail.getText().isEmpty() && !txt_pasaporte.getText().isEmpty() && !txt_telefono.getText().isEmpty() && !txt_contraseña.getText().isEmpty()){
-            try {
-                nombre_ = txt_nombre.getText();
-                mail_ = txt_mail.getText();
-                pasaporte_ = txt_pasaporte.getText();
-                telefono_ = Integer.parseInt(txt_telefono.getText());
-                contraseña_= txt_contraseña.getText();
-                fichaMedica_ = txt_fichamedica.getValue();
-                tipo_ = txt_tipo.getValue();
-                String json = "";
-                try {
-                    ObjectMapper mapper = new ObjectMapper();
-                    ObjectNode rest = mapper.createObjectNode();
-                    rest.put("pasaporte", pasaporte_);
-                    rest.put("nombre", nombre_);
-                    rest.put("telefono",telefono_);
-                    rest.put("mail",mail_ );
-                    rest.put("contraseña", contraseña_);
-                    rest.put("ficha_medica", String.valueOf(fichaMedica_));
-                    rest.put("tipo",tipo_ );
-                    json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
-                }catch (Exception ignored) {
-                }
-                try {
-                    HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/empleado")
-                            .header("Content-Type", "application/json").body(json).asJson();
+            telefono_ = Integer.parseInt(txt_telefono.getText());
 
-                    label.setText("EMPLEADO CREADO CORRECTAMENTE!");
-                    txt_pasaporte.setText("");
-                    txt_nombre.setText("");
-                    txt_telefono.setText("");
-                    txt_mail.setText("");
-                    txt_contraseña.setText("");
+            Empleado empleado = new Empleado(txt_pasaporte.getText(), txt_nombre.getText(), telefono_, txt_mail.getText(), txt_contraseña.getText(), txt_fichamedica.getValue().toString(), txt_tipo.getValue());
+            HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/empleado")
+                    .header("accept", "application/json")
+                    .header("Content-Type", "application/json")
+                    .body(empleado).asEmpty();
 
-                }catch (UnirestException ex) {}
-            }catch (NumberFormatException e){}
+            label.setText("EMPLEADO CREADO CORRECTAMENTE!");
+            txt_pasaporte.setText("");
+            txt_nombre.setText("");
+            txt_telefono.setText("");
+            txt_mail.setText("");
+            txt_contraseña.setText("");
+
         }else{
             System.out.println("Ingrese correctamente todos los datos para guardar una nueva Empresa");
         }

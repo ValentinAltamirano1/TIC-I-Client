@@ -1,5 +1,7 @@
 package com.example.usuario.usuario.Empleados;
 
+import com.example.usuario.usuario.Empresas.Empresa;
+
 import java.time.LocalDate;
 
 public class Empleado {
@@ -14,6 +16,8 @@ public class Empleado {
     private String ficha_medica;
     private String tipo;
 
+    private Empresa empresas;
+
     public Empleado() {
     }
 
@@ -25,6 +29,7 @@ public class Empleado {
         this.contraseña = contraseña;
         this.ficha_medica = ficha_medica;
         this.tipo = tipo;
+        //this.empresas = empresas;
     }
 
     public String getPasaporte() {
@@ -83,6 +88,14 @@ public class Empleado {
         this.ficha_medica = ficha_medica;
     }
 
+    public Empresa getEmpresas() {
+        return empresas;
+    }
+
+    public void setEmpresas(Empresa empresas) {
+        this.empresas = empresas;
+    }
+
     @Override
     public String toString() {
         return "Empleado{" +
@@ -91,8 +104,9 @@ public class Empleado {
                 ", telefono=" + telefono +
                 ", mail='" + mail + '\'' +
                 ", contraseña='" + contraseña + '\'' +
-                ", fichaMedica=" + ficha_medica +
+                ", ficha_medica='" + ficha_medica + '\'' +
                 ", tipo='" + tipo + '\'' +
+                ", empresas=" + empresas +
                 '}';
     }
 }

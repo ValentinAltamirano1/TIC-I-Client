@@ -1,5 +1,10 @@
 package com.example.usuario.usuario.Empresas;
 
+import com.example.usuario.usuario.Empleados.Empleado;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Empresa {
 
     private Long rut;

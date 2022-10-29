@@ -1,6 +1,12 @@
 package com.example.usuario.usuario.Actividades;
 
+import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
+import com.example.usuario.usuario.Imagen;
+
+import java.util.List;
+
 public class Actividades {
+    private CentroDeportivo centrosDeportivos;
     private String nombre;
     private String horario;
     private int precio;
@@ -11,10 +17,13 @@ public class Actividades {
 
     private String descripcion;
 
+    private List<Imagen> imagen;
+
     public Actividades() {
     }
 
-    public Actividades(String nombre, String horario, int precio, String categoria, int capacidad, int cupos, String descripcion) {
+    public Actividades(CentroDeportivo centrosDeportivos, String nombre, String horario, int precio, String categoria, int capacidad, int cupos, String descripcion, List<Imagen> imagen) {
+        this.centrosDeportivos = centrosDeportivos;
         this.nombre = nombre;
         this.horario = horario;
         this.precio = precio;
@@ -22,6 +31,7 @@ public class Actividades {
         this.capacidad = capacidad;
         this.cupos = cupos;
         this.descripcion = descripcion;
+        this.imagen = imagen;
     }
 
     public String getNombre() {
@@ -80,16 +90,34 @@ public class Actividades {
         this.descripcion = descripcion;
     }
 
+    public CentroDeportivo getCentrosDeportivos() {
+        return centrosDeportivos;
+    }
+
+    public void setCentrosDeportivos(CentroDeportivo centrosDeportivos) {
+        this.centrosDeportivos = centrosDeportivos;
+    }
+
+    public List<Imagen> getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(List<Imagen> imagen) {
+        this.imagen = imagen;
+    }
+
     @Override
     public String toString() {
         return "Actividades{" +
-                "nombre='" + nombre + '\'' +
+                "centrosDeportivos=" + centrosDeportivos +
+                ", nombre='" + nombre + '\'' +
                 ", horario='" + horario + '\'' +
                 ", precio=" + precio +
                 ", categoria='" + categoria + '\'' +
                 ", capacidad=" + capacidad +
                 ", cupos=" + cupos +
                 ", descripcion='" + descripcion + '\'' +
+                ", imagen=" + imagen +
                 '}';
     }
 }

@@ -2,9 +2,7 @@ package com.example.usuario.usuario.Empresas;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
-import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,6 +20,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
 
 import java.io.IOException;
 import java.net.URL;
@@ -118,36 +118,20 @@ public class EmpresaController implements Initializable{
     @FXML
     void CrearClickedButton(ActionEvent event) {
         if(!txt_nombre.getText().isEmpty() && !txt_rut.getText().isEmpty() && !txt_mail.getText().isEmpty() && !txt_contrasena.getText().isEmpty()){
-            try {
-                nombre_ = txt_nombre.getText();
-                rut_ = Long.parseLong(txt_rut.getText());
-                mailAdmin_ = txt_mail.getText();
-                contraseñaAdmin_= txt_contrasena.getText();
-                tipoAdmin_ = txt_tipo.getValue().toString();
-                String json = "";
-                try {
-                    ObjectMapper mapper = new ObjectMapper();
-                    ObjectNode rest = mapper.createObjectNode();
-                    rest.put("rut", rut_);
-                    rest.put("nombre", nombre_);
-                    rest.put("mail", mailAdmin_);
-                    rest.put("contra",contraseñaAdmin_);
-                    rest.put("tipo", tipoAdmin_);
-                    json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
-                }catch (Exception ignored) {
-                }
-                try {
-                    HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/empresa")
-                            .header("Content-Type", "application/json").body(json).asJson();
+            rut_ = Long.valueOf(txt_rut.getText());
 
-                    label.setText("EMPRESA CREADA CORRECTAMENTE!");
-                    txt_rut.setText("");
-                    txt_nombre.setText("");
-                    txt_mail.setText("");
-                    txt_contrasena.setText("");
+            Empresa empresa = new Empresa(rut_, txt_nombre.getText(), txt_mail.getText(),txt_contrasena.getText(), txt_tipo.getValue().toString());
+            HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/empresa")
+                    .header("accept","application/json" )
+                    .header("Content-Type", "application/json")
+                    .body(empresa).asEmpty();
 
-                }catch (UnirestException ex) {}
-            }catch (NumberFormatException e){}
+            label.setText("EMPRESA CREADA CORRECTAMENTE!");
+            txt_rut.setText("");
+            txt_nombre.setText("");
+            txt_mail.setText("");
+            txt_contrasena.setText("");
+
         }else{
             System.out.println("Ingrese correctamente los datos para guardar una nueva Empresa");
         }

@@ -117,10 +117,11 @@ public class TablaActividadesController implements Initializable {
             GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
-
+            System.out.println(temp);
             ObjectMapper mapper = new ObjectMapper();
 
             actividades = mapper.readValue(temp, new TypeReference<List<Actividades>>(){});
+            System.out.println(actividades);
 
             list = FXCollections.observableArrayList(actividades);
 

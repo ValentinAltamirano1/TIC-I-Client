@@ -5,11 +5,8 @@ public class CentroDeportivo {
     private Long telefono;
     private String nombre;
     private String direccion;
-
     private String mail;
-
     private String contra;
-
     private String tipo;
 
 
