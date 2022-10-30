@@ -1,6 +1,9 @@
 package com.example.usuario.usuario.Empleados;
 
 import com.example.usuario.usuario.Empresas.Empresa;
+import com.example.usuario.usuario.Usuarios;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.mashape.unirest.http.JsonNode;
@@ -18,6 +21,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import kong.unirest.GetRequest;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 
@@ -25,6 +29,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class EmpleadoController implements Initializable {
@@ -109,12 +114,28 @@ public class EmpleadoController implements Initializable {
 
     @FXML
     void CrearClickedButton(ActionEvent event) {
-
-
         if(!txt_nombre.getText().isEmpty() && !txt_mail.getText().isEmpty() && !txt_pasaporte.getText().isEmpty() && !txt_telefono.getText().isEmpty() && !txt_contraseña.getText().isEmpty()){
             telefono_ = Integer.parseInt(txt_telefono.getText());
 
-            Empleado empleado = new Empleado(txt_pasaporte.getText(), txt_nombre.getText(), telefono_, txt_mail.getText(), txt_contraseña.getText(), txt_fichamedica.getValue().toString(), txt_tipo.getValue());
+            Node node = (Node) event.getSource();
+            Stage stage1 = (Stage) node.getScene().getWindow();
+            Usuarios u = (Usuarios) stage1.getUserData();
+            System.out.println(u.getMail());
+
+            GetRequest response = Unirest.get("http://localhost:8080/api/v1/gimnasio/empresa/" + u.getMail())
+                    .header("Content-Type", "application/json");
+            String temp = response.asJson().getBody().toString();
+            ObjectMapper mapper = new ObjectMapper();
+            List<Empresa> empresa =null;
+            try {
+                empresa = mapper.readValue(temp, new TypeReference<List<Empresa>>() {});
+                System.out.println(empresa.get(0));
+
+            } catch (JsonProcessingException e) {}
+
+
+            Empleado empleado = new Empleado(txt_pasaporte.getText(), txt_nombre.getText(), telefono_, txt_mail.getText(), txt_contraseña.getText(), txt_fichamedica.getValue().toString(), txt_tipo.getValue(), empresa.get(0));
+            System.out.println(empleado);
             HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/empleado")
                     .header("accept", "application/json")
                     .header("Content-Type", "application/json")

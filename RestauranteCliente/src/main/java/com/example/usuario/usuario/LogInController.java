@@ -96,7 +96,13 @@ public class LogInController implements Initializable {
 
                 //falta adminEmpresa
                 if (listUser.getTipoUsuario().equals("adminEmpresa")){
+                    Node node = (Node) event.getSource();
+                    Stage stage1 = (Stage) node.getScene().getWindow();
+                    stage1.close();
+
                     Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/Empleado-view.fxml"));
+
+                    stage1.setUserData(listUser);
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
                     stage.setScene(scene);
