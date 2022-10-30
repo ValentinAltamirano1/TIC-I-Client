@@ -1,10 +1,13 @@
 package com.example.usuario.usuario.Actividades;
 
+import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
+import com.example.usuario.usuario.Empresas.Empresa;
+import com.example.usuario.usuario.Usuarios;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
-import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.mashape.unirest.request.body.RawBody;
 import javafx.collections.FXCollections;
@@ -24,6 +27,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import kong.unirest.GetRequest;
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
 
@@ -32,6 +38,7 @@ import javax.imageio.stream.ImageInputStream;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 public class CrearActividadesController {
     ObservableList<String> txt_horario_list= FXCollections.
@@ -150,59 +157,37 @@ public class CrearActividadesController {
     @FXML
     void CrearClickedButton(ActionEvent event) {
         if(!txt_nombre.getText().isEmpty() && !txt_capacidad.getText().isEmpty() && !txt_precio.getText().isEmpty()){
+            Node node = (Node) event.getSource();
+            Stage stage1 = (Stage) node.getScene().getWindow();
+            Usuarios u = (Usuarios) stage1.getUserData();
+            System.out.println(u.getMail());
+
+            GetRequest response = Unirest.get("http://localhost:8080/api/v1/gimnasio/centroDeportivo/" + u.getMail())
+                    .header("Content-Type", "application/json");
+            String temp = response.asJson().getBody().toString();
+            ObjectMapper mapper = new ObjectMapper();
+            List<CentroDeportivo> centroDeportivos =null;
             try {
-                nombre_ = txt_nombre.getText();
-                capacidad_ = Integer.parseInt(txt_capacidad.getText());
-                precio_= Integer.parseInt(txt_precio.getText());
-                horario_ = txt_horario.getValue().toString();
-                categoria_ = txt_categoria.getValue().toString();
-                descripcion_ = txt_descripcion.getText();
-                cupo_ = Integer.parseInt(txt_cupo.getText());
+                centroDeportivos = mapper.readValue(temp, new TypeReference<List<CentroDeportivo>>() {});
+                System.out.println(centroDeportivos.get(0));
 
-                String json = "";
-                String json1 = "";
+            } catch (JsonProcessingException e) {}
+            precio_= Integer.parseInt(txt_precio.getText());
+            capacidad_= Integer.parseInt(txt_capacidad.getText());
+            cupo_= Integer.parseInt(txt_cupo.getText());
+            Actividades actividades = new Actividades(centroDeportivos.get(0),txt_nombre.getText(),txt_horario.getValue().toString(),precio_,txt_categoria.getValue().toString(),capacidad_,cupo_,txt_descripcion.getText());
+            HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/actividades")
+                    .header("accept", "application/json")
+                    .header("Content-Type", "application/json")
+                    .body(actividades).asEmpty();
 
-                try {
-                    ObjectMapper mapper = new ObjectMapper();
-                    ObjectNode rest = mapper.createObjectNode();
 
-                    ObjectMapper mapper1 = new ObjectMapper();
-                    ObjectNode rest1 = mapper1.createObjectNode();
-
-                    rest.put("nombre", nombre_);
-                    rest.put("horario",horario_ );
-                    rest.put("precio", precio_);
-                    rest.put("categoria",categoria_ );
-                    rest.put("capacidad",capacidad_ );
-                    rest.put("descripcion", descripcion_);
-                    rest.put("cupos", cupo_);
-                    //rest.put("imagen",data_);
-
-                    rest1.put("imagen", data_);
-
-                    json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rest);
-                    System.out.println(json);
-                    json1= mapper1.writerWithDefaultPrettyPrinter().writeValueAsString(rest1);
-
-                    System.out.println(json);
-                }catch (Exception ignored) {}
-
-                try {
-                    HttpResponse<JsonNode> apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/actividades")
-                            .header("Content-Type", "application/json").body(json).asJson();
-
-                    HttpResponse<JsonNode> apiResponse1 = Unirest.post("http://localhost:8080/api/v1/gimnasio/imagen")
-                            .header("Content-Type", "application/json").body(json1).asJson();
-
-                    label.setText("ACTIVIDAD CREADA CORRECTAMENTE!");
-                    txt_nombre.setText("");
-                    txt_precio.setText("");
-                    txt_capacidad.setText("");
-                    txt_descripcion.setText("");
-                    txt_cupo.setText("");
-
-                }catch (UnirestException ex) {}
-            }catch (NumberFormatException e){}
+            label.setText("ACTIVIDAD CREADA CORRECTAMENTE!");
+            txt_nombre.setText("");
+            txt_precio.setText("");
+            txt_capacidad.setText("");
+            txt_descripcion.setText("");
+            txt_cupo.setText("");
         }else{
             System.out.println("Ingrese correctamente todos los datos para guardar una nueva Empresa");
         }
