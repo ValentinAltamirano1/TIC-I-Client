@@ -133,17 +133,18 @@ public class CrearActividadesController {
     private Label label;
     @FXML
     void FileChooserClickedButton(ActionEvent event) throws IOException {
+
         FileChooser fc = new FileChooser();
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imagenes","*.jpg", "*.png"));
-        File f = fc.showOpenDialog(null);
 
-        if(f != null){
-            fileChooser.setText("Selected Image:" + f.getAbsolutePath());
+        List<File> f = fc.showOpenMultipleDialog(null);
+        for (File file : f){
+            System.out.println(file.getAbsolutePath());
         }
 
         FileInputStream fileInputStream = null;
         try {
-            byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray(f));
+            byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray((File) f));
             data_ = new String(encoded, StandardCharsets.US_ASCII);
 
             System.out.println(encoded);
