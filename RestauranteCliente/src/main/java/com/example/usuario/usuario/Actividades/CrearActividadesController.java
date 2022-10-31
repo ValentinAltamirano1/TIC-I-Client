@@ -55,6 +55,7 @@ public class CrearActividadesController {
     int precio_;
     String descripcion_;
     int cupo_;
+    String fecha_;
 
     String data_;
 
@@ -68,6 +69,9 @@ public class CrearActividadesController {
 
     @FXML
     private Text capacidad;
+
+    @FXML
+    private Text fecha;
 
     @FXML
     private Text categoria;
@@ -97,7 +101,8 @@ public class CrearActividadesController {
 
     @FXML
     private ChoiceBox txt_horario;
-
+    @FXML
+    private DatePicker txt_fecha;
     @FXML
     private Button checkin_button;
 

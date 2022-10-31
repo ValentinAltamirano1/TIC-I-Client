@@ -37,37 +37,27 @@ public class EmpleadoController implements Initializable {
             observableArrayList("Usuario");
     Stage stage;
     Scene scene;
-
     String nombre_;
     String pasaporte_;
     String mail_;
     int telefono_;
     String tipo_;
-
     String contraseña_;
-
     LocalDate fichaMedica_;
     @FXML
     private Text CrearNuevoEmpleado;
-
     @FXML
     private Button cerrar_sesion_button;
-
     @FXML
     private Button creados_button;
-
     @FXML
     private Button crear_button;
-
     @FXML
     private ImageView foto;
-
     @FXML
     private Text mail;
-
     @FXML
     private Text nombre;
-
     @FXML
     private Text telefono;
     @FXML
@@ -78,7 +68,6 @@ public class EmpleadoController implements Initializable {
     private Text tipo;
     @FXML
     private TextField txt_mail;
-
     @FXML
     private TextField txt_nombre;
     @FXML
@@ -91,7 +80,6 @@ public class EmpleadoController implements Initializable {
     private DatePicker txt_fichamedica;
     @FXML
     private ChoiceBox<String> txt_tipo;
-
     @FXML
     private Label label;
     @FXML
@@ -152,7 +140,6 @@ public class EmpleadoController implements Initializable {
             System.out.println("Ingrese correctamente todos los datos para guardar una nueva Empresa");
         }
     }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         txt_tipo.setItems(txt_tipo_list);
