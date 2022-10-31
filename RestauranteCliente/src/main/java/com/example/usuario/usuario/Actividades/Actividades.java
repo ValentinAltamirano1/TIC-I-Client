@@ -17,12 +17,14 @@ public class Actividades {
 
     private String descripcion;
 
+    private String fecha;
+
     //private List<Imagen> imagen;
 
     public Actividades() {
     }
 
-    public Actividades(CentroDeportivo centrosDeportivos, String nombre, String horario, int precio, String categoria, int capacidad, int cupos, String descripcion /*, List<Imagen> imagen*/) {
+    public Actividades(CentroDeportivo centrosDeportivos, String nombre, String horario, int precio, String categoria, int capacidad, int cupos, String descripcion , String fecha/*, List<Imagen> imagen*/) {
         this.centrosDeportivos = centrosDeportivos;
         this.nombre = nombre;
         this.horario = horario;
@@ -31,6 +33,7 @@ public class Actividades {
         this.capacidad = capacidad;
         this.cupos = cupos;
         this.descripcion = descripcion;
+        this.fecha = fecha;
         //this.imagen = imagen;
     }
 
@@ -98,14 +101,23 @@ public class Actividades {
         this.centrosDeportivos = centrosDeportivos;
     }
 
-    /*public List<Imagen> getImagen() {
-        return imagen;
+    public String getFecha() {
+        return fecha;
     }
 
-    public void setImagen(List<Imagen> imagen) {
-        this.imagen = imagen;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
-*/
+
+    /*public List<Imagen> getImagen() {
+            return imagen;
+        }
+
+        public void setImagen(List<Imagen> imagen) {
+            this.imagen = imagen;
+        }
+    */
+
     @Override
     public String toString() {
         return "Actividades{" +
@@ -117,7 +129,7 @@ public class Actividades {
                 ", capacidad=" + capacidad +
                 ", cupos=" + cupos +
                 ", descripcion='" + descripcion + '\'' +
-              //  ", imagen=" + imagen +
+                ", fecha='" + fecha + '\'' +
                 '}';
     }
 }
