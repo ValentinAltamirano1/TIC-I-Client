@@ -40,7 +40,8 @@ public class NauticaController implements Initializable {
 
     @FXML
     private Button filtrar;
-
+    @FXML
+    private Button actividades;
     @FXML
     private ImageView foto_logo;
 
@@ -56,7 +57,8 @@ public class NauticaController implements Initializable {
     @FXML
     private Button ver_todas_button;
 
-    List<Actividades> actividades= new ArrayList<>();
+    @FXML
+    List<Actividades> actividades1= new ArrayList<>();
 
     @FXML
     private Button reservas;
@@ -115,19 +117,19 @@ public class NauticaController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        actividades.addAll(getData());
+        actividades1.addAll(getData());
         int row=1;
         int colum =0;
 
         try {
-            for (int i = 0; i < actividades.size(); i++) {
+            for (int i = 0; i < actividades1.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Usuario/Desplegar.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
 
 
                 DesplegarController desplegarController = fxmlLoader.getController();
-                desplegarController.setData(actividades.get(i));
+                desplegarController.setData(actividades1.get(i));
 
                 if (colum == 1) {
                     colum = 0;

@@ -44,6 +44,8 @@ public class ActividadesController implements Initializable {
     private AnchorPane anchorpane;
 
     @FXML
+    private Button actividades;
+    @FXML
     private Label titulo;
 
     @FXML
@@ -92,7 +94,7 @@ public class ActividadesController implements Initializable {
         stage.show();
     }
 
-    List<Actividades> actividades= new ArrayList<>();
+    List<Actividades> actividades1 = new ArrayList<>();
 
     private List<Actividades> getData() {
         List<Actividades> actividadesList =null;
@@ -127,19 +129,19 @@ public class ActividadesController implements Initializable {
     }*/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        actividades.addAll(getData());
+        actividades1.addAll(getData());
          int row=1;
          int colum =0;
 
          try {
-             for (int i = 0; i < actividades.size(); i++) {
+             for (int i = 0; i < actividades1.size(); i++) {
                  FXMLLoader fxmlLoader = new FXMLLoader();
                  fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Usuario/Desplegar.fxml"));
                  AnchorPane anchorPane = fxmlLoader.load();
 
 
                  DesplegarController desplegarController = fxmlLoader.getController();
-                 desplegarController.setData(actividades.get(i));
+                 desplegarController.setData(actividades1.get(i));
 
                  if (colum == 1) {
                      colum = 0;
