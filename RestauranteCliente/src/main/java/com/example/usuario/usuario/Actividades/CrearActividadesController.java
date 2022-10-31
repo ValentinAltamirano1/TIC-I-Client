@@ -58,7 +58,6 @@ public class CrearActividadesController {
 
     String data_;
 
-
     @FXML
     private Text CrearNuevaActividad;
     @FXML
