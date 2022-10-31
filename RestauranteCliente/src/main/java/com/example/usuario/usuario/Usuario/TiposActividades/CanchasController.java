@@ -1,7 +1,7 @@
-package com.example.usuario.usuario.Actividades.TiposActividades;
+package com.example.usuario.usuario.Usuario.TiposActividades;
 
 import com.example.usuario.usuario.Actividades.Actividades;
-import com.example.usuario.usuario.Actividades.DesplegarController;
+import com.example.usuario.usuario.Usuario.DesplegarController;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
@@ -28,7 +28,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ExteriorController implements Initializable {
+public class CanchasController implements Initializable {
+
     Scene scene;
     Stage stage;
 
@@ -37,9 +38,6 @@ public class ExteriorController implements Initializable {
 
     @FXML
     private Button cerrar_sesion;
-
-    @FXML
-    private Button exterior_button;
 
     @FXML
     private Button filtrar;
@@ -54,18 +52,19 @@ public class ExteriorController implements Initializable {
     private ScrollPane scroll;
 
     @FXML
+    private Button titulo;
+
+    @FXML
     private Button ver_todas_button;
 
     List<Actividades> actividades= new ArrayList<>();
 
     @FXML
     private Button reservas;
-
     @FXML
     void MisReservasClickedButton(ActionEvent event) {
 
     }
-
     @FXML
     void CerrrSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
@@ -76,13 +75,8 @@ public class ExteriorController implements Initializable {
     }
 
     @FXML
-    void ExteriorClickedButton(ActionEvent event) {
-
-    }
-
-    @FXML
     void FiltrarClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Categorias-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/FiltrarPor-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -92,7 +86,7 @@ public class ExteriorController implements Initializable {
 
     @FXML
     void VerTodasClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Actividades-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/Actividades-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -102,7 +96,7 @@ public class ExteriorController implements Initializable {
     private List<Actividades> getData() {
         List<Actividades> actividadesList =null;
         try{
-            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/Exterior")
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/Cancha")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             ObjectMapper mapper = new ObjectMapper();
@@ -119,7 +113,7 @@ public class ExteriorController implements Initializable {
         try {
             for (int i = 0; i < actividades.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Actividades/Desplegar.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Usuario/Desplegar.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
 
 

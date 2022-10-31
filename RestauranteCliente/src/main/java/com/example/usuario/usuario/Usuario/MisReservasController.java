@@ -1,4 +1,4 @@
-package com.example.usuario.usuario.Actividades;
+package com.example.usuario.usuario.Usuario;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,19 +21,46 @@ public class MisReservasController implements Initializable {
     private Button cerrar_sesion;
 
     @FXML
+    private Button filtrar;
+
+    @FXML
     private ImageView foto_logo;
 
     @FXML
     private GridPane grid;
 
     @FXML
+    private GridPane grid1;
+
+    @FXML
+    private Button reservas;
+
+    @FXML
     private ScrollPane scroll;
+
+    @FXML
+    private ScrollPane scroll_empleado;
 
     @FXML
     private Label titulo;
 
     @FXML
+    void ActividadesClickedButton(ActionEvent event) {
+
+    }
+
+    @FXML
     void CerrrSesionClickedButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void FiltrarClickedButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void MisReservasClickedButton(ActionEvent event) {
 
     }
 
@@ -41,7 +68,5 @@ public class MisReservasController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-
-    public void ActividadClickedButton(ActionEvent actionEvent) {
-    }
 }
+

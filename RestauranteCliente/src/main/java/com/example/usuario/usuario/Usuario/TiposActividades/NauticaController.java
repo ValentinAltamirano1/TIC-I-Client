@@ -1,7 +1,7 @@
-package com.example.usuario.usuario.Actividades.TiposActividades;
+package com.example.usuario.usuario.Usuario.TiposActividades;
 
 import com.example.usuario.usuario.Actividades.Actividades;
-import com.example.usuario.usuario.Actividades.DesplegarController;
+import com.example.usuario.usuario.Usuario.DesplegarController;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
@@ -28,8 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class CanchasController implements Initializable {
-
+public class NauticaController implements Initializable {
     Scene scene;
     Stage stage;
 
@@ -49,10 +48,10 @@ public class CanchasController implements Initializable {
     private GridPane grid;
 
     @FXML
-    private ScrollPane scroll;
+    private Button nautica_button;
 
     @FXML
-    private Button titulo;
+    private ScrollPane scroll;
 
     @FXML
     private Button ver_todas_button;
@@ -61,6 +60,7 @@ public class CanchasController implements Initializable {
 
     @FXML
     private Button reservas;
+
     @FXML
     void MisReservasClickedButton(ActionEvent event) {
 
@@ -76,7 +76,7 @@ public class CanchasController implements Initializable {
 
     @FXML
     void FiltrarClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Categorias-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/FiltrarPor-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -85,18 +85,22 @@ public class CanchasController implements Initializable {
 
 
     @FXML
+    void NauticaClickedButton(ActionEvent event) {
+
+    }
+
+    @FXML
     void VerTodasClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Actividades-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/Actividades-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-
     private List<Actividades> getData() {
         List<Actividades> actividadesList =null;
         try{
-            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/Cancha")
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/Nautico")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             ObjectMapper mapper = new ObjectMapper();
@@ -113,7 +117,7 @@ public class CanchasController implements Initializable {
         try {
             for (int i = 0; i < actividades.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Actividades/Desplegar.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Usuario/Desplegar.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
 
 

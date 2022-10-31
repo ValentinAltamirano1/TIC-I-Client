@@ -1,6 +1,7 @@
 package com.example.usuario.usuario;
 
 
+import com.example.usuario.usuario.Usuario.Usuarios;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -116,7 +117,7 @@ public class LogInController implements Initializable {
                 }
 
                 if (listUser.getTipoUsuario().equals("Usuario")) {
-                    Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Actividades-view.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/Actividades-view.fxml"));
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
                     stage.setScene(scene);

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="855.0" style="-fx-background-color: #FFE5B9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.TiposActividades.GimnasiosController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="855.0" style="-fx-background-color: #FFE5B9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Usuario.TiposActividades.ExteriorController">
    <children>
       <ImageView fx:id="foto_logo" fitHeight="98.0" fitWidth="148.0" layoutX="57.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -29,22 +29,22 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Button>
-      <Button fx:id="ver_todas_button" layoutX="37.0" layoutY="370.0" mnemonicParsing="false" onAction="#VerTodasClickedButton" prefHeight="35.0" prefWidth="187.0" style="-fx-background-color: #FFCA6F;" text="Ver todas">
+      <Button fx:id="ver_todas_button" layoutX="37.0" layoutY="376.0" mnemonicParsing="false" onAction="#VerTodasClickedButton" prefHeight="35.0" prefWidth="187.0" style="-fx-background-color: #FFCA6F;" text="Ver todas">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Button>
-      <Button fx:id="gimnasio_button" layoutX="377.0" layoutY="41.0" mnemonicParsing="false" onAction="#GimnasioClickedButton" prefHeight="111.0" prefWidth="370.0" style="-fx-background-color: #FF91D4;" text="Gimnasios" textFill="WHITE">
+      <Button fx:id="exterior_button" layoutX="367.0" layoutY="41.0" mnemonicParsing="false" onAction="#ExteriorClickedButton" prefHeight="111.0" prefWidth="370.0" style="-fx-background-color: #C9E265;" text="Exterior" textFill="WHITE">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
       </Button>
-      <Button fx:id="reservas" layoutX="37.0" layoutY="297.0" mnemonicParsing="false" onAction="#MisReservasClickedButton" prefHeight="35.0" prefWidth="187.0" style="-fx-background-color: #FFCA6F;" text="Mis reservas">
+      <Button fx:id="reservas" layoutX="37.0" layoutY="293.0" mnemonicParsing="false" onAction="#MisReservasClickedButton" prefHeight="35.0" prefWidth="187.0" style="-fx-background-color: #FFCA6F;" text="Mis reservas">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Button>
-      <HBox layoutX="316.0" layoutY="172.0" prefHeight="409.0" prefWidth="511.0">
+      <HBox layoutX="305.0" layoutY="171.0" prefHeight="409.0" prefWidth="511.0">
          <children>
             <ScrollPane fx:id="scroll" prefHeight="410.0" prefWidth="550.0" style="-fx-background-color: #FFCA6F;">
                <content>

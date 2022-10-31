@@ -1,5 +1,6 @@
-package com.example.usuario.usuario.Actividades;
+package com.example.usuario.usuario.Usuario;
 
+import com.example.usuario.usuario.Actividades.Actividades;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

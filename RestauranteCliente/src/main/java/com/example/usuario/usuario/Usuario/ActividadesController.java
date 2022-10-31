@@ -1,10 +1,8 @@
-package com.example.usuario.usuario.Actividades;
+package com.example.usuario.usuario.Usuario;
 
-import com.example.usuario.usuario.Application;
+import com.example.usuario.usuario.Actividades.Actividades;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +12,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
@@ -23,9 +20,6 @@ import javafx.stage.Stage;
 import kong.unirest.GetRequest;
 import kong.unirest.Unirest;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -77,7 +71,7 @@ public class ActividadesController implements Initializable {
 
     @FXML
     void FiltrarClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Categorias-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/FiltrarPor-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -126,7 +120,7 @@ public class ActividadesController implements Initializable {
          try {
              for (int i = 0; i < actividades.size(); i++) {
                  FXMLLoader fxmlLoader = new FXMLLoader();
-                 fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Actividades/Desplegar.fxml"));
+                 fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Usuario/Desplegar.fxml"));
                  AnchorPane anchorPane = fxmlLoader.load();
 
 

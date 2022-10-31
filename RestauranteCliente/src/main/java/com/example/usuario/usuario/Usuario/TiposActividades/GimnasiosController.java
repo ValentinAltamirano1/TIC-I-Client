@@ -1,7 +1,7 @@
-package com.example.usuario.usuario.Actividades.TiposActividades;
+package com.example.usuario.usuario.Usuario.TiposActividades;
 
 import com.example.usuario.usuario.Actividades.Actividades;
-import com.example.usuario.usuario.Actividades.DesplegarController;
+import com.example.usuario.usuario.Usuario.DesplegarController;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
@@ -76,7 +76,7 @@ public class GimnasiosController implements Initializable {
 
     @FXML
     void FiltrarClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Categorias-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/FiltrarPor-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -91,7 +91,7 @@ public class GimnasiosController implements Initializable {
 
     @FXML
     void VerTodasClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Actividades-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/Actividades-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -118,7 +118,7 @@ public class GimnasiosController implements Initializable {
         try {
             for (int i = 0; i < actividades.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Actividades/Desplegar.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Usuario/Desplegar.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
 
 

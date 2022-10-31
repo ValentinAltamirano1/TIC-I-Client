@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="130.0" prefWidth="352.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.DesplegarController">
+<AnchorPane prefHeight="130.0" prefWidth="352.0" style="-fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Usuario.DesplegarController">
    <children>
-      <Pane layoutY="-1.0" prefHeight="262.0" prefWidth="550.0" style="-fx-background-color: #FFCA6F; -fx-border-color: #FFE5B9;">
+      <Pane layoutY="-1.0" prefHeight="262.0" prefWidth="550.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30; -fx-border-color: #FFE5B9;" styleClass="boton-redondo" stylesheets="@../Redondo.css">
          <children>
-            <ImageView fitHeight="145.0" fitWidth="147.0" layoutX="25.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="145.0" fitWidth="147.0" layoutX="23.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
             <VBox layoutX="185.0" layoutY="17.0" prefHeight="176.0" prefWidth="117.0" spacing="15.0">
                <children>
                   <Label fx:id="titulo_nombre" text="Nombre:">
