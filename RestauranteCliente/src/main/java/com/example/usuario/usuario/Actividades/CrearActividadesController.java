@@ -1,6 +1,8 @@
 package com.example.usuario.usuario.Actividades;
 
 import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
+import com.example.usuario.usuario.Usuario.ActividadesController;
+import com.example.usuario.usuario.Usuario.MisReservasController;
 import com.example.usuario.usuario.Usuario.Usuarios;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -121,6 +123,8 @@ public class CrearActividadesController {
 
     @FXML
     private Label label;
+
+    public String mail;
     @FXML
     void FileChooserClickedButton(ActionEvent event) throws IOException {
 
@@ -145,7 +149,11 @@ public class CrearActividadesController {
 
     @FXML
     void CheckInClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(CrearActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
+        CheckInController checkInController = fxmlLoader.getController();
+        checkInController.info();
+
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -225,6 +233,13 @@ public class CrearActividadesController {
         txt_categoria.setValue("Categoria");
     }
 
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
 }
 
 

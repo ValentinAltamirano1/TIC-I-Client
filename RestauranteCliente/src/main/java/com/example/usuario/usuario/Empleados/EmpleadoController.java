@@ -33,13 +33,9 @@ public class EmpleadoController implements Initializable {
             observableArrayList("Usuario");
     Stage stage;
     Scene scene;
-    String nombre_;
-    String pasaporte_;
-    String mail_;
     int telefono_;
-    String tipo_;
-    String contraseña_;
-    LocalDate fichaMedica_;
+    int saldo_;
+    int sobre_giro_;
     @FXML
     private Text CrearNuevoEmpleado;
     @FXML
@@ -64,7 +60,7 @@ public class EmpleadoController implements Initializable {
     private Text saldo;
 
     @FXML
-    private Text sobregiro;
+    private Text sobre_giro;
     @FXML
     private Text pasaporte;
     @FXML
@@ -121,8 +117,10 @@ public class EmpleadoController implements Initializable {
 
     @FXML
     void CrearClickedButton(ActionEvent event) {
-        if(!txt_nombre.getText().isEmpty() && !txt_mail.getText().isEmpty() && !txt_pasaporte.getText().isEmpty() && !txt_telefono.getText().isEmpty() && !txt_contraseña.getText().isEmpty()){
+        if(!txt_nombre.getText().isEmpty() && !txt_mail.getText().isEmpty() && !txt_pasaporte.getText().isEmpty() && !txt_telefono.getText().isEmpty() && !txt_contraseña.getText().isEmpty() && !txt_saldo.getText().isEmpty() && !txt_sobregiro.getText().isEmpty()){
             telefono_ = Integer.parseInt(txt_telefono.getText());
+            saldo_= Integer.parseInt(txt_saldo.getText());
+            sobre_giro_= Integer.parseInt(txt_sobregiro.getText());
 
             Node node = (Node) event.getSource();
             Stage stage1 = (Stage) node.getScene().getWindow();
@@ -141,7 +139,7 @@ public class EmpleadoController implements Initializable {
             } catch (JsonProcessingException e) {}
 
 
-            Empleado empleado = new Empleado(txt_pasaporte.getText(), txt_nombre.getText(), telefono_, txt_mail.getText(), txt_contraseña.getText(), txt_fichamedica.getValue().toString(), txt_tipo.getValue(), empresa.get(0));
+            Empleado empleado = new Empleado(txt_pasaporte.getText(), txt_nombre.getText(), telefono_, txt_mail.getText(), txt_contraseña.getText(), txt_fichamedica.getValue().toString(), txt_tipo.getValue(),saldo_,sobre_giro_, empresa.get(0));
             System.out.println(empleado);
             HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/empleado")
                     .header("accept", "application/json")

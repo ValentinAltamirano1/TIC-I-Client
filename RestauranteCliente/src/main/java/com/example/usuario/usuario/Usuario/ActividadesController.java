@@ -96,7 +96,7 @@ public class ActividadesController implements Initializable {
         Parent root = fxmlLoader.load(ActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/MisReservas-view.fxml"));
         MisReservasController misReservasController = fxmlLoader.getController();
         misReservasController.setMail(mail);
-
+        misReservasController.inf();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

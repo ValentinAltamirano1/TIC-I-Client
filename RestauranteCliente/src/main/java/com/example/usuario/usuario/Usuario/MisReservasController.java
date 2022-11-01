@@ -1,6 +1,7 @@
 package com.example.usuario.usuario.Usuario;
 
 import com.example.usuario.usuario.Actividades.Actividades;
+import com.example.usuario.usuario.Empleados.Empleado;
 import com.example.usuario.usuario.LogInController;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -103,17 +104,26 @@ public class MisReservasController implements Initializable {
 
     List<Actividades> actividades1 = new ArrayList<>();
 
-    public List<Actividades> getDataUsuario() {
-        System.out.println(mail);
+    public List<Actividades> getDataUsuario(String mail) {
+        List<Empleado> empleadosList = null;
         List<Actividades> actividadesList = null;
         try {
-            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades")
+            //busco empleado por mail
+            GetRequest requestEmp = Unirest.get("http://localhost:8080/api/v1/gimnasio/empleado/" + mail)
+                    .header("Content-Type", "application/json");
+            String temp1 = requestEmp.asJson().getBody().toString();
+            System.out.println(temp1);
+            ObjectMapper mapper1 = new ObjectMapper();
+            empleadosList =mapper1.readValue(temp1, new TypeReference<List<Empleado>>() {});
+            System.out.println(empleadosList);
+
+            //con el empleado, busco las reservas asociadas al mismo
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/reservas/"+ empleadosList.get(0).getPasaporte())
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             System.out.println(temp);
             ObjectMapper mapper = new ObjectMapper();
-            actividadesList = mapper.readValue(temp, new TypeReference<List<Actividades>>() {
-            });
+            actividadesList = mapper.readValue(temp, new TypeReference<List<Actividades>>() {});
             System.out.println(actividadesList);
         } catch (Exception ignored) {
         }
@@ -124,7 +134,12 @@ public class MisReservasController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         //GET REQUEST de la tabla reservas , donde el mail == mail que ingreso
         //el mail lo paso del controller a este controller
-        actividades1.addAll(getDataUsuario());
+
+    }
+
+    public void inf(){
+        System.out.println(mail);
+        actividades1.addAll(getDataUsuario(mail));
         int row = 1;
         int colum = 0;
 
@@ -158,7 +173,6 @@ public class MisReservasController implements Initializable {
         } catch (Exception ignored) {
         }
     }
-
     public String getMail() {
         return mail;
     }

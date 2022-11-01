@@ -101,7 +101,7 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Text>
-                  <Text fx:id="sobregirp" fill="WHITE" layoutX="10.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sobregiro:">
+                  <Text fx:id="sobre_giro" fill="WHITE" layoutX="10.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sobregiro:">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>

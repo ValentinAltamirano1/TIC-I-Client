@@ -16,13 +16,17 @@ public class Empleado {
     private String ficha_medica;
     private String tipo;
 
+    private int saldo;
+
+    private int sobre_giro;//adicional por lo que eln empleado se va a poder pasar de plata
+
     private Empresa empresas;
 
     public Empleado() {
     }
 
 
-    public Empleado(String pasaporte, String nombre, int telefono, String mail, String contraseña, String ficha_medica, String tipo, Empresa empresas) {
+    public Empleado(String pasaporte, String nombre, int telefono, String mail, String contraseña, String ficha_medica, String tipo, int saldo, int sobre_giro, Empresa empresas) {
         this.pasaporte = pasaporte;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -30,7 +34,25 @@ public class Empleado {
         this.contraseña = contraseña;
         this.ficha_medica = ficha_medica;
         this.tipo = tipo;
+        this.saldo = saldo;
+        this.sobre_giro = sobre_giro;
         this.empresas = empresas;
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
+
+    public int getSobre_giro() {
+        return sobre_giro;
+    }
+
+    public void setSobre_giro(int sobre_giro) {
+        this.sobre_giro = sobre_giro;
     }
 
     public String getPasaporte() {

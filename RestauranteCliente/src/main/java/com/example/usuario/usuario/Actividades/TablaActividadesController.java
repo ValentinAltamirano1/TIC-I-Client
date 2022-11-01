@@ -146,6 +146,7 @@ public class TablaActividadesController implements Initializable {
         horario.setCellValueFactory(new PropertyValueFactory<Actividades,String>("horario"));
         cupos.setCellValueFactory(new PropertyValueFactory<Actividades,String>("cupos"));
         descripcion.setCellValueFactory(new PropertyValueFactory<Actividades,String>("descripcion"));
+
         listarActividades();
     }
 

@@ -67,7 +67,7 @@
                   <TableColumn fx:id="ficha_medica" prefWidth="96.0" style="-fx-background-color: #ffffff;" text="Ficha medica" />
                   <TableColumn fx:id="tipo" prefWidth="51.999957275390614" style="-fx-background-color: #ffffff;" text="Tipo" />
                   <TableColumn fx:id="saldo" prefWidth="51.999957275390614" style="-fx-background-color: #ffffff;" text="Saldo" />
-                  <TableColumn fx:id="sobregiro" prefWidth="65.60009765625" style="-fx-background-color: #ffffff;" text="Sobregiro" />
+                  <TableColumn fx:id="sobre_giro" prefWidth="65.60009765625" style="-fx-background-color: #ffffff;" text="Sobregiro" />
                </columns>
             </TableView>
          </children></AnchorPane>

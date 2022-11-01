@@ -25,13 +25,14 @@ public class Actividades {
    /* @OneToMany
     @JoinColumn(name = "id_actividad")
     private Set<Imagenes> imagenes;*/
-
-
     private ActividadesKey actividadesKey;
+
     private int precio;
 
     private String categoria;
+
     private int capacidad;
+
 
     private String descripcion;
 
