@@ -37,16 +37,17 @@ public class DesplegarController {
 
     @FXML
     void ReservarClickedButton(ActionEvent event) {
-
+        //tabla reservas con datos de la actividad y del usuario
     }
     private Actividades actividades;
 
     public void setData(Actividades actividades){
-        /*this.actividades = actividades;
-        nombre1.setText(actividades.getNombre());
+        this.actividades = actividades;
+        nombre1.setText(actividades.getActividadesKey().getNombre());
         precio1.setText(String.valueOf(actividades.getPrecio()));
-        horario1.setText(actividades.getHorario());
-        capacidad1.setText(String.valueOf(actividades.getCapacidad()));*/
+        horario1.setText(actividades.getActividadesKey().getHorario());
+        capacidad1.setText(String.valueOf(actividades.getCapacidad()));
+
     }
 
 }
