@@ -42,11 +42,11 @@ public class DesplegarController {
     private Actividades actividades;
 
     public void setData(Actividades actividades){
-        this.actividades = actividades;
+        /*this.actividades = actividades;
         nombre1.setText(actividades.getNombre());
         precio1.setText(String.valueOf(actividades.getPrecio()));
         horario1.setText(actividades.getHorario());
-        capacidad1.setText(String.valueOf(actividades.getCapacidad()));
+        capacidad1.setText(String.valueOf(actividades.getCapacidad()));*/
     }
 
 }

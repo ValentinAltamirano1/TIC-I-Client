@@ -6,52 +6,53 @@ import com.example.usuario.usuario.Imagen;
 import java.util.List;
 
 public class Actividades {
-    private CentroDeportivo centrosDeportivos;
-    private String nombre;
-    private String horario;
+
+   /* @ManyToMany(mappedBy = "actividades")
+    private List<Empleados> empleados=new ArrayList<>() ;
+
+    /*@ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinTable(name = "actividades_empleados_mapping")
+    @JoinColumn(name = "id_actividad")
+    @JoinColumn(name = "id_empleado")
+    private Set<Empleados> empleados;*/
+
+
+
+    /*@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinColumn(name = "rut")
+    private CentrosDeportivos centrosDeportivos; // muchos actividades pueden pertenecer a un mismo centro deportivo
+
+   /* @OneToMany
+    @JoinColumn(name = "id_actividad")
+    private Set<Imagenes> imagenes;*/
+
+
+    private ActividadesKey actividadesKey;
     private int precio;
+
     private String categoria;
     private int capacidad;
 
-    private int cupos;
-
     private String descripcion;
 
-    private String fecha;
+    private int cupos;
 
-    //private List<Imagen> imagen;
+    //@Column(name = "imagen", nullable = false)
+    //private List<Imagenes> imagen;
+
 
     public Actividades() {
     }
 
-    public Actividades(CentroDeportivo centrosDeportivos, String nombre, String horario, int precio, String categoria, int capacidad, int cupos, String descripcion , String fecha/*, List<Imagen> imagen*/) {
-        this.centrosDeportivos = centrosDeportivos;
-        this.nombre = nombre;
-        this.horario = horario;
+    public Actividades(ActividadesKey actividadesKey, int precio, String categoria, int capacidad, String descripcion, int cupos) {
+        this.actividadesKey = actividadesKey;
         this.precio = precio;
         this.categoria = categoria;
         this.capacidad = capacidad;
-        this.cupos = cupos;
         this.descripcion = descripcion;
-        this.fecha = fecha;
-        //this.imagen = imagen;
+        this.cupos = cupos;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getHorario() {
-        return horario;
-    }
-
-    public void setHorario(String horario) {
-        this.horario = horario;
-    }
 
     public int getPrecio() {
         return precio;
@@ -77,14 +78,6 @@ public class Actividades {
         this.capacidad = capacidad;
     }
 
-    public int getCupos() {
-        return cupos;
-    }
-
-    public void setCupos(int cupos) {
-        this.cupos = cupos;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
@@ -93,43 +86,39 @@ public class Actividades {
         this.descripcion = descripcion;
     }
 
-    public CentroDeportivo getCentrosDeportivos() {
-        return centrosDeportivos;
+    public int getCupos() {
+        return cupos;
     }
 
-    public void setCentrosDeportivos(CentroDeportivo centrosDeportivos) {
-        this.centrosDeportivos = centrosDeportivos;
+    public void setCupos(int cupos) {
+        this.cupos = cupos;
+    }
+/*
+    public List<Imagenes> getImagen() {
+        return imagen;
     }
 
-    public String getFecha() {
-        return fecha;
+    public void setImagen(List<Imagenes> imagen) {
+        this.imagen = imagen;
+    }*/
+
+    public ActividadesKey getActividadesKey() {
+        return actividadesKey;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setActividadesKey(ActividadesKey actividadesKey) {
+        this.actividadesKey = actividadesKey;
     }
-
-    /*public List<Imagen> getImagen() {
-            return imagen;
-        }
-
-        public void setImagen(List<Imagen> imagen) {
-            this.imagen = imagen;
-        }
-    */
 
     @Override
     public String toString() {
         return "Actividades{" +
-                "centrosDeportivos=" + centrosDeportivos +
-                ", nombre='" + nombre + '\'' +
-                ", horario='" + horario + '\'' +
+                "actividadesKey=" + actividadesKey +
                 ", precio=" + precio +
                 ", categoria='" + categoria + '\'' +
                 ", capacidad=" + capacidad +
-                ", cupos=" + cupos +
                 ", descripcion='" + descripcion + '\'' +
-                ", fecha='" + fecha + '\'' +
+                ", cupos=" + cupos +
                 '}';
     }
 }
