@@ -59,6 +59,12 @@ public class EmpleadoController implements Initializable {
     private Text nombre;
     @FXML
     private Text telefono;
+
+    @FXML
+    private Text saldo;
+
+    @FXML
+    private Text sobregiro;
     @FXML
     private Text pasaporte;
     @FXML
@@ -73,6 +79,12 @@ public class EmpleadoController implements Initializable {
     private TextField txt_pasaporte;
     @FXML
     private TextField txt_telefono;
+
+    @FXML
+    private TextField txt_saldo;
+    @FXML
+    private TextField txt_sobregiro;
+
     @FXML
     private TextField txt_contraseña;
     @FXML

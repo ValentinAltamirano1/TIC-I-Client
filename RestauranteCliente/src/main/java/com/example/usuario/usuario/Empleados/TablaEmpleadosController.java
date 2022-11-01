@@ -52,6 +52,11 @@ public class TablaEmpleadosController implements Initializable {
 
     @FXML
     private TableColumn<Empleado, String> pasaporte;
+    @FXML
+    private TableColumn<Empleado, String> saldo;
+
+    @FXML
+    private TableColumn<Empleado, String> sobregiro;
 
     @FXML
     private TableColumn<Empleado, String> telefono;

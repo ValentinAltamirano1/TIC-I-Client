@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empleados.EmpleadoController">
+<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empleados.EmpleadoController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="221.0" style="-fx-background-color: #000000;">
          <children>
@@ -47,19 +47,19 @@
                </children>
             </VBox>
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="422.0" style="-fx-background-color: #000000;">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="482.0" prefWidth="537.0" style="-fx-background-color: #000000;">
          <children>
-            <Text fx:id="CrearNuevoEmpleado" fill="WHITE" layoutX="70.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREAR NUEVO EMPELADO:">
+            <Text fx:id="CrearNuevoEmpleado" fill="WHITE" layoutX="115.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREAR NUEVO EMPELADO:">
                <font>
                   <Font name="System Bold" size="26.0" />
                </font>
             </Text>
-            <Button fx:id="crear_button" layoutX="184.0" layoutY="407.0" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Crear" textFill="WHITE">
+            <Button fx:id="crear_button" layoutX="179.0" layoutY="489.0" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Crear" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <VBox layoutX="48.0" layoutY="129.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+            <VBox layoutX="82.0" layoutY="109.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                <children>
                   <Text fx:id="nombre" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:">
                      <font>
@@ -96,9 +96,19 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Text>
+                  <Text fx:id="saldo" fill="WHITE" layoutX="10.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="sobregirp" fill="WHITE" layoutX="10.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sobregiro:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
                </children>
             </VBox>
-            <VBox layoutX="248.0" layoutY="128.0" prefHeight="200.0" prefWidth="193.0" spacing="12.0">
+            <VBox layoutX="281.0" layoutY="122.0" prefHeight="200.0" prefWidth="193.0" spacing="13.0">
                <children>
                   <TextField fx:id="txt_nombre" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese nombre" />
                   <TextField fx:id="txt_pasaporte" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese pasaporte" />
@@ -107,6 +117,8 @@
                   <TextField fx:id="txt_contraseña" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese contraseña" />
                   <DatePicker fx:id="txt_fichamedica" prefHeight="26.0" prefWidth="198.0" promptText="Ingrese fecha de vencimiento" />
                   <ChoiceBox fx:id="txt_tipo" prefHeight="26.0" prefWidth="199.0" />
+                  <TextField fx:id="txt_saldo" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese saldo" />
+                  <TextField fx:id="txt_sobregiro" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese sobregiro" />
                </children>
             </VBox>
             <Label fx:id="label" layoutX="82.0" layoutY="27.0" prefHeight="27.0" prefWidth="319.0" text=" " textAlignment="CENTER" textFill="#df2d29">
