@@ -1,6 +1,7 @@
 package com.example.usuario.usuario.Usuario;
 
 import com.example.usuario.usuario.Actividades.Actividades;
+import com.example.usuario.usuario.LogInController;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.event.ActionEvent;
@@ -61,6 +62,8 @@ public class MisReservasController implements Initializable {
     @FXML
     private Label titulo;
 
+    public ActividadesController actividadesController;
+
 
     @FXML
     void ActividadesClickedButton(ActionEvent event) throws IOException {
@@ -118,7 +121,6 @@ public class MisReservasController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         //GET REQUEST de la tabla reservas , donde el mail == mail que ingreso
         //el mail lo paso del controller a este controller
 

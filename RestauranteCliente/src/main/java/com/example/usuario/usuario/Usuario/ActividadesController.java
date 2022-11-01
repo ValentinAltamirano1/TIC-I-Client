@@ -59,6 +59,7 @@ public class ActividadesController implements Initializable {
     @FXML
     private Button reservas;
 
+
     @FXML
     void ActividadesClickedButton(ActionEvent event)throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/Actividades-view.fxml"));
@@ -87,7 +88,13 @@ public class ActividadesController implements Initializable {
 
     @FXML
     void MisReservasClickedButton(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage1 = (Stage) node.getScene().getWindow();
+        Usuarios u = (Usuarios) stage1.getUserData();
+        System.out.println(u.getMail());
+
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/MisReservas-view.fxml"));
+
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

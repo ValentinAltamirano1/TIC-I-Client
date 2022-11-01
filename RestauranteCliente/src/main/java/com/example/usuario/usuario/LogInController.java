@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.URL;
