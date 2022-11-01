@@ -59,6 +59,10 @@ public class ActividadesController implements Initializable {
     @FXML
     private Button reservas;
 
+    List<Actividades> actividades1 = new ArrayList<>();
+
+    public String mail;
+
 
     @FXML
     void ActividadesClickedButton(ActionEvent event)throws IOException {
@@ -88,12 +92,10 @@ public class ActividadesController implements Initializable {
 
     @FXML
     void MisReservasClickedButton(ActionEvent event) throws IOException {
-        Node node = (Node) event.getSource();
-        Stage stage1 = (Stage) node.getScene().getWindow();
-        Usuarios u = (Usuarios) stage1.getUserData();
-        System.out.println(u.getMail());
-
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/MisReservas-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(ActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/MisReservas-view.fxml"));
+        MisReservasController misReservasController = fxmlLoader.getController();
+        misReservasController.setMail(mail);
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -101,9 +103,7 @@ public class ActividadesController implements Initializable {
         stage.show();
     }
 
-    List<Actividades> actividades1 = new ArrayList<>();
-
-    private List<Actividades> getData() {
+    public List<Actividades> getData() {
         List<Actividades> actividadesList =null;
         try{
             GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades")
@@ -170,5 +170,13 @@ public class ActividadesController implements Initializable {
              }
          }catch (Exception ignored){}
 
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 }

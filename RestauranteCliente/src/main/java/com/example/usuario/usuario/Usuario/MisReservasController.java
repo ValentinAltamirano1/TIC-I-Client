@@ -62,7 +62,7 @@ public class MisReservasController implements Initializable {
     @FXML
     private Label titulo;
 
-    public ActividadesController actividadesController;
+    public String mail;
 
 
     @FXML
@@ -103,7 +103,8 @@ public class MisReservasController implements Initializable {
 
     List<Actividades> actividades1 = new ArrayList<>();
 
-    private List<Actividades> getData() {
+    public List<Actividades> getDataUsuario() {
+        System.out.println(mail);
         List<Actividades> actividadesList = null;
         try {
             GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades")
@@ -123,8 +124,7 @@ public class MisReservasController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         //GET REQUEST de la tabla reservas , donde el mail == mail que ingreso
         //el mail lo paso del controller a este controller
-
-        actividades1.addAll(getData());
+        actividades1.addAll(getDataUsuario());
         int row = 1;
         int colum = 0;
 
@@ -157,6 +157,14 @@ public class MisReservasController implements Initializable {
             }
         } catch (Exception ignored) {
         }
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 }
 

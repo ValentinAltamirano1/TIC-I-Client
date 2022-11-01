@@ -16,7 +16,7 @@
    <children>
       <ImageView fx:id="foto_logo" fitHeight="83.0" fitWidth="124.0" layoutX="64.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Fotos/Foto_Logo.jpg" />
+            <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
          </image>
       </ImageView>
       <Label layoutX="57.0" layoutY="220.0" />
@@ -35,22 +35,22 @@
       </HBox>
       <VBox layoutX="37.0" layoutY="320.0" prefHeight="270.0" prefWidth="178.0" spacing="25.0">
          <children>
-            <Button fx:id="actividades" layoutX="10.0" layoutY="111.0" mnemonicParsing="false" onAction="#ActividadesClickedButton" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="Actividades" textAlignment="CENTER">
+            <Button fx:id="actividades" layoutX="10.0" layoutY="111.0" mnemonicParsing="false" onAction="#ActividadesClickedButton" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Actividades" textAlignment="CENTER">
                <font>
                   <Font name="Nirmala UI Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="filtrar" mnemonicParsing="false" onAction="#FiltrarClickedButton" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="Filtrar actividades" textAlignment="CENTER">
+            <Button fx:id="filtrar" mnemonicParsing="false" onAction="#FiltrarClickedButton" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Filtrar actividades" textAlignment="CENTER">
                <font>
                   <Font name="Nirmala UI Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="reservas" mnemonicParsing="false" onAction="#MisReservasClickedButton" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="Mis reservas" textAlignment="CENTER">
+            <Button fx:id="reservas" mnemonicParsing="false" onAction="#MisReservasClickedButton" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Mis reservas" textAlignment="CENTER">
                <font>
                   <Font name="Nirmala UI Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="cerrar_sesion" mnemonicParsing="false" onAction="#CerrrSesionClickedButton" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="Cerrar Sesion">
+            <Button fx:id="cerrar_sesion" mnemonicParsing="false" onAction="#CerrrSesionClickedButton" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Cerrar Sesion">
                <font>
                   <Font name="Nirmala UI Bold" size="18.0" />
                </font>
@@ -72,7 +72,7 @@
       </HBox>
       <ImageView fitHeight="92.0" fitWidth="581.0" layoutX="280.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Fotos/Foto_Deportes1.jpg" />
+            <Image url="@/com/example/usuario/usuario/Fotos/Foto_Deportes1.jpg" />
          </image>
       </ImageView>
       <Label fx:id="titulo" layoutX="375.0" layoutY="79.0" prefHeight="92.0" prefWidth="391.0" text="ACTIVIDADES">
@@ -82,7 +82,7 @@
       </Label>
       <ImageView fitHeight="110.0" fitWidth="581.0" layoutX="280.0" layoutY="579.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Fotos/Foto_Deportes.jpg" />
+            <Image url="@/com/example/usuario/usuario/Fotos/Foto_Deportes.jpg" />
          </image>
       </ImageView>
    </children>
