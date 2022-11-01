@@ -24,24 +24,34 @@
                   <Image url="@../Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
-            <Text fx:id="titulo" fill="#df2d29" layoutX="63.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CENTRO" wrappingWidth="141.48089599609375">
+            <Text fx:id="titulo__" fill="#df2d29" layoutX="63.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CENTRO" wrappingWidth="141.48089599609375">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Text>
-            <VBox layoutX="19.0" layoutY="201.0" prefHeight="240.0" prefWidth="190.0" spacing="50.0" style="-fx-background-color: #000000;">
+            <Text fx:id="titulo_" fill="#df2d29" layoutX="43.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DEPORTIVO" wrappingWidth="141.48089599609375">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <VBox layoutX="34.0" layoutY="210.0" prefHeight="240.0" prefWidth="150.0" spacing="25.0" style="-fx-background-color: #000000;">
                <children>
-                  <Button fx:id="creados_button1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="46.0" prefWidth="189.0" style="-fx-background-color: #000000;" text="Crear nuevo centro" textFill="WHITE">
+                  <Button fx:id="crearNuevo_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevoClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Crear centro" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #000000;" text="Ver ya creados" textFill="WHITE">
+                  <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Ver ya creados" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="cerrar_sesion_button" mnemonicParsing="false" onAction="#CerrarSesionClickedButton" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #000000;" text="Cerrar Sesion" textFill="WHITE">
+                  <Button fx:id="checkin_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CheckInClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Check In" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cerrar_sesion_button" mnemonicParsing="false" onAction="#CerrarSesionClickedButton" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Cerrar Sesion" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -51,16 +61,11 @@
                   </Button>
                </children>
             </VBox>
-            <Text fx:id="titulo1" fill="#df2d29" layoutX="43.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DEPORTIVO" wrappingWidth="141.48089599609375">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Text>
          </children>
       </AnchorPane>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="492.0" prefWidth="506.0" style="-fx-background-color: #000000;">
          <children>
-            <Text fx:id="Confirmar" fill="WHITE" layoutX="202.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHECK IN">
+            <Text fx:id="confirmar" fill="WHITE" layoutX="202.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHECK IN">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>

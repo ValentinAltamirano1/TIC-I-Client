@@ -33,7 +33,6 @@ public class TablaCentroDeportivoController implements Initializable {
     private Label centrosdeportivos;
     @FXML
     private TableView<CentroDeportivo> tableView;
-
     @FXML
     private TableColumn<CentroDeportivo,String> rut;
 
@@ -62,7 +61,10 @@ public class TablaCentroDeportivoController implements Initializable {
     private Button cerrar_sesion_button;
 
     @FXML
-    private Button crear_button;
+    private Button crearNuevo_button;
+
+    @FXML
+    private Button checkin_button;
 
     @FXML
     private ImageView foto;
@@ -84,6 +86,25 @@ public class TablaCentroDeportivoController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    void CreadosClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/TablaCentrosDeportivos-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void CheckInClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CheckIn-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
@@ -93,7 +114,7 @@ public class TablaCentroDeportivoController implements Initializable {
         stage.show();
     }
     @FXML
-    void CrearClickedButton(ActionEvent event) throws IOException {
+    void CrearNuevoClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CentroDeportivo-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

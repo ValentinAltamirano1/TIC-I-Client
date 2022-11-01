@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
@@ -20,20 +21,6 @@
                   <Image url="@../Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
-            <VBox layoutX="32.0" layoutY="218.0" prefHeight="114.0" prefWidth="150.0" spacing="150.0" style="-fx-background-color: #000000;">
-               <children>
-                  <Button fx:id="crear_button" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Crear nuevo" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="cerrar_sesion_button" mnemonicParsing="false" onAction="#CerrarSesionClickedButton" prefHeight="131.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Cerrar Sesion" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Button>
-               </children>
-            </VBox>
             <Label fx:id="titulo_uno" layoutX="56.0" layoutY="117.0" text="CENTRO" textFill="#df2d29">
                <font>
                   <Font name="System Bold" size="26.0" />
@@ -44,6 +31,33 @@
                   <Font name="System Bold" size="26.0" />
                </font>
             </Label>
+            <VBox layoutX="30.0" layoutY="206.0" prefHeight="240.0" prefWidth="150.0" spacing="25.0" style="-fx-background-color: #000000;">
+               <children>
+                  <Button fx:id="crearNuevo_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevoClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Crear centro" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Ver ya creados" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="checkin_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CheckInClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Check In" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cerrar_sesion_button" mnemonicParsing="false" onAction="#CerrarSesionClickedButton" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Cerrar Sesion" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="485.0" prefWidth="543.0" style="-fx-background-color: #000000;">
          <children>

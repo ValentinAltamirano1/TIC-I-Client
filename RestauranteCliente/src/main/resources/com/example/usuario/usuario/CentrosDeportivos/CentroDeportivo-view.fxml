@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="689.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.CentrosDeportivos.CentroDeportivoController">
+<SplitPane dividerPositions="0.2999709048588885" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="689.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.CentrosDeportivos.CentroDeportivoController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="484.0" prefWidth="227.0" style="-fx-background-color: #000000;">
          <children>
@@ -22,14 +22,24 @@
                   <Image url="@../Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
-            <Text fx:id="titulo" fill="#df2d29" layoutX="38.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CENTRO" wrappingWidth="141.48089599609375">
+            <Text fx:id="titulo" fill="#df2d29" layoutX="47.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CENTRO" wrappingWidth="141.48089599609375">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Text>
-            <VBox layoutX="19.0" layoutY="199.0" prefHeight="240.0" prefWidth="150.0" spacing="150.0" style="-fx-background-color: #000000;">
+            <VBox layoutX="19.0" layoutY="199.0" prefHeight="240.0" prefWidth="150.0" spacing="25.0" style="-fx-background-color: #000000;">
                <children>
+                  <Button fx:id="crearNuevo_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevoClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Crear centro" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
                   <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Ver ya creados" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="checkin_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CheckInClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Check In" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -44,7 +54,7 @@
                   </Button>
                </children>
             </VBox>
-            <Text fx:id="titulo1" fill="#df2d29" layoutX="24.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DEPORTIVO" wrappingWidth="141.48089599609375">
+            <Text fx:id="titulo1" fill="#df2d29" layoutX="31.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DEPORTIVO" wrappingWidth="141.48089599609375">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

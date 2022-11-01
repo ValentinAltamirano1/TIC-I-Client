@@ -56,8 +56,10 @@ public class CentroDeportivoController implements Initializable {
     private Button volver_button;
 
     @FXML
-    private Button crear_button;
+    private Button crearNuevo_button;
 
+    @FXML
+    private Button checkin_button;
     @FXML
     private Text direccion;
 
@@ -137,7 +139,23 @@ public class CentroDeportivoController implements Initializable {
                 System.out.println("Ingrese correctamente todos los datos para guardar un nuevo Centro Deportivo");
             }
         }
+    @FXML
+    void CrearNuevoClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CentroDeportivo-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
+    @FXML
+    void CheckInClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CheckIn-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/TablaCentrosDeportivos-view.fxml"));
