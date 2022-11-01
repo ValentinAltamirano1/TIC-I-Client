@@ -17,7 +17,6 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
 import kong.unirest.Unirest;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -64,9 +63,6 @@ public class TablaCentroDeportivoController implements Initializable {
     private Button crearNuevo_button;
 
     @FXML
-    private Button checkin_button;
-
-    @FXML
     private ImageView foto;
 
     @FXML
@@ -90,15 +86,6 @@ public class TablaCentroDeportivoController implements Initializable {
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/TablaCentrosDeportivos-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    void CheckInClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CheckIn-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

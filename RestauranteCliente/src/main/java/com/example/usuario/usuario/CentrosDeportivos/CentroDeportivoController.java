@@ -1,8 +1,5 @@
 package com.example.usuario.usuario.CentrosDeportivos;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.mashape.unirest.http.JsonNode;
-import com.mashape.unirest.http.exceptions.UnirestException;
+import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -59,8 +56,6 @@ public class CentroDeportivoController implements Initializable {
     @FXML
     private Button crearNuevo_button;
 
-    @FXML
-    private Button checkin_button;
     @FXML
     private Text direccion;
 
@@ -149,14 +144,7 @@ public class CentroDeportivoController implements Initializable {
         stage.show();
     }
 
-    @FXML
-    void CheckInClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CheckIn-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
+
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/TablaCentrosDeportivos-view.fxml"));

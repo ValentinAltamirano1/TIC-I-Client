@@ -48,7 +48,11 @@ public class TablaEmpresasController implements Initializable {
 
     @FXML
     private TableColumn<Empresa, String> tipo;
+    @FXML
+    private Button crearNueva_button;
 
+    @FXML
+    private Button creadas_button;
     @FXML
     private TableView<Empresa> tableView;
 
@@ -77,6 +81,15 @@ public class TablaEmpresasController implements Initializable {
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void CrearNuevaClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/EmpresaController.java"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

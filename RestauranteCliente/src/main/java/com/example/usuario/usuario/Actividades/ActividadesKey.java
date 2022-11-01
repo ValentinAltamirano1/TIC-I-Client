@@ -5,16 +5,10 @@ import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
 import java.io.Serializable;
 
 public class ActividadesKey  {
-
     private CentroDeportivo centrosDeportivos;
-
     private String nombre;
-
     private String horario;
-
     private String fecha;
-
-
     public ActividadesKey() {
     }
 

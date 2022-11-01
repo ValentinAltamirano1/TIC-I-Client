@@ -39,7 +39,7 @@
                   </Button>
                </children>
             </VBox>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="221.0" style="-fx-background-color: #000000;">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="458.0" prefWidth="180.0" style="-fx-background-color: #000000;">
                <children>
                   <ImageView fx:id="foto1" fitHeight="97.0" fitWidth="103.0" layoutX="38.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -51,9 +51,14 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Text>
-                  <VBox layoutX="15.0" layoutY="187.0" prefHeight="114.0" prefWidth="150.0" spacing="150.0" style="-fx-background-color: #000000;">
+                  <VBox layoutX="14.0" layoutY="184.0" prefHeight="114.0" prefWidth="150.0" spacing="50.0" style="-fx-background-color: #000000;">
                      <children>
-                        <Button fx:id="crearempresa_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearEmpresaClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Crear empresa" textFill="WHITE">
+                        <Button fx:id="crearNueva_button" mnemonicParsing="false" onAction="#CrearNuevaClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Crear nueva" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="creados_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Ver ya creadas" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>

@@ -17,29 +17,34 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="221.0" style="-fx-background-color: #000000;">
          <children>
-            <ImageView fx:id="foto" fitHeight="97.0" fitWidth="103.0" layoutX="43.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="foto" fitHeight="81.0" fitWidth="133.0" layoutX="43.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
-            <Text fx:id="titulo" fill="#df2d29" layoutX="19.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACTIVIDADES" wrappingWidth="170.39999999999986">
+            <Text fx:id="titulo" fill="#df2d29" layoutX="34.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACTIVIDADES" wrappingWidth="160.00000000000006">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Text>
-            <VBox layoutX="14.0" layoutY="202.0" prefHeight="222.0" prefWidth="162.0" spacing="50.0" style="-fx-background-color: #000000;">
+            <VBox layoutX="29.0" layoutY="231.0" prefHeight="311.0" prefWidth="160.0" spacing="50.0" style="-fx-background-color: #000000;">
                <children>
-                  <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Ver ya creados" textFill="WHITE">
+                  <Button fx:id="crearNueva_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevaClickedButton" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #000000;" text="Crear actividad" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="checkin_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CheckInClickedButton" prefHeight="47.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="CHECK IN" textFill="WHITE">
+                  <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="40.0" prefWidth="163.0" style="-fx-background-color: #000000;" text="Ver ya creadas" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="cerrar_sesion_button" mnemonicParsing="false" onAction="#CerrarSesionClickedButton" prefHeight="131.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Cerrar Sesion" textFill="WHITE">
+                  <Button fx:id="checkin_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CheckInClickedButton" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #000000;" text="Check In" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cerrar_sesion_button" mnemonicParsing="false" onAction="#CerrarSesionClickedButton" prefHeight="41.0" prefWidth="166.0" style="-fx-background-color: #000000;" text="Cerrar Sesion" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

@@ -1,4 +1,4 @@
-package com.example.usuario.usuario.CentrosDeportivos;
+package com.example.usuario.usuario.Actividades;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

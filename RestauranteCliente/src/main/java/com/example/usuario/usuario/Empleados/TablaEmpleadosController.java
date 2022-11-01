@@ -71,7 +71,11 @@ public class TablaEmpleadosController implements Initializable {
 
     @FXML
     private Button volver_button;
+    @FXML
+    private Button crearNuevo_button;
 
+    @FXML
+    private Button creados_button;
     @FXML
     private ObservableList<Empleado> list;
 
@@ -92,7 +96,23 @@ public class TablaEmpleadosController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    void CrearNuevoClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/Empleado-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
+    @FXML
+    void CreadosClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/TablaEmpleadosController.java"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/Empleado-view.fxml"));
@@ -113,6 +133,8 @@ public class TablaEmpleadosController implements Initializable {
         tipo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("tipo"));
         listarEmpleados();
     }
+
+
     public void listarEmpleados(){
         List<Empleado> empleados;
         try {
