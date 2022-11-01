@@ -32,6 +32,7 @@ public class CentroDeportivoController implements Initializable {
     String nombre_;
     Long rut_;
     Long telefono_;
+    
     String direccion_;
 
     String mailAdmin_;
