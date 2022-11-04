@@ -114,26 +114,12 @@ public class ActividadesController implements Initializable {
             actividadesList = mapper.readValue(temp, new TypeReference<List<Actividades>>(){});
             System.out.println(actividadesList);
             }
-        catch (Exception ignored){}
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         return actividadesList;
     }
 
-    /*private byte[] getImageData(){
-        GetRequest apiResponde = Unirest.get("http://localhost:8080/api/v1/gimnasio/imagen")
-                .header("Content-Type", "application/json");
-        byte[] arrayByte = apiResponde.asBytes().getBody();
-        ByteArrayInputStream inStreambj = new ByteArrayInputStream(arrayByte);
-
-        // read image from byte array
-        BufferedImage newImage = null;
-        try {
-            newImage = ImageIO.read(inStreambj);
-        } catch (IOException e) {}
-
-        // write output image
-        return ImageIO.write(newImage, "jpg", arrayByte);
-
-    }*/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         actividades1.addAll(getData());

@@ -7,6 +7,8 @@ import java.util.Arrays;
 public class Imagen {
     private String nombre;
 
+    public Imagen(){
+    }
     public Imagen(String nombre) {
         this.nombre = nombre;
     }
