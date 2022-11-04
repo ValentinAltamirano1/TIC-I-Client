@@ -5,37 +5,24 @@ import com.example.usuario.usuario.Actividades.Actividades;
 import java.util.Arrays;
 
 public class Imagen {
+    private String nombre;
 
-    private Actividades actividades;
-
-    private byte[] imageData;
-
-    public Imagen(Actividades actividades, byte[] imageData) {
-        this.actividades = actividades;
-        this.imageData = imageData;
+    public Imagen(String nombre) {
+        this.nombre = nombre;
     }
 
-    public Actividades getActividades() {
-        return actividades;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setActividades(Actividades actividades) {
-        this.actividades = actividades;
-    }
-
-    public byte[] getImageData() {
-        return imageData;
-    }
-
-    public void setImageData(byte[] imageData) {
-        this.imageData = imageData;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     @Override
     public String toString() {
         return "Imagen{" +
-                "actividades=" + actividades +
-                ", imageData=" + Arrays.toString(imageData) +
+                "nombre='" + nombre + '\'' +
                 '}';
     }
 }

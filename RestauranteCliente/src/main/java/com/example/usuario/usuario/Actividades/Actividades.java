@@ -6,25 +6,6 @@ import com.example.usuario.usuario.Imagen;
 import java.util.List;
 
 public class Actividades {
-
-   /* @ManyToMany(mappedBy = "actividades")
-    private List<Empleados> empleados=new ArrayList<>() ;
-
-    /*@ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinTable(name = "actividades_empleados_mapping")
-    @JoinColumn(name = "id_actividad")
-    @JoinColumn(name = "id_empleado")
-    private Set<Empleados> empleados;*/
-
-
-
-    /*@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    @JoinColumn(name = "rut")
-    private CentrosDeportivos centrosDeportivos; // muchos actividades pueden pertenecer a un mismo centro deportivo
-
-   /* @OneToMany
-    @JoinColumn(name = "id_actividad")
-    private Set<Imagenes> imagenes;*/
     private ActividadesKey actividadesKey;
 
     private int precio;
@@ -38,22 +19,21 @@ public class Actividades {
 
     private int cupos;
 
-    //@Column(name = "imagen", nullable = false)
-    //private List<Imagenes> imagen;
+    private List<Imagen> imagen;
 
 
     public Actividades() {
     }
 
-    public Actividades(ActividadesKey actividadesKey, int precio, String categoria, int capacidad, String descripcion, int cupos) {
+    public Actividades(ActividadesKey actividadesKey, int precio, String categoria, int capacidad, String descripcion, int cupos ,List<Imagen> imagen) {
         this.actividadesKey = actividadesKey;
         this.precio = precio;
         this.categoria = categoria;
         this.capacidad = capacidad;
         this.descripcion = descripcion;
         this.cupos = cupos;
+        this.imagen = imagen;
     }
-
 
     public int getPrecio() {
         return precio;
@@ -94,14 +74,15 @@ public class Actividades {
     public void setCupos(int cupos) {
         this.cupos = cupos;
     }
-/*
-    public List<Imagenes> getImagen() {
+
+
+    public List<Imagen> getImagen() {
         return imagen;
     }
 
-    public void setImagen(List<Imagenes> imagen) {
+    public void setImagen(List<Imagen> imagen) {
         this.imagen = imagen;
-    }*/
+    }
 
     public ActividadesKey getActividadesKey() {
         return actividadesKey;
@@ -120,6 +101,7 @@ public class Actividades {
                 ", capacidad=" + capacidad +
                 ", descripcion='" + descripcion + '\'' +
                 ", cupos=" + cupos +
+                ", imagen=" + imagen +
                 '}';
     }
 }

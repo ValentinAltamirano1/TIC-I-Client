@@ -1,6 +1,7 @@
 package com.example.usuario.usuario.Actividades;
 
 import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
+import com.example.usuario.usuario.Imagen;
 import com.example.usuario.usuario.Usuario.ActividadesController;
 import com.example.usuario.usuario.Usuario.MisReservasController;
 import com.example.usuario.usuario.Usuario.Usuarios;
@@ -31,6 +32,7 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CrearActividadesController {
@@ -125,6 +127,8 @@ public class CrearActividadesController {
     private Label label;
 
     public String mail;
+
+    public List<Imagen> imagenes = new ArrayList<>();
     @FXML
     void FileChooserClickedButton(ActionEvent event) throws IOException {
 
@@ -133,9 +137,14 @@ public class CrearActividadesController {
 
         List<File> f = fc.showOpenMultipleDialog(null);
         for (File file : f){
+            byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray(file));
+            data_ = new String(encoded, StandardCharsets.US_ASCII);
+            Imagen imagenCentro = new Imagen(data_);
+            System.out.println(data_);
+            imagenes.add(imagenCentro);
             System.out.println(file.getAbsolutePath());
-
         }
+
 
         /*FileInputStream fileInputStream = null;
         try {
@@ -171,6 +180,7 @@ public class CrearActividadesController {
 
     @FXML
     void CrearClickedButton(ActionEvent event) {
+        System.out.println(imagenes.size());
         if(!txt_nombre.getText().isEmpty() && !txt_capacidad.getText().isEmpty() && !txt_precio.getText().isEmpty()){
             Node node = (Node) event.getSource();
             Stage stage1 = (Stage) node.getScene().getWindow();
@@ -191,7 +201,7 @@ public class CrearActividadesController {
             capacidad_= Integer.parseInt(txt_capacidad.getText());
             cupo_= Integer.parseInt(txt_cupo.getText());
             ActividadesKey actividadesKey = new ActividadesKey(centroDeportivos.get(0), txt_nombre.getText(), txt_horario.getValue().toString());
-            Actividades actividades = new Actividades(actividadesKey,precio_,txt_categoria.getValue().toString(),capacidad_,txt_descripcion.getText(),cupo_);
+            Actividades actividades = new Actividades(actividadesKey,precio_,txt_categoria.getValue().toString(),capacidad_,txt_descripcion.getText(),cupo_ ,imagenes);
             HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/actividades")
                     .header("accept", "application/json")
                     .header("Content-Type", "application/json")
