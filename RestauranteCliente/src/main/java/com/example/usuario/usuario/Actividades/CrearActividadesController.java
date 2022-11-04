@@ -134,6 +134,7 @@ public class CrearActividadesController {
         List<File> f = fc.showOpenMultipleDialog(null);
         for (File file : f){
             System.out.println(file.getAbsolutePath());
+
         }
 
         /*FileInputStream fileInputStream = null;
