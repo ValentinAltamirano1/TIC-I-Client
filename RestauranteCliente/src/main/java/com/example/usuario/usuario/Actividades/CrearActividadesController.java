@@ -136,14 +136,14 @@ public class CrearActividadesController {
             System.out.println(file.getAbsolutePath());
         }
 
-        FileInputStream fileInputStream = null;
+        /*FileInputStream fileInputStream = null;
         try {
             byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray((File) f));
             data_ = new String(encoded, StandardCharsets.US_ASCII);
 
             System.out.println(encoded);
         } catch (FileNotFoundException e) {}
-
+*/
         }
 
 
