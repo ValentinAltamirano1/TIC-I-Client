@@ -18,7 +18,7 @@ public class Empleado {
 
     private int saldo;
 
-    private int sobre_giro;//adicional por lo que eln empleado se va a poder pasar de plata
+    private int sobre_giro;//adicional por lo que el empleado se va a poder pasar de plata
 
     private Empresa empresas;
 
@@ -129,6 +129,8 @@ public class Empleado {
                 ", contraseña='" + contraseña + '\'' +
                 ", ficha_medica='" + ficha_medica + '\'' +
                 ", tipo='" + tipo + '\'' +
+                ", saldo='" + saldo + '\'' +
+                ", sobre_giro='" + sobre_giro + '\'' +
                 ", empresas=" + empresas +
                 '}';
     }

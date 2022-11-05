@@ -58,7 +58,6 @@ public class ActividadesController implements Initializable {
     private ScrollPane scroll;
     @FXML
     private Button reservas;
-
     List<Actividades> actividades1 = new ArrayList<>();
 
     public String mail;
