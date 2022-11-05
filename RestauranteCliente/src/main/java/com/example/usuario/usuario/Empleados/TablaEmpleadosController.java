@@ -56,7 +56,7 @@ public class TablaEmpleadosController implements Initializable {
     private TableColumn<Empleado, String> saldo;
 
     @FXML
-    private TableColumn<Empleado, String> sobregiro;
+    private TableColumn<Empleado, String> sobre_giro;
 
     @FXML
     private TableColumn<Empleado, String> telefono;
@@ -129,7 +129,7 @@ public class TablaEmpleadosController implements Initializable {
         ficha_medica.setCellValueFactory(new PropertyValueFactory<Empleado, String>("ficha_medica"));
         tipo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("tipo"));
         saldo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("saldo"));
-        sobregiro.setCellValueFactory(new PropertyValueFactory<Empleado,String>("sobre_giro"));
+        sobre_giro.setCellValueFactory(new PropertyValueFactory<Empleado,String>("sobre_giro"));
         listarEmpleados();
     }
 
