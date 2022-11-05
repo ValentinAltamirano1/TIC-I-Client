@@ -145,16 +145,7 @@ public class CrearActividadesController {
             System.out.println(file.getAbsolutePath());
         }
 
-
-        /*FileInputStream fileInputStream = null;
-        try {
-            byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray((File) f));
-            data_ = new String(encoded, StandardCharsets.US_ASCII);
-
-            System.out.println(encoded);
-        } catch (FileNotFoundException e) {}
-*/
-        }
+    }
 
 
     @FXML
@@ -162,6 +153,7 @@ public class CrearActividadesController {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(CrearActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
         CheckInController checkInController = fxmlLoader.getController();
+        checkInController.setMail(mail);
         checkInController.info();
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

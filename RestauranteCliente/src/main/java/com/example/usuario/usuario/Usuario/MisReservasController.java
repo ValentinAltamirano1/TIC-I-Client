@@ -132,9 +132,6 @@ public class MisReservasController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //GET REQUEST de la tabla reservas , donde el mail == mail que ingreso
-        //el mail lo paso del controller a este controller
-
     }
 
     public void inf(){

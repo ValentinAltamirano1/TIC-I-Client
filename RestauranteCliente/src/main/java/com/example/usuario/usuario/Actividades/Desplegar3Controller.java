@@ -8,22 +8,22 @@ import javafx.scene.control.Label;
 public class Desplegar3Controller {
 
     @FXML
-    private Label capacidad1;
+    private Label capacidad2;
 
     @FXML
     private Button confirmar_button;
 
     @FXML
-    private Label horario1;
+    private Label horario2;
 
     @FXML
-    private Label nombre1;
+    private Label nombre2;
 
     @FXML
-    private Label pasaporte;
+    private Label pasaporte2;
 
     @FXML
-    private Label precio1;
+    private Label precio2;
 
     @FXML
     private Label titulo_capacidad;
@@ -40,9 +40,19 @@ public class Desplegar3Controller {
     @FXML
     private Label titulo_precio;
 
+    private Actividades actividades;
     @FXML
     void ConfirmarClickedButton(ActionEvent event) {
 
+
     }
 
+
+    public void setData1(Actividades actividades){
+        this.actividades = actividades;
+        nombre2.setText(actividades.getActividadesKey().getNombre());
+        precio2.setText(String.valueOf(actividades.getPrecio()));
+        horario2.setText(actividades.getActividadesKey().getHorario());
+        capacidad2.setText(String.valueOf(actividades.getCapacidad()));
+    }
 }

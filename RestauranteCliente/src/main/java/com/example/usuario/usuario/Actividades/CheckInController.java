@@ -1,8 +1,11 @@
 package com.example.usuario.usuario.Actividades;
 
 import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
+import com.example.usuario.usuario.Empleados.Empleado;
 import com.example.usuario.usuario.Usuario.DesplegarController;
 import com.example.usuario.usuario.Usuario.Usuarios;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -120,6 +123,7 @@ public class CheckInController implements Initializable {
 
     }
     public List<Actividades> getDataCentro(String mail){
+        System.out.println(mail);
         //agarro las actividades del centro
         List<CentroDeportivo> centrosDepor=null;
         List<Actividades> actividadesCentro = null;
@@ -128,9 +132,21 @@ public class CheckInController implements Initializable {
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             ObjectMapper mapper = new ObjectMapper();
+            centrosDepor =mapper.readValue(temp, new TypeReference<List<CentroDeportivo>>() {});
+            System.out.println(centrosDepor);
         }catch (Exception ignored){}
 
+
         //con el centro deportivo, busco las reservas asociadas al centro
+        GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/reservas/getRut/"+ centrosDepor.get(0).getRut())
+                .header("Content-Type", "application/json");
+        String temp1 = apiResponse.asJson().getBody().toString();
+        System.out.println(temp1);
+        ObjectMapper mapper1 = new ObjectMapper();
+        try {
+            actividadesCentro = mapper1.readValue(temp1, new TypeReference<List<Actividades>>() {});
+        } catch (Exception e) {}
+        System.out.println(actividadesCentro);
         return actividadesCentro;
     }
     public void info(){
@@ -146,8 +162,8 @@ public class CheckInController implements Initializable {
                 AnchorPane anchorPane = fxmlLoader.load();
 
 
-                DesplegarController desplegarController = fxmlLoader.getController();
-                desplegarController.setData(actividades1.get(i));
+                Desplegar3Controller desplegar3Controller = fxmlLoader.getController();
+                desplegar3Controller.setData1(actividades1.get(i));
 
                 if (colum == 1) {
                     colum = 0;
