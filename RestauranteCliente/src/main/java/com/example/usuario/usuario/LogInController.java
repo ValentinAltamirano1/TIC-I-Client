@@ -141,6 +141,7 @@ public class LogInController implements Initializable {
                     scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();
+
                 }
             } else {
                 System.out.println("Usuario Incorrecto");
