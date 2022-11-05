@@ -94,14 +94,6 @@ public class TablaEmpleadosController implements Initializable {
     }
 
     @FXML
-    void CrearClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/Empleado-view.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-    @FXML
     void CrearNuevoClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/Empleado-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -136,6 +128,8 @@ public class TablaEmpleadosController implements Initializable {
         contraseña.setCellValueFactory(new PropertyValueFactory<Empleado,String>("contraseña"));
         ficha_medica.setCellValueFactory(new PropertyValueFactory<Empleado, String>("ficha_medica"));
         tipo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("tipo"));
+        saldo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("saldo"));
+        sobregiro.setCellValueFactory(new PropertyValueFactory<Empleado,String>("sobre_giro"));
         listarEmpleados();
     }
 
