@@ -40,19 +40,20 @@ public class Desplegar3Controller {
     @FXML
     private Label titulo_precio;
 
-    private Actividades actividades;
+    private Actividades actividades1;
     @FXML
     void ConfirmarClickedButton(ActionEvent event) {
 
 
     }
 
-
     public void setData1(Actividades actividades){
-        this.actividades = actividades;
+        this.actividades1 = actividades;
         nombre2.setText(actividades.getActividadesKey().getNombre());
         precio2.setText(String.valueOf(actividades.getPrecio()));
         horario2.setText(actividades.getActividadesKey().getHorario());
         capacidad2.setText(String.valueOf(actividades.getCapacidad()));
+
     }
 }
+

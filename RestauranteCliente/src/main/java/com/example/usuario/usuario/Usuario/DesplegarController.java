@@ -24,6 +24,8 @@ public class DesplegarController {
 
     @FXML
     private Label capacidad1;
+    @FXML
+    private Label descripcion;
 
     @FXML
     private Label horario1;
@@ -45,6 +47,9 @@ public class DesplegarController {
 
     @FXML
     private Label titulo_nombre;
+
+    @FXML
+    private Label titulo_descripcion;
 
     @FXML
     private Label titulo_precio;
@@ -88,6 +93,7 @@ public class DesplegarController {
         precio1.setText(String.valueOf(actividades.getPrecio()));
         horario1.setText(actividades.getActividadesKey().getHorario());
         capacidad1.setText(String.valueOf(actividades.getCapacidad()));
+        descripcion.setText(actividades.getDescripcion());
     }
 
 }

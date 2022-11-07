@@ -71,7 +71,7 @@
                   </Label>
                </children>
             </VBox>
-            <Button fx:id="confirmar_button" layoutX="32.0" layoutY="248.0" mnemonicParsing="false" onAction="#ConfirmarClickedButton" prefHeight="46.0" prefWidth="474.0" style="-fx-background-color: #000000;" text="Confirmar" textFill="WHITE">
+            <Button fx:id="confirmar_button" layoutX="32.0" layoutY="257.0" mnemonicParsing="false" onAction="#ConfirmarClickedButton" prefHeight="46.0" prefWidth="474.0" style="-fx-background-color: #000000;" text="Confirmar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>

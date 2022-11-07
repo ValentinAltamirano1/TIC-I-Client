@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="147.0" prefWidth="222.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Usuario.Desplegar2Controller">
+<AnchorPane prefHeight="147.0" prefWidth="222.0" style="-fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Usuario.Desplegar2Controller">
    <children>
-      <Pane layoutY="-1.0" prefHeight="147.0" prefWidth="221.0" style="-fx-background-color: #FFCA6F; -fx-border-color: #FFE5B9;">
+      <Pane layoutY="-1.0" prefHeight="147.0" prefWidth="221.0" style="-fx-background-color: #FFCA6F; -fx-border-color: #FFE5B9; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css">
          <children>
             <ImageView fx:id="foto_usuario" fitHeight="57.0" fitWidth="78.0" layoutX="80.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                <image>

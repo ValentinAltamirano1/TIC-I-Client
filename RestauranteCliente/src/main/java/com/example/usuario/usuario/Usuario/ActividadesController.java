@@ -81,8 +81,32 @@ public class ActividadesController implements Initializable {
     }
 
     @FXML
-    void FiltrarClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/FiltrarPor-view.fxml"));
+    void CanchasClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Canchas-viiew.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void ExteriorClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Exterior-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void NauticaClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Nautica-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void GimnasiosClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Gimnasios-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -119,41 +143,43 @@ public class ActividadesController implements Initializable {
         return actividadesList;
     }
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         actividades1.addAll(getData());
-         int row=1;
-         int colum =0;
+        int row = 1;
+        int colum = 0;
 
-         try {
-             for (int i = 0; i < actividades1.size(); i++) {
-                 FXMLLoader fxmlLoader = new FXMLLoader();
-                 fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Usuario/Desplegar.fxml"));
-                 AnchorPane anchorPane = fxmlLoader.load();
+        try {
+            for (int i = 0; i < actividades1.size(); i++) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Usuario/Desplegar.fxml"));
+                AnchorPane anchorPane = fxmlLoader.load();
 
 
-                 DesplegarController desplegarController = fxmlLoader.getController();
-                 desplegarController.setData(actividades1.get(i));
+                DesplegarController desplegarController = fxmlLoader.getController();
+                desplegarController.setData(actividades1.get(i));
 
-                 if (colum == 1) {
-                     colum = 0;
-                     row++;
-                 }
+                if (colum == 1) {
+                    colum = 0;
+                    row++;
+                }
 
-                 grid.add(anchorPane, colum++, row);
+                grid.add(anchorPane, colum++, row);
 
-                 grid.setMinHeight(Region.USE_COMPUTED_SIZE);
-                 grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
-                 grid.setMaxHeight(Region.USE_COMPUTED_SIZE);
+                grid.setMinHeight(Region.USE_COMPUTED_SIZE);
+                grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                grid.setMaxHeight(Region.USE_COMPUTED_SIZE);
 
-                 grid.setMinWidth(Region.USE_COMPUTED_SIZE);
-                 grid.setMinWidth(Region.USE_COMPUTED_SIZE);
-                 grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
 
-                 GridPane.setMargin(anchorPane,new Insets(10));
+                GridPane.setMargin(anchorPane, new Insets(10));
 
-             }
-         }catch (Exception ignored){}
+            }
+        } catch (Exception ignored) {
+        }
 
     }
 

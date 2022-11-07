@@ -37,10 +37,6 @@ public class CheckInController implements Initializable {
 
     Stage stage;
     Scene scene;
-
-    @FXML
-    private Text confirmar;
-
     @FXML
     private Button cerrar_sesion_button;
 
@@ -48,13 +44,13 @@ public class CheckInController implements Initializable {
     private Button checkin_button;
 
     @FXML
-    private Button confirmar_button;
+    private Text confirmar;
 
     @FXML
     private Button creados_button;
 
     @FXML
-    private Button crearNuevo_button;
+    private Button crearNueva_button;
 
     @FXML
     private ImageView foto;
@@ -69,10 +65,7 @@ public class CheckInController implements Initializable {
     private ScrollPane scroll;
 
     @FXML
-    private javafx.scene.text.Text titulo_;
-
-    @FXML
-    private javafx.scene.text.Text titulo__;
+    private Text titulo;
 
     @FXML
     private Button volver_button;
