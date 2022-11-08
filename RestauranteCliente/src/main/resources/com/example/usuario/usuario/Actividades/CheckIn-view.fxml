@@ -54,7 +54,7 @@
             </VBox>
          </children>
       </AnchorPane>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="492.0" prefWidth="506.0" style="-fx-background-color: #000000;">
+      <AnchorPane fx:id="anchorpane" minHeight="0.0" minWidth="0.0" prefHeight="492.0" prefWidth="506.0" style="-fx-background-color: #000000;">
          <children>
             <Text fx:id="confirmar" fill="WHITE" layoutX="234.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHECK IN">
                <font>
@@ -66,6 +66,16 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
+            <Button fx:id="noreservados" layoutX="254.0" layoutY="482.0" mnemonicParsing="false" onAction="#NoReservadosClickedButton" style="-fx-background-color: #ffffff;" text="Sin reserva previa">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Text fx:id="confirmar1" fill="WHITE" layoutX="170.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Con reserva previa">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Text>
             <HBox layoutX="53.0" layoutY="130.0" prefHeight="331.0" prefWidth="548.0">
                <children>
                   <ScrollPane fx:id="scroll1" prefHeight="310.0" prefWidth="549.0" style="-fx-background-color: #FFCA6F;">
@@ -79,16 +89,6 @@
                   </ScrollPane>
                </children>
             </HBox>
-            <Button fx:id="noreservados" layoutX="254.0" layoutY="482.0" mnemonicParsing="false" onAction="#NoReservadosClickedButton" style="-fx-background-color: #ffffff;" text="Sin reserva previa">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Button>
-            <Text fx:id="confirmar1" fill="WHITE" layoutX="170.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Con reserva previa">
-               <font>
-                  <Font name="System Bold" size="36.0" />
-               </font>
-            </Text>
          </children>
       </AnchorPane>
    </items>
