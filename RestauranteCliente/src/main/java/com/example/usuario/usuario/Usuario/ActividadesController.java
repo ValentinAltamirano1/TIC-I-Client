@@ -27,9 +27,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ActividadesController implements Initializable {
-
     Scene scene;
-
     Stage stage;
 
     @FXML
