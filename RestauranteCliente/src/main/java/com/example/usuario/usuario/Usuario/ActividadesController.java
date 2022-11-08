@@ -59,6 +59,7 @@ public class ActividadesController implements Initializable {
     @FXML
     private Button reservas;
     List<Actividades> actividades1 = new ArrayList<>();
+    List<Usuarios> usuarios1 = new ArrayList<>();
 
     public String mail;
 
@@ -142,7 +143,22 @@ public class ActividadesController implements Initializable {
         }
         return actividadesList;
     }
-
+    public List<Usuarios> getData2() {
+        List<Usuarios> usuariosList =null;
+        try{
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/usuarios")
+                    .header("Content-Type", "application/json");
+            String temp = apiResponse.asJson().getBody().toString();
+            System.out.println(temp);
+            ObjectMapper mapper = new ObjectMapper();
+            usuariosList = mapper.readValue(temp, new TypeReference<List<Usuarios>>(){});
+            System.out.println(usuariosList);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return usuariosList;
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -160,12 +176,47 @@ public class ActividadesController implements Initializable {
                 DesplegarController desplegarController = fxmlLoader.getController();
                 desplegarController.setData(actividades1.get(i));
 
-                if (colum == 1) {
+                if (colum == 2) {
                     colum = 0;
                     row++;
                 }
 
                 grid.add(anchorPane, colum++, row);
+
+                grid.setMinHeight(Region.USE_COMPUTED_SIZE);
+                grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                grid.setMaxHeight(Region.USE_COMPUTED_SIZE);
+
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+
+                GridPane.setMargin(anchorPane, new Insets(10));
+
+            }
+        } catch (Exception ignored) {
+        }
+
+        usuarios1.addAll(getData2());
+        int row1 = 1;
+        int colum1 = 0;
+
+        try {
+            for (int i = 0; i < usuarios1.size(); i++) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Usuario/Desplegar2.fxml"));
+                AnchorPane anchorPane = fxmlLoader.load();
+
+
+                Desplegar2Controller desplegar2Controller = fxmlLoader.getController();
+                desplegar2Controller.setData2(usuarios1.get(i));
+
+                if (colum1 == 1) {
+                    colum1 = 0;
+                    row1++;
+                }
+
+                grid.add(anchorPane, colum1++, row1);
 
                 grid.setMinHeight(Region.USE_COMPUTED_SIZE);
                 grid.setPrefHeight(Region.USE_COMPUTED_SIZE);

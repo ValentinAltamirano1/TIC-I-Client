@@ -23,9 +23,8 @@ import java.util.List;
 public class DesplegarController {
 
     @FXML
-    private Label capacidad1;
-    @FXML
-    private Label descripcion;
+    private Label cupos1;
+
 
     @FXML
     private Label horario1;
@@ -40,7 +39,7 @@ public class DesplegarController {
     private Button reserva_button;
 
     @FXML
-    private Label titulo_capacidad;
+    private Label titulo_cupos;
 
     @FXML
     private Label titulo_horario;
@@ -48,8 +47,7 @@ public class DesplegarController {
     @FXML
     private Label titulo_nombre;
 
-    @FXML
-    private Label titulo_descripcion;
+
 
     @FXML
     private Label titulo_precio;
@@ -92,8 +90,8 @@ public class DesplegarController {
         nombre1.setText(actividades.getActividadesKey().getNombre());
         precio1.setText(String.valueOf(actividades.getPrecio()));
         horario1.setText(actividades.getActividadesKey().getHorario());
-        capacidad1.setText(String.valueOf(actividades.getCapacidad()));
-        descripcion.setText(actividades.getDescripcion());
+        cupos1.setText(String.valueOf(actividades.getCupos()));
+
     }
 
 }

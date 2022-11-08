@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="705.0" prefWidth="931.0" style="-fx-background-color: #FFE5B9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Usuario.ActividadesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1219.0" style="-fx-background-color: #FFE5B9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Usuario.ActividadesController">
    <children>
       <ImageView fx:id="foto_logo" fitHeight="135.0" fitWidth="187.0" layoutX="30.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -20,11 +20,11 @@
          </image>
       </ImageView>
       <Label layoutX="57.0" layoutY="220.0" />
-      <HBox layoutX="277.0" layoutY="228.0" prefHeight="451.0" prefWidth="626.0">
+      <HBox layoutX="281.0" layoutY="215.0" prefHeight="530.0" prefWidth="604.0" style="-fx-background-color: #FFE5B9;">
          <children>
-            <ScrollPane fx:id="scroll" prefHeight="451.0" prefWidth="647.0" style="-fx-background-color: #FFCA6F;">
+            <ScrollPane fx:id="scroll" prefHeight="530.0" prefWidth="631.0" style="-fx-background-color: #FFCA6F;">
                <content>
-                  <GridPane fx:id="grid" prefHeight="7.0" prefWidth="14.0">
+                  <GridPane fx:id="grid" prefHeight="7.0" prefWidth="14.0" style="-fx-background-color: #FFE5B9;">
                     <rowConstraints>
                       <RowConstraints maxHeight="8.600012207031249" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
                     </rowConstraints>
@@ -65,47 +65,47 @@
             </ScrollPane>
          </children>
       </HBox>
-      <Label fx:id="titulo" layoutX="364.0" layoutY="45.0" prefHeight="92.0" prefWidth="490.0" text="ACTIVIDADES">
+      <Label fx:id="titulo" layoutX="295.0" layoutY="31.0" prefHeight="92.0" prefWidth="774.0" text="TODAS LAS ACTIVIDADES">
          <font>
-            <Font name="Californian FB" size="72.0" />
+            <Font name="Californian FB" size="64.0" />
          </font>
       </Label>
-      <Button fx:id="canchas" layoutX="279.0" layoutY="155.0" mnemonicParsing="false" onAction="#CanchasClickedButton" prefHeight="54.0" prefWidth="178.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="Canchas" textAlignment="RIGHT">
+      <Button fx:id="canchas" layoutX="287.0" layoutY="139.0" mnemonicParsing="false" onAction="#CanchasClickedButton" prefHeight="54.0" prefWidth="178.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="Canchas" textAlignment="RIGHT">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="gimnasios" layoutX="452.0" layoutY="155.0" mnemonicParsing="false" onAction="#GimnasiosClickedButton" prefHeight="54.0" prefWidth="164.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="Gimnasios" textAlignment="RIGHT">
+      <Button fx:id="gimnasios" layoutX="460.0" layoutY="139.0" mnemonicParsing="false" onAction="#GimnasiosClickedButton" prefHeight="54.0" prefWidth="164.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="Gimnasios" textAlignment="RIGHT">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="exterior" layoutX="609.0" layoutY="155.0" mnemonicParsing="false" onAction="#ExteriorClickedButton" prefHeight="54.0" prefWidth="153.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="Exterior" textAlignment="RIGHT">
+      <Button fx:id="exterior" layoutX="617.0" layoutY="139.0" mnemonicParsing="false" onAction="#ExteriorClickedButton" prefHeight="54.0" prefWidth="153.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="Exterior" textAlignment="RIGHT">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="nautica" layoutX="760.0" layoutY="155.0" mnemonicParsing="false" onAction="#NauticaClickedButton" prefHeight="54.0" prefWidth="138.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="Nauticos" textAlignment="RIGHT">
+      <Button fx:id="nautica" layoutX="768.0" layoutY="139.0" mnemonicParsing="false" onAction="#NauticaClickedButton" prefHeight="54.0" prefWidth="138.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="Nauticos" textAlignment="RIGHT">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Button>
-      <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="287.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="295.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/com/example/usuario/usuario/Fotos/Foto_Canchas1.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="36.0" fitWidth="63.0" layoutX="430.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="36.0" fitWidth="63.0" layoutX="438.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/com/example/usuario/usuario/Fotos/Foto_Gimnasios1.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="49.0" fitWidth="48.0" layoutX="609.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="49.0" fitWidth="48.0" layoutX="617.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/com/example/usuario/usuario/Fotos/Foto_Exterior1.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="49.0" fitWidth="48.0" layoutX="745.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="49.0" fitWidth="48.0" layoutX="753.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/com/example/usuario/usuario/Fotos/Foto_Nautica1.jpg" />
          </image>
