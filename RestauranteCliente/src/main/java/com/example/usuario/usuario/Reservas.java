@@ -6,15 +6,10 @@ public class Reservas {
 
     private Actividades actividades;
 
+
     private ReservasKey reservasKey;
 
-    public Reservas() {
-    }
-
-    public Reservas(Actividades actividades, ReservasKey reservasKey) {
-        this.actividades = actividades;
-        this.reservasKey = reservasKey;
-    }
+    private boolean asistio;
 
     public Actividades getActividades() {
         return actividades;
@@ -24,6 +19,16 @@ public class Reservas {
         this.actividades = actividades;
     }
 
+    public Reservas() {
+    }
+
+    public Reservas(Actividades actividades, ReservasKey reservasKey, boolean asistio) {
+        this.actividades = actividades;
+        this.reservasKey = reservasKey;
+        this.asistio = asistio;
+    }
+
+
     public ReservasKey getReservasKey() {
         return reservasKey;
     }
@@ -32,11 +37,20 @@ public class Reservas {
         this.reservasKey = reservasKey;
     }
 
+    public boolean isAsistio() {
+        return asistio;
+    }
+
+    public void setAsistio(boolean asistio) {
+        this.asistio = asistio;
+    }
+
     @Override
     public String toString() {
         return "Reservas{" +
                 "actividades=" + actividades +
                 ", reservasKey=" + reservasKey +
+                ", asistio=" + asistio +
                 '}';
     }
 }

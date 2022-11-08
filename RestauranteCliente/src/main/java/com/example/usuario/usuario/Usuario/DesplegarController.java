@@ -76,7 +76,7 @@ public class DesplegarController {
 
         //tabla reservas con datos de la actividad y del usuario
         ReservasKey reservasKey = new ReservasKey(empleados.get(0));
-        Reservas reservas = new Reservas(actividades,reservasKey);
+        Reservas reservas = new Reservas(actividades,reservasKey,false);
         System.out.println(reservas);
 
 
