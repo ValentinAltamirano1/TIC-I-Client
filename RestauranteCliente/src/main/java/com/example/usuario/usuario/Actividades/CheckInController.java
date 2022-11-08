@@ -37,6 +37,9 @@ public class CheckInController implements Initializable {
 
     Stage stage;
     Scene scene;
+
+    @FXML
+    private AnchorPane anchorpane;
     @FXML
     private Button cerrar_sesion_button;
 
