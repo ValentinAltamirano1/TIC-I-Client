@@ -45,7 +45,7 @@ public class CheckInController implements Initializable {
     private Text confirmar;
 
     @FXML
-    private Text confirmar1;
+    private Text copia_confirmar;
 
     @FXML
     private Button creados_button;

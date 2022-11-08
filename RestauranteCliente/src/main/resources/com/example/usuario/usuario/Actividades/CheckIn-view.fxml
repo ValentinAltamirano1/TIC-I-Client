@@ -23,7 +23,7 @@
                   <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
-            <Text fx:id="titulo" fill="#df2d29" layoutX="39.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACTIVIDADES" wrappingWidth="160.00000000000006">
+            <Text fx:id="titulo1" fill="#df2d29" layoutX="39.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACTIVIDADES" wrappingWidth="160.00000000000006">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -56,7 +56,7 @@
       </AnchorPane>
       <AnchorPane fx:id="anchorpane" minHeight="0.0" minWidth="0.0" prefHeight="492.0" prefWidth="506.0" style="-fx-background-color: #000000;">
          <children>
-            <Text fx:id="confirmar" fill="WHITE" layoutX="234.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHECK IN">
+            <Text fx:id="confirmar1" fill="WHITE" layoutX="234.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHECK IN">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
@@ -71,7 +71,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <Text fx:id="confirmar1" fill="WHITE" layoutX="170.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Con reserva previa">
+            <Text fx:id="copia_confirmar1" fill="WHITE" layoutX="170.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Con reserva previa">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
