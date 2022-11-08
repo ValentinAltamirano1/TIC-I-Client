@@ -88,7 +88,7 @@
                   <TextField fx:id="txt_actividad" prefHeight="35.0" prefWidth="187.0" promptText="Nombre de actividad" />
                </children>
             </VBox>
-            <Button fx:id="checkin_button1" layoutX="234.0" layoutY="391.0" mnemonicParsing="false" onAction="#CheckInClickedButton" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #ffffff;" text="Check In">
+            <Button fx:id="darCheckIn" layoutX="234.0" layoutY="391.0" mnemonicParsing="false" onAction="#DarCheckInClickedButton" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #ffffff;" text="Check In">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

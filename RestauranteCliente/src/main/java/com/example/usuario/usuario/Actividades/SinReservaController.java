@@ -34,7 +34,7 @@ public class SinReservaController implements Initializable {
     private Button checkin_button;
 
     @FXML
-    private Button checkin_button1;
+    private Button darCheckIn;
 
     @FXML
     private Text confirmar;

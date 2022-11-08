@@ -2,11 +2,14 @@ package com.example.usuario.usuario.Usuario;
 
 import com.example.usuario.usuario.Actividades.Actividades;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class Desplegar2Controller {
 
@@ -16,12 +19,18 @@ public class Desplegar2Controller {
     @FXML
     private Label nombre;
 
-    List<Usuarios> usuarios = new ArrayList<>();
+    public String mail;
 
-    public void setData2(Usuarios usuarios){
-        this.usuarios = (List<Usuarios>) usuarios;
-        nombre.setText(usuarios.getMail());
+
+    public String getMail() {
+        return mail;
     }
 
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+    public void setDataUsuario(String mail){
+        nombre.setText(mail);
+    }
 }
 
