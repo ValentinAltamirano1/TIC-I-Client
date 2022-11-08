@@ -56,13 +56,13 @@ public class CheckInController implements Initializable {
     private ImageView foto;
 
     @FXML
-    private GridPane grid;
+    private GridPane grid1;
 
     @FXML
     private Label label;
 
     @FXML
-    private ScrollPane scroll;
+    private ScrollPane scroll1;
 
     @FXML
     private Text titulo;
@@ -75,8 +75,19 @@ public class CheckInController implements Initializable {
     public String mail;
 
     @FXML
+    private Button noreservados;
+
+    @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividades-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void NoReservadosClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/SinReserva-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -163,15 +174,15 @@ public class CheckInController implements Initializable {
                     row++;
                 }
 
-                grid.add(anchorPane, colum++, row);
+                grid1.add(anchorPane, colum++, row);
 
-                grid.setMinHeight(Region.USE_COMPUTED_SIZE);
-                grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
-                grid.setMaxHeight(Region.USE_COMPUTED_SIZE);
+                grid1.setMinHeight(Region.USE_COMPUTED_SIZE);
+                grid1.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                grid1.setMaxHeight(Region.USE_COMPUTED_SIZE);
 
-                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
-                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
-                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid1.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid1.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid1.setMinWidth(Region.USE_COMPUTED_SIZE);
 
                 GridPane.setMargin(anchorPane, new Insets(10));
             }

@@ -2,19 +2,16 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2748639287481444" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="878.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.CheckInController">
+<SplitPane dividerPositions="0.2748639287481444" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="878.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.SinReservaController">
    <items>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="478.0" prefWidth="226.0" style="-fx-background-color: #000000;">
          <children>
@@ -54,7 +51,7 @@
             </VBox>
          </children>
       </AnchorPane>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="492.0" prefWidth="506.0" style="-fx-background-color: #000000;">
+      <AnchorPane fx:id="darcheckin" minHeight="0.0" minWidth="0.0" onDragDetected="#DarCheckInClickedButton" prefHeight="492.0" prefWidth="506.0" style="-fx-background-color: #000000;">
          <children>
             <Text fx:id="confirmar" fill="WHITE" layoutX="234.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHECK IN">
                <font>
@@ -66,29 +63,36 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <HBox layoutX="53.0" layoutY="130.0" prefHeight="331.0" prefWidth="548.0">
-               <children>
-                  <ScrollPane fx:id="scroll1" prefHeight="310.0" prefWidth="549.0" style="-fx-background-color: #FFCA6F;">
-                     <content>
-                        <GridPane fx:id="grid1" prefHeight="7.0" prefWidth="14.0">
-                           <rowConstraints>
-                              <RowConstraints maxHeight="8.600012207031249" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                        </GridPane>
-                     </content>
-                  </ScrollPane>
-               </children>
-            </HBox>
-            <Button fx:id="noreservados" layoutX="254.0" layoutY="482.0" mnemonicParsing="false" onAction="#NoReservadosClickedButton" style="-fx-background-color: #ffffff;" text="Sin reserva previa">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Button>
-            <Text fx:id="confirmar1" fill="WHITE" layoutX="170.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Con reserva previa">
+            <Text fx:id="confirmar1" fill="WHITE" layoutX="166.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sin reserva previa">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Text>
+            <VBox layoutX="138.0" layoutY="217.0" prefHeight="90.0" prefWidth="160.0" spacing="25.0">
+               <children>
+                  <Label fx:id="pasaporte" text="Pasaporte:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="actividad" text="Actividad:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="275.0" layoutY="224.0" prefHeight="106.0" prefWidth="174.0" spacing="25.0">
+               <children>
+                  <TextField fx:id="txt_pasaporte" prefHeight="32.0" prefWidth="150.0" promptText="Pasaporte" />
+                  <TextField fx:id="txt_actividad" prefHeight="35.0" prefWidth="187.0" promptText="Nombre de actividad" />
+               </children>
+            </VBox>
+            <Button fx:id="checkin_button1" layoutX="234.0" layoutY="391.0" mnemonicParsing="false" onAction="#CheckInClickedButton" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #ffffff;" text="Check In">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </items>
