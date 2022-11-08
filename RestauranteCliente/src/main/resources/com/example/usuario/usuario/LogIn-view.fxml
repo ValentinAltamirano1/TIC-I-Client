@@ -35,7 +35,7 @@
       <PasswordField fx:id="txt_contraseña" layoutX="173.0" layoutY="361.0" prefHeight="27.0" prefWidth="219.0" style="-fx-border-color: #DF2D29;" />
       <ImageView fitHeight="157.0" fitWidth="250.0" layoutX="87.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Fotos/Foto_Logo.jpg" />
+            <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
          </image>
       </ImageView>
    </children>
