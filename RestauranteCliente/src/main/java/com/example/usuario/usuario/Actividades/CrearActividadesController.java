@@ -107,7 +107,7 @@ public class CrearActividadesController {
 
     public String mail;
     @FXML
-    private Label dias;
+    private Text dias;
     @FXML
     private CheckBox lunes;
     @FXML
