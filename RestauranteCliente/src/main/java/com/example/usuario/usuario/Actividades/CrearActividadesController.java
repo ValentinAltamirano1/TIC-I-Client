@@ -37,12 +37,11 @@ import java.util.List;
 
 public class CrearActividadesController {
     ObservableList<String> txt_horario_list= FXCollections.
-            observableArrayList("9:00","10:00","11:00","14:00","15:00","16:00","17:00","18:00");
+            observableArrayList("8:00-9:00","10:00","11:00","14:00","15:00","16:00","17:00","18:00");
     ObservableList<String> txt_categoria_list= FXCollections.
             observableArrayList("Cancha","Gimnasio", "Exterior", "Nautico");
     Stage stage;
     Scene scene;
-
     int capacidad_;
     String categoria_;
     String horario_;
@@ -50,46 +49,33 @@ public class CrearActividadesController {
     int precio_;
     String descripcion_;
     int cupo_;
-
     String data_;
-
     @FXML
     private Text CrearNuevaActividad;
     @FXML
     private Button fileChooser;
-
     @FXML
     private Text imagen;
-
     @FXML
     private Text capacidad;
-
     @FXML
     private Text categoria;
-
     @FXML
     private Text horario;
-
     @FXML
     private Text nombre;
-
     @FXML
     private Text fichamedica;
-
     @FXML
     private Text contraseña;
-
     @FXML
     private Text descripcion;
     @FXML
     private Text cupo;
-
     @FXML
     private Text precio;
-
     @FXML
     private TextField txt_capacidad;
-
     @FXML
     private ChoiceBox txt_horario;
     @FXML
@@ -104,29 +90,38 @@ public class CrearActividadesController {
     private TextField txt_descripcion;
     @FXML
     private ChoiceBox txt_categoria;
-
     @FXML
     private TextField txt_precio;
-
     @FXML
     private Button crear_button;
-
     @FXML
     private Button cerrar_sesion_button;
-
     @FXML
     private Button creados_button;
-
     @FXML
     private ImageView foto;
-
     @FXML
     private Text titulo;
-
     @FXML
     private Label label;
 
     public String mail;
+    @FXML
+    private Label dias;
+    @FXML
+    private CheckBox lunes;
+    @FXML
+    private CheckBox martes;
+    @FXML
+    private CheckBox miercoles;
+    @FXML
+    private CheckBox jueves;
+    @FXML
+    private CheckBox viernes;
+    @FXML
+    private CheckBox sabado;
+    @FXML
+    private CheckBox domingo;
 
     public List<Imagen> imagenes = new ArrayList<>();
     @FXML
@@ -147,7 +142,6 @@ public class CrearActividadesController {
 
     }
 
-
     @FXML
     void CheckInClickedButton(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -162,17 +156,6 @@ public class CrearActividadesController {
         stage.show();
 
     }
-
-
-
-    /*@FXML
-    void CheckInClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }*/
 
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
