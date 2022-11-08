@@ -21,9 +21,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SinReservaController implements Initializable {
-    Scene scene;
     Stage stage;
-
+    Scene scene;
     @FXML
     private Label actividad;
 
@@ -32,9 +31,6 @@ public class SinReservaController implements Initializable {
 
     @FXML
     private Button checkin_button;
-
-    @FXML
-    private Button darCheckIn;
 
     @FXML
     private Text confirmar;
@@ -47,6 +43,9 @@ public class SinReservaController implements Initializable {
 
     @FXML
     private Button crearNueva_button;
+
+    @FXML
+    private Button darCheckIn;
 
     @FXML
     private AnchorPane darcheckin;
@@ -68,6 +67,7 @@ public class SinReservaController implements Initializable {
 
     @FXML
     private TextField txt_pasaporte;
+
 
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
@@ -106,7 +106,7 @@ public class SinReservaController implements Initializable {
     }
 
     @FXML
-    void DarCheckInClickedButton(MouseEvent event) {
+    void DarCheckInClickedButton(ActionEvent event) {
 
     }
 

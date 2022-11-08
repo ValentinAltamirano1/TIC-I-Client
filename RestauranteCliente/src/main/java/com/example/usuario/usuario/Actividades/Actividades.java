@@ -2,6 +2,7 @@ package com.example.usuario.usuario.Actividades;
 
 import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
 import com.example.usuario.usuario.Imagen;
+import javafx.fxml.FXML;
 
 import java.util.List;
 

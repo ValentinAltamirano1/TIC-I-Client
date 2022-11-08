@@ -8,11 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1219.0" style="-fx-background-color: #FFE5B9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Usuario.ActividadesController">
    <children>
@@ -100,19 +98,15 @@
          </image>
       </ImageView>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="75.0" prefWidth="222.0" style="-fx-background-color: #FFE5B9;" />
-      <Pane layoutX="32.0" layoutY="262.0" prefHeight="75.0" prefWidth="178.0" style="-fx-background-color: #FFCA6F; -fx-border-color: #FFE5B9; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css">
-         <children>
-            <Label fx:id="usuario_nombre" layoutX="42.0" layoutY="31.0" prefHeight="30.0" prefWidth="103.0" text="Nombre:" textAlignment="CENTER">
-               <font>
-                  <Font name="Candara Bold Italic" size="24.0" />
-               </font>
-            </Label>
-            <Text layoutX="64.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hola">
-               <font>
-                  <Font name="Candara Bold Italic" size="24.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
+      <Label fx:id="usuario_nombre1" layoutX="93.0" layoutY="254.0" prefHeight="30.0" prefWidth="63.0" text="Hola">
+         <font>
+            <Font name="Candara Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="usuario_nombre" layoutX="54.0" layoutY="276.0" prefHeight="43.0" prefWidth="144.0" text="Nombre:">
+         <font>
+            <Font name="Candara Bold Italic" size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

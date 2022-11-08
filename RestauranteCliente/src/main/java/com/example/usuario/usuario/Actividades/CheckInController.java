@@ -1,10 +1,6 @@
 package com.example.usuario.usuario.Actividades;
 
 import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
-import com.example.usuario.usuario.Empleados.Empleado;
-import com.example.usuario.usuario.Usuario.DesplegarController;
-import com.example.usuario.usuario.Usuario.Usuarios;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.event.ActionEvent;
@@ -19,13 +15,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Region;
-import javafx.scene.text.Text;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
 import kong.unirest.Unirest;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -34,12 +28,13 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class CheckInController implements Initializable {
+    Scene scene;
 
     Stage stage;
-    Scene scene;
 
     @FXML
     private AnchorPane anchorpane;
+
     @FXML
     private Button cerrar_sesion_button;
 
@@ -48,6 +43,9 @@ public class CheckInController implements Initializable {
 
     @FXML
     private Text confirmar;
+
+    @FXML
+    private Text confirmar1;
 
     @FXML
     private Button creados_button;
@@ -65,60 +63,71 @@ public class CheckInController implements Initializable {
     private Label label;
 
     @FXML
+    private Button noreservados;
+
+    @FXML
     private ScrollPane scroll1;
 
     @FXML
     private Text titulo;
 
-    @FXML
-    private Button volver_button;
 
-    List<Actividades> actividades1 = new ArrayList<>();
+    java.util.List<Actividades> actividades1 = new ArrayList<>();
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
 
     public String mail;
 
     @FXML
-    private Button noreservados;
+    void CerrarSesionClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
-    @FXML
-    void CrearNuevaClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividades-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-    @FXML
-    void NoReservadosClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/SinReserva-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
     @FXML
     void CheckInClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
 
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/TablaActividades-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
+
     @FXML
-    void CerrarSesionClickedButton(ActionEvent event)throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    void CrearNuevaClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividades-view.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+    @FXML
+    void NoReservadosClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/SinReserva-view.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -129,34 +138,40 @@ public class CheckInController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-    public List<Actividades> getDataCentro(String mail){
+
+    public List<Actividades> getDataCentro(String mail) {
         System.out.println(mail);
         //agarro las actividades del centro
-        List<CentroDeportivo> centrosDepor=null;
+        List<CentroDeportivo> centrosDepor = null;
         List<Actividades> actividadesCentro = null;
         try {
             GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/centroDeportivo/" + mail)
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             ObjectMapper mapper = new ObjectMapper();
-            centrosDepor =mapper.readValue(temp, new TypeReference<List<CentroDeportivo>>() {});
+            centrosDepor = mapper.readValue(temp, new TypeReference<List<CentroDeportivo>>() {
+            });
             System.out.println(centrosDepor);
-        }catch (Exception ignored){}
+        } catch (Exception ignored) {
+        }
 
 
         //con el centro deportivo, busco las reservas asociadas al centro
-        GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/reservas/getRut/"+ centrosDepor.get(0).getRut())
+        GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/reservas/getRut/" + centrosDepor.get(0).getRut())
                 .header("Content-Type", "application/json");
         String temp1 = apiResponse.asJson().getBody().toString();
         System.out.println(temp1);
         ObjectMapper mapper1 = new ObjectMapper();
         try {
-            actividadesCentro = mapper1.readValue(temp1, new TypeReference<List<Actividades>>() {});
-        } catch (Exception e) {}
+            actividadesCentro = mapper1.readValue(temp1, new TypeReference<List<Actividades>>() {
+            });
+        } catch (Exception e) {
+        }
         System.out.println(actividadesCentro);
         return actividadesCentro;
     }
-    public void info(){
+
+    public void info() {
         System.out.println(mail);
         actividades1.addAll(getDataCentro(mail));
         int row = 1;
@@ -192,13 +207,7 @@ public class CheckInController implements Initializable {
         } catch (Exception ignored) {
         }
 
+
     }
 
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
 }
