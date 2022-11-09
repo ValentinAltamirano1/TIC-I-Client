@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import java.util.List;
 
 public class Actividades {
+    public Actividades myListener;
     private ActividadesKey actividadesKey;
 
     private int precio;

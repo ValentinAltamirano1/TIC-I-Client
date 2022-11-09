@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="315.0" prefWidth="265.0" style="-fx-background-color: #FFE5B9;" styleClass="boton-redondo" stylesheets="@../Redondo.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Usuario.DesplegarController">
    <children>
-      <Pane prefHeight="315.0" prefWidth="274.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css">
+      <Pane onMousePressed="#click" prefHeight="315.0" prefWidth="274.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css">
          <children>
             <ImageView fitHeight="125.0" fitWidth="194.0" layoutX="45.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
             <VBox layoutX="120.0" layoutY="188.0" prefHeight="97.0" prefWidth="140.0" spacing="18.0">

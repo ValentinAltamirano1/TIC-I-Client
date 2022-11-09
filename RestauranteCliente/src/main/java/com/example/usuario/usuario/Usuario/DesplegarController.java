@@ -18,6 +18,7 @@ import kong.unirest.GetRequest;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 
+import java.awt.event.MouseEvent;
 import java.util.List;
 
 public class DesplegarController {
@@ -47,13 +48,17 @@ public class DesplegarController {
     @FXML
     private Label titulo_nombre;
 
+    @FXML
+    public void click(javafx.scene.input.MouseEvent mouseEvent) {
+        myListener.onClickListener(actividades);
+    }
 
 
     @FXML
     private Label titulo_precio;
 
     private Actividades actividades;
-
+    private MyListener myListener;
     @FXML
     void ReservarClickedButton(ActionEvent event) {
         Node node = (Node) event.getSource();
@@ -85,14 +90,16 @@ public class DesplegarController {
         // Falta hacer que se reste un cupo y en caso de que quede solo 1 que se elimine la actividad
     }
 
-    public void setData(Actividades actividades){
+    public void setData(Actividades actividades, MyListener myListener){
         this.actividades = actividades;
+        this.myListener = myListener;
         nombre1.setText(actividades.getActividadesKey().getNombre());
         precio1.setText(String.valueOf(actividades.getPrecio()));
         horario1.setText(actividades.getActividadesKey().getHorario());
         cupos1.setText(String.valueOf(actividades.getCupos()));
 
     }
+
 
 }
 

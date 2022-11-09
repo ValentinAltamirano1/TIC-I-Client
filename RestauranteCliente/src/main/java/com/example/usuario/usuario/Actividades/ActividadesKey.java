@@ -7,7 +7,7 @@ public class ActividadesKey  {
     private String nombre;
     private String horario;
 
-    public ActividadesKey() {
+    public ActividadesKey(CentroDeportivo centroDeportivo, String text) {
     }
 
     public ActividadesKey(CentroDeportivo centrosDeportivos, String nombre, String horario) {

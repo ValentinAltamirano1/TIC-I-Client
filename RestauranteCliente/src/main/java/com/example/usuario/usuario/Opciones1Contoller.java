@@ -22,6 +22,8 @@ public class Opciones1Contoller implements Initializable {
 
     @FXML
     private Button empresa_button;
+    @FXML
+    private Button cerrarsesion;
 
     @FXML
     private Label titulo;
@@ -35,6 +37,14 @@ public class Opciones1Contoller implements Initializable {
     @FXML
     void CentroDeportivoClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CentroDeportivo-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void CerrarSesionClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

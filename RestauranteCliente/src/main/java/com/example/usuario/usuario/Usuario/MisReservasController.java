@@ -134,7 +134,7 @@ public class MisReservasController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
     }
 
-    public void inf(){
+   /* public void inf(){
         System.out.println(mail);
         actividades1.addAll(getDataUsuario(mail));
         int row = 1;
@@ -177,5 +177,6 @@ public class MisReservasController implements Initializable {
     public void setMail(String mail) {
         this.mail = mail;
     }
+    */
 }
 

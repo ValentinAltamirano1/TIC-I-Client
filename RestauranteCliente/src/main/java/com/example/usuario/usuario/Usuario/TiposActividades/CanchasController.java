@@ -151,9 +151,9 @@ public class CanchasController implements Initializable {
         }catch (Exception ignored){}
         return actividadesList;
     }
-    @Override
+  @Override
     public void initialize(URL location, ResourceBundle resources) {
-        actividades1.addAll(getData());
+     /*     actividades1.addAll(getData());
         int row=1;
         int colum =0;
 
@@ -186,7 +186,7 @@ public class CanchasController implements Initializable {
 
             }
         }catch (Exception ignored){}
-
+*/
     }
 
 

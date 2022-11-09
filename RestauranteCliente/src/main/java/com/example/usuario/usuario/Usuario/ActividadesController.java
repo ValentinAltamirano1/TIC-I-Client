@@ -12,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
@@ -34,9 +35,21 @@ public class ActividadesController implements Initializable {
     private HBox hbox;
     @FXML
     private Button cerrar_sesion;
+    @FXML
+    private Label cupos_grande;
 
     @FXML
+    private Label descripcion_grande;
+
+    @FXML
+    private ChoiceBox<?> dias_grande;
+    @FXML
     private Button filtrar;
+    @FXML
+    private Label nombre_grande;
+
+    @FXML
+    private Label precio_grande;
 
     @FXML
     private AnchorPane anchorpane;
@@ -69,9 +82,14 @@ public class ActividadesController implements Initializable {
     private Button reservas;
     List<Actividades> actividades1 = new ArrayList<>();
 
-
+    private MyListener myListener;
     public String mail;
 
+
+    @FXML
+    void ReservarClickedButton(ActionEvent event) {
+
+    }
 
     @FXML
     void ActividadesClickedButton(ActionEvent event)throws IOException {
@@ -123,7 +141,7 @@ public class ActividadesController implements Initializable {
         stage.show();
     }
 
-    @FXML
+   /* @FXML
     void MisReservasClickedButton(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(ActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/MisReservas-view.fxml"));
@@ -134,6 +152,13 @@ public class ActividadesController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }*/
+
+    private void setChosenActivity(Actividades actividades){
+        nombre_grande.setText(actividades.getActividadesKey().getNombre());
+        cupos_grande.setText(String.valueOf(actividades.getCupos()));
+        descripcion_grande.setText(actividades.getDescripcion());
+        precio_grande.setText(String.valueOf(actividades.getPrecio()));
     }
 
     public List<Actividades> getData() {
@@ -156,6 +181,15 @@ public class ActividadesController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         actividades1.addAll(getData());
+        if(actividades1.size()>0){
+            setChosenActivity(actividades1.get(0));
+            myListener = new MyListener() {
+                @Override
+                public void onClickListener(Actividades actividades) {
+                    setChosenActivity(actividades);
+                }
+            };
+        }
         int row = 1;
         int colum = 0;
 
@@ -167,7 +201,7 @@ public class ActividadesController implements Initializable {
 
 
                 DesplegarController desplegarController = fxmlLoader.getController();
-                desplegarController.setData(actividades1.get(i));
+                desplegarController.setData(actividades1.get(1), myListener);
 
                 if (colum == 2) {
                     colum = 0;

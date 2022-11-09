@@ -117,7 +117,7 @@ public class NauticaController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        actividades1.addAll(getData());
+      /*  actividades1.addAll(getData());
         int row=1;
         int colum =0;
 
@@ -150,6 +150,9 @@ public class NauticaController implements Initializable {
 
             }
         }catch (Exception ignored){}
-
+*/
     }
+
+
 }
+

@@ -185,7 +185,7 @@ public class CrearActividadesController {
             precio_= Integer.parseInt(txt_precio.getText());
             capacidad_= Integer.parseInt(txt_capacidad.getText());
             cupo_= Integer.parseInt(txt_cupo.getText());
-            ActividadesKey actividadesKey = new ActividadesKey(centroDeportivos.get(0), txt_nombre.getText(), txt_horario.getValue().toString());
+            ActividadesKey actividadesKey = new ActividadesKey(centroDeportivos.get(0), txt_nombre.getText());
             Actividades actividades = new Actividades(actividadesKey,precio_,txt_categoria.getValue().toString(),capacidad_,txt_descripcion.getText(),cupo_ ,imagenes);
             HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/actividades")
                     .header("accept", "application/json")
