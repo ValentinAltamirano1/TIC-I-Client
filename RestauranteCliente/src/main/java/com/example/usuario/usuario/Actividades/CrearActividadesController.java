@@ -36,8 +36,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CrearActividadesController {
-    ObservableList<String> txt_horario_list= FXCollections.
-            observableArrayList("8:00-9:00","10:00","11:00","14:00","15:00","16:00","17:00","18:00");
+    ObservableList<String> txt_dia_list= FXCollections.
+            observableArrayList("Lunes", "Martes", "Miercoles", "Jueves","Viernes", "Sabado","Domingo");
     ObservableList<String> txt_categoria_list= FXCollections.
             observableArrayList("Cancha","Gimnasio", "Exterior", "Nautico");
     Stage stage;
@@ -61,7 +61,9 @@ public class CrearActividadesController {
     @FXML
     private Text categoria;
     @FXML
-    private Text horario;
+    private Text horario_inicio;
+    @FXML
+    private Text horario_fin;
     @FXML
     private Text nombre;
     @FXML
@@ -75,9 +77,14 @@ public class CrearActividadesController {
     @FXML
     private Text precio;
     @FXML
+    private Text dia;
+    @FXML
     private TextField txt_capacidad;
     @FXML
-    private ChoiceBox txt_horario;
+    private TextField txt_inicio;
+    @FXML
+    private TextField txt_fin;
+
     @FXML
     private Button checkin_button;
     @FXML
@@ -90,6 +97,9 @@ public class CrearActividadesController {
     private TextField txt_descripcion;
     @FXML
     private ChoiceBox txt_categoria;
+
+    @FXML
+    private ChoiceBox txt_dia;
     @FXML
     private TextField txt_precio;
     @FXML
@@ -108,20 +118,7 @@ public class CrearActividadesController {
     public String mail;
     @FXML
     private Text dias;
-    @FXML
-    private CheckBox lunes;
-    @FXML
-    private CheckBox martes;
-    @FXML
-    private CheckBox miercoles;
-    @FXML
-    private CheckBox jueves;
-    @FXML
-    private CheckBox viernes;
-    @FXML
-    private CheckBox sabado;
-    @FXML
-    private CheckBox domingo;
+
 
     public List<Imagen> imagenes = new ArrayList<>();
     @FXML
@@ -226,8 +223,8 @@ public class CrearActividadesController {
 
     @FXML
     private void initialize(){
-        txt_horario.setItems(txt_horario_list);
-        txt_horario.setValue("Horario");
+        txt_dia.setItems(txt_dia_list);
+        txt_dia.setValue("Dia");
         txt_categoria.setItems(txt_categoria_list);
         txt_categoria.setValue("Categoria");
     }
