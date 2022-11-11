@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -107,7 +109,7 @@
             <Font name="Candara Bold Italic" size="36.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="914.0" layoutY="237.0" prefHeight="459.0" prefWidth="277.0" style="-fx-background-color: #FFCA6F;">
+      <AnchorPane layoutX="914.0" layoutY="217.0" prefHeight="528.0" prefWidth="278.0" style="-fx-background-color: #FFCA6F;">
          <children>
             <VBox layoutX="18.0" layoutY="11.0" prefHeight="351.0" prefWidth="239.0" style="-fx-background-color: #FFCA6F;">
                <children>
@@ -153,11 +155,13 @@
                   </Label>
                </children>
             </VBox>
-            <Button fx:id="reservar_button" layoutX="59.0" layoutY="391.0" mnemonicParsing="false" onAction="#ReservarClickedButton" prefHeight="63.0" prefWidth="171.0" style="-fx-background-color: #FFE5B9; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="RESERVAR">
+            <Button fx:id="reservar_button" layoutX="61.0" layoutY="451.0" mnemonicParsing="false" onAction="#ReservarClickedButton" prefHeight="63.0" prefWidth="171.0" style="-fx-background-color: #FFE5B9; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="RESERVAR">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
+            <DatePicker layoutX="15.0" layoutY="395.0" prefHeight="26.0" prefWidth="118.0" promptText="Ingrese dia:" style="-fx-background-color: #FFFFFF;" />
+            <ChoiceBox fx:id="choicebox" layoutX="153.0" layoutY="395.0" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #FFFFFF;" />
          </children>
       </AnchorPane>
    </children>
