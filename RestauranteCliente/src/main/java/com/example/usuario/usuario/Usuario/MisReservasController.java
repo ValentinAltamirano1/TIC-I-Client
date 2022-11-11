@@ -2,9 +2,10 @@ package com.example.usuario.usuario.Usuario;
 
 import com.example.usuario.usuario.Actividades.Actividades;
 import com.example.usuario.usuario.Empleados.Empleado;
-import com.example.usuario.usuario.LogInController;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.request.GetRequest;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,15 +15,16 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
-import kong.unirest.GetRequest;
-import kong.unirest.Unirest;
 
 import java.io.IOException;
 import java.net.URL;
@@ -40,7 +42,22 @@ public class MisReservasController implements Initializable {
     private Button cerrar_sesion;
 
     @FXML
-    private Button filtrar;
+    private ChoiceBox<?> choicebox;
+
+    @FXML
+    private Label cupos;
+
+    @FXML
+    private Label cupos_grande;
+
+    @FXML
+    private DatePicker datepicker;
+
+    @FXML
+    private Label descripcion;
+
+    @FXML
+    private Label descripcion_grande;
 
     @FXML
     private ImageView foto_logo;
@@ -49,7 +66,19 @@ public class MisReservasController implements Initializable {
     private GridPane grid;
 
     @FXML
-    private GridPane grid1;
+    private HBox nombre;
+
+    @FXML
+    private Label nombre_grande;
+
+    @FXML
+    private Label precio;
+
+    @FXML
+    private Label precio_grande;
+
+    @FXML
+    private Button reservar_button;
 
     @FXML
     private Button reservas;
@@ -58,13 +87,18 @@ public class MisReservasController implements Initializable {
     private ScrollPane scroll;
 
     @FXML
-    private ScrollPane scroll_empleado;
-
-    @FXML
     private Label titulo;
 
-    public String mail;
+    @FXML
+    private Label usuario_nombre;
 
+    @FXML
+    private Label usuario_nombre1;
+
+
+    public String mail;
+    private MyListener myListener;
+    List<Actividades> actividades1 = new ArrayList<>();
 
     @FXML
     void ActividadesClickedButton(ActionEvent event) throws IOException {
@@ -102,7 +136,7 @@ public class MisReservasController implements Initializable {
         stage.show();
     }
 
-    List<Actividades> actividades1 = new ArrayList<>();
+
 
     public List<Actividades> getDataUsuario(String mail) {
         List<Empleado> empleadosList = null;
@@ -129,15 +163,24 @@ public class MisReservasController implements Initializable {
         }
         return actividadesList;
     }
-
+    private void setChosenActivity(Actividades actividades){
+        nombre_grande.setText(actividades.getActividadesKey().getNombre());
+        cupos_grande.setText(String.valueOf(actividades.getCupos()));
+        descripcion_grande.setText(actividades.getDescripcion());
+        precio_grande.setText(String.valueOf(actividades.getPrecio()));
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    }
-
-   /*public void inf(){
-        System.out.println(mail);
         actividades1.addAll(getDataUsuario(mail));
-
+        if(actividades1.size()>0){
+            setChosenActivity(actividades1.get(0));
+            myListener = new MyListener() {
+                @Override
+                public void onClickListener(Actividades actividades) {
+                    setChosenActivity(actividades);
+                }
+            };
+        }
         int row = 1;
         int colum = 0;
 
@@ -151,7 +194,7 @@ public class MisReservasController implements Initializable {
                 DesplegarController desplegarController = fxmlLoader.getController();
                 desplegarController.setData(actividades1.get(i), myListener);
 
-                if (colum == 1) {
+                if (colum == 2) {
                     colum = 0;
                     row++;
                 }
@@ -167,10 +210,13 @@ public class MisReservasController implements Initializable {
                 grid.setMinWidth(Region.USE_COMPUTED_SIZE);
 
                 GridPane.setMargin(anchorPane, new Insets(10));
+
             }
         } catch (Exception ignored) {
         }
-    }*/
+    }
+
+
     public String getMail() {
         return mail;
     }

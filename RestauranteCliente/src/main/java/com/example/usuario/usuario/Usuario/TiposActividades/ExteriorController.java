@@ -169,7 +169,7 @@ public class ExteriorController implements Initializable {
     private List<Actividades> getData() {
         List<Actividades> actividadesList = null;
         try {
-            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/Exterior")
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/categ/Exterior")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             ObjectMapper mapper = new ObjectMapper();

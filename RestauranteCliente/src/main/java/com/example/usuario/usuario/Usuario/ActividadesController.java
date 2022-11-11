@@ -11,10 +11,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
@@ -30,6 +27,11 @@ import java.util.ResourceBundle;
 public class ActividadesController implements Initializable {
     Scene scene;
     Stage stage;
+
+    @FXML
+    private ChoiceBox<?> choicebox;
+    @FXML
+    private DatePicker datepicker;
 
     @FXML
     private HBox hbox;
