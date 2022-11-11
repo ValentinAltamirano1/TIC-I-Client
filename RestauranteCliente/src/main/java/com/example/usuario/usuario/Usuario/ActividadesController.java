@@ -43,6 +43,7 @@ public class ActividadesController implements Initializable {
 
     @FXML
     private ChoiceBox<?> dias_grande;
+
     @FXML
     private Button filtrar;
     @FXML
@@ -201,7 +202,7 @@ public class ActividadesController implements Initializable {
 
 
                 DesplegarController desplegarController = fxmlLoader.getController();
-                desplegarController.setData(actividades1.get(1), myListener);
+                desplegarController.setData(actividades1.get(i), myListener);
 
                 if (colum == 2) {
                     colum = 0;
@@ -223,8 +224,6 @@ public class ActividadesController implements Initializable {
             }
         } catch (Exception ignored) {
         }
-
-
 
     }
 
