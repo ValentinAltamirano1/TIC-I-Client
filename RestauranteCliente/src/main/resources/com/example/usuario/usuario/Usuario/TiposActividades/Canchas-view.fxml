@@ -16,7 +16,7 @@
    <children>
       <ImageView fx:id="foto_logo" fitHeight="135.0" fitWidth="187.0" layoutX="30.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Fotos/Foto_Logo.jpg" />
+            <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
          </image>
       </ImageView>
       <Label layoutX="57.0" layoutY="220.0" />
@@ -70,22 +70,22 @@
             <Font name="Californian FB" size="50.0" />
          </font>
       </Label>
-      <Button fx:id="canchas" layoutX="279.0" layoutY="155.0" mnemonicParsing="false" onAction="#CanchasClickedButton" prefHeight="54.0" prefWidth="178.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../../Redondo.css" text="Canchas" textAlignment="RIGHT">
+      <Button fx:id="canchas" layoutX="279.0" layoutY="155.0" mnemonicParsing="false" onAction="#CanchasClickedButton" prefHeight="54.0" prefWidth="178.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Canchas" textAlignment="RIGHT">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="gimnasios" layoutX="452.0" layoutY="155.0" mnemonicParsing="false" onAction="#GimnasiosClickedButton" prefHeight="54.0" prefWidth="164.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../../Redondo.css" text="Gimnasios" textAlignment="RIGHT">
+      <Button fx:id="gimnasios" layoutX="452.0" layoutY="155.0" mnemonicParsing="false" onAction="#GimnasiosClickedButton" prefHeight="54.0" prefWidth="164.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Gimnasios" textAlignment="RIGHT">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="exterior" layoutX="609.0" layoutY="155.0" mnemonicParsing="false" onAction="#ExteriorClickedButton" prefHeight="54.0" prefWidth="153.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../../Redondo.css" text="Exterior" textAlignment="RIGHT">
+      <Button fx:id="exterior" layoutX="609.0" layoutY="155.0" mnemonicParsing="false" onAction="#ExteriorClickedButton" prefHeight="54.0" prefWidth="153.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Exterior" textAlignment="RIGHT">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="nautica" layoutX="760.0" layoutY="155.0" mnemonicParsing="false" onAction="#NauticaClickedButton" prefHeight="54.0" prefWidth="138.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../../Redondo.css" text="Nauticos" textAlignment="RIGHT">
+      <Button fx:id="nautica" layoutX="760.0" layoutY="155.0" mnemonicParsing="false" onAction="#NauticaClickedButton" prefHeight="54.0" prefWidth="138.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Nauticos" textAlignment="RIGHT">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>

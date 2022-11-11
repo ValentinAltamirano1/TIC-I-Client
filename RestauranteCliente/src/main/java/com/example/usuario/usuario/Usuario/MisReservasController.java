@@ -134,9 +134,10 @@ public class MisReservasController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
     }
 
-   /* public void inf(){
+   /*public void inf(){
         System.out.println(mail);
         actividades1.addAll(getDataUsuario(mail));
+
         int row = 1;
         int colum = 0;
 
@@ -148,7 +149,7 @@ public class MisReservasController implements Initializable {
 
 
                 DesplegarController desplegarController = fxmlLoader.getController();
-                desplegarController.setData(actividades1.get(i));
+                desplegarController.setData(actividades1.get(i), myListener);
 
                 if (colum == 1) {
                     colum = 0;
@@ -169,7 +170,7 @@ public class MisReservasController implements Initializable {
             }
         } catch (Exception ignored) {
         }
-    }
+    }*/
     public String getMail() {
         return mail;
     }
@@ -177,6 +178,6 @@ public class MisReservasController implements Initializable {
     public void setMail(String mail) {
         this.mail = mail;
     }
-    */
+
 }
 

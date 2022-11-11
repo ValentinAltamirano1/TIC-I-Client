@@ -110,7 +110,7 @@ public class ActividadesController implements Initializable {
 
     @FXML
     void CanchasClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Canchas-viiew.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Canchas-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -141,18 +141,18 @@ public class ActividadesController implements Initializable {
         stage.show();
     }
 
-   /* @FXML
+   @FXML
     void MisReservasClickedButton(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(ActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/MisReservas-view.fxml"));
         MisReservasController misReservasController = fxmlLoader.getController();
         misReservasController.setMail(mail);
-        misReservasController.inf();
+        //misReservasController.inf();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }*/
+    }
 
     private void setChosenActivity(Actividades actividades){
         nombre_grande.setText(actividades.getActividadesKey().getNombre());

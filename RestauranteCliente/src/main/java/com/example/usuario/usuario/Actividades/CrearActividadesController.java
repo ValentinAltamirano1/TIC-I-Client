@@ -1,6 +1,7 @@
 package com.example.usuario.usuario.Actividades;
 
 import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
+import com.example.usuario.usuario.HorarioKey;
 import com.example.usuario.usuario.Imagen;
 import com.example.usuario.usuario.Usuario.ActividadesController;
 import com.example.usuario.usuario.Usuario.MisReservasController;
@@ -121,6 +122,8 @@ public class CrearActividadesController {
 
 
     public List<Imagen> imagenes = new ArrayList<>();
+
+    public List<HorarioKey> horarios = new ArrayList<>();
     @FXML
     void FileChooserClickedButton(ActionEvent event) throws IOException {
 
@@ -186,7 +189,11 @@ public class CrearActividadesController {
             capacidad_= Integer.parseInt(txt_capacidad.getText());
             cupo_= Integer.parseInt(txt_cupo.getText());
             ActividadesKey actividadesKey = new ActividadesKey(centroDeportivos.get(0), txt_nombre.getText());
-            Actividades actividades = new Actividades(actividadesKey,precio_,txt_categoria.getValue().toString(),capacidad_,txt_descripcion.getText(),cupo_ ,imagenes);
+
+            HorarioKey horarioKey = new HorarioKey(txt_dia.getValue().toString(), txt_inicio.getText(), txt_fin.getText());
+            horarios.add(horarioKey);
+
+            Actividades actividades = new Actividades(actividadesKey,precio_,txt_categoria.getValue().toString(),capacidad_,txt_descripcion.getText(),cupo_ ,horarios,imagenes);
             HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/actividades")
                     .header("accept", "application/json")
                     .header("Content-Type", "application/json")

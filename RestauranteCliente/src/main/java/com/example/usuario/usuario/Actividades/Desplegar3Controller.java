@@ -51,7 +51,7 @@ public class Desplegar3Controller {
         this.actividades1 = actividades;
         nombre2.setText(actividades.getActividadesKey().getNombre());
         precio2.setText(String.valueOf(actividades.getPrecio()));
-        horario2.setText(actividades.getActividadesKey().getHorario());
+        //horario2.setText(String.valueOf(actividades.getHorarios().get(0)));
         capacidad2.setText(String.valueOf(actividades.getCapacidad()));
 
     }

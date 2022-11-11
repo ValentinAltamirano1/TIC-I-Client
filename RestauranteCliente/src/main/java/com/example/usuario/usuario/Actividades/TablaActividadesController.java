@@ -1,6 +1,7 @@
 package com.example.usuario.usuario.Actividades;
 
 import com.example.usuario.usuario.Empresas.Empresa;
+import com.example.usuario.usuario.HorarioKey;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.collections.FXCollections;
@@ -50,7 +51,7 @@ public class TablaActividadesController implements Initializable {
     private ImageView foto;
 
     @FXML
-    private TableColumn<Actividades, String> nombre;
+    private TableColumn<ActividadesKey, String> nombre;
 
     @FXML
     private TableColumn<Actividades, String> categoria;
@@ -62,7 +63,7 @@ public class TablaActividadesController implements Initializable {
     private TableColumn<Actividades, String> precio;
 
     @FXML
-    private TableColumn<Actividades, String> horario;
+    private TableColumn<HorarioKey, String> horario;
 
     @FXML
     private TableColumn<Actividades, String> cupos;
@@ -139,11 +140,11 @@ public class TablaActividadesController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        nombre.setCellValueFactory(new PropertyValueFactory<Actividades,String>("nombre"));
+        nombre.setCellValueFactory(new PropertyValueFactory<ActividadesKey,String>("nombre"));
         categoria.setCellValueFactory(new PropertyValueFactory<Actividades,String>("categoria"));
         capacidad.setCellValueFactory(new PropertyValueFactory<Actividades,String>("capacidad"));
         precio.setCellValueFactory(new PropertyValueFactory<Actividades,String>("precio"));
-        horario.setCellValueFactory(new PropertyValueFactory<Actividades,String>("horario"));
+        horario.setCellValueFactory(new PropertyValueFactory<HorarioKey,String>("horario_inicio"));
         cupos.setCellValueFactory(new PropertyValueFactory<Actividades,String>("cupos"));
         descripcion.setCellValueFactory(new PropertyValueFactory<Actividades,String>("descripcion"));
 

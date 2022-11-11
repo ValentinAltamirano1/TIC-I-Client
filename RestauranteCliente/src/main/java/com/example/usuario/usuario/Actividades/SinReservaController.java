@@ -1,5 +1,11 @@
 package com.example.usuario.usuario.Actividades;
 
+import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
+import com.example.usuario.usuario.Empleados.Empleado;
+import com.example.usuario.usuario.Usuario.Usuarios;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,9 +21,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import kong.unirest.GetRequest;
+import kong.unirest.Unirest;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class SinReservaController implements Initializable {
@@ -107,7 +116,34 @@ public class SinReservaController implements Initializable {
 
     @FXML
     void DarCheckInClickedButton(ActionEvent event) {
+        Node node = (Node) event.getSource();
+        Stage stage1 = (Stage) node.getScene().getWindow();
+        Usuarios u = (Usuarios) stage1.getUserData();
+        System.out.println(u.getMail());
 
+        //Agarro empleado
+        GetRequest response = Unirest.get("http://localhost:8080/api/v1/gimnasio/empleado/"+txt_pasaporte.getText())
+                .header("Content-Type", "application/json");
+        String temp = response.asJson().getBody().toString();
+        ObjectMapper mapper = new ObjectMapper();
+        List<Empleado> empleados =null;
+        try {
+            empleados = mapper.readValue(temp, new TypeReference<List<Empleado>>() {});
+            System.out.println(empleados.get(0));
+        } catch (JsonProcessingException e) {}
+
+
+        //agarro actividades
+        GetRequest response2 = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/" + u.getMail())
+                .header("Content-Type", "application/json");
+        String temp2 = response.asJson().getBody().toString();
+        ObjectMapper mapper1 = new ObjectMapper();
+        List<Actividades> actividades =null;
+        try {
+            actividades = mapper.readValue(temp, new TypeReference<List<Actividades>>() {});
+            System.out.println(actividades.get(0));
+
+        } catch (JsonProcessingException e) {}
     }
 
     @Override

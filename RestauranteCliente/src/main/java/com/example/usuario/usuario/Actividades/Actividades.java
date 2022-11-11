@@ -1,13 +1,14 @@
 package com.example.usuario.usuario.Actividades;
 
 import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
+import com.example.usuario.usuario.HorarioKey;
 import com.example.usuario.usuario.Imagen;
 import javafx.fxml.FXML;
 
 import java.util.List;
 
 public class Actividades {
-    public Actividades myListener;
+
     private ActividadesKey actividadesKey;
 
     private int precio;
@@ -16,25 +17,35 @@ public class Actividades {
 
     private int capacidad;
 
-
     private String descripcion;
 
     private int cupos;
-
+    private List <HorarioKey> horarios;
     private List<Imagen> imagen;
 
 
     public Actividades() {
     }
 
-    public Actividades(ActividadesKey actividadesKey, int precio, String categoria, int capacidad, String descripcion, int cupos ,List<Imagen> imagen) {
+
+
+    public Actividades(ActividadesKey actividadesKey, int precio, String categoria, int capacidad, String descripcion, int cupos, List<HorarioKey> horarios, List<Imagen> imagen) {
         this.actividadesKey = actividadesKey;
         this.precio = precio;
         this.categoria = categoria;
         this.capacidad = capacidad;
         this.descripcion = descripcion;
         this.cupos = cupos;
+        this.horarios = horarios;
         this.imagen = imagen;
+    }
+
+    public List<HorarioKey> getHorarios() {
+        return horarios;
+    }
+
+    public void setHorarios(List<HorarioKey> horarios) {
+        this.horarios = horarios;
     }
 
     public int getPrecio() {
@@ -77,7 +88,6 @@ public class Actividades {
         this.cupos = cupos;
     }
 
-
     public List<Imagen> getImagen() {
         return imagen;
     }
@@ -103,6 +113,7 @@ public class Actividades {
                 ", capacidad=" + capacidad +
                 ", descripcion='" + descripcion + '\'' +
                 ", cupos=" + cupos +
+                ", horarios=" + horarios +
                 ", imagen=" + imagen +
                 '}';
     }
