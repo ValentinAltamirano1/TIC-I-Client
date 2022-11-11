@@ -1,7 +1,10 @@
 package com.example.usuario.usuario.Usuario.TiposActividades;
 
 import com.example.usuario.usuario.Actividades.Actividades;
+import com.example.usuario.usuario.Usuario.ActividadesController;
 import com.example.usuario.usuario.Usuario.DesplegarController;
+import com.example.usuario.usuario.Usuario.MisReservasController;
+import com.example.usuario.usuario.Usuario.MyListener;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
@@ -15,10 +18,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
@@ -27,98 +32,189 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-
 public class ExteriorController implements Initializable {
     Scene scene;
     Stage stage;
 
     @FXML
-    private AnchorPane anchorpane;
+    private Button actividades;
+
+    @FXML
+    private Button canchas;
 
     @FXML
     private Button cerrar_sesion;
 
     @FXML
-    private Button exterior_button;
+    private Label cupos;
 
     @FXML
-    private Button filtrar;
+    private Label cupos_grande;
+
+    @FXML
+    private Label descripcion;
+
+    @FXML
+    private Label descripcion_grande;
+
+    @FXML
+    private Button exterior;
 
     @FXML
     private ImageView foto_logo;
 
     @FXML
+    private Button gimnasios;
+
+    @FXML
     private GridPane grid;
 
     @FXML
-    private ScrollPane scroll;
+    private Button nautica;
 
     @FXML
-    private Button actividades;
+    private HBox nombre;
 
     @FXML
-    private Button ver_todas_button;
+    private Label nombre_grande;
 
-    List<Actividades> actividades1 = new ArrayList<>();
+    @FXML
+    private Label precio;
+
+    @FXML
+    private Label precio_grande;
+
+    @FXML
+    private Button reservar_button;
 
     @FXML
     private Button reservas;
 
     @FXML
-    void MisReservasClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/MisReservas-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
+    private ScrollPane scroll;
+
     @FXML
-    void ActividadesClickedButton(ActionEvent event)throws IOException {
+    private Label titulo;
+
+    @FXML
+    private Label usuario_nombre;
+
+    @FXML
+    private Label usuario_nombre1;
+
+    List<Actividades> actividades1 = new ArrayList<>();
+    private MyListener myListener;
+    public String mail;
+
+
+
+    @FXML
+    void ActividadesClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/Actividades-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
     @FXML
     void CerrrSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+    @FXML
+    void CanchasClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Canchas-view.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
     @FXML
-    void ExteriorClickedButton(ActionEvent event) {
-
-    }
-
-    @FXML
-    void FiltrarClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/FiltrarPor-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    void ExteriorClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Exterior-view.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    void NauticaClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Nautica-view.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void GimnasiosClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Gimnasios-view.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void ReservarClickedButton(ActionEvent actionEvent) {
     }
 
     private List<Actividades> getData() {
-        List<Actividades> actividadesList =null;
-        try{
+        List<Actividades> actividadesList = null;
+        try {
             GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/Exterior")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             ObjectMapper mapper = new ObjectMapper();
-            actividadesList = mapper.readValue(temp, new TypeReference<List<Actividades>>(){});
-        }catch (Exception ignored){}
+            actividadesList = mapper.readValue(temp, new TypeReference<List<Actividades>>() {
+            });
+        } catch (Exception e) {
+            e.getMessage();
+        }
         return actividadesList;
     }
+
+    @FXML
+    void MisReservasClickedButton(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(ActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/MisReservas-view.fxml"));
+        MisReservasController misReservasController = fxmlLoader.getController();
+        misReservasController.setMail(mail);
+        //misReservasController.inf();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    private void setChosenActivity(Actividades actividades) {
+        nombre_grande.setText(actividades.getActividadesKey().getNombre());
+        cupos_grande.setText(String.valueOf(actividades.getCupos()));
+        descripcion_grande.setText(actividades.getDescripcion());
+        precio_grande.setText(String.valueOf(actividades.getPrecio()));
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-      /*  actividades1.addAll(getData());
-        int row=1;
-        int colum =0;
+        actividades1.addAll(getData());
+        if (actividades1.size() > 0) {
+            setChosenActivity(actividades1.get(0));
+            myListener = new MyListener() {
+                @Override
+                public void onClickListener(Actividades actividades) {
+                    setChosenActivity(actividades);
+                }
+            };
+        }
+        int row = 1;
+        int colum = 0;
 
         try {
             for (int i = 0; i < actividades1.size(); i++) {
@@ -128,9 +224,9 @@ public class ExteriorController implements Initializable {
 
 
                 DesplegarController desplegarController = fxmlLoader.getController();
-                desplegarController.setData(actividades1.get(i));
+                desplegarController.setData(actividades1.get(i), myListener);
 
-                if (colum == 1) {
+                if (colum == 2) {
                     colum = 0;
                     row++;
                 }
@@ -145,10 +241,10 @@ public class ExteriorController implements Initializable {
                 grid.setMinWidth(Region.USE_COMPUTED_SIZE);
                 grid.setMinWidth(Region.USE_COMPUTED_SIZE);
 
-                GridPane.setMargin(anchorPane,new Insets(10));
+                GridPane.setMargin(anchorPane, new Insets(10));
 
             }
-        }catch (Exception ignored){}
-*/
+        } catch (Exception ignored) {
+        }
     }
 }
