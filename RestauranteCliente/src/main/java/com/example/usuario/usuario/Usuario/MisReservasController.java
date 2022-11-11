@@ -135,8 +135,9 @@ public class MisReservasController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
-
+    @FXML
+    public void CancelarReservaClickedButton(ActionEvent actionEvent) {
+    }
 
     public List<Actividades> getDataUsuario(String mail) {
         List<Empleado> empleadosList = null;
@@ -171,6 +172,9 @@ public class MisReservasController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+    }
+
+    public void getinf(){
         actividades1.addAll(getDataUsuario(mail));
         if(actividades1.size()>0){
             setChosenActivity(actividades1.get(0));
@@ -216,7 +220,6 @@ public class MisReservasController implements Initializable {
         }
     }
 
-
     public String getMail() {
         return mail;
     }
@@ -224,6 +227,7 @@ public class MisReservasController implements Initializable {
     public void setMail(String mail) {
         this.mail = mail;
     }
+
 
 }
 
