@@ -44,9 +44,6 @@ public class ActividadesController implements Initializable {
     private Label descripcion_grande;
 
     @FXML
-    private ChoiceBox<?> dias_grande;
-
-    @FXML
     private Button filtrar;
     @FXML
     private Label nombre_grande;
@@ -91,7 +88,11 @@ public class ActividadesController implements Initializable {
 
     @FXML
     void ReservarClickedButton(ActionEvent event) {
+        if (!(datepicker.getValue() ==null) && !(choicebox.getValue() == null)){
 
+        }else{
+            System.out.println("Ingrese todos los datos para poder realizar una reserva");
+        }
     }
 
     @FXML
