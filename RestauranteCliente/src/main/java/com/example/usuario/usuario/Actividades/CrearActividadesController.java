@@ -38,7 +38,7 @@ import java.util.List;
 
 public class CrearActividadesController {
     ObservableList<String> txt_dia_list= FXCollections.
-            observableArrayList("Lunes", "Martes", "Miercoles", "Jueves","Viernes", "Sabado","Domingo");
+            observableArrayList("MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY","FRIDAY", "SATURDAY","SUNDAY");
     ObservableList<String> txt_categoria_list= FXCollections.
             observableArrayList("Cancha","Gimnasio", "Exterior", "Nautico");
     Stage stage;

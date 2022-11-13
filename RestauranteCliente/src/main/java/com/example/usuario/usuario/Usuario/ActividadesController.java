@@ -3,6 +3,7 @@ package com.example.usuario.usuario.Usuario;
 import com.example.usuario.usuario.Actividades.Actividades;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.java.accessibility.util.Translator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.skin.DatePickerSkin;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
@@ -20,8 +22,11 @@ import kong.unirest.Unirest;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ActividadesController implements Initializable {
@@ -84,6 +89,7 @@ public class ActividadesController implements Initializable {
 
     private MyListener myListener;
     public String mail;
+    public String diaSemana;
 
 
     @FXML
@@ -207,6 +213,13 @@ public class ActividadesController implements Initializable {
                 DesplegarController desplegarController = fxmlLoader.getController();
                 desplegarController.setData(actividades1.get(i), myListener);
 
+                //conseguir horarios segun la actividad con el dia de la semana
+                GetRequest request = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/horario/" + diaSemana + "/" + actividades1.get(i).getActividadesKey().getNombre()
+                                + "/" + actividades1.get(i).getActividadesKey().getCentrosDeportivos().getRut())
+                        .header("Content-Type", "application/json");
+                String temp = request.asJson().getBody().toString();
+                System.out.println(temp);
+
                 if (colum == 2) {
                     colum = 0;
                     row++;
@@ -223,12 +236,20 @@ public class ActividadesController implements Initializable {
                 grid.setMinWidth(Region.USE_COMPUTED_SIZE);
 
                 GridPane.setMargin(anchorPane, new Insets(10));
-
             }
         } catch (Exception ignored) {
         }
 
     }
+
+    public void getDate(ActionEvent event){
+        LocalDate date = datepicker.getValue();
+        System.out.println(date.toString());
+
+        diaSemana = date.getDayOfWeek().toString();
+        System.out.println(diaSemana);
+    }
+
 
     public String getMail() {
         return mail;

@@ -160,7 +160,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <DatePicker fx:id="datepicker" layoutX="15.0" layoutY="395.0" prefHeight="26.0" prefWidth="118.0" promptText="Ingrese dia:" style="-fx-background-color: #FFFFFF;" />
+            <DatePicker fx:id="datepicker" layoutX="15.0" layoutY="395.0" prefHeight="26.0" prefWidth="118.0" onAction="#getDate" promptText="Ingrese dia:" style="-fx-background-color: #FFFFFF;" />
             <ChoiceBox fx:id="choicebox" layoutX="153.0" layoutY="395.0" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #FFFFFF;" />
          </children>
       </AnchorPane>
