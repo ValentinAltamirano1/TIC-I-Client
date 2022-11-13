@@ -91,6 +91,7 @@ public class ActividadesController implements Initializable {
     public String mail;
     public String diaSemana;
 
+    public Actividades actividades_;
 
     @FXML
     void ReservarClickedButton(ActionEvent event) {
@@ -197,7 +198,9 @@ public class ActividadesController implements Initializable {
                 @Override
                 public void onClickListener(Actividades actividades) {
                     setChosenActivity(actividades);
-                }
+                    setActividades_(actividades);
+                    }
+
             };
         }
         int row = 1;
@@ -212,13 +215,6 @@ public class ActividadesController implements Initializable {
 
                 DesplegarController desplegarController = fxmlLoader.getController();
                 desplegarController.setData(actividades1.get(i), myListener);
-
-                //conseguir horarios segun la actividad con el dia de la semana
-                GetRequest request = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/horario/" + diaSemana + "/" + actividades1.get(i).getActividadesKey().getNombre()
-                                + "/" + actividades1.get(i).getActividadesKey().getCentrosDeportivos().getRut())
-                        .header("Content-Type", "application/json");
-                String temp = request.asJson().getBody().toString();
-                System.out.println(temp);
 
                 if (colum == 2) {
                     colum = 0;
@@ -248,6 +244,17 @@ public class ActividadesController implements Initializable {
 
         diaSemana = date.getDayOfWeek().toString();
         System.out.println(diaSemana);
+        System.out.println(actividades_.getActividadesKey().getNombre());
+        System.out.println(actividades_.getActividadesKey().getCentrosDeportivos().getRut());
+
+        //conseguir horarios segun la actividad con el dia de la semana
+        GetRequest request = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/horario/" + diaSemana + "/" + actividades_.getActividadesKey().getNombre()
+                        + "/" + actividades_.getActividadesKey().getCentrosDeportivos().getRut())
+                .header("Content-Type", "application/json");
+        String temp = request.asJson().getBody().toString();
+        System.out.println(temp);
+
+
     }
 
 
@@ -257,5 +264,13 @@ public class ActividadesController implements Initializable {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public Actividades getActividades_() {
+        return actividades_;
+    }
+
+    public void setActividades_(Actividades actividades_) {
+        this.actividades_ = actividades_;
     }
 }
