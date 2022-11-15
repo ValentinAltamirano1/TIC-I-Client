@@ -260,6 +260,9 @@ public class CrearActividadesController {
 
         }
     }
+
+    public void AdministracionClickedButton(ActionEvent actionEvent) {
+    }
 }
 
 
