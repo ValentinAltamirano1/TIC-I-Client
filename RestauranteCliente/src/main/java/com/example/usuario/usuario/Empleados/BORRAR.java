@@ -26,7 +26,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class TablaEmpleadosController implements Initializable {
+public class BORRAR implements Initializable {
     Stage stage;
     Scene scene;
 

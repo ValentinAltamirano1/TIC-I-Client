@@ -206,9 +206,7 @@ public class CheckInController implements Initializable {
     }
 
     public void info () {
-        System.out.println(mail);
         actividades1.addAll(getDataCentro(mail));
-        System.out.println(actividades1);
         int row = 1;
         int colum = 0;
 

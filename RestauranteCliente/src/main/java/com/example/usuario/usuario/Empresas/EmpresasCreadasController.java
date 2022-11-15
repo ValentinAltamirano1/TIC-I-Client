@@ -1,8 +1,9 @@
-package com.example.usuario.usuario.CentrosDeportivos;
+package com.example.usuario.usuario.Empresas;
 
+import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
+import com.example.usuario.usuario.CentrosDeportivos.DesplegarCentrosController;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.vertx.core.eventbus.Message;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,22 +29,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class CentroDeportivoCreadosController implements Initializable  {
-
-    private Scene scene;
-
-    private Stage stage;
-    @FXML
-    private Label centrosdeportivos;
+public class EmpresasCreadasController implements Initializable {
 
     @FXML
     private Button cerrar_sesion_button;
 
     @FXML
-    private Button creados_button;
+    private Button creadas_button;
 
     @FXML
     private Button crearNuevo_button;
+
+    @FXML
+    private Label empresa;
 
     @FXML
     private ImageView foto;
@@ -60,79 +58,72 @@ public class CentroDeportivoCreadosController implements Initializable  {
     @FXML
     private Label titulo_uno;
 
-    @FXML
-    private Button volver_button;
-
-    List<CentroDeportivo> centros1 = new ArrayList<>();
-    @FXML
-    void VolverClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
+    List<Empresa> empresas = new ArrayList<>();
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/TablaCentrosDeportivos-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/EmpresasCreadasController-view.fxml"));
+        Stage stage;
+        Scene scene;
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-    @FXML
-    void CrearNuevoClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CrearCentroDeportivo-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    public List<CentroDeportivo> getData() {
-        List<CentroDeportivo> centrosList =null;
+    @FXML
+    void CrearNuevaClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/Empresa-view.fxml"));
+        Stage stage;
+        Scene scene;
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public List<Empresa> getData() {
+        List<Empresa> empresasList =null;
         try{
-            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/centroDeportivo")
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/empresa")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             System.out.println(temp);
             ObjectMapper mapper = new ObjectMapper();
-            centrosList = mapper.readValue(temp, new TypeReference<List<CentroDeportivo>>(){});
-            System.out.println(centrosList);
+            empresasList = mapper.readValue(temp, new TypeReference<List<Empresa>>(){});
+            System.out.println(empresasList);
         }
         catch (Exception e){
             System.out.println(e.getMessage());
         }
-        return centrosList;
+        return empresasList;
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        centros1.addAll(getData());
-        System.out.println(centros1);
+        empresas.addAll(getData());
+        System.out.println(empresas);
 
         int row = 1;
         int colum = 0;
 
         try {
-            for (int i = 0; i < centros1.size(); i++) {
+            for (int i = 0; i < empresas.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/DesplegarCentros-view.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Empresas/DesplegarEmpresas.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
 
 
-                DesplegarCentrosController desplegarCentrosController = fxmlLoader.getController();
-                desplegarCentrosController.setData(centros1.get(i));
+                DesplegarEmpresasController desplegarEmpresasController = fxmlLoader.getController();
+                desplegarEmpresasController.setData(empresas.get(i));
 
                 if (colum == 2) {
                     colum = 0;

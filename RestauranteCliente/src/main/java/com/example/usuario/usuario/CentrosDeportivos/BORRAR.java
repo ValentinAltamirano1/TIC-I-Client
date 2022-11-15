@@ -25,7 +25,7 @@ import java.util.ResourceBundle;
 
 import static javafx.collections.FXCollections.observableArrayList;
 
-public class TablaCentroDeportivoController implements Initializable {
+public class BORRAR implements Initializable {
     private Scene scene;
     private Stage stage;
     @FXML

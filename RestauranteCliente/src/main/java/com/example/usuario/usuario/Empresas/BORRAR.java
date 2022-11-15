@@ -23,7 +23,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class TablaEmpresasController implements Initializable {
+public class BORRAR implements Initializable {
     private Stage stage;
     private Scene scene;
     @FXML

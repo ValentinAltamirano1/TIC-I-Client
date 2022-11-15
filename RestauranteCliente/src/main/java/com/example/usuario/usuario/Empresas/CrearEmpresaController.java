@@ -1,9 +1,5 @@
 package com.example.usuario.usuario.Empresas;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.mashape.unirest.http.JsonNode;
-import com.mashape.unirest.http.exceptions.UnirestException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,12 +21,10 @@ import kong.unirest.Unirest;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 
-public class EmpresaController implements Initializable{
+public class CrearEmpresaController implements Initializable{
     ObservableList<String> txt_list_tipos= FXCollections.
             observableArrayList("adminEmpresa");
     private Stage stage;
@@ -144,7 +138,7 @@ public class EmpresaController implements Initializable{
     }
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/TablaEmpresa-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/EmpresasCreadas-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
