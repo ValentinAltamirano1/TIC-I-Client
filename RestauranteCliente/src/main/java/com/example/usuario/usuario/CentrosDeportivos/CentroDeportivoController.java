@@ -1,5 +1,4 @@
 package com.example.usuario.usuario.CentrosDeportivos;
-import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

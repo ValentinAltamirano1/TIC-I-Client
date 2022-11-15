@@ -134,11 +134,6 @@ public class CheckInController implements Initializable {
     }
 
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
-
     public List<Actividades> getDataCentro(String mail) {
         System.out.println(mail);
         //agarro las actividades del centro
@@ -171,21 +166,23 @@ public class CheckInController implements Initializable {
         return actividadesCentro;
     }
 
-    public void info() {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         System.out.println(mail);
         actividades1.addAll(getDataCentro(mail));
+        System.out.println(actividades1.addAll(getDataCentro(mail)));
         int row = 1;
         int colum = 0;
 
         try {
             for (int i = 0; i < actividades1.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Actividades/Desplegar3.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Actividades/DesplegarCheckIn.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
 
 
-                Desplegar3Controller desplegar3Controller = fxmlLoader.getController();
-                desplegar3Controller.setData1(actividades1.get(i));
+                DesplegarCheckInController desplegarCheckInController = fxmlLoader.getController();
+                desplegarCheckInController.setData1(actividades1.get(i));
 
                 if (colum == 1) {
                     colum = 0;

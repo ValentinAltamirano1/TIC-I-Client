@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="409.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empleados.DesplegarEmpleadosController">
+   <children>
+      <VBox layoutX="14.0" layoutY="23.0" prefHeight="281.0" prefWidth="138.0" spacing="10.0">
+         <children>
+            <Label text="Nombre:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label text="Pasaporte:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="52.0" text="Telefono:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="104.0" text="Mail:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="135.0" text="Contraseña:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="166.0" text="Tipo:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="176.0" text="Ficha Medica:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="260.0" text="Saldo:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="301.0" text="Sobregiro:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="158.0" layoutY="23.0" prefHeight="364.0" prefWidth="186.0" spacing="10.0">
+         <children>
+            <Label fx:id="nombre" text="Nombre:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="pasaporte" text="Pasaporte:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="telefono" layoutX="10.0" layoutY="52.0" text="Telefono:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="mail" layoutX="10.0" layoutY="104.0" text="Mail:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="contrasena" layoutX="10.0" layoutY="135.0" text="Contraseña:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="tipo" layoutX="10.0" layoutY="166.0" text="Tipo:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="fichamedica" layoutX="10.0" layoutY="176.0" text="Ficha Medica:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="saldo" layoutX="10.0" layoutY="260.0" text="Saldo:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="sobregiro" layoutX="10.0" layoutY="301.0" text="Sobregiro:">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

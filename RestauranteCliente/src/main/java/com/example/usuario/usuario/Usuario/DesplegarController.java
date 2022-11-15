@@ -25,8 +25,6 @@ public class DesplegarController {
 
     @FXML
     private Label cupos1;
-
-
     @FXML
     private Label horario1;
 
@@ -39,6 +37,11 @@ public class DesplegarController {
     @FXML
     private Button reserva_button;
 
+    @FXML
+    private Button atras_button;
+
+    @FXML
+    private Button siguiente_button;
     @FXML
     private Label titulo_cupos;
 
@@ -53,6 +56,12 @@ public class DesplegarController {
         myListener.onClickListener(actividades);
     }
 
+    public void AtrasClickedButton(ActionEvent actionEvent) {
+
+    }
+
+    public void SiguienteClickedButton(ActionEvent actionEvent) {
+    }
 
     @FXML
     private Label titulo_precio;

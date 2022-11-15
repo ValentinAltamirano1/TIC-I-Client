@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public class Desplegar3Controller {
+public class DesplegarCheckInController {
 
     @FXML
     private Label capacidad2;

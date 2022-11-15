@@ -142,7 +142,7 @@ public class CrearActividadesController {
 
     }
 
-    @FXML
+    /*@FXML
     void CheckInClickedButton(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(CrearActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
@@ -155,7 +155,7 @@ public class CrearActividadesController {
         stage.setScene(scene);
         stage.show();
 
-    }
+    }*/
 
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
@@ -242,6 +242,9 @@ public class CrearActividadesController {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public void CheckInClickedButton(ActionEvent actionEvent) {
     }
 }
 
