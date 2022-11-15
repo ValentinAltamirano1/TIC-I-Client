@@ -39,6 +39,8 @@ public class EmpleadosCreadosController implements Initializable {
 
     @FXML
     private Button creados_button;
+    @FXML
+    private Button administracion;
 
     @FXML
     private Button crearNuevo_button;
@@ -77,7 +79,10 @@ public class EmpleadosCreadosController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    void AdministracionClickedButton(ActionEvent event) throws IOException {
 
+    }
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/TablaEmpleadosController.java"));

@@ -29,7 +29,6 @@ public class DesplegarActividadesController {
 
     public void setData(Actividades actividades){
         this.actividades = actividades;
-            //HACER LOS SET TEXT
         nombre.setText(actividades.getActividadesKey().getNombre());
         precio.setText(String.valueOf(actividades.getPrecio()));
         descripcion.setText(actividades.getDescripcion());

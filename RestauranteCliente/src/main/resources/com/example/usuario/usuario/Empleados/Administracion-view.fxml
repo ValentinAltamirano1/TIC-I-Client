@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.2745194677180877" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empleados.EmpleadosCreadosController">
+<SplitPane dividerPositions="0.2745194677180877" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empleados.AdministracionController">
    <items>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="484.0" prefWidth="227.0" style="-fx-background-color: #000000;">
          <children>
@@ -64,7 +64,7 @@
       </AnchorPane>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="773.0" prefWidth="1219.0" style="-fx-background-color: #000000;">
          <children>
-            <Label fx:id="centrosdeportivos" layoutX="262.0" layoutY="55.0" text="EMPLEADOS" textFill="WHITE">
+            <Label fx:id="centrosdeportivos" layoutX="161.0" layoutY="56.0" text="ADMINISTRACION" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="62.0" />
                </font>
