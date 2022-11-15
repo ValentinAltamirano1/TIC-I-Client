@@ -2,7 +2,10 @@ package com.example.usuario.usuario.Usuario;
 
 import com.example.usuario.usuario.Actividades.Actividades;
 import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
+import com.example.usuario.usuario.Empleados.Empleado;
 import com.example.usuario.usuario.HorarioKey;
+import com.example.usuario.usuario.Reservas;
+import com.example.usuario.usuario.ReservasKey;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,6 +26,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
+import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 
 import java.io.IOException;
@@ -104,7 +108,27 @@ public class ActividadesController implements Initializable {
 
     @FXML
     void ReservarClickedButton(ActionEvent event) {
+        List<Empleado> empleadosList = null;
         if (!(datepicker.getValue() ==null) && !(choicebox.getValue() == null)){
+
+            //busco empleado por mail
+            GetRequest requestEmp = Unirest.get("http://localhost:8080/api/v1/gimnasio/empleado/" + mail)
+                    .header("Content-Type", "application/json");
+            String temp1 = requestEmp.asJson().getBody().toString();
+            System.out.println(temp1);
+            ObjectMapper mapper1 = new ObjectMapper();
+            try {
+                empleadosList =mapper1.readValue(temp1, new TypeReference<List<Empleado>>() {});
+                System.out.println(empleadosList);
+            } catch (JsonProcessingException e) {}
+
+            ReservasKey reservasKey = new ReservasKey(empleadosList.get(0),datepicker.getValue().toString(),choicebox.getValue().toString());
+            Reservas reservas1 = new Reservas(actividades_,reservasKey,false);
+
+            HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/reservas")
+                    .header("accept", "application/json")
+                    .header("Content-Type", "application/json")
+                    .body(reservas1).asEmpty();
 
         }else{
             System.out.println("Ingrese todos los datos para poder realizar una reserva");
@@ -283,7 +307,6 @@ public class ActividadesController implements Initializable {
 
             txt_horarios_list.add(horarioInicio);
         } catch (JsonProcessingException e) {}
-
 
 
         choicebox.setItems(txt_horarios_list);

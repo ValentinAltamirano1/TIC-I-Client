@@ -90,7 +90,7 @@ public class EmpleadosCreadosController implements Initializable {
     public List<Empleado> getData() {
         List<Empleado> empleadosList =null;
         try{
-            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/Empleado")
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/empleado")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             System.out.println(temp);

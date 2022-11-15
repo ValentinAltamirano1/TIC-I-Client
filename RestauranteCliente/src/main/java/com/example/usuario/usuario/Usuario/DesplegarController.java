@@ -68,36 +68,6 @@ public class DesplegarController {
 
     private Actividades actividades;
     private MyListener myListener;
-    @FXML
-    void ReservarClickedButton(ActionEvent event) {
-        Node node = (Node) event.getSource();
-        Stage stage1 = (Stage) node.getScene().getWindow();
-        Usuarios u = (Usuarios) stage1.getUserData();
-        System.out.println(u.getMail());
-
-        GetRequest response = Unirest.get("http://localhost:8080/api/v1/gimnasio/empleado/" + u.getMail())
-                .header("Content-Type", "application/json");
-        String temp = response.asJson().getBody().toString();
-        ObjectMapper mapper = new ObjectMapper();
-        List<Empleado> empleados =null;
-        try {
-            empleados = mapper.readValue(temp, new TypeReference<List<Empleado>>() {});
-            System.out.println(empleados.get(0));
-
-        } catch (JsonProcessingException e) {}
-
-        //tabla reservas con datos de la actividad y del usuario
-        ReservasKey reservasKey = new ReservasKey(empleados.get(0));
-        Reservas reservas = new Reservas(actividades,reservasKey,false);
-        System.out.println(reservas);
-
-
-        HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/reservas")
-                .header("accept","application/json" )
-                .header("Content-Type", "application/json")
-                .body(reservas).asEmpty();
-        // Falta hacer que se reste un cupo y en caso de que quede solo 1 que se elimine la actividad
-    }
 
     public void setData(Actividades actividades, MyListener myListener){
         this.actividades = actividades;

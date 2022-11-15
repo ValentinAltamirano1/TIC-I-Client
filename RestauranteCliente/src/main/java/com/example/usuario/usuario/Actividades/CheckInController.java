@@ -161,6 +161,7 @@ public class CheckInController implements Initializable {
         } catch (Exception e) {
         }
         System.out.println(actividadesCentro);
+        System.out.println("hola");
         return actividadesCentro;
     }
 
