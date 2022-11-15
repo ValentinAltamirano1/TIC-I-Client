@@ -39,11 +39,11 @@ public class DesplegarCheckInController {
     private Label titulo_precio;
 
     private Actividades actividades1;
+
     private Empleado empleados;
     @FXML
     void ConfirmarClickedButton(ActionEvent event) {
-
-
+        System.out.println(this.actividades1);
     }
 
     public void setData1(Actividades actividades){

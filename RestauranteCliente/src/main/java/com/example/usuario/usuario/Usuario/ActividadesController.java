@@ -150,7 +150,10 @@ public class ActividadesController implements Initializable {
 
     @FXML
     void BuscarClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/Buscar-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(BuscarController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/Buscar-view.fxml"));
+        BuscarController buscarController = fxmlLoader.getController();
+        buscarController.getData();
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -324,7 +327,6 @@ public class ActividadesController implements Initializable {
 
         choicebox.setItems(txt_horarios_list);
         choicebox.setValue("Horario");
-
 
     }
 

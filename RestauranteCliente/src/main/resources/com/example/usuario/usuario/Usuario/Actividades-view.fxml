@@ -188,7 +188,7 @@
             </ImageView>
             <ImageView fitHeight="49.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Fotos/Foto_Nautica1.jpg" />
+                  <Image url="@/com/example/usuario/usuario/Fotos/Foto_Nautica1.jpg" />
                </image>
             </ImageView>
          </children>

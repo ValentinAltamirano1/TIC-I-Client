@@ -120,12 +120,7 @@
                   </Label>
                </children>
             </VBox>
-            <Button fx:id="reservar_button" layoutX="61.0" layoutY="451.0" mnemonicParsing="false" onAction="#ReservarClickedButton" prefHeight="63.0" prefWidth="171.0" style="-fx-background-color: #FFE5B9; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="RESERVAR">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Button>
-            <DatePicker fx:id="datepicker" layoutX="15.0" layoutY="395.0" onAction="#getDate" prefHeight="26.0" prefWidth="118.0" promptText="Ingrese dia:" style="-fx-background-color: #FFFFFF;" />
+            <DatePicker fx:id="datepicker" layoutX="15.0" layoutY="395.0" onAction="#getData" prefHeight="26.0" prefWidth="118.0" promptText="Ingrese dia:" style="-fx-background-color: #FFFFFF;" />
             <ChoiceBox fx:id="choicebox" layoutX="153.0" layoutY="395.0" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #FFFFFF;" />
          </children>
       </AnchorPane>
@@ -148,7 +143,7 @@
             </ImageView>
             <ImageView fitHeight="49.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Fotos/Foto_Nautica1.jpg" />
+                  <Image url="@/com/example/usuario/usuario/Fotos/Foto_Nautica1.jpg" />
                </image>
             </ImageView>
          </children>

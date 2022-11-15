@@ -135,9 +135,7 @@ public class CrearActividadesController {
             byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray(file));
             data_ = new String(encoded, StandardCharsets.US_ASCII);
             Imagen imagenCentro = new Imagen(data_);
-            System.out.println(data_);
             imagenes.add(imagenCentro);
-            System.out.println(file.getAbsolutePath());
         }
 
     }
