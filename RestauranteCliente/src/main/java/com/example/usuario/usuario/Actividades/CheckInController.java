@@ -133,7 +133,6 @@ public class CheckInController implements Initializable {
         stage.show();
     }
 
-
     public List<Actividades> getDataCentro(String mail) {
         System.out.println(mail);
         //agarro las actividades del centro
@@ -149,7 +148,6 @@ public class CheckInController implements Initializable {
             System.out.println(centrosDepor);
         } catch (Exception ignored) {
         }
-
 
         //con el centro deportivo, busco las reservas asociadas al centro
         GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/reservas/getRut/" + centrosDepor.get(0).getRut())
