@@ -13,14 +13,9 @@
       <Pane layoutY="-1.0" prefHeight="318.0" prefWidth="538.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30; -fx-border-color: #FFE5B9;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css">
          <children>
             <ImageView fitHeight="145.0" fitWidth="147.0" layoutX="24.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" />
-            <VBox layoutX="185.0" layoutY="17.0" prefHeight="176.0" prefWidth="117.0" spacing="17.0">
+            <VBox layoutX="185.0" layoutY="40.0" prefHeight="176.0" prefWidth="117.0" spacing="17.0">
                <children>
                   <Label fx:id="titulo_nombre" text="Nombre:">
-                     <font>
-                        <Font name="System Bold" size="21.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="titulo_horario" layoutX="10.0" layoutY="10.0" text="Horario:">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
@@ -42,16 +37,11 @@
                   </Label>
                </children>
             </VBox>
-            <VBox layoutX="302.0" layoutY="12.0" prefHeight="176.0" prefWidth="229.0" spacing="20.0">
+            <VBox layoutX="302.0" layoutY="39.0" prefHeight="176.0" prefWidth="229.0" spacing="20.0">
                <children>
                   <Label fx:id="nombre2" style="-fx-background-color: #FFFFFF;" text="nombre " textAlignment="CENTER" textFill="RED">
                      <font>
                         <Font name="Eras Medium ITC" size="28.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="horario2" layoutX="10.0" layoutY="61.0" text="horario">
-                     <font>
-                        <Font name="Eras Medium ITC" size="24.0" />
                      </font>
                   </Label>
                   <Label fx:id="capacidad2" text="capacidad">
