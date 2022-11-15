@@ -93,6 +93,9 @@ public class BuscarController implements Initializable {
     private Label titulo;
 
     @FXML
+    private ChoiceBox<?> centros_choicebox;
+
+    @FXML
     private Label usuario_nombre;
 
     @FXML
@@ -104,6 +107,10 @@ public class BuscarController implements Initializable {
 
     @FXML
     void ActividadesClickedButton(ActionEvent event) {
+
+    }
+    @FXML
+    void ReservarClickedButton(ActionEvent event) {
 
     }
 
