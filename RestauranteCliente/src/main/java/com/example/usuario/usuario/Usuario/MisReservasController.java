@@ -1,6 +1,7 @@
 package com.example.usuario.usuario.Usuario;
 
 import com.example.usuario.usuario.Actividades.Actividades;
+import com.example.usuario.usuario.Actividades.CrearActividadesController;
 import com.example.usuario.usuario.Empleados.Empleado;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -33,7 +34,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class MisReservasController implements Initializable {
-    Stage stage;
     Scene scene;
     @FXML
     private Button actividades;
@@ -102,7 +102,15 @@ public class MisReservasController implements Initializable {
 
     @FXML
     void ActividadesClickedButton(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/Actividades-view.fxml"));
+        ActividadesController controller = fxmlLoader.getController();
+        //controller.setMail(mail);
+
+        Stage stage = new Stage();
+        Scene scene;
+
+        stage.setUserData("vale");
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -112,6 +120,7 @@ public class MisReservasController implements Initializable {
     @FXML
     void CerrrSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        Stage stage;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -121,6 +130,7 @@ public class MisReservasController implements Initializable {
     @FXML
     void FiltrarClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/FiltrarPor-view.fxml"));
+        Stage stage;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -130,6 +140,7 @@ public class MisReservasController implements Initializable {
     @FXML
     void MisReservasClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/MisReservas-view.fxml"));
+        Stage stage;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
