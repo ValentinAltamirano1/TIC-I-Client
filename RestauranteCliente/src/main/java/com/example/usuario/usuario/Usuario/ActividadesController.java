@@ -1,9 +1,14 @@
 package com.example.usuario.usuario.Usuario;
 
 import com.example.usuario.usuario.Actividades.Actividades;
+import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
+import com.example.usuario.usuario.HorarioKey;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.java.accessibility.util.Translator;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,8 +36,14 @@ import java.util.ResourceBundle;
 
 public class ActividadesController implements Initializable {
 
+    ObservableList<String> txt_horarios_list= FXCollections.
+            observableArrayList();
+
+    Scene scene;
+    Stage stage;
+
     @FXML
-    private ChoiceBox<?> choicebox;
+    private ChoiceBox choicebox;
     @FXML
     private DatePicker datepicker;
 
@@ -166,12 +177,9 @@ public class ActividadesController implements Initializable {
     void MisReservasClickedButton(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(ActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/MisReservas-view.fxml"));
-        Stage stage;
-        Scene scene;
         MisReservasController misReservasController = fxmlLoader.getController();
         misReservasController.setMail(mail);
         misReservasController.getinf();
-
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -266,6 +274,20 @@ public class ActividadesController implements Initializable {
                 .header("Content-Type", "application/json");
         String temp = request.asJson().getBody().toString();
         System.out.println(temp);
+        ObjectMapper mapper = new ObjectMapper();
+
+        List<HorarioKey> horarioKeys =null;
+        try {
+            horarioKeys = mapper.readValue(temp, new TypeReference<List<HorarioKey>>() {});
+            String horarioInicio =horarioKeys.get(0).getHorario_inicio();
+
+            txt_horarios_list.add(horarioInicio);
+        } catch (JsonProcessingException e) {}
+
+
+
+        choicebox.setItems(txt_horarios_list);
+        choicebox.setValue("Horario");
 
 
     }
