@@ -1,7 +1,6 @@
 package com.example.usuario.usuario;
 
 
-import com.example.usuario.usuario.Actividades.Actividades;
 import com.example.usuario.usuario.Actividades.CrearActividadesController;
 import com.example.usuario.usuario.Usuario.ActividadesController;
 import com.example.usuario.usuario.Usuario.Usuarios;
@@ -23,7 +22,6 @@ import javafx.stage.Stage;
 import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.URL;
@@ -115,7 +113,7 @@ public class LogInController implements Initializable {
                     Stage stage1 = (Stage) node.getScene().getWindow();
                     stage1.close();
 
-                    Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/Empleado-view.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/CrearEmpleado-view.fxml"));
 
                     stage1.setUserData(listUser);
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

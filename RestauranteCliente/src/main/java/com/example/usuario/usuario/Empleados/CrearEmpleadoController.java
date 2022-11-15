@@ -24,11 +24,10 @@ import kong.unirest.Unirest;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class EmpleadoController implements Initializable {
+public class CrearEmpleadoController implements Initializable {
     ObservableList<String> txt_tipo_list= FXCollections.
             observableArrayList("Usuario");
     Stage stage;
@@ -99,7 +98,7 @@ public class EmpleadoController implements Initializable {
     }
     @FXML
     void CrearNuevoClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/Empleado-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/CrearEmpleado-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

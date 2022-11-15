@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CentroDeportivoController implements Initializable {
+public class CrearCentroDeportivoController implements Initializable {
     ObservableList<String> txt_tipo_list= FXCollections.
             observableArrayList("adminCentro");
     private Stage stage;
@@ -136,7 +136,7 @@ public class CentroDeportivoController implements Initializable {
         }
     @FXML
     void CrearNuevoClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CentroDeportivo-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CrearCentroDeportivo-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
