@@ -9,19 +9,19 @@ import javafx.scene.control.Label;
 public class DesplegarCheckInController {
 
     @FXML
-    private Label capacidad;
+    private Label capacidad2;
 
     @FXML
     private Button confirmar_button;
 
     @FXML
-    private Label nombre;
+    private Label nombre2;
 
     @FXML
-    private Label pasaporte;
+    private Label pasaporte2;
 
     @FXML
-    private Label precio;
+    private Label precio2;
 
     @FXML
     private Label titulo_capacidad;
@@ -48,10 +48,11 @@ public class DesplegarCheckInController {
 
     public void setData1(Actividades actividades){
         this.actividades1 = actividades;
-        nombre.setText(actividades.getActividadesKey().getNombre());
-        precio.setText(String.valueOf(actividades.getPrecio()));
-        capacidad.setText(String.valueOf(actividades.getCapacidad()));
-        pasaporte.setText(empleados.getPasaporte());
+
+        nombre2.setText(actividades.getActividadesKey().getNombre());
+        precio2.setText(String.valueOf(actividades.getPrecio()));
+        capacidad2.setText(String.valueOf(actividades.getCapacidad()));
+        //pasaporte2.setText(empleados.getPasaporte());
 
     }
 }

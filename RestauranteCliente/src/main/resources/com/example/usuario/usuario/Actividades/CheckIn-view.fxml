@@ -80,7 +80,7 @@
       </Button>
       <ImageView fitHeight="142.0" fitWidth="216.0" layoutX="65.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Fotos/Foto_Logo.jpg" />
+            <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
          </image>
       </ImageView>
       <Line endX="-7.792327880859375" endY="773.0000610351562" fill="WHITE" layoutX="340.0" startX="-7.792327880859375" startY="-1.4405885849555489E-5" stroke="WHITE" />

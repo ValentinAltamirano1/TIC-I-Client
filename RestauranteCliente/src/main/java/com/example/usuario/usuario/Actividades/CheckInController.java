@@ -57,7 +57,7 @@ public class CheckInController implements Initializable {
     private ImageView foto;
 
     @FXML
-    private GridPane grid1;
+    private GridPane grid;
 
     @FXML
     private Label label;
@@ -166,7 +166,7 @@ public class CheckInController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println(mail);
+    /*    System.out.println(mail);
         actividades1.addAll(getDataCentro(mail));
         System.out.println(actividades1.addAll(getDataCentro(mail)));
         int row = 1;
@@ -200,6 +200,48 @@ public class CheckInController implements Initializable {
                 GridPane.setMargin(anchorPane, new Insets(10));
             }
         } catch (Exception ignored) {
+        }*/
+
+
+    }
+
+    public void info () {
+        System.out.println(mail);
+        actividades1.addAll(getDataCentro(mail));
+        System.out.println(actividades1);
+        int row = 1;
+        int colum = 0;
+
+        try {
+            for (int i = 0; i < actividades1.size(); i++) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Actividades/DesplegarCheckIn.fxml"));
+
+                AnchorPane anchorPane = fxmlLoader.load();
+
+
+                DesplegarCheckInController desplegarCheckInController = fxmlLoader.getController();
+                desplegarCheckInController.setData1(actividades1.get(i));
+
+                if (colum == 1) {
+                    colum = 0;
+                    row++;
+                }
+
+                grid.add(anchorPane, colum++, row);
+
+                grid.setMinHeight(Region.USE_COMPUTED_SIZE);
+                grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                grid.setMaxHeight(Region.USE_COMPUTED_SIZE);
+
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+
+                GridPane.setMargin(anchorPane, new Insets(10));
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
 
 

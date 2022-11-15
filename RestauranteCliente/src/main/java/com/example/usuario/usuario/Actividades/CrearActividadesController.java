@@ -245,6 +245,20 @@ public class CrearActividadesController {
     }
 
     public void CheckInClickedButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            Parent root = fxmlLoader.load(CrearActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
+            CheckInController checkInController = fxmlLoader.getController();
+            checkInController.setMail(mail);
+            checkInController.info();
+
+            stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+
+        }
     }
 }
 
