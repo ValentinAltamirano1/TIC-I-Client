@@ -13,35 +13,40 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empleados.CrearEmpleadoController">
+<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1525.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empleados.CrearEmpleadoController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="221.0" style="-fx-background-color: #000000;">
          <children>
-            <ImageView fx:id="foto" fitHeight="97.0" fitWidth="103.0" layoutX="38.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="foto" fitHeight="212.0" fitWidth="281.0" layoutX="65.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
-            <Text fx:id="titulo" fill="#df2d29" layoutX="31.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLEADO" wrappingWidth="141.48089599609375">
+            <Text fx:id="titulo" fill="#df2d29" layoutX="87.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLEADO" wrappingWidth="254.3123321533203">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="40.0" />
                </font>
             </Text>
-            <VBox layoutX="10.0" layoutY="194.0" prefHeight="205.0" prefWidth="158.0" spacing="50.0" style="-fx-background-color: #000000;">
+            <VBox layoutX="60.0" layoutY="396.0" prefHeight="318.0" prefWidth="281.0" spacing="35.0" style="-fx-background-color: #000000;">
                <children>
-                  <Button fx:id="crearNuevo_button" mnemonicParsing="false" onAction="#CrearNuevoClickedButton" prefHeight="40.0" prefWidth="166.0" style="-fx-background-color: #000000;" text="Crear empleado" textFill="WHITE">
+                  <Button fx:id="crearNuevo_button" mnemonicParsing="false" onAction="#CrearNuevoClickedButton" prefHeight="75.0" prefWidth="280.0" style="-fx-background-color: #000000;" text="Crear empleado" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font name="System Bold" size="30.0" />
                      </font>
                   </Button>
-                  <Button fx:id="creados_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="40.0" prefWidth="166.0" style="-fx-background-color: #000000;" text="Ver ya creados" textFill="WHITE">
+                  <Button fx:id="creados_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="75.0" prefWidth="283.0" style="-fx-background-color: #000000;" text="Ver ya creados" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font name="System Bold" size="30.0" />
                      </font>
                   </Button>
-                  <Button fx:id="cerrar_sesion_button" mnemonicParsing="false" onAction="#CerrarSesionClickedButton" prefHeight="131.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Cerrar Sesion" textFill="WHITE">
+                  <Button fx:id="creados_button1" layoutX="10.0" layoutY="136.0" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="75.0" prefWidth="283.0" style="-fx-background-color: #000000;" text="Administracion" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cerrar_sesion_button" mnemonicParsing="false" onAction="#CerrarSesionClickedButton" prefHeight="67.0" prefWidth="291.0" style="-fx-background-color: #000000;" text="Cerrar Sesion" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
                      </font>
                   </Button>
                </children>
@@ -49,81 +54,81 @@
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="482.0" prefWidth="537.0" style="-fx-background-color: #000000;">
          <children>
-            <Text fx:id="CrearNuevoEmpleado" fill="WHITE" layoutX="115.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREAR NUEVO EMPELADO:">
+            <Text fx:id="CrearNuevoEmpleado" fill="WHITE" layoutX="145.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREAR NUEVO EMPELADO:">
                <font>
-                  <Font name="System Bold" size="26.0" />
+                  <Font name="System Bold" size="60.0" />
                </font>
             </Text>
-            <Button fx:id="crear_button" layoutX="179.0" layoutY="489.0" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #df2d29;" text="Crear" textFill="WHITE">
+            <Button fx:id="crear_button" layoutX="431.0" layoutY="696.0" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="68.0" prefWidth="234.0" style="-fx-background-color: #df2d29;" text="Crear" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="System Bold" size="35.0" />
                </font>
             </Button>
-            <VBox layoutX="82.0" layoutY="109.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+            <VBox layoutX="258.0" layoutY="205.0" prefHeight="414.0" prefWidth="270.0" spacing="5.0">
                <children>
                   <Text fx:id="nombre" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="System Bold" size="35.0" />
                      </font>
                   </Text>
                   <Text fx:id="pasaporte" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Pasaporte:">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="System Bold" size="35.0" />
                      </font>
                   </Text>
                   <Text fx:id="telefono" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono:">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="System Bold" size="35.0" />
                      </font>
                   </Text>
                   <Text fx:id="mail" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Mail:">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="System Bold" size="35.0" />
                      </font>
                   </Text>
                   <Text fx:id="contraseña" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="System Bold" size="35.0" />
                      </font>
                   </Text>
                   <Text fx:id="fichamedica" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Ficha medica:">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="System Bold" size="35.0" />
                      </font>
                   </Text>
                   <Text fx:id="tipo" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo:">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="System Bold" size="35.0" />
                      </font>
                   </Text>
                   <Text fx:id="saldo" fill="WHITE" layoutX="10.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo:">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="System Bold" size="35.0" />
                      </font>
                   </Text>
                   <Text fx:id="sobre_giro" fill="WHITE" layoutX="10.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sobregiro:">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="System Bold" size="35.0" />
                      </font>
                   </Text>
                </children>
             </VBox>
-            <VBox layoutX="281.0" layoutY="122.0" prefHeight="200.0" prefWidth="193.0" spacing="13.0">
+            <VBox layoutX="548.0" layoutY="219.0" prefHeight="414.0" prefWidth="256.0" spacing="26.0">
                <children>
                   <TextField fx:id="txt_nombre" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese nombre" />
                   <TextField fx:id="txt_pasaporte" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese pasaporte" />
                   <TextField fx:id="txt_telefono" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese Telefono" />
                   <TextField fx:id="txt_mail" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese Mail" />
                   <TextField fx:id="txt_contraseña" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese contraseña" />
-                  <DatePicker fx:id="txt_fichamedica" prefHeight="26.0" prefWidth="198.0" promptText="Ingrese fecha de vencimiento" />
-                  <ChoiceBox fx:id="txt_tipo" prefHeight="26.0" prefWidth="199.0" />
+                  <DatePicker fx:id="txt_fichamedica" prefHeight="26.0" prefWidth="265.0" promptText="Ingrese fecha de vencimiento" />
+                  <ChoiceBox fx:id="txt_tipo" prefHeight="26.0" prefWidth="256.0" />
                   <TextField fx:id="txt_saldo" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese saldo" />
                   <TextField fx:id="txt_sobregiro" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="170.0" promptText="Ingrese sobregiro" />
                </children>
             </VBox>
-            <Label fx:id="label" layoutX="82.0" layoutY="27.0" prefHeight="27.0" prefWidth="319.0" text=" " textAlignment="CENTER" textFill="#df2d29">
+            <Label fx:id="label" layoutX="167.0" layoutY="28.0" prefHeight="74.0" prefWidth="717.0" text=" " textAlignment="CENTER" textFill="#df2d29">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="40.0" />
                </font>
             </Label>
          </children></AnchorPane>

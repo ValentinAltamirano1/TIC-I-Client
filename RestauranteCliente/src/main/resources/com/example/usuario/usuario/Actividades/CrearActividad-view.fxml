@@ -50,7 +50,7 @@
                   </Button>
                </children>
             </VBox>
-            <ImageView fitHeight="173.0" fitWidth="266.0" layoutX="71.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="185.0" fitWidth="284.0" layoutX="71.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
                </image>

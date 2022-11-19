@@ -119,7 +119,7 @@ public class EmpleadosCreadosController implements Initializable {
         try {
             for (int i = 0; i < empleados1.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("com/example/usuario/usuario/Empleados/DesplegarEmpleados-view.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Empleados/DesplegarEmpleados-view.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
 
 
@@ -143,7 +143,8 @@ public class EmpleadosCreadosController implements Initializable {
 
                 GridPane.setMargin(anchorPane, new Insets(10));
             }
-        } catch (Exception ignored) {
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
 
     }

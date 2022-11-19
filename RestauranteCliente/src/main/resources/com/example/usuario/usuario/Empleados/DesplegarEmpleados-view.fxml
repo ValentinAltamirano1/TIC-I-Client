@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="409.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empleados.DesplegarEmpleadosController">
+<AnchorPane prefHeight="510.0" prefWidth="353.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empleados.DesplegarEmpleadosController">
    <children>
-      <VBox layoutX="14.0" layoutY="23.0" prefHeight="281.0" prefWidth="138.0" spacing="10.0">
+      <ImageView fitHeight="530.0" fitWidth="354.0" layoutX="-1.0" opacity="0.42" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Fotos/Fondito4.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="14.0" layoutY="74.0" prefHeight="281.0" prefWidth="138.0" spacing="10.0">
          <children>
             <Label text="Nombre:">
                <font>
@@ -56,7 +63,7 @@
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="158.0" layoutY="23.0" prefHeight="364.0" prefWidth="186.0" spacing="10.0">
+      <VBox layoutX="152.0" layoutY="74.0" prefHeight="364.0" prefWidth="198.0" spacing="10.0">
          <children>
             <Label fx:id="nombre" text="Nombre:">
                <font>
