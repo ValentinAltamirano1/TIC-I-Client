@@ -199,11 +199,7 @@ public class CrearActividadesController {
 
 
             label.setText("ACTIVIDAD CREADA CORRECTAMENTE!");
-            txt_nombre.setText("");
-            txt_precio.setText("");
-            txt_capacidad.setText("");
-            txt_descripcion.setText("");
-            txt_cupo.setText("");
+
         }else{
             System.out.println("Ingrese correctamente todos los datos para guardar una nueva Empresa");
         }
