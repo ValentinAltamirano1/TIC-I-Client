@@ -1,6 +1,7 @@
 package com.example.usuario.usuario.Actividades;
 
 import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
+import com.example.usuario.usuario.Reservas;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.event.ActionEvent;
@@ -72,7 +73,7 @@ public class CheckInController implements Initializable {
     private Text titulo;
 
 
-    java.util.List<Actividades> actividades1 = new ArrayList<>();
+    List<Reservas> actividades1 = new ArrayList<>();
 
     public String getMail() {
         return mail;
@@ -133,77 +134,27 @@ public class CheckInController implements Initializable {
         stage.show();
     }
 
-    public List<Actividades> getDataCentro(String mail) {
+    public List<Reservas> getDataCentro(String mail) {
         System.out.println(mail);
-        //agarro las actividades del centro
-        List<CentroDeportivo> centrosDepor = null;
-        List<Actividades> actividadesCentro = null;
+        //agarro las reservas asociadadas al centro deportivo que ingreso
+
+        List<Reservas> reservasCentro = null;
         try {
-            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/centroDeportivo/" + mail)
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/reservas/getMail/" + mail)
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             ObjectMapper mapper = new ObjectMapper();
-            centrosDepor = mapper.readValue(temp, new TypeReference<List<CentroDeportivo>>() {
+            reservasCentro = mapper.readValue(temp, new TypeReference<List<Reservas>>() {
             });
-            System.out.println(centrosDepor);
-        } catch (Exception ignored) {
-        }
-
-        //con el centro deportivo, busco las reservas asociadas al centro
-        GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/reservas/getRut/" + centrosDepor.get(0).getRut())
-                .header("Content-Type", "application/json");
-        String temp1 = apiResponse.asJson().getBody().toString();
-        System.out.println(temp1);
-        ObjectMapper mapper1 = new ObjectMapper();
-        try {
-            actividadesCentro = mapper1.readValue(temp1, new TypeReference<List<Actividades>>() {
-            });
+            System.out.println(reservasCentro);
         } catch (Exception e) {
+            e.printStackTrace();
         }
-        System.out.println(actividadesCentro);
-        System.out.println("hola");
-        return actividadesCentro;
+        return reservasCentro;
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    /*    System.out.println(mail);
-        actividades1.addAll(getDataCentro(mail));
-        System.out.println(actividades1.addAll(getDataCentro(mail)));
-        int row = 1;
-        int colum = 0;
-
-        try {
-            for (int i = 0; i < actividades1.size(); i++) {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Actividades/DesplegarCheckIn.fxml"));
-                AnchorPane anchorPane = fxmlLoader.load();
-
-
-                DesplegarCheckInController desplegarCheckInController = fxmlLoader.getController();
-                desplegarCheckInController.setData1(actividades1.get(i));
-
-                if (colum == 1) {
-                    colum = 0;
-                    row++;
-                }
-
-                grid1.add(anchorPane, colum++, row);
-
-                grid1.setMinHeight(Region.USE_COMPUTED_SIZE);
-                grid1.setPrefHeight(Region.USE_COMPUTED_SIZE);
-                grid1.setMaxHeight(Region.USE_COMPUTED_SIZE);
-
-                grid1.setMinWidth(Region.USE_COMPUTED_SIZE);
-                grid1.setMinWidth(Region.USE_COMPUTED_SIZE);
-                grid1.setMinWidth(Region.USE_COMPUTED_SIZE);
-
-                GridPane.setMargin(anchorPane, new Insets(10));
-            }
-        } catch (Exception ignored) {
-        }*/
-
-
     }
 
     public void info () {

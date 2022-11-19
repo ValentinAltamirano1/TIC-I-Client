@@ -120,7 +120,7 @@
                   </Label>
                </children>
             </VBox>
-            <DatePicker fx:id="datepicker" layoutX="15.0" layoutY="395.0" onAction="#getData" prefHeight="26.0" prefWidth="118.0" promptText="Ingrese dia:" style="-fx-background-color: #FFFFFF;" />
+            <DatePicker fx:id="datepicker" layoutX="15.0" layoutY="395.0" prefHeight="26.0" prefWidth="118.0" promptText="Ingrese dia:" style="-fx-background-color: #FFFFFF;" />
             <ChoiceBox fx:id="choicebox" layoutX="153.0" layoutY="395.0" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #FFFFFF;" />
             <Button fx:id="reservar_button" layoutX="58.0" layoutY="454.0" mnemonicParsing="false" onAction="#ReservarClickedButton" prefHeight="63.0" prefWidth="171.0" style="-fx-background-color: #FFE5B9; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css" text="RESERVAR">
                <font>
@@ -153,6 +153,6 @@
             </ImageView>
          </children>
       </VBox>
-      <ChoiceBox fx:id="centros_choicebox" layoutX="831.0" layoutY="84.0" prefHeight="42.0" prefWidth="322.0" style="-fx-background-color: #ffffff;" />
+      <ChoiceBox fx:id="centros_choicebox" layoutX="831.0" layoutY="84.0" onAction="#mostrar" prefHeight="42.0" prefWidth="322.0" style="-fx-background-color: #ffffff;" />
    </children>
 </AnchorPane>

@@ -153,7 +153,7 @@ public class ActividadesController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(BuscarController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/Buscar-view.fxml"));
         BuscarController buscarController = fxmlLoader.getController();
-        buscarController.getData();
+        buscarController.getDataCentro();
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

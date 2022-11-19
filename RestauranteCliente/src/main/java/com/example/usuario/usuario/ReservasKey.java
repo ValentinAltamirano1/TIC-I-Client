@@ -1,8 +1,9 @@
 package com.example.usuario.usuario;
 
+import com.example.usuario.usuario.Actividades.Actividades;
 import com.example.usuario.usuario.Empleados.Empleado;
 
-public class ReservasKey {
+public class ReservasKey  {
 
     private Empleado empleados;
 
@@ -14,6 +15,9 @@ public class ReservasKey {
         this.empleados = empleados;
         this.fecha = fecha;
         this.horario = horario;
+    }
+
+    public ReservasKey() {
     }
 
     public Empleado getEmpleados() {

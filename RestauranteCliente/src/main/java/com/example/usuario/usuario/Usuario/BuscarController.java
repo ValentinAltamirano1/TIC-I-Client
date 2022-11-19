@@ -93,7 +93,7 @@ public class BuscarController implements Initializable {
     private Label titulo;
 
     @FXML
-    private ChoiceBox<?> centros_choicebox;
+    private ChoiceBox centros_choicebox;
 
     @FXML
     private Label usuario_nombre;
@@ -130,7 +130,7 @@ public class BuscarController implements Initializable {
     }
 
     @FXML
-    void getData() {
+    void getDataCentro() {
         //conseguir centros deportivos
         GetRequest request = Unirest.get("http://localhost:8080/api/v1/gimnasio/centroDeportivo")
                 .header("Content-Type", "application/json");
@@ -147,11 +147,83 @@ public class BuscarController implements Initializable {
             txt_centros_list.add(nombreCentro);
         }
 
-        choicebox.setItems(txt_centros_list);
-        choicebox.setValue("Centros Deportivos");
+        centros_choicebox.setItems(txt_centros_list);
+        centros_choicebox.setValue("Centros Deportivos");
+    }
+
+    public List<Actividades> getData(){
+        List<Actividades> actividadesList =null;
+        try{
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/nombre/"+centros_choicebox.getValue().toString())
+                    .header("Content-Type", "application/json");
+            String temp = apiResponse.asJson().getBody().toString();
+            System.out.println(temp);
+            ObjectMapper mapper = new ObjectMapper();
+            actividadesList = mapper.readValue(temp, new TypeReference<List<Actividades>>(){});
+            System.out.println(actividadesList);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return actividadesList;
+    }
+
+    private void setChosenActivity(Actividades actividades){
+        nombre_grande.setText(actividades.getActividadesKey().getNombre());
+        cupos_grande.setText(String.valueOf(actividades.getCupos()));
+        descripcion_grande.setText(actividades.getDescripcion());
+        precio_grande.setText(String.valueOf(actividades.getPrecio()));
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
-}
+
+    public void mostrar(){
+        System.out.println("HOLA");
+        actividades1.addAll(getData());
+        if(actividades1.size()>0){
+            setChosenActivity(actividades1.get(0));
+            myListener = new MyListener() {
+                @Override
+                public void onClickListener(Actividades actividades) {
+                    setChosenActivity(actividades);
+                }
+
+            };
+        }
+        int row = 1;
+        int colum = 0;
+
+        try {
+            for (int i = 0; i < actividades1.size(); i++) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Usuario/Desplegar.fxml"));
+                AnchorPane anchorPane = fxmlLoader.load();
+
+
+                DesplegarController desplegarController = fxmlLoader.getController();
+                desplegarController.setData(actividades1.get(i), myListener);
+
+                if (colum == 2) {
+                    colum = 0;
+                    row++;
+                }
+
+                grid.add(anchorPane, colum++, row);
+
+                grid.setMinHeight(Region.USE_COMPUTED_SIZE);
+                grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                grid.setMaxHeight(Region.USE_COMPUTED_SIZE);
+
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+
+                GridPane.setMargin(anchorPane, new Insets(10));
+            }
+        } catch (Exception ignored) {
+        }
+    }
+    }
+
