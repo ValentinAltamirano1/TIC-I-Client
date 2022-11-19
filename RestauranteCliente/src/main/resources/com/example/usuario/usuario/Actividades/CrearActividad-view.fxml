@@ -52,7 +52,7 @@
             </VBox>
             <ImageView fitHeight="173.0" fitWidth="266.0" layoutX="71.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Fotos/Foto_Logo.jpg" />
+                  <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
          </children></AnchorPane>

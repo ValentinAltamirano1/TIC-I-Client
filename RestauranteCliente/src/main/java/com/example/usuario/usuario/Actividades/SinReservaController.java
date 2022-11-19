@@ -140,7 +140,6 @@ public class SinReservaController implements Initializable {
         try {
             actividades = mapper.readValue(temp, new TypeReference<List<Actividades>>() {});
             System.out.println(actividades.get(0));
-
         } catch (JsonProcessingException e) {}
     }
 

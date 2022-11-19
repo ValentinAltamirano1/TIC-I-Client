@@ -56,26 +56,16 @@ public class DesplegarCheckInController {
     @FXML
     void ConfirmarClickedButton(ActionEvent event) {
         //busco empleado por mail
-        System.out.println(mail);
-        List<Empleado> empleadosList = null;
-        GetRequest requestEmp = Unirest.get("http://localhost:8080/api/v1/gimnasio/empleado/" + mail)
-                .header("Content-Type", "application/json");
-        String temp1 = requestEmp.asJson().getBody().toString();
-        System.out.println(temp1);
-        ObjectMapper mapper1 = new ObjectMapper();
-        try {
-            empleadosList =mapper1.readValue(temp1, new TypeReference<List<Empleado>>() {});
-            System.out.println(empleadosList);
-        } catch (JsonProcessingException e) {}
+        System.out.println("hola");
+        System.out.println(reservas1.getReservasKey().getFecha());
 
-        /*ReservasKey reservasKey = new ReservasKey(empleadosList.get(0),datepicker.getValue().toString(),choicebox.getValue().toString());
-        Reservas reservas1 = new Reservas(this.actividades1,reservasKey,true);
+        Reservas reservas = new Reservas(reservas1.getActividades(),reservas1.getReservasKey(),true);
 
         HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/reservas")
                 .header("accept", "application/json")
                 .header("Content-Type", "application/json")
-                .body(reservas1).asEmpty();
-        System.out.println(this.actividades1.getActividadesKey().getNombre());*/
+                .body(reservas).asEmpty();
+
     }
 
     public void setData1(Reservas reservas){
@@ -83,8 +73,6 @@ public class DesplegarCheckInController {
         nombre2.setText(reservas1.getActividades().getActividadesKey().getNombre());
         precio2.setText(String.valueOf(reservas1.getActividades().getPrecio()));
         capacidad2.setText(String.valueOf(reservas1.getActividades().getCapacidad()));
-
-        //pasaporte2.setText(empleados.getPasaporte());
 
     }
 
@@ -95,5 +83,7 @@ public class DesplegarCheckInController {
     public void setMail(String mail) {
         this.mail = mail;
     }
+
+
 }
 
