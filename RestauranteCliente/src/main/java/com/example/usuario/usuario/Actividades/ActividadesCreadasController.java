@@ -110,7 +110,8 @@ public class ActividadesCreadasController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
+    public void AdministracionClickedButton(ActionEvent actionEvent) {
+    }
     public List<Actividades> getData() {
         List<Actividades> actividadesList =null;
         try{

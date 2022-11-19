@@ -1,6 +1,8 @@
 package com.example.usuario.usuario.Actividades;
 
 import com.example.usuario.usuario.Empleados.Empleado;
+import com.example.usuario.usuario.Reservas;
+import com.example.usuario.usuario.ReservasKey;
 import com.example.usuario.usuario.Usuario.Usuarios;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -18,6 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
+import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 
 import java.io.IOException;
@@ -157,8 +160,16 @@ public class SinReservaController implements Initializable {
         try {
             actividades = mapper.readValue(temp, new TypeReference<List<Actividades>>() {});
             System.out.println(actividades.get(0));
-
         } catch (JsonProcessingException e) {}
+
+        //falta la fecha y horario con date picker
+        /*ReservasKey reservasKey = new ReservasKey(empleados.get(0),);
+        Reservas reservas1 = new Reservas(actividades.get(0),reservasKey,true);
+
+        HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/reservas")
+                .header("accept", "application/json")
+                .header("Content-Type", "application/json")
+                .body(reservas1).asEmpty();*/
     }
 
     @Override
