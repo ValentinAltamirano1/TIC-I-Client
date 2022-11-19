@@ -35,7 +35,7 @@
             </Label>
             <VBox layoutX="27.0" layoutY="384.0" prefHeight="240.0" prefWidth="260.0" spacing="25.0" style="-fx-background-color: #000000;">
                <children>
-                  <Button fx:id="crearNuevo_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevoClickedButton" prefHeight="51.0" prefWidth="262.0" style="-fx-background-color: #000000;" text="Crear centro" textFill="WHITE">
+                  <Button fx:id="crearNuevo_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevoClickedButton" prefHeight="51.0" prefWidth="262.0" style="-fx-background-color: #000000;" text="Crear empleado" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>

@@ -132,6 +132,17 @@ public class ActividadesController implements Initializable {
                     .header("Content-Type", "application/json")
                     .body(reservas1).asEmpty();
 
+
+            int precio = actividades_.getPrecio();
+            int capacidad = actividades_.getCapacidad();
+            int cupos = actividades_.getCupos();
+            Actividades actividades2 = new Actividades(actividades_.getActividadesKey(),precio,actividades_.getCategoria(),capacidad,actividades_.getDescripcion(),
+                    cupos-1,actividades_.getHorarios(),actividades_.getImagen());
+
+            HttpResponse apiResponse1 = Unirest.post("http://localhost:8080/api/v1/gimnasio/reservas")
+                    .header("accept", "application/json")
+                    .header("Content-Type", "application/json")
+                    .body(actividades2).asEmpty();
         }else{
             System.out.println("Ingrese todos los datos para poder realizar una reserva");
         }
