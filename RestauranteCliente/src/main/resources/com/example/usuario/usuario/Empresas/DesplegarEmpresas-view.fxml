@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="257.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empresas.DesplegarEmpresasController">
+<AnchorPane prefHeight="284.0" prefWidth="375.0" style="-fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empresas.DesplegarEmpresasController">
    <children>
-      <VBox layoutX="14.0" layoutY="23.0" prefHeight="217.0" prefWidth="138.0" spacing="10.0">
+      <ImageView fitHeight="309.0" fitWidth="461.0" layoutX="-1.0" opacity="0.36" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Fotos/Fondito2.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="34.0" layoutY="43.0" prefHeight="217.0" prefWidth="138.0" spacing="10.0">
          <children>
             <Label text="Nombre:">
                <font>
@@ -36,31 +43,31 @@
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="158.0" layoutY="23.0" prefHeight="200.0" prefWidth="186.0" spacing="10.0">
+      <VBox layoutX="165.0" layoutY="42.0" prefHeight="218.0" prefWidth="243.0" spacing="10.0">
          <children>
             <Label fx:id="nombre" text="Nombre:">
                <font>
-                  <Font name="System Bold" size="21.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
             <Label fx:id="rut" layoutX="10.0" layoutY="52.0" text="RUT:">
                <font>
-                  <Font name="System Bold" size="21.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
             <Label fx:id="mail" layoutX="10.0" layoutY="104.0" text="Mail:">
                <font>
-                  <Font name="System Bold" size="21.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
             <Label fx:id="contrasena" layoutX="10.0" layoutY="135.0" text="Contraseña:">
                <font>
-                  <Font name="System Bold" size="21.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
             <Label fx:id="tipo" layoutX="10.0" layoutY="166.0" text="Tipo:">
                <font>
-                  <Font name="System Bold" size="21.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
          </children>

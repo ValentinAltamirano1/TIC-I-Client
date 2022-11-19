@@ -95,7 +95,7 @@ public class CrearEmpresaController implements Initializable{
     private Button creadas_button;
 
     @FXML
-    private Label label;
+    private Label label_yacreado;
 
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
@@ -126,7 +126,7 @@ public class CrearEmpresaController implements Initializable{
                     .header("Content-Type", "application/json")
                     .body(empresa).asEmpty();
 
-            label.setText("EMPRESA CREADA CORRECTAMENTE!");
+            label_yacreado.setText("EMPRESA CREADA CORRECTAMENTE!");
             txt_rut.setText("");
             txt_nombre.setText("");
             txt_mail.setText("");

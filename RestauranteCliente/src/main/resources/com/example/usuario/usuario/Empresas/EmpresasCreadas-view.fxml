@@ -13,12 +13,13 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2745194677180877" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empresas.EmpresasCreadasController">
+<SplitPane dividerPositions="0.3001181567546278" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1525.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empresas.EmpresasCreadasController">
    <items>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="484.0" prefWidth="227.0" style="-fx-background-color: #000000;">
          <children>
-            <ImageView fx:id="foto" fitHeight="129.0" fitWidth="232.0" layoutX="57.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="foto" fitHeight="271.0" fitWidth="273.0" layoutX="91.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Fotos/Foto_Logo.jpg" />
                </image>
@@ -28,19 +29,19 @@
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <Label fx:id="titulo_dos" layoutX="65.0" layoutY="263.0" text="EMPRESAS" textFill="#df2d29">
-               <font>
-                  <Font name="System Bold" size="36.0" />
-               </font>
-            </Label>
-            <VBox layoutX="27.0" layoutY="384.0" prefHeight="240.0" prefWidth="260.0" spacing="25.0" style="-fx-background-color: #000000;">
+            <VBox layoutX="93.0" layoutY="377.0" prefHeight="240.0" prefWidth="260.0" spacing="25.0" style="-fx-background-color: #000000;">
                <children>
-                  <Button fx:id="crearNuevo_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevaClickedButton" prefHeight="51.0" prefWidth="262.0" style="-fx-background-color: #000000;" text="Crear empresa" textFill="WHITE">
+                  <Button fx:id="crearNueva_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevaClickedButton" prefHeight="51.0" prefWidth="262.0" style="-fx-background-color: #000000;" text="Crear centro" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
                   </Button>
-                  <Button fx:id="creadas_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="47.0" prefWidth="262.0" style="-fx-background-color: #000000;" text="Ver ya creadas" textFill="WHITE">
+                  <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="47.0" prefWidth="262.0" style="-fx-background-color: #000000;" text="Ver ya creados" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="volver_button" layoutX="10.0" layoutY="192.0" mnemonicParsing="false" onAction="#VolverClickedButton" prefHeight="50.0" prefWidth="265.0" style="-fx-background-color: #000000;" text="Volver" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
@@ -55,18 +56,23 @@
                   </Button>
                </children>
             </VBox>
+            <Text fx:id="titulo" fill="#df2d29" layoutX="144.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPRESA" wrappingWidth="190.99832484163926">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="773.0" prefWidth="1219.0" style="-fx-background-color: #000000;">
          <children>
-            <Label fx:id="empresa" layoutX="262.0" layoutY="55.0" text="EMPRESAS" textFill="WHITE">
+            <Label fx:id="empresa" layoutX="444.0" layoutY="49.0" text="EMPRESAS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="62.0" />
                </font>
             </Label>
-            <HBox layoutX="70.0" layoutY="172.0" prefHeight="530.0" prefWidth="754.0" style="-fx-background-color: #FFFFFF;">
+            <HBox layoutX="70.0" layoutY="172.0" prefHeight="581.0" prefWidth="966.0" style="-fx-background-color: #000000;">
                <children>
-                  <ScrollPane fx:id="scroll" prefHeight="530.0" prefWidth="752.0" style="-fx-background-color: #FFCA6F;">
+                  <ScrollPane fx:id="scroll" prefHeight="582.0" prefWidth="966.0" style="-fx-background-color: #000000;">
                      <content>
                         <GridPane fx:id="grid" prefHeight="7.0" prefWidth="14.0" style="-fx-background-color: #FFFFFF;">
                            <rowConstraints>

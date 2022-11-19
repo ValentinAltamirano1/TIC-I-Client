@@ -63,6 +63,8 @@ public class DesplegarController {
     public void SiguienteClickedButton(ActionEvent actionEvent) {
     }
 
+
+
     @FXML
     private Label titulo_precio;
 

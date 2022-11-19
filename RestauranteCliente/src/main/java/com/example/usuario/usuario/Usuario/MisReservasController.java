@@ -1,7 +1,6 @@
 package com.example.usuario.usuario.Usuario;
 
 import com.example.usuario.usuario.Actividades.Actividades;
-import com.example.usuario.usuario.Actividades.CrearActividadesController;
 import com.example.usuario.usuario.Empleados.Empleado;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

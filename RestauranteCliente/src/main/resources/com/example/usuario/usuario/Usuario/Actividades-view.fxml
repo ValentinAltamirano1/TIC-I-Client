@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1219.0" style="-fx-background-color: #FFE5B9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Usuario.ActividadesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1219.0" style="-fx-background-color: #FFE5B9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Usuario.ActividadesController">
    <children>
       <ImageView fx:id="foto_logo" fitHeight="177.0" fitWidth="213.0" layoutX="30.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
          <image>

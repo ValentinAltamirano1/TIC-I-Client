@@ -1,6 +1,5 @@
 package com.example.usuario.usuario.Actividades;
 
-import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
 import com.example.usuario.usuario.Empleados.Empleado;
 import com.example.usuario.usuario.Usuario.Usuarios;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -17,7 +16,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -80,7 +78,7 @@ public class SinReservaController implements Initializable {
 
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividades-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividad-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

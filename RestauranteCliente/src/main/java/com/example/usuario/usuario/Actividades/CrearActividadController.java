@@ -3,8 +3,6 @@ package com.example.usuario.usuario.Actividades;
 import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
 import com.example.usuario.usuario.HorarioKey;
 import com.example.usuario.usuario.Imagen;
-import com.example.usuario.usuario.Usuario.ActividadesController;
-import com.example.usuario.usuario.Usuario.MisReservasController;
 import com.example.usuario.usuario.Usuario.Usuarios;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -36,7 +34,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CrearActividadesController {
+public class CrearActividadController {
     ObservableList<String> txt_dia_list= FXCollections.
             observableArrayList("MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY","FRIDAY", "SATURDAY","SUNDAY");
     ObservableList<String> txt_categoria_list= FXCollections.
@@ -114,7 +112,7 @@ public class CrearActividadesController {
     @FXML
     private Text titulo;
     @FXML
-    private Label label;
+    private Label label_yacreado;
 
     public String mail;
     @FXML
@@ -157,7 +155,7 @@ public class CrearActividadesController {
 
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividades-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividad-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -198,7 +196,7 @@ public class CrearActividadesController {
                     .body(actividades).asEmpty();
 
 
-            label.setText("ACTIVIDAD CREADA CORRECTAMENTE!");
+            label_yacreado.setText("ACTIVIDAD CREADA CORRECTAMENTE!");
 
         }else{
             System.out.println("Ingrese correctamente todos los datos para guardar una nueva Empresa");
@@ -241,7 +239,7 @@ public class CrearActividadesController {
     public void CheckInClickedButton(ActionEvent actionEvent) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            Parent root = fxmlLoader.load(CrearActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
+            Parent root = fxmlLoader.load(CrearActividadController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
             CheckInController checkInController = fxmlLoader.getController();
             checkInController.setMail(mail);
             checkInController.info();

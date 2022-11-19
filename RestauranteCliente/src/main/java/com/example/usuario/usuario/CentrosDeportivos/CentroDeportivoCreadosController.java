@@ -29,9 +29,6 @@ import java.util.ResourceBundle;
 
 public class CentroDeportivoCreadosController implements Initializable  {
 
-    private Scene scene;
-
-    private Stage stage;
     @FXML
     private Label centrosdeportivos;
 
@@ -66,6 +63,8 @@ public class CentroDeportivoCreadosController implements Initializable  {
     @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -75,6 +74,8 @@ public class CentroDeportivoCreadosController implements Initializable  {
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/BORRAR.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -84,6 +85,8 @@ public class CentroDeportivoCreadosController implements Initializable  {
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -92,6 +95,8 @@ public class CentroDeportivoCreadosController implements Initializable  {
     @FXML
     void CrearNuevoClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CrearCentroDeportivo-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

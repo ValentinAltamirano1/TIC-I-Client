@@ -1,7 +1,5 @@
 package com.example.usuario.usuario.Empresas;
 
-import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
-import com.example.usuario.usuario.CentrosDeportivos.DesplegarCentrosController;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.event.ActionEvent;
@@ -36,6 +34,9 @@ public class EmpresasCreadasController implements Initializable {
 
     @FXML
     private Button creadas_button;
+
+    @FXML
+    private Button volver_button;
 
     @FXML
     private Button crearNuevo_button;
@@ -79,10 +80,20 @@ public class EmpresasCreadasController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    void VolverClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
+        Stage stage;
+        Scene scene;
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/Empresa-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/CrearEmpresa-view.fxml"));
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -118,7 +129,7 @@ public class EmpresasCreadasController implements Initializable {
         try {
             for (int i = 0; i < empresas.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Empresas/DesplegarEmpresas.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/com/example/usuario/usuario/Empresas/DesplegarEmpresas-view.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
 
 

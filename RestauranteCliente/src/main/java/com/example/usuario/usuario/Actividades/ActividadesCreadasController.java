@@ -1,7 +1,5 @@
 package com.example.usuario.usuario.Actividades;
 
-import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
-import com.example.usuario.usuario.CentrosDeportivos.DesplegarCentrosController;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.event.ActionEvent;
@@ -72,7 +70,7 @@ public class ActividadesCreadasController implements Initializable {
 
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividades-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividad-view.fxml"));
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

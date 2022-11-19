@@ -6,27 +6,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="617.0" prefWidth="484.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Opciones1Contoller">
+<AnchorPane maxHeight="569.0" maxWidth="452.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1525.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Opciones1Contoller">
    <children>
-      <ImageView fitHeight="145.0" fitWidth="261.0" layoutX="127.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="674.0" fitWidth="411.0" layoutX="604.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
+            <Image url="@Fotos/Foto_Fondo.jpeg" />
          </image>
       </ImageView>
-      <Button fx:id="Empresa" layoutX="27.0" layoutY="290.0" mnemonicParsing="false" onAction="#EmpresaClickedButton" prefHeight="55.0" prefWidth="202.0" style="-fx-background-color: #DF2D29; -fx-background-radius: 30;" stylesheets="@Redondo.css" text="Empresas" textFill="WHITE">
+      <Button fx:id="Empresa" layoutX="699.0" layoutY="425.0" mnemonicParsing="false" onAction="#EmpresaClickedButton" prefHeight="53.0" prefWidth="182.0" style="-fx-background-color: #DF2D29; -fx-background-radius: 30;" stylesheets="@Redondo.css" text="Empresas" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="CentroDeportivo" layoutX="257.0" layoutY="290.0" mnemonicParsing="false" onAction="#CentroDeportivoClickedButton" prefHeight="55.0" prefWidth="202.0" style="-fx-background-color: #DF2D29; -fx-background-radius: 30;" stylesheets="@Redondo.css" text="Centros deportivos" textFill="WHITE">
+      <Button fx:id="CentroDeportivo" layoutX="699.0" layoutY="495.0" mnemonicParsing="false" onAction="#CentroDeportivoClickedButton" prefHeight="56.0" prefWidth="182.0" style="-fx-background-color: #DF2D29; -fx-background-radius: 30;" stylesheets="@Redondo.css" text="Centros deportivos" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="cerrarsesion" layoutX="167.0" layoutY="372.0" mnemonicParsing="false" onAction="#CerrarSesionClickedButton" prefHeight="38.0" prefWidth="149.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" stylesheets="@Redondo.css" text="Cerrar sesion">
+      <Button fx:id="cerrarsesion" layoutX="699.0" layoutY="609.0" mnemonicParsing="false" onAction="#CerrarSesionClickedButton" prefHeight="68.0" prefWidth="180.0" style="-fx-background-color: #000000; -fx-background-radius: 30;" stylesheets="@Redondo.css" text="Cerrar sesion" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
+      <ImageView fitHeight="191.0" fitWidth="309.0" layoutX="656.0" layoutY="144.0" opacity="0.43" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Fotos/Foto_Logo.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

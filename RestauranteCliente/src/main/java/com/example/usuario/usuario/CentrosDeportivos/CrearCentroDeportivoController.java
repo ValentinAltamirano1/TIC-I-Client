@@ -22,8 +22,7 @@ import java.util.ResourceBundle;
 public class CrearCentroDeportivoController implements Initializable {
     ObservableList<String> txt_tipo_list= FXCollections.
             observableArrayList("adminCentro");
-    private Stage stage;
-    private Scene scene;
+
 
     String nombre_;
     Long rut_;
@@ -39,9 +38,6 @@ public class CrearCentroDeportivoController implements Initializable {
 
     @FXML
     private Text CrearNuevoCentro;
-
-    @FXML
-    private Label label;
 
     @FXML
     private Button cerrar_sesion_button;
@@ -93,6 +89,9 @@ public class CrearCentroDeportivoController implements Initializable {
     private TextField txt_mail;
 
     @FXML
+    private Label label_yacreado;
+
+    @FXML
     private TextField txt_contrasena;
 
     @FXML
@@ -105,6 +104,8 @@ public class CrearCentroDeportivoController implements Initializable {
     @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -122,7 +123,7 @@ public class CrearCentroDeportivoController implements Initializable {
                     .header("Content-Type", "application/json")
                     .body(centroDeportivo).asEmpty();
 
-            label.setText("CENTRO CREADO CORRECTAMENTE!");
+            label_yacreado.setText("CENTRO CREADO CORRECTAMENTE!");
             txt_contrasena.setText("");
             txt_mail.setText("");
             txt_rut.setText("");
@@ -137,6 +138,8 @@ public class CrearCentroDeportivoController implements Initializable {
     @FXML
     void CrearNuevoClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CrearCentroDeportivo-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -147,6 +150,8 @@ public class CrearCentroDeportivoController implements Initializable {
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/CentrosDeportivosCreados-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -156,6 +161,8 @@ public class CrearCentroDeportivoController implements Initializable {
     @FXML
     void CerrarSesionClickedButton(ActionEvent event)throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
