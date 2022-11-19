@@ -20,7 +20,7 @@
       </ImageView>
       <ImageView fitHeight="605.0" fitWidth="478.0" layoutX="-10.0" layoutY="-10.0" opacity="0.51" AnchorPane.bottomAnchor="98.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0">
          <image>
-            <Image url="@../../../../../../../../../../Downloads/Foto%20(1).png" />
+            <Image url="@Fotos/Fondo_LogIn.png" />
          </image>
          <viewport>
             <Rectangle2D />

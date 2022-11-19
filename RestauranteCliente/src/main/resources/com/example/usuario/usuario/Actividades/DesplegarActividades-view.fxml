@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="274.0" prefWidth="367.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.DesplegarActividadesController">
+<AnchorPane prefHeight="255.0" prefWidth="430.0" style="-fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../Redondo.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.DesplegarActividadesController">
    <children>
-      <VBox layoutX="14.0" layoutY="23.0" prefHeight="250.0" prefWidth="126.0" spacing="10.0">
+      <ImageView fitHeight="255.0" fitWidth="430.0" layoutX="-24.0" layoutY="-14.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Fotos/Fondito3.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="50.0" layoutY="23.0" prefHeight="219.0" prefWidth="126.0" spacing="6.0">
          <children>
             <Label text="Nombre:">
                <font>
@@ -41,7 +48,7 @@
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="140.0" layoutY="23.0" prefHeight="250.0" prefWidth="126.0" spacing="10.0">
+      <VBox layoutX="173.0" layoutY="23.0" prefHeight="212.0" prefWidth="220.0" spacing="6.0">
          <children>
             <Label fx:id="nombre" text="Nombre:">
                <font>

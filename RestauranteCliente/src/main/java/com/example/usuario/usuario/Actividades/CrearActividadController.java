@@ -152,7 +152,16 @@ public class CrearActividadController {
         stage.show();
 
     }*/
-
+    @FXML
+    void AdministracionClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Administracion-view.fxml"));
+        Stage stage;
+        Scene scene;
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividad-view.fxml"));
@@ -253,8 +262,6 @@ public class CrearActividadController {
         }
     }
 
-    public void AdministracionClickedButton(ActionEvent actionEvent) {
-    }
 }
 
 

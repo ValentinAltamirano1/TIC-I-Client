@@ -12,9 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -40,6 +38,10 @@ public class SinReservaController implements Initializable {
     private Button checkin_button;
 
     @FXML
+    private Button administracion;
+
+
+    @FXML
     private Text confirmar;
 
     @FXML
@@ -61,7 +63,7 @@ public class SinReservaController implements Initializable {
     private ImageView foto;
 
     @FXML
-    private Label label;
+    private Label label_checkin;
 
     @FXML
     private Label pasaporte;
@@ -72,6 +74,10 @@ public class SinReservaController implements Initializable {
     @FXML
     private TextField txt_actividad;
 
+    @FXML
+    private DatePicker txt_fecha;
+    @FXML
+    private ChoiceBox txt_horario;
     @FXML
     private TextField txt_pasaporte;
 
@@ -84,6 +90,7 @@ public class SinReservaController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
 
     @FXML
     void CheckInClickedButton(ActionEvent event) throws IOException {
@@ -106,6 +113,16 @@ public class SinReservaController implements Initializable {
     @FXML
     void CerrarSesionClickedButton(ActionEvent event)throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void AdministracionClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Administracion-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

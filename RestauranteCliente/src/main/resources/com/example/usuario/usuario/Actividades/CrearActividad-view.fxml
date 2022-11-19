@@ -52,7 +52,7 @@
             </VBox>
             <ImageView fitHeight="173.0" fitWidth="266.0" layoutX="71.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Fotos/Foto_Logo.jpg" />
+                  <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
          </children></AnchorPane>
@@ -63,7 +63,7 @@
                   <Font name="System Bold" size="60.0" />
                </font>
             </Text>
-            <Button fx:id="crear_button" layoutX="457.0" layoutY="720.0" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="62.0" prefWidth="254.0" style="-fx-background-color: #df2d29;" text="Crear" textFill="WHITE">
+            <Button fx:id="crear_button" layoutX="462.0" layoutY="726.0" mnemonicParsing="false" onAction="#CrearClickedButton" prefHeight="62.0" prefWidth="254.0" style="-fx-background-color: #df2d29;" text="Crear" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="29.0" />
                </font>

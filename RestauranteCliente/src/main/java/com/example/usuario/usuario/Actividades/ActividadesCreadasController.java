@@ -89,7 +89,16 @@ public class ActividadesCreadasController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
+    @FXML
+    void AdministracionClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Administracion-view.fxml"));
+        Stage stage;
+        Scene scene;
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
@@ -159,6 +168,7 @@ public class ActividadesCreadasController implements Initializable {
         }
 
     }
+
 }
 
 

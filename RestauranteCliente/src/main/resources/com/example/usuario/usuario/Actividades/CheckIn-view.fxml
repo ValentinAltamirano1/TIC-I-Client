@@ -14,40 +14,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1219.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.CheckInController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1525.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.CheckInController">
    <children>
-      <Text fx:id="titulo1" fill="#df2d29" layoutX="69.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACTIVIDADES" wrappingWidth="204.4534759521485">
+      <Text fx:id="titulo1" fill="#df2d29" layoutX="75.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACTIVIDADES" wrappingWidth="204.4534759521485">
          <font>
             <Font name="System Bold" size="29.0" />
          </font>
       </Text>
-      <VBox layoutX="36.0" layoutY="339.0" prefHeight="383.0" prefWidth="259.0" spacing="25.0" style="-fx-background-color: #000000;">
+      <HBox layoutX="407.0" layoutY="156.0" prefHeight="546.0" prefWidth="1094.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Button fx:id="crearNueva_button" layoutX="10.0" layoutY="10.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#CrearNuevaClickedButton" prefHeight="66.0" prefWidth="258.0" style="-fx-background-color: #000000;" text="Crear actividad" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Button>
-            <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="40.0" prefWidth="262.0" style="-fx-background-color: #000000;" text="Ver ya creadas" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Button>
-            <Button fx:id="checkin_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CheckInClickedButton" prefHeight="40.0" prefWidth="264.0" style="-fx-background-color: #000000;" text="Check In" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Button>
-            <Button fx:id="cerrar_sesion_button" mnemonicParsing="false" onAction="#CerrarSesionClickedButton" prefHeight="42.0" prefWidth="257.0" style="-fx-background-color: #000000;" text="Cerrar Sesion" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Button>
-         </children>
-      </VBox>
-      <HBox layoutX="434.0" layoutY="158.0" prefHeight="530.0" prefWidth="732.0" style="-fx-background-color: #FFE5B9;">
-         <children>
-            <ScrollPane fx:id="scroll" prefHeight="530.0" prefWidth="733.0" style="-fx-background-color: #FFFFFF;">
+            <ScrollPane fx:id="scroll" prefHeight="546.0" prefWidth="1095.0" style="-fx-background-color: #FFFFFF;">
                <content>
                   <GridPane fx:id="grid" prefHeight="7.0" prefWidth="14.0" style="-fx-background-color: #FFFFFF;">
                      <rowConstraints>
@@ -58,7 +34,7 @@
             </ScrollPane>
          </children>
       </HBox>
-      <Text fx:id="confirmar1" fill="WHITE" layoutX="677.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHECK IN">
+      <Text fx:id="confirmar1" fill="WHITE" layoutX="794.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHECK IN">
          <font>
             <Font name="System Bold" size="52.0" />
          </font>
@@ -68,21 +44,50 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Text fx:id="copia_confirmar1" fill="WHITE" layoutX="646.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Con reserva previa">
+      <Text fx:id="copia_confirmar1" fill="WHITE" layoutX="757.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Con reserva previa">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
       </Text>
-      <Button fx:id="noreservados" layoutX="692.0" layoutY="707.0" mnemonicParsing="false" onAction="#NoReservadosClickedButton" prefHeight="52.0" prefWidth="269.0" style="-fx-background-color: #ffffff;" text="Sin reserva previa">
+      <Button fx:id="noreservados" layoutX="891.0" layoutY="717.0" mnemonicParsing="false" onAction="#NoReservadosClickedButton" prefHeight="52.0" prefWidth="269.0" style="-fx-background-color: #ffffff;" text="Sin reserva previa">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Button>
-      <ImageView fitHeight="142.0" fitWidth="216.0" layoutX="65.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="170.0" fitWidth="237.0" layoutX="65.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
          </image>
       </ImageView>
-      <Line endX="-7.792327880859375" endY="773.0000610351562" fill="WHITE" layoutX="340.0" startX="-7.792327880859375" startY="-1.4405885849555489E-5" stroke="WHITE" />
+      <Line endX="10.521087646484375" endY="800.0" fill="WHITE" layoutX="340.0" startX="10.521087646484375" startY="-8.013955266505945E-6" stroke="WHITE" />
+      <VBox layoutX="21.0" layoutY="318.0" prefHeight="412.0" prefWidth="308.0" spacing="20.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button fx:id="crearNueva_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevaClickedButton" prefHeight="75.0" prefWidth="326.0" style="-fx-background-color: #000000;" text="Crear actividad" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="75.0" prefWidth="305.0" style="-fx-background-color: #000000;" text="Ver ya creadas" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="checkin_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CheckInClickedButton" prefHeight="40.0" prefWidth="292.0" style="-fx-background-color: #000000;" text="Check In" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="administracion" layoutX="10.0" layoutY="191.0" mnemonicParsing="false" onAction="#AdministracionClickedButton" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: #000000;" text="Administracion" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="cerrar_sesion_button" mnemonicParsing="false" onAction="#CerrarSesionClickedButton" prefHeight="41.0" prefWidth="291.0" style="-fx-background-color: #000000;" text="Cerrar Sesion" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
