@@ -4,7 +4,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="134.0" prefWidth="973.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.DesplegarAdministracionController">
    <children>
       <Label layoutX="62.0" layoutY="54.0" text="Empresa:">
