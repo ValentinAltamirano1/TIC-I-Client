@@ -13,6 +13,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -23,9 +26,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
+import javafx.stage.Stage;
 import kong.unirest.GetRequest;
 import kong.unirest.Unirest;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +40,10 @@ public class BuscarController implements Initializable {
 
     ObservableList<String> txt_centros_list= FXCollections.
             observableArrayList();
+
+    Scene scene;
+    Stage stage;
+
     @FXML
     private Button actividades;
 
@@ -105,28 +114,59 @@ public class BuscarController implements Initializable {
 
     private MyListener myListener;
 
-    @FXML
-    void ActividadesClickedButton(ActionEvent event) {
+    String mail;
 
+    @FXML
+    void ActividadesClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/Actividades-view.fxml"));
+        Stage stage;
+        Scene scene;
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     @FXML
-    void ReservarClickedButton(ActionEvent event) {
-
-    }
-
-    @FXML
-    void BuscarClickedButton(ActionEvent event) {
-
-    }
-
-    @FXML
-    void CerrrSesionClickedButton(ActionEvent event) {
+    void ReservarClickedButton(ActionEvent event) throws IOException {
 
     }
 
     @FXML
-    void MisReservasClickedButton(ActionEvent event) {
+    void BuscarClickedButton(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(BuscarController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/Buscar-view.fxml"));
+        BuscarController buscarController = fxmlLoader.getController();
+        buscarController.getDataCentro();
+        Stage stage;
+        Scene scene;
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
+    @FXML
+    void CerrrSesionClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        Stage stage;
+        Scene scene;
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void MisReservasClickedButton(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(ActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/MisReservas-view.fxml"));
+        MisReservasController misReservasController = fxmlLoader.getController();
+        misReservasController.setMail(mail);
+        misReservasController.getinf();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -180,7 +220,6 @@ public class BuscarController implements Initializable {
     }
 
     public void mostrar(){
-        System.out.println("HOLA");
         actividades1.addAll(getData());
         if(actividades1.size()>0){
             setChosenActivity(actividades1.get(0));
@@ -225,5 +264,13 @@ public class BuscarController implements Initializable {
         } catch (Exception ignored) {
         }
     }
+
+    public String getMail() {
+        return mail;
     }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+}
 

@@ -103,6 +103,7 @@ public class ActividadesController implements Initializable {
     List<Actividades> actividades1 = new ArrayList<>();
 
     private MyListener myListener;
+
     public String mail;
     public String diaSemana;
 
@@ -164,6 +165,7 @@ public class ActividadesController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(BuscarController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/Buscar-view.fxml"));
         BuscarController buscarController = fxmlLoader.getController();
+        buscarController.setMail(mail);
         buscarController.getDataCentro();
         Stage stage;
         Scene scene;
@@ -247,7 +249,7 @@ public class ActividadesController implements Initializable {
     public List<Actividades> getData() {
         List<Actividades> actividadesList =null;
         try{
-            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades")
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/cupos")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             System.out.println(temp);
