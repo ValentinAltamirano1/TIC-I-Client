@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="134.0" prefWidth="973.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.DesplegarAdministracionController">
+   <children>
+      <Label layoutX="62.0" layoutY="54.0" text="Empresa:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="empresa" layoutX="150.0" layoutY="56.0" prefHeight="30.0" prefWidth="179.0" text="Empresa">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="398.0" layoutY="56.0" text="RUT:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="rut" layoutX="451.0" layoutY="56.0" prefHeight="30.0" prefWidth="173.0" text="RUT">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="668.0" layoutY="54.0" text="Monto: $ ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="monto" layoutX="762.0" layoutY="54.0" prefHeight="30.0" prefWidth="179.0" text="Monto">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
