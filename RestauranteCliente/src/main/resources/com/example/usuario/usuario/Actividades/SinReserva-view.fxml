@@ -102,7 +102,7 @@
             <VBox layoutX="561.0" layoutY="329.0" prefHeight="106.0" prefWidth="272.0" spacing="60.0">
                <children>
                   <TextField fx:id="txt_pasaporte" prefHeight="60.0" prefWidth="272.0" promptText="Pasaporte" />
-                  <TextField fx:id="txt_actividad" prefHeight="40.0" prefWidth="272.0" promptText="Nombre de actividad" />
+                  <ChoiceBox fx:id="txt_actividad" prefHeight="26.0" prefWidth="286.0" />
                   <DatePicker fx:id="txt_fecha" prefHeight="26.0" prefWidth="271.0" />
                   <ChoiceBox fx:id="txt_horario" prefHeight="26.0" prefWidth="276.0" />
                </children>

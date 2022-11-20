@@ -82,7 +82,7 @@ public class SinReservaController implements Initializable {
     private Text titulo;
 
     @FXML
-    private TextField txt_actividad;
+    private ChoiceBox txt_actividad;
 
     @FXML
     private DatePicker txt_fecha;

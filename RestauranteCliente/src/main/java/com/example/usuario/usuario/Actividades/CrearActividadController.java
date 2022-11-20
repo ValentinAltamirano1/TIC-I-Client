@@ -19,6 +19,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
@@ -29,6 +30,8 @@ import kong.unirest.Unirest;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -39,8 +42,7 @@ public class CrearActividadController {
             observableArrayList("MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY","FRIDAY", "SATURDAY","SUNDAY");
     ObservableList<String> txt_categoria_list= FXCollections.
             observableArrayList("Cancha","Gimnasio", "Exterior", "Nautico");
-    Stage stage;
-    Scene scene;
+
     int capacidad_;
     String categoria_;
     String horario_;
@@ -118,7 +120,6 @@ public class CrearActividadController {
     @FXML
     private Text dias;
 
-
     public List<Imagen> imagenes = new ArrayList<>();
 
     public List<HorarioKey> horarios = new ArrayList<>();
@@ -130,10 +131,18 @@ public class CrearActividadController {
 
         List<File> f = fc.showOpenMultipleDialog(null);
         for (File file : f){
-            byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray(file));
+            /*byte[] byteArray = actividades.getImage();
+            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArray);
+            BufferedImage bufferedImage = ImageIO.read(byteArrayInputStream);
+            Image imagen = SwingFXUtils.Image(bufferedImage, null);
+            */
+
+            /*byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray(file));
             data_ = new String(encoded, StandardCharsets.US_ASCII);
             Imagen imagenCentro = new Imagen(data_);
             imagenes.add(imagenCentro);
+
+             */
         }
 
     }
@@ -165,6 +174,8 @@ public class CrearActividadController {
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividad-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -218,6 +229,8 @@ public class CrearActividadController {
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -227,6 +240,8 @@ public class CrearActividadController {
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/ActividadesCreadas-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -256,7 +271,8 @@ public class CrearActividadController {
             CheckInController checkInController = fxmlLoader.getController();
             checkInController.setMail(mail);
             checkInController.info();
-
+            Stage stage;
+            Scene scene;
             stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
