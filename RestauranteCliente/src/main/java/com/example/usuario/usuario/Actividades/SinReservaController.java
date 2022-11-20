@@ -1,12 +1,15 @@
 package com.example.usuario.usuario.Actividades;
 
 import com.example.usuario.usuario.Empleados.Empleado;
+import com.example.usuario.usuario.HorarioKey;
 import com.example.usuario.usuario.Reservas;
 import com.example.usuario.usuario.ReservasKey;
 import com.example.usuario.usuario.Usuario.Usuarios;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,10 +28,14 @@ import kong.unirest.Unirest;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class SinReservaController implements Initializable {
+    ObservableList<String> txt_horarios_list= FXCollections.
+            observableArrayList();
+
     Stage stage;
     Scene scene;
     @FXML
@@ -84,6 +91,14 @@ public class SinReservaController implements Initializable {
     @FXML
     private TextField txt_pasaporte;
 
+    public String diaSemana;
+
+    public String mail;
+
+    public Actividades actividad_;
+
+    public Empleado empleado_;
+
 
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
@@ -134,13 +149,8 @@ public class SinReservaController implements Initializable {
 
     @FXML
     void DarCheckInClickedButton(ActionEvent event) {
-        Node node = (Node) event.getSource();
-        Stage stage1 = (Stage) node.getScene().getWindow();
-        Usuarios u = (Usuarios) stage1.getUserData();
-        System.out.println(u.getMail());
-
         //Agarro empleado
-        GetRequest response = Unirest.get("http://localhost:8080/api/v1/gimnasio/empleado/"+txt_pasaporte.getText())
+        GetRequest response = Unirest.get("http://localhost:8080/api/v1/gimnasio/empleado/pasaporte/"+txt_pasaporte.getText())
                 .header("Content-Type", "application/json");
         String temp = response.asJson().getBody().toString();
         ObjectMapper mapper = new ObjectMapper();
@@ -151,20 +161,20 @@ public class SinReservaController implements Initializable {
         } catch (JsonProcessingException e) {}
 
 
-        //agarro actividades
-        GetRequest response2 = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/" + u.getMail())
+        //agarro actividades del centro con el nombre ingresado
+        GetRequest response2 = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/centro/" + mail + "/" + txt_actividad.getText())
                 .header("Content-Type", "application/json");
-        String temp2 = response.asJson().getBody().toString();
+        String temp2 = response2.asJson().getBody().toString();
         ObjectMapper mapper1 = new ObjectMapper();
         List<Actividades> actividades =null;
         try {
-            actividades = mapper.readValue(temp, new TypeReference<List<Actividades>>() {});
+            actividades = mapper1.readValue(temp2, new TypeReference<List<Actividades>>() {});
             System.out.println(actividades.get(0));
         } catch (JsonProcessingException e) {}
 
-        //falta la fecha y horario con date picker
-        /*ReservasKey reservasKey = new ReservasKey(empleados.get(0),);
-        Reservas reservas1 = new Reservas(actividades.get(0),reservasKey,true);
+        //falta horario
+        /*ReservasKey reservasKey = new ReservasKey(empleado_,txt_fecha.getValue().toString(),);
+        Reservas reservas1 = new Reservas(actividad_,reservasKey,true);
 
         HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/reservas")
                 .header("accept", "application/json")
@@ -174,6 +184,16 @@ public class SinReservaController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        txt_horario.setItems(txt_horarios_list);
+        txt_horario.setValue("Horario");
+    }
 
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 }
+

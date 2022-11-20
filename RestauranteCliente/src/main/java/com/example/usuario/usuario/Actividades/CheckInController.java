@@ -1,7 +1,9 @@
 package com.example.usuario.usuario.Actividades;
 
 import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
+import com.example.usuario.usuario.LogInController;
 import com.example.usuario.usuario.Reservas;
+import com.example.usuario.usuario.Usuario.ActividadesController;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.event.ActionEvent;
@@ -128,7 +130,13 @@ public class CheckInController implements Initializable {
 
     @FXML
     void NoReservadosClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/SinReserva-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(SinReservaController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/SinReserva-view.fxml"));
+
+        SinReservaController sinReservaController = fxmlLoader.getController();
+        sinReservaController.setMail(mail);
+
+
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

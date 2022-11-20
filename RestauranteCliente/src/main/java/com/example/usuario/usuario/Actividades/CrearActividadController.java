@@ -204,7 +204,11 @@ public class CrearActividadController {
                     .header("Content-Type", "application/json")
                     .body(actividades).asEmpty();
 
-
+            txt_inicio.setText("");
+            txt_fin.setText("");
+            txt_nombre.setText("");
+            txt_capacidad.setText("");
+            txt_cupo.setText("");
             label_yacreado.setText("ACTIVIDAD CREADA CORRECTAMENTE!");
 
         }else{
