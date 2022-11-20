@@ -266,6 +266,8 @@ public class ActividadesController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         actividades1.addAll(getData());
+        choicebox.setItems(txt_horarios_list);
+        choicebox.setValue("Horario");
         if(actividades1.size()>0){
             setChosenActivity(actividades1.get(0));
             myListener = new MyListener() {
@@ -313,6 +315,7 @@ public class ActividadesController implements Initializable {
     }
 
     public void getDate(ActionEvent event){
+        choicebox.getItems().clear();
         LocalDate date = datepicker.getValue();
         System.out.println(date.toString());
 
@@ -332,14 +335,18 @@ public class ActividadesController implements Initializable {
         List<HorarioKey> horarioKeys =null;
         try {
             horarioKeys = mapper.readValue(temp, new TypeReference<List<HorarioKey>>() {});
-            String horarioInicio =horarioKeys.get(0).getHorario_inicio();
-
-            txt_horarios_list.add(horarioInicio);
         } catch (JsonProcessingException e) {}
 
+        if (horarioKeys.size()==0){
+            txt_horarios_list.add("                      ");
+        }
 
-        choicebox.setItems(txt_horarios_list);
-        choicebox.setValue("Horario");
+
+        for (int i=0; i<horarioKeys.size();i++) {
+            String horarioInicio = horarioKeys.get(i).getHorario_inicio();
+            txt_horarios_list.add(horarioInicio);
+        }
+
 
     }
 
