@@ -62,6 +62,8 @@ public class EmpleadosCreadosController implements Initializable {
 
     List<Empleado> empleados1 = new ArrayList<>();
 
+    String mail;
+
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
@@ -95,7 +97,7 @@ public class EmpleadosCreadosController implements Initializable {
     public List<Empleado> getData() {
         List<Empleado> empleadosList =null;
         try{
-            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/empleado")
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/empleado/" + mail)
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             System.out.println(temp);
@@ -111,6 +113,9 @@ public class EmpleadosCreadosController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+    }
+
+    public void informacion(){
         empleados1.addAll(getData());
 
         int row = 1;
@@ -149,4 +154,11 @@ public class EmpleadosCreadosController implements Initializable {
 
     }
 
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
 }

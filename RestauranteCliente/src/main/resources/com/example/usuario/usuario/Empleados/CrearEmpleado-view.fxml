@@ -19,7 +19,7 @@
          <children>
             <ImageView fx:id="foto" fitHeight="212.0" fitWidth="281.0" layoutX="65.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Fotos/Foto_Logo.jpg" />
+                  <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
             <Text fx:id="titulo" fill="#df2d29" layoutX="87.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLEADO" wrappingWidth="254.3123321533203">

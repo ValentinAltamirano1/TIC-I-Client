@@ -2,6 +2,7 @@ package com.example.usuario.usuario;
 
 
 import com.example.usuario.usuario.Actividades.CrearActividadController;
+import com.example.usuario.usuario.Empleados.CrearEmpleadoController;
 import com.example.usuario.usuario.Usuario.ActividadesController;
 import com.example.usuario.usuario.Usuario.Usuarios;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -113,7 +114,11 @@ public class LogInController implements Initializable {
                     Stage stage1 = (Stage) node.getScene().getWindow();
                     stage1.close();
 
-                    Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/CrearEmpleado-view.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    Parent root = fxmlLoader.load(CrearEmpleadoController.class.getResourceAsStream("/com/example/usuario/usuario/Empleados/CrearEmpleado-view.fxml"));
+
+                    CrearEmpleadoController crearEmpleadoController = fxmlLoader.getController();
+                    crearEmpleadoController.setMail_(listUser.getMail());
 
                     stage1.setUserData(listUser);
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

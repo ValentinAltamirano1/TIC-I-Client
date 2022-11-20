@@ -1,6 +1,9 @@
 package com.example.usuario.usuario.Empleados;
 
+import com.example.usuario.usuario.Actividades.CheckInController;
+import com.example.usuario.usuario.Actividades.CrearActividadController;
 import com.example.usuario.usuario.Empresas.Empresa;
+import com.example.usuario.usuario.Empresas.EmpresasCreadasController;
 import com.example.usuario.usuario.Usuario.Usuarios;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -90,6 +93,7 @@ public class CrearEmpleadoController implements Initializable {
     @FXML
     private Label label;
 
+    public String mail_;
 
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
@@ -110,7 +114,12 @@ public class CrearEmpleadoController implements Initializable {
 
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/EmpleadosCreados-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(EmpleadosCreadosController.class.getResourceAsStream("/com/example/usuario/usuario/Empleados/EmpleadosCreados-view.fxml"));
+        EmpleadosCreadosController empleadosCreadosController = fxmlLoader.getController();
+        empleadosCreadosController.setMail(mail_);
+        empleadosCreadosController.informacion();
+
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -174,5 +183,13 @@ public class CrearEmpleadoController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         txt_tipo.setItems(txt_tipo_list);
         txt_tipo.setValue("Tipo");
+    }
+
+    public String getMail_() {
+        return mail_;
+    }
+
+    public void setMail_(String mail_) {
+        this.mail_ = mail_;
     }
 }
