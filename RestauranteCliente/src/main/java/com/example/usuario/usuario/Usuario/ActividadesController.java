@@ -1,7 +1,6 @@
 package com.example.usuario.usuario.Usuario;
 
 import com.example.usuario.usuario.Actividades.Actividades;
-import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
 import com.example.usuario.usuario.Empleados.Empleado;
 import com.example.usuario.usuario.HorarioKey;
 import com.example.usuario.usuario.Reservas;
@@ -9,7 +8,6 @@ import com.example.usuario.usuario.ReservasKey;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.java.accessibility.util.Translator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,21 +19,19 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.skin.DatePickerSkin;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
+import kong.unirest.HttpRequestWithBody;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ActividadesController implements Initializable {
@@ -133,17 +129,12 @@ public class ActividadesController implements Initializable {
                     .header("Content-Type", "application/json")
                     .body(reservas1).asEmpty();
 
-/*
-            int precio = actividades_.getPrecio();
-            int capacidad = actividades_.getCapacidad();
-            int cupos = actividades_.getCupos();
-            Actividades actividades2 = new Actividades(actividades_.getActividadesKey(),precio,actividades_.getCategoria(),capacidad,actividades_.getDescripcion(),
-                    (cupos-1),actividades_.getHorarios(),actividades_.getImagen());
 
-            HttpResponse apiResponse1 = Unirest.post("http://localhost:8080/api/v1/gimnasio/reservas")
+            HttpRequestWithBody apiResponse1 = Unirest.put("http://localhost:8080/api/v1/gimnasio/actividades/update/"+actividades_.getActividadesKey())
                     .header("accept", "application/json")
-                    .header("Content-Type", "application/json")
-                    .body(actividades2).asEmpty();*/
+                    .header("Content-Type", "application/json");
+
+
         }else{
             System.out.println("Ingrese todos los datos para poder realizar una reserva");
         }
