@@ -33,11 +33,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class SinReservaController implements Initializable {
-    ObservableList<String> txt_horarios_list= FXCollections.
-            observableArrayList();
 
-    Stage stage;
-    Scene scene;
     @FXML
     private Label actividad;
 
@@ -82,12 +78,12 @@ public class SinReservaController implements Initializable {
     private Text titulo;
 
     @FXML
-    private ChoiceBox txt_actividad;
+    private TextField txt_actividad;
 
     @FXML
     private DatePicker txt_fecha;
     @FXML
-    private ChoiceBox txt_horario;
+    private TextField txt_horario;
     @FXML
     private TextField txt_pasaporte;
 
@@ -103,6 +99,8 @@ public class SinReservaController implements Initializable {
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividad-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -113,6 +111,8 @@ public class SinReservaController implements Initializable {
     @FXML
     void CheckInClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -122,6 +122,8 @@ public class SinReservaController implements Initializable {
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/TablaActividades-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -131,6 +133,8 @@ public class SinReservaController implements Initializable {
     @FXML
     void CerrarSesionClickedButton(ActionEvent event)throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -184,8 +188,7 @@ public class SinReservaController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        txt_horario.setItems(txt_horarios_list);
-        txt_horario.setValue("Horario");
+
     }
 
     public String getMail() {
