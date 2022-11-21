@@ -56,7 +56,7 @@ public class DesplegarCheckInController {
     @FXML
     void ConfirmarClickedButton(ActionEvent event) {
 
-        Reservas reservas = new Reservas(reservas1.getActividades(),reservas1.getReservasKey(),true);
+        Reservas reservas = new Reservas(reservas1.getActividades(),reservas1.getReservasKey(),true,"reservado");
 
         HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/reservas/update")
                 .header("accept", "application/json")

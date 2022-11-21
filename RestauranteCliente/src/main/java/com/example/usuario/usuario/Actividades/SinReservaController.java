@@ -190,7 +190,7 @@ public class SinReservaController implements Initializable {
 
 
         ReservasKey reservasKey = new ReservasKey(empleados.get(0),txt_fecha.getValue().toString(),txt_horario.getText());
-        Reservas reservas1 = new Reservas(actividad_,reservasKey,true);
+        Reservas reservas1 = new Reservas(actividad_,reservasKey,true,"reservado");
 
         HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/reservas")
                 .header("accept", "application/json")
