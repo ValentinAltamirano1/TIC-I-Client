@@ -166,7 +166,12 @@ public class CrearActividadController {
     }*/
     @FXML
     void AdministracionClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Administracion-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(AdministracionController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/Administracion-view.fxml"));
+        AdministracionController administracionController= fxmlLoader.getController();
+        administracionController.setMail(mail);
+        administracionController.informacion();
+
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

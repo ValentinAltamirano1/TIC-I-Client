@@ -76,9 +76,8 @@ public class DesplegarController {
         this.myListener = myListener;
         nombre1.setText(actividades.getActividadesKey().getNombre());
         precio1.setText(String.valueOf(actividades.getPrecio()));
-        //horario1.setText(actividades.getActividadesKey().getHorario());
+        horario1.setText(String.valueOf(actividades.getHorarios().get(0).getDia_de_semana()));
         cupos1.setText(String.valueOf(actividades.getCupos()));
-
     }
 
 

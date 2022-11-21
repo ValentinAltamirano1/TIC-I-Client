@@ -1,5 +1,6 @@
 package com.example.usuario.usuario.Empleados;
 
+import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
 
 import java.io.IOException;
 
@@ -88,7 +91,11 @@ public class BorrarEmpleadoController {
 
     @FXML
     void BorrarClickedButton(ActionEvent event) {
-
+        Empleado empleado = new Empleado();
+        HttpResponse apiResponse = Unirest.delete("http://localhost:8080/api/v1/gimnasio/empleado/"+txt_pasaporte1.getText())
+                .header("accept","application/json" )
+                .header("Content-Type", "application/json")
+                .body(empleado).asEmpty();
     }
 
     @FXML

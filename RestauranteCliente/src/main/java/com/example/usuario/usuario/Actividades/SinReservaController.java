@@ -93,7 +93,6 @@ public class SinReservaController implements Initializable {
 
     public Actividades actividad_;
 
-    public Empleado empleado_;
 
 
     @FXML
@@ -173,17 +172,24 @@ public class SinReservaController implements Initializable {
         List<Actividades> actividades =null;
         try {
             actividades = mapper1.readValue(temp2, new TypeReference<List<Actividades>>() {});
+            actividad_ = actividades.get(0);
             System.out.println(actividades.get(0));
         } catch (JsonProcessingException e) {}
 
-        //falta horario
-        /*ReservasKey reservasKey = new ReservasKey(empleado_,txt_fecha.getValue().toString(),);
+
+        ReservasKey reservasKey = new ReservasKey(empleados.get(0),txt_fecha.getValue().toString(),txt_horario.getText());
         Reservas reservas1 = new Reservas(actividad_,reservasKey,true);
 
         HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/reservas")
                 .header("accept", "application/json")
                 .header("Content-Type", "application/json")
-                .body(reservas1).asEmpty();*/
+                .body(reservas1).asEmpty();
+
+        Actividades actividades2 = new Actividades(actividad_.getActividadesKey(),actividad_.getPrecio(),actividad_.getCategoria(),actividad_.getCapacidad(),actividad_.getDescripcion(),actividad_.getCupos(),actividad_.getHorarios(),actividad_.getImagen());
+        HttpResponse apiResponse1 =  Unirest.post("http://localhost:8080/api/v1/gimnasio/actividades/update")
+                .header("accept", "application/json")
+                .header("Content-Type", "application/json")
+                .body(actividades2).asEmpty();
     }
 
     @Override

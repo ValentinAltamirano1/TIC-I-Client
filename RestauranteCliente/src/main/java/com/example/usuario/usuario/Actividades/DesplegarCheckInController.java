@@ -55,13 +55,10 @@ public class DesplegarCheckInController {
     public String mail;
     @FXML
     void ConfirmarClickedButton(ActionEvent event) {
-        //busco empleado por mail
-        System.out.println("hola");
-        System.out.println(reservas1.getReservasKey().getFecha());
 
         Reservas reservas = new Reservas(reservas1.getActividades(),reservas1.getReservasKey(),true);
 
-        HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/reservas")
+        HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/reservas/update")
                 .header("accept", "application/json")
                 .header("Content-Type", "application/json")
                 .body(reservas).asEmpty();
@@ -73,6 +70,7 @@ public class DesplegarCheckInController {
         nombre2.setText(reservas1.getActividades().getActividadesKey().getNombre());
         precio2.setText(String.valueOf(reservas1.getActividades().getPrecio()));
         capacidad2.setText(String.valueOf(reservas1.getActividades().getCapacidad()));
+        pasaporte2.setText(reservas1.getReservasKey().getEmpleados().getPasaporte());
 
     }
 

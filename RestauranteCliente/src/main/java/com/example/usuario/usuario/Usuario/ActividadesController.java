@@ -129,10 +129,11 @@ public class ActividadesController implements Initializable {
                     .header("Content-Type", "application/json")
                     .body(reservas1).asEmpty();
 
-
-            HttpRequestWithBody apiResponse1 = Unirest.put("http://localhost:8080/api/v1/gimnasio/actividades/update/"+actividades_.getActividadesKey())
+            Actividades actividades2 = new Actividades(actividades_.getActividadesKey(),actividades_.getPrecio(),actividades_.getCategoria(),actividades_.getCapacidad(),actividades_.getDescripcion(),actividades_.getCupos(),actividades_.getHorarios(),actividades_.getImagen());
+            HttpResponse apiResponse1 =  Unirest.post("http://localhost:8080/api/v1/gimnasio/actividades/update")
                     .header("accept", "application/json")
-                    .header("Content-Type", "application/json");
+                    .header("Content-Type", "application/json")
+                    .body(actividades2).asEmpty();
 
 
         }else{

@@ -1,5 +1,6 @@
 package com.example.usuario.usuario.CentrosDeportivos;
 
+import com.example.usuario.usuario.Empresas.Empresa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
 
 import java.io.IOException;
 
@@ -68,7 +71,11 @@ public class BorrarCentroDeportivoController {
 
     @FXML
     void BorrarClickedButton(ActionEvent event) {
-
+        CentroDeportivo centroDeportivo=new CentroDeportivo();
+        HttpResponse apiResponse = Unirest.delete("http://localhost:8080/api/v1/gimnasio/centroDeportivo/"+txt_rut.getText())
+                .header("accept","application/json" )
+                .header("Content-Type", "application/json")
+                .body(centroDeportivo).asEmpty();
     }
 
 

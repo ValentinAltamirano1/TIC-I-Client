@@ -11,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
 
 import java.io.IOException;
 
@@ -83,7 +85,11 @@ public class BorrarEmpresaController {
     }
     @FXML
     void BorrarClickedButton(ActionEvent event) {
-
+        Empresa empresa = new Empresa();
+        HttpResponse apiResponse = Unirest.delete("http://localhost:8080/api/v1/gimnasio/empresa/"+txt_rut.getText())
+                .header("accept","application/json" )
+                .header("Content-Type", "application/json")
+                .body(empresa).asEmpty();
     }
 
 

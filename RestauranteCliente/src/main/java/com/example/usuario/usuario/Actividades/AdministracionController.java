@@ -12,6 +12,9 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import kong.unirest.HttpRequestWithBody;
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
 
 import java.io.IOException;
 
@@ -117,6 +120,13 @@ public class AdministracionController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void informacion(){
+        HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/pagos")
+                .header("accept", "application/json")
+                .header("Content-Type", "application/json").body("").asEmpty();
+
     }
 
 }
