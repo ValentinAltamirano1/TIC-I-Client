@@ -138,6 +138,8 @@ public class LogInController implements Initializable {
                     ActividadesController actividadesController = fxmlLoader.getController();
                     actividadesController.setMail(listUser.getMail());
                     actividadesController.getUsuario_nombre().setText(listUser.getMail());
+                    actividadesController.getEmpleado();
+
 
 
                     stage1.setUserData(listUser);

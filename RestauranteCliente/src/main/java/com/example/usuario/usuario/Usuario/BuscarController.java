@@ -228,6 +228,9 @@ public class BuscarController implements Initializable {
     }
 
     public void mostrar(){
+        grid = new GridPane();
+        scroll.setContent(grid);
+        actividades1.clear();
         actividades1.addAll(getData());
         if(actividades1.size()>0){
             setChosenActivity(actividades1.get(0));

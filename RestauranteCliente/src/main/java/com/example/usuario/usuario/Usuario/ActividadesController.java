@@ -80,6 +80,14 @@ public class ActividadesController implements Initializable {
         this.usuario_nombre = usuario_nombre;
     }
 
+    public Label getUsuario_saldo() {
+        return usuario_saldo;
+    }
+
+    public void setUsuario_saldo(Label usuario_saldo) {
+        this.usuario_saldo = usuario_saldo;
+    }
+
     @FXML
     private Label usuario_nombre;
     @FXML
@@ -104,6 +112,7 @@ public class ActividadesController implements Initializable {
 
     public Actividades actividades_;
 
+    Empleado empleado;
     @FXML
     void ReservarClickedButton(ActionEvent event) {
         List<Empleado> empleadosList = null;
@@ -121,7 +130,7 @@ public class ActividadesController implements Initializable {
             } catch (JsonProcessingException e) {}
 
             ReservasKey reservasKey = new ReservasKey(empleadosList.get(0),datepicker.getValue().toString(),choicebox.getValue().toString());
-            Reservas reservas1 = new Reservas(actividades_,reservasKey,false);
+            Reservas reservas1 = new Reservas(actividades_,reservasKey,false,"reservado");
 
             HttpResponse apiResponse = Unirest.post("http://localhost:8080/api/v1/gimnasio/reservas")
                     .header("accept", "application/json")
@@ -361,6 +370,23 @@ public class ActividadesController implements Initializable {
 
     public void setActividades_(Actividades actividades_) {
         this.actividades_ = actividades_;
+    }
+
+    public void getEmpleado(){
+        List<Empleado> empleadosList = null;
+        GetRequest requestEmp = Unirest.get("http://localhost:8080/api/v1/gimnasio/empleado/" + mail)
+                .header("Content-Type", "application/json");
+        String temp1 = requestEmp.asJson().getBody().toString();
+        System.out.println(temp1);
+        ObjectMapper mapper1 = new ObjectMapper();
+        try {
+            empleadosList =mapper1.readValue(temp1, new TypeReference<List<Empleado>>() {});
+            System.out.println(empleadosList);
+        } catch (JsonProcessingException e) {}
+
+        empleado = empleadosList.get(0);
+        usuario_saldo.setText(String.valueOf(empleadosList.get(0).getSaldo()));
+
     }
 
 
