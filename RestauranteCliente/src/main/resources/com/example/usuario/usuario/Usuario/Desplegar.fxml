@@ -14,10 +14,13 @@
          <children>
             <ImageView fitHeight="350.0" fitWidth="262.0" layoutX="-6.0" layoutY="-3.0" opacity="0.21" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Fotos/Footbal_Grass_Ball_567788_600x800.jpg" />
+                  <Image url="@/com/example/usuario/usuario/Fotos/Footbal_Grass_Ball_567788_600x800.jpg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imagen" fitHeight="154.0" fitWidth="224.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imagen" fitHeight="154.0" fitWidth="224.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/com/example/usuario/usuario/Fotos/Foto_actividades.jpg" />
+               </image></ImageView>
             <VBox layoutX="119.0" layoutY="214.0" prefHeight="109.0" prefWidth="133.0" spacing="18.0">
                <children>
                   <Label fx:id="horario1" layoutX="10.0" layoutY="61.0" text="horario">

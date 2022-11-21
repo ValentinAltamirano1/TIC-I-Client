@@ -1,5 +1,6 @@
 package com.example.usuario.usuario.Actividades;
 
+import com.example.usuario.usuario.Imagen;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
