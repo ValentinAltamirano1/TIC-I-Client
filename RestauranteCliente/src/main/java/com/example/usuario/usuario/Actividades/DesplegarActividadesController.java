@@ -44,8 +44,6 @@ public class DesplegarActividadesController {
         capacidad.setText(String.valueOf(actividades.getCapacidad()));
         categoria.setText(actividades.getCategoria());
         cupos.setText(String.valueOf(actividades.getCupos()));
-
-
     }
 
     public Image decodificar(String imagen) {
