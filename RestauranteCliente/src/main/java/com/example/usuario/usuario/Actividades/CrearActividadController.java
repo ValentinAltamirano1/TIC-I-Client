@@ -9,6 +9,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,14 +28,10 @@ import javafx.stage.Stage;
 import kong.unirest.GetRequest;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.io.FileUtils;
 
 import javax.imageio.ImageIO;
-import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -143,7 +140,7 @@ public class CrearActividadController {
         }
     }
 
-    public Imagen codificar(String imagen){
+    public Image codificar(String imagen){
         byte[] imageDecoded = org.apache.commons.codec.binary.Base64.decodeBase64(imagen);
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(imageDecoded);
         BufferedImage bufferedImage = null;
@@ -152,9 +149,9 @@ public class CrearActividadController {
         }catch (IOException e){
             e.printStackTrace();
         }
-        //Image agregar = SwingFXUtils.toFXImage(bufferedImage, null);
-        //return agregar;
-        return null;
+        Image agregar = SwingFXUtils.toFXImage(bufferedImage, null);
+        return agregar;
+
     }
 
 
