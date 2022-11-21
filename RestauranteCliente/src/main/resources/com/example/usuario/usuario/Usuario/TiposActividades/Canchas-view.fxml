@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -12,153 +14,181 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1219.0" style="-fx-background-color: #FFE5B9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Usuario.TiposActividades.CanchasController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1219.0" style="-fx-background-color: #FFE5B9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Usuario.TiposActividades.CanchasController">
    <children>
-      <ImageView fx:id="foto_logo" fitHeight="177.0" fitWidth="213.0" layoutX="30.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="789.0" fitWidth="1258.0" layoutX="-2.0" layoutY="-2.0" opacity="0.29" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/com/example/usuario/usuario/Fotos/feather_football-Sports_HD_Widescreen_Wallpaper_medium.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="foto_logo" fitHeight="176.0" fitWidth="220.0" layoutX="30.0" layoutY="40.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
          </image>
       </ImageView>
       <Label layoutX="57.0" layoutY="220.0" />
-      <HBox layoutX="281.0" layoutY="215.0" prefHeight="530.0" prefWidth="604.0" style="-fx-background-color: #FFE5B9;">
+      <HBox layoutX="281.0" layoutY="226.0" prefHeight="519.0" prefWidth="604.0" style="-fx-background-color: #FFCA6F;">
          <children>
-            <ScrollPane fx:id="scroll" prefHeight="530.0" prefWidth="631.0" style="-fx-background-color: #FFCA6F;">
+            <ScrollPane fx:id="scroll" prefHeight="496.0" prefWidth="604.0" style="-fx-background-color: #FFCA6F;">
                <content>
                   <GridPane fx:id="grid" prefHeight="7.0" prefWidth="14.0" style="-fx-background-color: #FFE5B9;">
-                     <rowConstraints>
-                        <RowConstraints maxHeight="8.600012207031249" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="8.600012207031249" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
                   </GridPane>
                </content>
             </ScrollPane>
          </children>
       </HBox>
-      <VBox layoutX="37.0" layoutY="377.0" prefHeight="270.0" prefWidth="178.0" spacing="25.0">
+      <VBox layoutX="31.0" layoutY="393.0" prefHeight="344.0" prefWidth="219.0" spacing="25.0">
          <children>
-            <Button fx:id="actividades" layoutX="10.0" layoutY="111.0" mnemonicParsing="false" onAction="#ActividadesClickedButton" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Actividades" textAlignment="CENTER">
+            <Button fx:id="actividades" layoutX="10.0" layoutY="111.0" mnemonicParsing="false" onAction="#ActividadesClickedButton" prefHeight="52.0" prefWidth="225.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Actividades" textAlignment="CENTER">
                <font>
-                  <Font name="Nirmala UI Bold" size="18.0" />
+                  <Font name="Nirmala UI Bold" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="reservas" mnemonicParsing="false" onAction="#MisReservasClickedButton" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Mis reservas" textAlignment="CENTER">
+            <Button fx:id="buscar" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#BuscarClickedButton" prefHeight="52.0" prefWidth="230.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Buscar por centro">
                <font>
-                  <Font name="Nirmala UI Bold" size="18.0" />
+                  <Font name="Nirmala UI Bold" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="cerrar_sesion" mnemonicParsing="false" onAction="#CerrrSesionClickedButton" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Cerrar Sesion">
+            <Button fx:id="reservas" mnemonicParsing="false" onAction="#MisReservasClickedButton" prefHeight="52.0" prefWidth="240.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Mis reservas" textAlignment="CENTER">
                <font>
-                  <Font name="Nirmala UI Bold" size="18.0" />
+                  <Font name="Nirmala UI Bold" size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="cerrar_sesion" mnemonicParsing="false" onAction="#CerrrSesionClickedButton" prefHeight="52.0" prefWidth="228.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Cerrar Sesion">
+               <font>
+                  <Font name="Nirmala UI Bold" size="25.0" />
                </font>
             </Button>
          </children>
       </VBox>
-      <Label fx:id="titulo" layoutX="325.0" layoutY="26.0" prefHeight="92.0" prefWidth="774.0" text="Filtrado por: CANCHAS">
+      <Label fx:id="titulo" layoutX="299.0" layoutY="31.0" prefHeight="104.0" prefWidth="886.0" text="Filtrado por: CANCHAS">
          <font>
-            <Font name="Californian FB" size="64.0" />
+            <Font size="74.0" />
          </font>
       </Label>
-      <Button fx:id="canchas" layoutX="287.0" layoutY="139.0" mnemonicParsing="false" onAction="#CanchasClickedButton" prefHeight="54.0" prefWidth="178.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Canchas" textAlignment="RIGHT">
+      <Label fx:id="label_hola" layoutX="30.0" layoutY="214.0" prefHeight="44.0" prefWidth="107.0" text="Hola">
          <font>
-            <Font name="Nirmala UI Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="gimnasios" layoutX="465.0" layoutY="139.0" mnemonicParsing="false" onAction="#GimnasiosClickedButton" prefHeight="54.0" prefWidth="153.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Gimnasios" textAlignment="RIGHT">
-         <font>
-            <Font name="Nirmala UI Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="exterior" layoutX="617.0" layoutY="139.0" mnemonicParsing="false" onAction="#ExteriorClickedButton" prefHeight="54.0" prefWidth="144.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Exterior" textAlignment="RIGHT">
-         <font>
-            <Font name="Nirmala UI Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="nautica" layoutX="761.0" layoutY="139.0" mnemonicParsing="false" onAction="#NauticaClickedButton" prefHeight="54.0" prefWidth="138.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="Nauticos" textAlignment="RIGHT">
-         <font>
-            <Font name="Nirmala UI Bold" size="14.0" />
-         </font>
-      </Button>
-      <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="295.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@/com/example/usuario/usuario/Fotos/Foto_Canchas1.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="36.0" fitWidth="63.0" layoutX="438.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@/com/example/usuario/usuario/Fotos/Foto_Gimnasios1.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="49.0" fitWidth="48.0" layoutX="617.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@/com/example/usuario/usuario/Fotos/Foto_Exterior1.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="49.0" fitWidth="48.0" layoutX="753.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@/com/example/usuario/usuario/Fotos/Foto_Nautica1.jpg" />
-         </image>
-      </ImageView>
-      <Label fx:id="usuario_nombre1" layoutX="48.0" layoutY="241.0" prefHeight="30.0" prefWidth="63.0" text="Hola">
-         <font>
-            <Font name="Candara Bold Italic" size="24.0" />
+            <Font name="Candara Bold Italic" size="40.0" />
          </font>
       </Label>
-      <Label fx:id="usuario_nombre" layoutX="59.0" layoutY="276.0" prefHeight="43.0" prefWidth="139.0" text="Nombre:">
+      <Label fx:id="usuario_nombre" layoutX="49.0" layoutY="252.0" prefHeight="48.0" prefWidth="182.0" text="Nombre:">
          <font>
-            <Font name="Candara Bold Italic" size="36.0" />
+            <Font name="Candara Bold Italic" size="40.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="914.0" layoutY="237.0" prefHeight="459.0" prefWidth="277.0" style="-fx-background-color: #FFCA6F;">
+      <AnchorPane layoutX="900.0" layoutY="230.0" prefHeight="519.0" prefWidth="285.0" style="-fx-background-color: #FFE5B9; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../../Redondo.css">
          <children>
-            <VBox layoutX="18.0" layoutY="11.0" prefHeight="351.0" prefWidth="239.0" style="-fx-background-color: #FFCA6F;">
+            <Button fx:id="reservar_button" layoutX="65.0" layoutY="447.0" mnemonicParsing="false" onAction="#ReservarClickedButton" prefHeight="51.0" prefWidth="163.0" style="-fx-background-color: #FFCA6F; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@../../Redondo.css" text="RESERVAR">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <DatePicker fx:id="datepicker" layoutX="8.0" layoutY="409.0" onAction="#getDate" prefHeight="26.0" prefWidth="118.0" promptText="Ingrese dia:" style="-fx-background-color: #FFFFFF;" />
+            <ChoiceBox fx:id="choicebox" layoutX="155.0" layoutY="407.0" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #FFFFFF;" />
+            <VBox layoutX="25.0" layoutY="18.0" prefHeight="217.0" prefWidth="239.0" style="-fx-background-color: ;">
                <children>
                   <HBox fx:id="nombre" prefHeight="78.0" prefWidth="258.0">
                      <children>
                         <Label fx:id="nombre_grande" prefHeight="79.0" prefWidth="258.0" text="NOMBRE" textAlignment="CENTER">
                            <font>
-                              <Font name="System Bold" size="29.0" />
+                              <Font name="System Bold" size="36.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
-                  <ImageView fitHeight="136.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label fx:id="cupos" layoutX="10.0" layoutY="224.0" prefHeight="31.0" prefWidth="153.0" text="Cupos:">
+                  <ImageView fitHeight="143.0" fitWidth="235.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </VBox>
+            <HBox layoutX="26.0" layoutY="268.0" prefHeight="34.0" prefWidth="241.0">
+               <children>
+                  <Label fx:id="precio" prefHeight="31.0" prefWidth="291.0" text="Precio:">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
                   </Label>
-                  <Label fx:id="cupos_grande" prefHeight="31.0" prefWidth="153.0" text="Cupos:">
+                  <Label fx:id="precio_grande" prefHeight="32.0" prefWidth="384.0" text="Precio:">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="26.0" layoutY="300.0" prefHeight="42.0" prefWidth="258.0">
+               <children>
+                  <Label fx:id="cupos" prefHeight="31.0" prefWidth="153.0" text="Cupos:">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
                   </Label>
-                  <Label fx:id="precio" layoutX="10.0" layoutY="270.0" prefHeight="31.0" prefWidth="291.0" text="Precio:">
+                  <Label fx:id="cupos_grande" prefHeight="32.0" prefWidth="259.0" text="Cupos:">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox layoutX="22.0" layoutY="336.0" prefHeight="66.0" prefWidth="234.0">
+               <children>
+                  <Label fx:id="descripcion" prefHeight="31.0" prefWidth="291.0" text="Descripcion:">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
                   </Label>
-                  <Label fx:id="precio_grande" layoutX="10.0" layoutY="305.0" prefHeight="31.0" prefWidth="291.0" text="Precio:">
+                  <Label fx:id="descripcion_grande" prefHeight="31.0" prefWidth="291.0" text="Descripcion:">
                      <font>
-                        <Font name="System Bold" size="21.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="descripcion" layoutX="10.0" layoutY="327.0" prefHeight="31.0" prefWidth="291.0" text="Descripcion:">
-                     <font>
-                        <Font name="System Bold" size="21.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="descripcion_grande" layoutX="10.0" layoutY="274.0" prefHeight="31.0" prefWidth="291.0" text="Descripcion:">
-                     <font>
-                        <Font name="System Bold" size="21.0" />
+                        <Font size="22.0" />
                      </font>
                   </Label>
                </children>
             </VBox>
-            <Button fx:id="reservar_button" layoutX="59.0" layoutY="391.0" mnemonicParsing="false" onAction="#ReservarClickedButton" prefHeight="63.0" prefWidth="171.0" style="-fx-background-color: #FFE5B9; -fx-background-radius: 30;" styleClass="boton-redondo" stylesheets="@/com/example/usuario/usuario/Redondo.css" text="RESERVAR">
+         </children>
+      </AnchorPane>
+      <HBox layoutX="484.0" layoutY="149.0" prefHeight="68.0" prefWidth="711.0" spacing="50.0">
+         <children>
+            <Button fx:id="canchas" mnemonicParsing="false" onAction="#CanchasClickedButton" prefHeight="54.0" prefWidth="138.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../../Redondo.css" text="Canchas" textAlignment="RIGHT">
                <font>
-                  <Font name="System Bold" size="20.0" />
+                  <Font name="Nirmala UI Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="gimnasios" mnemonicParsing="false" onAction="#GimnasiosClickedButton" prefHeight="54.0" prefWidth="138.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../../Redondo.css" text="Gimnasios" textAlignment="RIGHT">
+               <font>
+                  <Font name="Nirmala UI Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="exterior" mnemonicParsing="false" onAction="#ExteriorClickedButton" prefHeight="54.0" prefWidth="138.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../../Redondo.css" text="Exterior" textAlignment="RIGHT">
+               <font>
+                  <Font name="Nirmala UI Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="nautica" mnemonicParsing="false" onAction="#NauticaClickedButton" prefHeight="54.0" prefWidth="138.0" style="-fx-background-color: #FFCA6F;" styleClass="boton-redondo" stylesheets="@../../Redondo.css" text="Nauticos" textAlignment="RIGHT">
+               <font>
+                  <Font name="Nirmala UI Bold" size="14.0" />
                </font>
             </Button>
          </children>
-      </AnchorPane>
+      </HBox>
+      <Label fx:id="usuario_nombre11" layoutX="320.0" layoutY="154.0" prefHeight="47.0" prefWidth="195.0" text="Filtrar por:">
+         <font>
+            <Font name="Candara Bold Italic" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_saldo" layoutX="30.0" layoutY="300.0" prefHeight="48.0" prefWidth="219.0" text="Saldo disponible:">
+         <font>
+            <Font name="Candara Bold Italic" size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="usuario_saldo" layoutX="63.0" layoutY="332.0" prefHeight="48.0" prefWidth="154.0" text="Saldo">
+         <font>
+            <Font name="Candara Bold Italic" size="31.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_pesos" layoutX="46.0" layoutY="332.0" prefHeight="48.0" prefWidth="22.0" text="\$">
+         <font>
+            <Font name="Candara Bold Italic" size="29.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
