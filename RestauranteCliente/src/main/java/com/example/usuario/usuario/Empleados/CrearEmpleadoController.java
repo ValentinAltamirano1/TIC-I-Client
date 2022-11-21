@@ -33,8 +33,7 @@ import java.util.ResourceBundle;
 public class CrearEmpleadoController implements Initializable {
     ObservableList<String> txt_tipo_list= FXCollections.
             observableArrayList("Usuario");
-    Stage stage;
-    Scene scene;
+
     int telefono_;
     int saldo_;
     int sobre_giro_;
@@ -44,8 +43,7 @@ public class CrearEmpleadoController implements Initializable {
     private Button cerrar_sesion_button;
     @FXML
     private Button creados_button;
-    @FXML
-    private Button administracion;
+
     @FXML
     private Button crearNuevo_button;
     @FXML
@@ -96,8 +94,37 @@ public class CrearEmpleadoController implements Initializable {
     public String mail_;
 
     @FXML
+    private Button administracion;
+
+    @FXML
+    private Button borrar_button;
+    @FXML
+    void AdministracionClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("com/example/usuario/usuario/Empleados/Administracion-view.fxml"));
+        Stage stage;
+        Scene scene;
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void BorrarEmpleadoClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/BorrarEmpleado-view.fxml"));
+        Stage stage;
+        Scene scene;
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -106,6 +133,8 @@ public class CrearEmpleadoController implements Initializable {
     @FXML
     void CrearNuevoClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/CrearEmpleado-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -115,6 +144,8 @@ public class CrearEmpleadoController implements Initializable {
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
+        Stage stage;
+        Scene scene;
         Parent root = fxmlLoader.load(EmpleadosCreadosController.class.getResourceAsStream("/com/example/usuario/usuario/Empleados/EmpleadosCreados-view.fxml"));
         EmpleadosCreadosController empleadosCreadosController = fxmlLoader.getController();
         empleadosCreadosController.setMail(mail_);
@@ -126,16 +157,6 @@ public class CrearEmpleadoController implements Initializable {
         stage.show();
     }
 
-    @FXML
-    void AdministracionClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("com/example/usuario/usuario/Empleados/Administracion-view.fxml"));
-        Stage stage;
-        Scene scene;
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
     @FXML
     void CrearClickedButton(ActionEvent event) {

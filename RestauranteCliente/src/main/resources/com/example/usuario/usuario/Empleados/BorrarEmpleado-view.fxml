@@ -2,37 +2,30 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2745194677180877" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1525.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empleados.EmpleadosCreadosController">
+<SplitPane dividerPositions="0.2740873728306403" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1525.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Empleados.BorrarEmpleadoController">
    <items>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="484.0" prefWidth="227.0" style="-fx-background-color: #000000;">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="221.0" style="-fx-background-color: #000000;">
          <children>
-            <ImageView fx:id="foto" fitHeight="195.0" fitWidth="252.0" layoutX="37.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="foto" fitHeight="212.0" fitWidth="281.0" layoutX="65.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
-            <Label fx:id="titulo_uno" layoutX="96.0" layoutY="221.0" textFill="#df2d29">
+            <Text fx:id="titulo" fill="#df2d29" layoutX="104.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLEADO" wrappingWidth="254.3123321533203">
                <font>
-                  <Font name="System Bold" size="36.0" />
+                  <Font name="System Bold" size="40.0" />
                </font>
-            </Label>
-            <Label fx:id="titulo_dos" layoutX="100.0" layoutY="270.0" text="EMPLEADOS" textFill="#df2d29">
-               <font>
-                  <Font name="System Bold" size="36.0" />
-               </font>
-            </Label>
-            <VBox layoutX="59.0" layoutY="343.0" prefHeight="318.0" prefWidth="281.0" spacing="15.0" style="-fx-background-color: #000000;">
+            </Text>
+            <VBox layoutX="61.0" layoutY="357.0" prefHeight="318.0" prefWidth="281.0" spacing="15.0" style="-fx-background-color: #000000;">
                <children>
                   <Button fx:id="crearNuevo_button" mnemonicParsing="false" onAction="#CrearNuevoClickedButton" prefHeight="75.0" prefWidth="280.0" style="-fx-background-color: #000000;" text="Crear empleado" textFill="WHITE">
                      <font>
@@ -63,26 +56,29 @@
             </VBox>
          </children>
       </AnchorPane>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="773.0" prefWidth="1219.0" style="-fx-background-color: #000000;">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="482.0" prefWidth="537.0" style="-fx-background-color: #000000;">
          <children>
-            <Label fx:id="centrosdeportivos" layoutX="412.0" layoutY="64.0" text="EMPLEADOS" textFill="WHITE">
+            <Text fx:id="CrearNuevoEmpleado" fill="WHITE" layoutX="215.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BORRAR EMPELADO:">
                <font>
-                  <Font name="System Bold" size="62.0" />
+                  <Font name="System Bold" size="60.0" />
+               </font>
+            </Text>
+            <Button fx:id="borrar" layoutX="421.0" layoutY="623.0" mnemonicParsing="false" onAction="#BorrarClickedButton" prefHeight="68.0" prefWidth="234.0" style="-fx-background-color: #df2d29;" text="Borrar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Button>
+            <Label fx:id="label" layoutX="167.0" layoutY="28.0" prefHeight="74.0" prefWidth="717.0" text=" " textAlignment="CENTER" textFill="#df2d29">
+               <font>
+                  <Font name="System Bold" size="40.0" />
                </font>
             </Label>
-            <HBox layoutX="70.0" layoutY="172.0" prefHeight="577.0" prefWidth="972.0" style="-fx-background-color: #FFFFFF;">
-               <children>
-                  <ScrollPane fx:id="scroll" prefHeight="578.0" prefWidth="971.0" style="-fx-background-color: #FFCA6F;">
-                     <content>
-                        <GridPane fx:id="grid" prefHeight="7.0" prefWidth="14.0" style="-fx-background-color: #FFFFFF;">
-                           <rowConstraints>
-                              <RowConstraints maxHeight="8.600012207031249" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                        </GridPane>
-                     </content>
-                  </ScrollPane>
-               </children>
-            </HBox>
+            <Text fx:id="pasaporte1" fill="WHITE" layoutX="226.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pasaporte:">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txt_pasaporte1" layoutX="463.0" layoutY="291.0" prefHeight="46.0" prefWidth="298.0" promptText="Ingrese pasaporte" />
          </children>
       </AnchorPane>
    </items>

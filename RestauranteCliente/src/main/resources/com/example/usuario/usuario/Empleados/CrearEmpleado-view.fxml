@@ -27,9 +27,14 @@
                   <Font name="System Bold" size="40.0" />
                </font>
             </Text>
-            <VBox layoutX="60.0" layoutY="396.0" prefHeight="318.0" prefWidth="281.0" spacing="35.0" style="-fx-background-color: #000000;">
+            <VBox layoutX="65.0" layoutY="378.0" prefHeight="318.0" prefWidth="281.0" spacing="15.0" style="-fx-background-color: #000000;">
                <children>
                   <Button fx:id="crearNuevo_button" mnemonicParsing="false" onAction="#CrearNuevoClickedButton" prefHeight="75.0" prefWidth="280.0" style="-fx-background-color: #000000;" text="Crear empleado" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="borrar_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#BorrarEmpleadoClickedButton" prefHeight="75.0" prefWidth="280.0" style="-fx-background-color: #000000;" text="Borrar empleado" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
@@ -39,7 +44,7 @@
                         <Font name="System Bold" size="30.0" />
                      </font>
                   </Button>
-                  <Button fx:id="creados_button1" layoutX="10.0" layoutY="136.0" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="75.0" prefWidth="283.0" style="-fx-background-color: #000000;" text="Administracion" textFill="WHITE">
+                  <Button fx:id="administracion" layoutX="10.0" layoutY="136.0" mnemonicParsing="false" onAction="#AdministracionClickedButton" prefHeight="75.0" prefWidth="283.0" style="-fx-background-color: #000000;" text="Administracion" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
