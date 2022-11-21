@@ -101,7 +101,7 @@
                   </HBox>
                   <ImageView fitHeight="143.0" fitWidth="235.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../Fotos/Foto_actividades.jpg" />
+                        <Image url="@/com/example/usuario/usuario/Fotos/Foto_actividades.jpg" />
                      </image></ImageView>
                </children>
             </VBox>
