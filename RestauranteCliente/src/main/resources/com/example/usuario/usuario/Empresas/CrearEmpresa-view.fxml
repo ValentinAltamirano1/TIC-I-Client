@@ -22,14 +22,24 @@
                   <Font name="System Bold" size="35.0" />
                </font>
             </Text>
-            <VBox layoutX="80.0" layoutY="373.0" prefHeight="240.0" prefWidth="260.0" spacing="25.0" style="-fx-background-color: #000000;">
+            <ImageView fitHeight="183.0" fitWidth="288.0" layoutX="94.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Fotos/Foto_Logo.jpg" />
+               </image>
+            </ImageView>
+            <VBox layoutX="84.0" layoutY="358.0" prefHeight="240.0" prefWidth="260.0" spacing="20.0" style="-fx-background-color: #000000;">
                <children>
-                  <Button fx:id="crearNueva_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevaClickedButton" prefHeight="51.0" prefWidth="262.0" style="-fx-background-color: #000000;" text="Crear centro" textFill="WHITE">
+                  <Button fx:id="crearNueva_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevaClickedButton" prefHeight="51.0" prefWidth="262.0" style="-fx-background-color: #000000;" text="Crear empresa" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
                   </Button>
-                  <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="47.0" prefWidth="262.0" style="-fx-background-color: #000000;" text="Ver ya creados" textFill="WHITE">
+                  <Button fx:id="button_borrar" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#BorrarEmpresaClickedButton" prefHeight="51.0" prefWidth="262.0" style="-fx-background-color: #000000;" text="Borrar empresa" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="creados_button" mnemonicParsing="false" onAction="#CreadosClickedButton" prefHeight="47.0" prefWidth="262.0" style="-fx-background-color: #000000;" text="Ver ya creadas" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
@@ -49,11 +59,6 @@
                   </Button>
                </children>
             </VBox>
-            <ImageView fitHeight="183.0" fitWidth="288.0" layoutX="94.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Fotos/Foto_Logo.jpg" />
-               </image>
-            </ImageView>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="422.0" style="-fx-background-color: #000000;">
          <children>

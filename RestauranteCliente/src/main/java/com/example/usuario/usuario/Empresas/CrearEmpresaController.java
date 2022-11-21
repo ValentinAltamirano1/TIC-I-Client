@@ -27,8 +27,6 @@ import java.util.ResourceBundle;
 public class CrearEmpresaController implements Initializable{
     ObservableList<String> txt_list_tipos= FXCollections.
             observableArrayList("adminEmpresa");
-    private Stage stage;
-    private Scene scene;
 
     String nombre_;
     Long rut_;
@@ -98,8 +96,22 @@ public class CrearEmpresaController implements Initializable{
     private Label label_yacreado;
 
     @FXML
+    private Button button_borrar;
+    @FXML
+    void BorrarEmpresaClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/BorrarEmpresa-view.fxml"));
+        Stage stage;
+        Scene scene;
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -109,6 +121,8 @@ public class CrearEmpresaController implements Initializable{
     @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -139,6 +153,8 @@ public class CrearEmpresaController implements Initializable{
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/EmpresasCreadas-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -148,6 +164,8 @@ public class CrearEmpresaController implements Initializable{
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/EmpresaController.java"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

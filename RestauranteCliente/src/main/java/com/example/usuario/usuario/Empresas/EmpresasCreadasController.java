@@ -60,6 +60,20 @@ public class EmpresasCreadasController implements Initializable {
     private Label titulo_uno;
 
     List<Empresa> empresas = new ArrayList<>();
+
+    @FXML
+    private Button button_borrar;
+
+    @FXML
+    void BorrarEmpresaClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/BorrarEmpresa-view.fxml"));
+        Stage stage;
+        Scene scene;
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/EmpresasCreadasController-view.fxml"));
