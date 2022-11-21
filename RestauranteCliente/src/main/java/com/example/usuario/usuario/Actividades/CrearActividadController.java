@@ -3,6 +3,7 @@ package com.example.usuario.usuario.Actividades;
 import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
 import com.example.usuario.usuario.HorarioKey;
 import com.example.usuario.usuario.Imagen;
+import com.example.usuario.usuario.LogInController;
 import com.example.usuario.usuario.Usuario.Usuarios;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -188,7 +189,12 @@ public class CrearActividadController {
 
     @FXML
     void BorrarActividadClickedButton(ActionEvent event)throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/BorrarActividad-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(CrearActividadController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/BorrarActividad-view.fxml"));
+        BorrarActividadController borrarActividadController = fxmlLoader.getController();
+        borrarActividadController.setMail(mail);
+
+
         Stage stage;
         Scene scene;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -213,11 +219,12 @@ public class CrearActividadController {
     }
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividad-view.fxml"));
-        Stage stage;
-        Scene scene;
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(LogInController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/CrearActividad-view.fxml"));
+        CrearActividadController controller = fxmlLoader.getController();
+        controller.setMail(mail);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
@@ -308,22 +315,18 @@ public class CrearActividadController {
         this.mail = mail;
     }
 
-    public void CheckInClickedButton(ActionEvent actionEvent) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            Parent root = fxmlLoader.load(CrearActividadController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
-            CheckInController checkInController = fxmlLoader.getController();
-            checkInController.setMail(mail);
-            checkInController.info();
-            Stage stage;
-            Scene scene;
-            stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-
-        }
+    public void CheckInClickedButton(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(CrearActividadController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
+        CheckInController checkInController = fxmlLoader.getController();
+        checkInController.setMail(mail);
+        checkInController.info();
+        Stage stage;
+        Scene scene;
+        stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

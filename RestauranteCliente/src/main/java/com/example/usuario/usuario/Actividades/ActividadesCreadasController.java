@@ -1,5 +1,6 @@
 package com.example.usuario.usuario.Actividades;
 
+import com.example.usuario.usuario.LogInController;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.event.ActionEvent;
@@ -64,7 +65,12 @@ public class ActividadesCreadasController implements Initializable {
 
     @FXML
     void BorrarActividadClickedButton(ActionEvent event)throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/BorrarActividad-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(CrearActividadController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/BorrarActividad-view.fxml"));
+        BorrarActividadController borrarActividadController = fxmlLoader.getController();
+        borrarActividadController.setMail(mail);
+
+
         Stage stage;
         Scene scene;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -85,28 +91,39 @@ public class ActividadesCreadasController implements Initializable {
 
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CrearActividad-view.fxml"));
-        Stage stage;
-        Scene scene;
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(LogInController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/CrearActividad-view.fxml"));
+        CrearActividadController controller = fxmlLoader.getController();
+        controller.setMail(mail);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
     @FXML
     void CheckInClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(CrearActividadController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
+        CheckInController checkInController = fxmlLoader.getController();
+        checkInController.setMail(mail);
+        checkInController.info();
         Stage stage;
         Scene scene;
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     @FXML
     void AdministracionClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/Administracion-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(CrearActividadController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/Administracion-view.fxml"));
+
+        AdministracionController administracionController = fxmlLoader.getController();
+        administracionController.setMail(mail);
+        administracionController.informacion();
+
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -117,7 +134,11 @@ public class ActividadesCreadasController implements Initializable {
 
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/TablaActividades-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(ActividadesCreadasController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/ActividadesCreadas-view.fxml"));
+        ActividadesCreadasController actividadesCreadasController = fxmlLoader.getController();
+        actividadesCreadasController.setMail(mail);
+        actividadesCreadasController.inf();
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -146,7 +167,6 @@ public class ActividadesCreadasController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
 
     }
 

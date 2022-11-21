@@ -1,7 +1,9 @@
 package com.example.usuario.usuario.Usuario;
 
 import com.example.usuario.usuario.Actividades.Actividades;
+import com.example.usuario.usuario.Actividades.CrearActividadController;
 import com.example.usuario.usuario.Empleados.Empleado;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
@@ -83,6 +85,11 @@ public class MisReservasController implements Initializable {
     private Button reservar_button;
 
     @FXML
+    private Label usuario_nombre;
+    @FXML
+    private Label usuario_saldo;
+
+    @FXML
     private Label label_hola;
 
     @FXML
@@ -100,8 +107,7 @@ public class MisReservasController implements Initializable {
     @FXML
     private Label titulo;
 
-    @FXML
-    private Label usuario_nombre;
+
 
     public String mail;
     private MyListener myListener;
@@ -110,9 +116,10 @@ public class MisReservasController implements Initializable {
     @FXML
     void ActividadesClickedButton(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/Actividades-view.fxml"));
+        Parent root = fxmlLoader.load(MisReservasController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/Actividades-view.fxml"));
         ActividadesController controller = fxmlLoader.getController();
-        //controller.setMail(mail);
+        controller.setMail(mail);
+        controller.getEmpleado();
 
         Stage stage = new Stage();
         Scene scene;
@@ -138,10 +145,15 @@ public class MisReservasController implements Initializable {
 
     @FXML
     void MisReservasClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/MisReservas-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(ActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/MisReservas-view.fxml"));
+        MisReservasController misReservasController = fxmlLoader.getController();
+        misReservasController.setMail(mail);
+        misReservasController.getinf();
+        misReservasController.getEmpleado();
         Stage stage;
         Scene scene;
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -190,6 +202,7 @@ public class MisReservasController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(BuscarController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/Buscar-view.fxml"));
         BuscarController buscarController = fxmlLoader.getController();
+
         buscarController.setMail(mail);
         buscarController.getDataCentro();
         Stage stage;
@@ -254,8 +267,24 @@ public class MisReservasController implements Initializable {
         this.mail = mail;
     }
 
-
     public void getDate(ActionEvent actionEvent) {
+    }
+    Empleado empleado;
+    public void getEmpleado(){
+        List<Empleado> empleadosList = null;
+        kong.unirest.GetRequest requestEmp = kong.unirest.Unirest.get("http://localhost:8080/api/v1/gimnasio/empleado/" + mail)
+                .header("Content-Type", "application/json");
+        String temp1 = requestEmp.asJson().getBody().toString();
+        System.out.println(temp1);
+        ObjectMapper mapper1 = new ObjectMapper();
+        try {
+            empleadosList =mapper1.readValue(temp1, new TypeReference<List<Empleado>>() {});
+            System.out.println(empleadosList);
+        } catch (JsonProcessingException e) {}
+
+        empleado = empleadosList.get(0);
+        usuario_saldo.setText(String.valueOf(empleadosList.get(0).getSaldo()));
+        usuario_nombre.setText(empleadosList.get(0).getNombre());
     }
 }
 

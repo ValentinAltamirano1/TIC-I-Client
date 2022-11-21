@@ -242,6 +242,7 @@ public class ActividadesController implements Initializable {
         MisReservasController misReservasController = fxmlLoader.getController();
         misReservasController.setMail(mail);
         misReservasController.getinf();
+        misReservasController.getEmpleado();
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

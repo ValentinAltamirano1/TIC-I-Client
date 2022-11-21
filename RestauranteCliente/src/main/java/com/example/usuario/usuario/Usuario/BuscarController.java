@@ -155,7 +155,9 @@ public class BuscarController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(ActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/Actividades-view.fxml"));
         ActividadesController actividadesController = fxmlLoader.getController();
+        actividadesController.setMail(mail);
         actividadesController.getEmpleado();
+
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -204,6 +206,7 @@ public class BuscarController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(BuscarController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/Buscar-view.fxml"));
         BuscarController buscarController = fxmlLoader.getController();
+        buscarController.setMail(mail);
         buscarController.getDataCentro();
         Stage stage;
         Scene scene;
