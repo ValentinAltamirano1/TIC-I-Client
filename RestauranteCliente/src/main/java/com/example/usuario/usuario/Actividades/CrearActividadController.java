@@ -283,7 +283,7 @@ public class CrearActividadController {
         Parent root = fxmlLoader.load(ActividadesCreadasController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/ActividadesCreadas-view.fxml"));
         ActividadesCreadasController actividadesCreadasController = fxmlLoader.getController();
         actividadesCreadasController.setMail(mail);
-        actividadesCreadasController.getData1();
+        actividadesCreadasController.inf();
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

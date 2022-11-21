@@ -130,7 +130,7 @@ public class ActividadesCreadasController implements Initializable {
         System.out.println(mail);
         List<Actividades> actividadesList =null;
         try{
-            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades")
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/mail/" + mail)
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             System.out.println(temp);
@@ -146,6 +146,11 @@ public class ActividadesCreadasController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+
+    }
+
+    public  void inf () {
         actividades.addAll(getData1());
         System.out.println(actividades);
 
@@ -182,7 +187,6 @@ public class ActividadesCreadasController implements Initializable {
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
-
     }
 
     public String getMail() {
