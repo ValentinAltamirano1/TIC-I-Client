@@ -96,7 +96,6 @@ public class BorrarEmpleadoController {
                 .header("Content-Type", "application/json")
                 .body(empleado).asEmpty();
 
-        label.setText("EMPLEADO BORRADO CORRECTAMENTE");
     }
 
     @FXML
