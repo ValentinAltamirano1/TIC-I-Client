@@ -120,32 +120,35 @@ public class CrearActividadController {
     @FXML
     private Text dias;
 
+    public Actividades actividades;
+
     public List<Imagen> imagenes = new ArrayList<>();
 
     public List<HorarioKey> horarios = new ArrayList<>();
     @FXML
     void FileChooserClickedButton(ActionEvent event) throws IOException {
-
+/*
         FileChooser fc = new FileChooser();
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imagenes","*.jpg", "*.png"));
 
         List<File> f = fc.showOpenMultipleDialog(null);
         for (File file : f){
-            /*byte[] byteArray = actividades.getImage();
-            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArray);
-            BufferedImage bufferedImage = ImageIO.read(byteArrayInputStream);
-            Image imagen = SwingFXUtils.Image(bufferedImage, null);
-            */
 
-            /*byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray(file));
+            byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray(file));
             data_ = new String(encoded, StandardCharsets.US_ASCII);
             Imagen imagenCentro = new Imagen(data_);
             imagenes.add(imagenCentro);
 
-             */
-        }
 
+        byte[] byteArray = actividades.getImagen();
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArray);
+        BufferedImage bufferedImage = ImageIO.read(byteArrayInputStream);
+        Image imagen = SwingFXUtils.Image(bufferedImage, null);
+         */
     }
+
+
+    
 
     /*@FXML
     void CheckInClickedButton(ActionEvent event) throws IOException {

@@ -61,6 +61,18 @@ public class CentroDeportivoCreadosController implements Initializable  {
 
     List<CentroDeportivo> centros1 = new ArrayList<>();
     @FXML
+    private Button borrar_button;
+    @FXML
+    void BorrarCentroClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/CentrosDeportivos/BorrarCentroDeportivo-view.fxml"));
+        Stage stage;
+        Scene scene;
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
     void VolverClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Opciones1-view.fxml"));
         Stage stage;

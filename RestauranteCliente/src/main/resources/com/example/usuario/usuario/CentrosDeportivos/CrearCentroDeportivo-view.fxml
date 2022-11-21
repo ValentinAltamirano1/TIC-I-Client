@@ -22,9 +22,24 @@
                   <Image url="@../Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
-            <VBox layoutX="92.0" layoutY="400.0" prefHeight="240.0" prefWidth="260.0" spacing="25.0" style="-fx-background-color: #000000;">
+            <Label fx:id="titulo_uno" layoutX="146.0" layoutY="247.0" text="CENTRO" textFill="#df2d29">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="titulo_dos" layoutX="118.0" layoutY="303.0" text="DEPORTIVO" textFill="#df2d29">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <VBox layoutX="82.0" layoutY="384.0" prefHeight="240.0" prefWidth="260.0" spacing="10.0" style="-fx-background-color: #000000;">
                <children>
                   <Button fx:id="crearNuevo_button1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevoClickedButton" prefHeight="51.0" prefWidth="262.0" style="-fx-background-color: #000000;" text="Crear centro" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="borrar_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#BorrarCentroClickedButton" prefHeight="51.0" prefWidth="262.0" style="-fx-background-color: #000000;" text="Borrar centro" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
@@ -49,16 +64,6 @@
                   </Button>
                </children>
             </VBox>
-            <Label fx:id="titulo_uno" layoutX="146.0" layoutY="247.0" text="CENTRO" textFill="#df2d29">
-               <font>
-                  <Font name="System Bold" size="36.0" />
-               </font>
-            </Label>
-            <Label fx:id="titulo_dos" layoutX="118.0" layoutY="303.0" text="DEPORTIVO" textFill="#df2d29">
-               <font>
-                  <Font name="System Bold" size="36.0" />
-               </font>
-            </Label>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="487.0" prefWidth="516.0" style="-fx-background-color: #000000;">
          <children>
