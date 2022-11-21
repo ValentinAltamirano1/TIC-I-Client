@@ -64,7 +64,7 @@
             </Button>
          </children>
       </VBox>
-      <Label fx:id="titulo" layoutX="299.0" layoutY="31.0" prefHeight="104.0" prefWidth="886.0" text="TODAS LAS ACTIVIDADES">
+      <Label fx:id="titulo" layoutX="299.0" layoutY="31.0" prefHeight="104.0" prefWidth="886.0" text="Filtrado por: GIMNASIOS">
          <font>
             <Font size="74.0" />
          </font>
