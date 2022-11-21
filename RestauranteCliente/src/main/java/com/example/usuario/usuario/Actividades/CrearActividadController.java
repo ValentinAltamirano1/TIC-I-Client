@@ -135,19 +135,30 @@ public class CrearActividadController {
 
         List<File> f = fc.showOpenMultipleDialog(null);
         for (File file : f){
+            byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray(file));
+            data_ = new String(encoded, StandardCharsets.US_ASCII);
+            Imagen imagenCentro = new Imagen(data_);
+            System.out.println(data_);
+            imagenes.add(imagenCentro);
             System.out.println(file.getAbsolutePath());
+
+        }}
+
+
+    public Image codificar(String imagen){
+        byte[] imageDecoded = org.apache.commons.codec.binary.Base64.decodeBase64(imagen);
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(imageDecoded);
+        BufferedImage bufferedImage = null;
+        try{
+            bufferedImage = ImageIO.read(byteArrayInputStream);
+        }catch (IOException e){
+            e.printStackTrace();
         }
 
-        FileInputStream fileInputStream = null;
-        try {
-            byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray((File) f));
-            data_ = new String(encoded, StandardCharsets.US_ASCII);
+        Image agregar = SwingFXUtils.toFXImage(bufferedImage, null);
+        return agregar;
 
-            System.out.println(encoded);
-        } catch (FileNotFoundException e) {}
-
-    }
-
+        }
     @FXML
     private Button borrar_button;
 

@@ -15,12 +15,12 @@
    <children>
       <ImageView fitHeight="175.0" fitWidth="294.0" layoutX="90.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="650.0" AnchorPane.topAnchor="120.0">
          <image>
-            <Image url="@Fotos/Foto_Logo.jpg" />
+            <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="605.0" fitWidth="478.0" layoutX="-10.0" layoutY="-10.0" opacity="0.51" AnchorPane.bottomAnchor="98.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0">
          <image>
-            <Image url="@Fotos/Fondo_LogIn.png" />
+            <Image url="@/com/example/usuario/usuario/Fotos/Fondo_LogIn.png" />
          </image>
          <viewport>
             <Rectangle2D />

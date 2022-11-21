@@ -205,7 +205,7 @@ public class AdministracionController implements Initializable {
                 DesplegarAdministracionController desplegarAdministracionController = fxmlLoader.getController();
                 desplegarAdministracionController.setData1(pagos.get(i));
 
-                if (colum == 2) {
+                if (colum == 1) {
                     colum = 0;
                     row++;
                 }
