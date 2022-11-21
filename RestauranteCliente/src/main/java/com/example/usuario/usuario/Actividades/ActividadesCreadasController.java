@@ -131,7 +131,6 @@ public class ActividadesCreadasController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -146,6 +145,7 @@ public class ActividadesCreadasController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
 
     public List<Actividades> getData1() {
         System.out.println(mail);
