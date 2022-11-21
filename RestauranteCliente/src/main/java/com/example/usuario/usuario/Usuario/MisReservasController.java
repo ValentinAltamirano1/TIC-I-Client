@@ -33,9 +33,12 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class MisReservasController implements Initializable {
-    Scene scene;
+
     @FXML
     private Button actividades;
+
+    @FXML
+    private Button buscar;
 
     @FXML
     private Button cerrar_sesion;
@@ -80,6 +83,15 @@ public class MisReservasController implements Initializable {
     private Button reservar_button;
 
     @FXML
+    private Label label_hola;
+
+    @FXML
+    private Label label_pesos;
+
+    @FXML
+    private Label label_saldo;
+
+    @FXML
     private Button reservas;
 
     @FXML
@@ -90,10 +102,6 @@ public class MisReservasController implements Initializable {
 
     @FXML
     private Label usuario_nombre;
-
-    @FXML
-    private Label usuario_nombre1;
-
 
     public String mail;
     private MyListener myListener;
@@ -120,6 +128,7 @@ public class MisReservasController implements Initializable {
     void CerrrSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
         Stage stage;
+        Scene scene;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -131,6 +140,7 @@ public class MisReservasController implements Initializable {
     void MisReservasClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/MisReservas-view.fxml"));
         Stage stage;
+        Scene scene;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -173,6 +183,21 @@ public class MisReservasController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+    }
+
+    @FXML
+    void BuscarClickedButton(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(BuscarController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/Buscar-view.fxml"));
+        BuscarController buscarController = fxmlLoader.getController();
+        buscarController.setMail(mail);
+        buscarController.getDataCentro();
+        Stage stage;
+        Scene scene;
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void getinf(){
@@ -230,5 +255,7 @@ public class MisReservasController implements Initializable {
     }
 
 
+    public void getDate(ActionEvent actionEvent) {
+    }
 }
 

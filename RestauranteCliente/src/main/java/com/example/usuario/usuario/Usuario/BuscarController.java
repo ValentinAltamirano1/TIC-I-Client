@@ -2,7 +2,6 @@ package com.example.usuario.usuario.Usuario;
 
 import com.example.usuario.usuario.Actividades.Actividades;
 import com.example.usuario.usuario.CentrosDeportivos.CentroDeportivo;
-import com.example.usuario.usuario.HorarioKey;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -41,8 +40,6 @@ public class BuscarController implements Initializable {
     ObservableList<String> txt_centros_list= FXCollections.
             observableArrayList();
 
-    Scene scene;
-    Stage stage;
 
     @FXML
     private Button actividades;
@@ -100,12 +97,21 @@ public class BuscarController implements Initializable {
 
     @FXML
     private Label titulo;
+    @FXML
+    private Label label_hola;
 
     @FXML
-    private ChoiceBox centros_choicebox;
+    private Label label_pesos;
 
+    @FXML
+    private Label label_saldo;
     @FXML
     private Label usuario_nombre;
+
+    @FXML
+    private Label usuario_saldo;
+    @FXML
+    private ChoiceBox centros_choicebox;
 
     @FXML
     private Label usuario_nombre1;
@@ -163,6 +169,8 @@ public class BuscarController implements Initializable {
         MisReservasController misReservasController = fxmlLoader.getController();
         misReservasController.setMail(mail);
         misReservasController.getinf();
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -271,6 +279,9 @@ public class BuscarController implements Initializable {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public void getDate(ActionEvent actionEvent) {
     }
 }
 

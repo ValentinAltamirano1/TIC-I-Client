@@ -23,7 +23,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import kong.unirest.GetRequest;
-import kong.unirest.HttpRequestWithBody;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 
@@ -39,8 +38,6 @@ public class ActividadesController implements Initializable {
     ObservableList<String> txt_horarios_list= FXCollections.
             observableArrayList();
 
-    Scene scene;
-    Stage stage;
 
     @FXML
     private ChoiceBox choicebox;
@@ -85,6 +82,8 @@ public class ActividadesController implements Initializable {
 
     @FXML
     private Label usuario_nombre;
+    @FXML
+    private Label usuario_saldo;
 
     @FXML
     private ImageView foto_logo;
@@ -225,6 +224,8 @@ public class ActividadesController implements Initializable {
         MisReservasController misReservasController = fxmlLoader.getController();
         misReservasController.setMail(mail);
         misReservasController.getinf();
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -361,4 +362,6 @@ public class ActividadesController implements Initializable {
     public void setActividades_(Actividades actividades_) {
         this.actividades_ = actividades_;
     }
+
+
 }
