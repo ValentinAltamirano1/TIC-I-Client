@@ -6,12 +6,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.io.FileUtils;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Base64;
+import java.nio.charset.StandardCharsets;
 
 public class DesplegarActividadesController {
 
@@ -48,17 +52,18 @@ public class DesplegarActividadesController {
     }
 
     public Image decodificar(String imagen) {
-        byte[] imageDecoded = Base64.getDecoder().decode(imagen);
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(imageDecoded);
-        BufferedImage bufferedImage = null;
-        try{
-            bufferedImage = ImageIO.read(byteArrayInputStream);
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        Image agregar = SwingFXUtils.toFXImage(bufferedImage, null);
-        return agregar;
+        try {
+            File f = new File(imagen);
+            byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray((File) f));
+            String data_ = new String(encoded, StandardCharsets.US_ASCII);
 
+            System.out.println(encoded);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
     }
 
 }
+

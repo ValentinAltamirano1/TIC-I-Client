@@ -148,55 +148,6 @@ public class CrearActividadController {
 
     }
 
-   /* public Image codificar(String imagen){
-
-/*
-            byte[] byteArray = actividades.getImagen();
-            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArray);
-            BufferedImage bufferedImage = ImageIO.read(byteArrayInputStream);
-            Image imagen = SwingFXUtils.Image(bufferedImage, null);
-        /*byte[] imageDecoded = org.apache.commons.codec.binary.Base64.decodeBase64(imagen);
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(imageDecoded);
-        BufferedImage bufferedImage = null;
-        try{
-            bufferedImage = ImageIO.read(byteArrayInputStream);
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        Image agregar = SwingFXUtils.toFXImage(bufferedImage, null);
-        return agregar;*/
-
-
-
-        /*
-        for (File file : f){
-
-        byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray(file));
-        data_ = new String(encoded, StandardCharsets.US_ASCII);
-        Imagen imagenCentro = new Imagen(data_);
-        imagenes.add(imagenCentro);
-
-        byte[] byteArray = actividades.getImagen();
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArray);
-        BufferedImage bufferedImage = ImageIO.read(byteArrayInputStream);
-        Image imagen = SwingFXUtils.Image(bufferedImage, null);
-         */
-
-
-    /*@FXML
-    void CheckInClickedButton(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent root = fxmlLoader.load(CrearActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/CheckIn-view.fxml"));
-        CheckInController checkInController = fxmlLoader.getController();
-        checkInController.setMail(mail);
-        checkInController.info();
-
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
-    }*/
     @FXML
     private Button borrar_button;
 

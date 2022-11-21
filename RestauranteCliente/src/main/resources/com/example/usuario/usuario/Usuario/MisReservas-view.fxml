@@ -16,11 +16,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1219.0" style="-fx-background-color: #FFE5B9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Usuario.MisReservasController">
    <children>
-      <ImageView fitHeight="789.0" fitWidth="1258.0" layoutX="-2.0" layoutY="-2.0" opacity="0.29" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@/com/example/usuario/usuario/Fotos/feather_football-Sports_HD_Widescreen_Wallpaper_medium.jpg" />
-         </image>
-      </ImageView>
+      <ImageView fitHeight="789.0" fitWidth="1258.0" layoutX="-2.0" layoutY="-2.0" opacity="0.29" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="foto_logo" fitHeight="176.0" fitWidth="220.0" layoutX="30.0" layoutY="40.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
@@ -94,10 +90,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <ImageView fitHeight="150.0" fitWidth="227.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@/com/example/usuario/usuario/Fotos/Foto_actividades.jpg" />
-                     </image></ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="227.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </VBox>
             <HBox layoutX="26.0" layoutY="268.0" prefHeight="34.0" prefWidth="241.0">

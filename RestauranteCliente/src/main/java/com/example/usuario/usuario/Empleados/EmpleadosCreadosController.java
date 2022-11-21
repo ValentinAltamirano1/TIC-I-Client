@@ -109,16 +109,32 @@ public class EmpleadosCreadosController implements Initializable {
         stage.show();
     }
 
+    public String mail_;
+
+    public String getMail_() {
+        return mail_;
+    }
+
+    public void setMail_(String mail_) {
+        this.mail_ = mail_;
+    }
+
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/TablaEmpleadosController.java"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
         Stage stage;
         Scene scene;
+        Parent root = fxmlLoader.load(EmpleadosCreadosController.class.getResourceAsStream("/com/example/usuario/usuario/Empleados/EmpleadosCreados-view"));
+        EmpleadosCreadosController empleadosCreadosController = fxmlLoader.getController();
+        empleadosCreadosController.setMail(mail_);
+        empleadosCreadosController.informacion();
+
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
 
     public List<Empleado> getData() {
         List<Empleado> empleadosList =null;
