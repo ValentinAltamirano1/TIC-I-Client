@@ -33,8 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 public class NauticaController implements Initializable {
-    Scene scene;
-    Stage stage;
+
 
     @FXML
     private Button actividades;
@@ -106,11 +105,33 @@ public class NauticaController implements Initializable {
     private MyListener myListener;
     public String mail;
 
+    @FXML
+    private Label usuario_nombre11;
 
+    @FXML
+    private Label usuario_saldo;
+
+    @FXML
+    private Button buscar;
+
+
+
+    @FXML
+    void BuscarClickedButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/Buscar-view.fxml"));
+        Scene scene;
+        Stage stage;
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     void ActividadesClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/Actividades-view.fxml"));
+        Scene scene;
+        Stage stage;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -120,6 +141,8 @@ public class NauticaController implements Initializable {
     @FXML
     void CerrrSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        Scene scene;
+        Stage stage;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -130,6 +153,8 @@ public class NauticaController implements Initializable {
     @FXML
     void CanchasClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Canchas-view.fxml"));
+        Scene scene;
+        Stage stage;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -139,6 +164,8 @@ public class NauticaController implements Initializable {
     @FXML
     void ExteriorClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Exterior-view.fxml"));
+        Scene scene;
+        Stage stage;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -148,6 +175,8 @@ public class NauticaController implements Initializable {
     @FXML
     void NauticaClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Nautica-view.fxml"));
+        Scene scene;
+        Stage stage;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -157,6 +186,8 @@ public class NauticaController implements Initializable {
     @FXML
     void GimnasiosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Gimnasios-view.fxml"));
+        Scene scene;
+        Stage stage;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -188,6 +219,8 @@ public class NauticaController implements Initializable {
         MisReservasController misReservasController = fxmlLoader.getController();
         misReservasController.setMail(mail);
         //misReservasController.inf();
+        Scene scene;
+        Stage stage;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -246,5 +279,8 @@ public class NauticaController implements Initializable {
             }
         } catch (Exception ignored) {
         }
+    }
+
+    public void getDate(ActionEvent actionEvent) {
     }
 }
