@@ -29,10 +29,13 @@ import javafx.stage.Stage;
 import kong.unirest.GetRequest;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.io.FileUtils;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -126,23 +129,33 @@ public class CrearActividadController {
     public List<HorarioKey> horarios = new ArrayList<>();
     @FXML
     void FileChooserClickedButton(ActionEvent event) throws IOException {
-        File file = null;
-        try {
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.setTitle("Elegir imagen");
-            fileChooser.getExtensionFilters().addAll(
-                    new FileChooser.ExtensionFilter("All images", "."),
-                    new FileChooser.ExtensionFilter("JPG", "*.jpg"),
-                    new FileChooser.ExtensionFilter("PNG", "*.png")
-            );
-            file = fileChooser.showOpenDialog(((Node) event.getSource()).getScene().getWindow());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());;
+
+        FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imagenes","*.jpg", "*.png"));
+
+        List<File> f = fc.showOpenMultipleDialog(null);
+        for (File file : f){
+            System.out.println(file.getAbsolutePath());
         }
+
+        FileInputStream fileInputStream = null;
+        try {
+            byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray((File) f));
+            data_ = new String(encoded, StandardCharsets.US_ASCII);
+
+            System.out.println(encoded);
+        } catch (FileNotFoundException e) {}
+
     }
 
-    public Image codificar(String imagen){
-        byte[] imageDecoded = org.apache.commons.codec.binary.Base64.decodeBase64(imagen);
+   /* public Image codificar(String imagen){
+
+/*
+            byte[] byteArray = actividades.getImagen();
+            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArray);
+            BufferedImage bufferedImage = ImageIO.read(byteArrayInputStream);
+            Image imagen = SwingFXUtils.Image(bufferedImage, null);
+        /*byte[] imageDecoded = org.apache.commons.codec.binary.Base64.decodeBase64(imagen);
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(imageDecoded);
         BufferedImage bufferedImage = null;
         try{
@@ -151,9 +164,9 @@ public class CrearActividadController {
             e.printStackTrace();
         }
         Image agregar = SwingFXUtils.toFXImage(bufferedImage, null);
-        return agregar;
+        return agregar;*/
 
-    }
+
 
         /*
         for (File file : f){
