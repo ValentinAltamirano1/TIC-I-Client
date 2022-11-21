@@ -146,6 +146,7 @@ public class CrearActividadController {
         Image imagen = SwingFXUtils.Image(bufferedImage, null);
          */
     }
+    
 
 
     

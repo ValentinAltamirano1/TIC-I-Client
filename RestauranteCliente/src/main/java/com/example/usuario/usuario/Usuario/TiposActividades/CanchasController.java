@@ -17,10 +17,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -34,7 +31,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 public class CanchasController implements Initializable {
-
+    @FXML
+    private DatePicker datepicker;
     @FXML
     private ChoiceBox<?> choicebox;
     @FXML
