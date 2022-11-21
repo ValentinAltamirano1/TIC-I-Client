@@ -87,7 +87,19 @@ public class CheckInController implements Initializable {
     }
 
     public String mail;
+    @FXML
+    private Button borrar_button;
 
+    @FXML
+    void BorrarActividadClickedButton(ActionEvent event)throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/BorrarActividad-view.fxml"));
+        Stage stage;
+        Scene scene;
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));

@@ -53,6 +53,7 @@ public class BorrarEmpleadoController {
     @FXML
     private TextField txt_pasaporte1;
 
+    public String mail_;
     public String getMail_() {
         return mail_;
     }
@@ -60,8 +61,6 @@ public class BorrarEmpleadoController {
     public void setMail_(String mail_) {
         this.mail_ = mail_;
     }
-
-    public String mail_;
     @FXML
     private Button administracion;
 

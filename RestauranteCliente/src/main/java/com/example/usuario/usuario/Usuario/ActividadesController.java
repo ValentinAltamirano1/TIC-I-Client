@@ -255,8 +255,11 @@ public class ActividadesController implements Initializable {
         return actividadesList;
     }
 
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         actividades1.addAll(getData());
         choicebox.setItems(txt_horarios_list);
         choicebox.setValue("Horario");

@@ -28,8 +28,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class EmpleadosCreadosController implements Initializable {
-    Stage stage;
-    Scene scene;
 
     @FXML
     private Label centrosdeportivos;
@@ -66,6 +64,7 @@ public class EmpleadosCreadosController implements Initializable {
 
     @FXML
     private Button borrar_button;
+
     @FXML
     void AdministracionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("com/example/usuario/usuario/Empleados/Administracion-view.fxml"));
@@ -91,6 +90,8 @@ public class EmpleadosCreadosController implements Initializable {
     @FXML
     void CerrarSesionClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/LogIn-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -100,6 +101,8 @@ public class EmpleadosCreadosController implements Initializable {
     @FXML
     void CrearNuevoClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/CrearEmpleado-view.fxml"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -109,6 +112,8 @@ public class EmpleadosCreadosController implements Initializable {
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empleados/TablaEmpleadosController.java"));
+        Stage stage;
+        Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -138,7 +143,6 @@ public class EmpleadosCreadosController implements Initializable {
 
     public void informacion(){
         empleados1.addAll(getData());
-
         int row = 1;
         int colum = 0;
 

@@ -16,7 +16,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1525.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuario.usuario.Actividades.CheckInController">
    <children>
-      <Text fx:id="titulo1" fill="#df2d29" layoutX="75.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACTIVIDADES" wrappingWidth="204.4534759521485">
+      <Text fx:id="titulo1" fill="#df2d29" layoutX="87.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACTIVIDADES" wrappingWidth="204.4534759521485">
          <font>
             <Font name="System Bold" size="29.0" />
          </font>
@@ -60,9 +60,14 @@
          </image>
       </ImageView>
       <Line endX="10.521087646484375" endY="800.0" fill="WHITE" layoutX="340.0" startX="10.521087646484375" startY="-8.013955266505945E-6" stroke="WHITE" />
-      <VBox layoutX="21.0" layoutY="318.0" prefHeight="412.0" prefWidth="308.0" spacing="20.0" style="-fx-background-color: #000000;">
+      <VBox layoutX="16.0" layoutY="284.0" prefHeight="498.0" prefWidth="331.0" spacing="15.0" style="-fx-background-color: #000000;">
          <children>
             <Button fx:id="crearNueva_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevaClickedButton" prefHeight="75.0" prefWidth="326.0" style="-fx-background-color: #000000;" text="Crear actividad" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="borrar_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#BorrarActividadClickedButton" prefHeight="75.0" prefWidth="326.0" style="-fx-background-color: #000000;" text="Borrar actividad" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>

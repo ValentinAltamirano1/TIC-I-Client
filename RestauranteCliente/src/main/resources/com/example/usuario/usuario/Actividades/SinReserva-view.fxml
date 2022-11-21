@@ -26,9 +26,14 @@
                   <Font name="System Bold" size="35.0" />
                </font>
             </Text>
-            <VBox layoutX="40.0" layoutY="318.0" prefHeight="412.0" prefWidth="341.0" spacing="20.0" style="-fx-background-color: #000000;">
+            <VBox layoutX="39.0" layoutY="290.0" prefHeight="412.0" prefWidth="341.0" spacing="20.0" style="-fx-background-color: #000000;">
                <children>
                   <Button fx:id="crearNueva_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevaClickedButton" prefHeight="75.0" prefWidth="326.0" style="-fx-background-color: #000000;" text="Crear actividad" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="borrar_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#BorrarActividadClickedButton" prefHeight="75.0" prefWidth="326.0" style="-fx-background-color: #000000;" text="Borrar actividad" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>

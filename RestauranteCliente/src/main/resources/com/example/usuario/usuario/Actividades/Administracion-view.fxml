@@ -17,19 +17,24 @@
    <items>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="484.0" prefWidth="227.0" style="-fx-background-color: #000000;">
          <children>
-            <ImageView fx:id="foto" fitHeight="192.0" fitWidth="256.0" layoutX="78.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="foto" fitHeight="192.0" fitWidth="281.0" layoutX="64.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@/com/example/usuario/usuario/Fotos/Foto_Logo.jpg" />
                </image>
             </ImageView>
-            <Label fx:id="titulo_uno" layoutX="101.0" layoutY="270.0" text="ACTIVIDADES" textFill="#df2d29">
+            <Label fx:id="titulo_uno" layoutX="91.0" layoutY="258.0" text="ACTIVIDADES" textFill="#df2d29">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <VBox layoutX="41.0" layoutY="352.0" prefHeight="412.0" prefWidth="341.0" spacing="20.0" style="-fx-background-color: #000000;">
+            <VBox layoutX="43.0" layoutY="300.0" prefHeight="412.0" prefWidth="341.0" spacing="20.0" style="-fx-background-color: #000000;">
                <children>
                   <Button fx:id="crearNueva_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#CrearNuevaClickedButton" prefHeight="75.0" prefWidth="326.0" style="-fx-background-color: #000000;" text="Crear actividad" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="borrar_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#BorrarActividadClickedButton" prefHeight="75.0" prefWidth="326.0" style="-fx-background-color: #000000;" text="Borrar actividad" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
