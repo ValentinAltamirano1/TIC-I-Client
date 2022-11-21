@@ -18,6 +18,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
@@ -109,7 +110,8 @@ public class ExteriorController implements Initializable {
     private Button buscar;
 
 
-
+    @FXML
+    private ChoiceBox<?> choicebox;
     @FXML
     private Label usuario_nombre11;
 

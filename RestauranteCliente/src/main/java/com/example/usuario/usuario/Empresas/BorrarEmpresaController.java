@@ -75,7 +75,7 @@ public class BorrarEmpresaController {
 
     @FXML
     void CrearNuevaClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/EmpresaController.java"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Empresas/CrearEmpresa-view.fxml"));
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
