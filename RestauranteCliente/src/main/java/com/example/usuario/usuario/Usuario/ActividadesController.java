@@ -5,6 +5,10 @@ import com.example.usuario.usuario.Empleados.Empleado;
 import com.example.usuario.usuario.HorarioKey;
 import com.example.usuario.usuario.Reservas;
 import com.example.usuario.usuario.ReservasKey;
+import com.example.usuario.usuario.Usuario.TiposActividades.CanchasController;
+import com.example.usuario.usuario.Usuario.TiposActividades.ExteriorController;
+import com.example.usuario.usuario.Usuario.TiposActividades.GimnasiosController;
+import com.example.usuario.usuario.Usuario.TiposActividades.NauticaController;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -72,21 +76,6 @@ public class ActividadesController implements Initializable {
     @FXML
     private Label titulo;
 
-    public Label getUsuario_nombre() {
-        return usuario_nombre;
-    }
-
-    public void setUsuario_nombre(Label usuario_nombre) {
-        this.usuario_nombre = usuario_nombre;
-    }
-
-    public Label getUsuario_saldo() {
-        return usuario_saldo;
-    }
-
-    public void setUsuario_saldo(Label usuario_saldo) {
-        this.usuario_saldo = usuario_saldo;
-    }
 
     @FXML
     private Label usuario_nombre;
@@ -151,7 +140,10 @@ public class ActividadesController implements Initializable {
 
     @FXML
     void ActividadesClickedButton(ActionEvent event)throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/Actividades-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(ActividadesController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/Actividades-view.fxml"));
+        ActividadesController actividadesController = fxmlLoader.getController();
+        actividadesController.getEmpleado();
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -166,6 +158,7 @@ public class ActividadesController implements Initializable {
         Parent root = fxmlLoader.load(BuscarController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/Buscar-view.fxml"));
         BuscarController buscarController = fxmlLoader.getController();
         buscarController.setMail(mail);
+        buscarController.getEmpleado();
         buscarController.getDataCentro();
         Stage stage;
         Scene scene;
@@ -187,7 +180,11 @@ public class ActividadesController implements Initializable {
 
     @FXML
     void CanchasClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Canchas-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(CanchasController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/TiposActividades/Canchas-view.fxml"));
+        CanchasController canchasController = fxmlLoader.getController();
+        canchasController.setMail(mail);
+        canchasController.getEmpleado();
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -197,7 +194,11 @@ public class ActividadesController implements Initializable {
     }
     @FXML
     void ExteriorClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Exterior-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(ExteriorController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/TiposActividades/Exterior-view.fxml"));
+        ExteriorController exteriorController = fxmlLoader.getController();
+        exteriorController.setMail(mail);
+        exteriorController.getEmpleado();
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -207,7 +208,11 @@ public class ActividadesController implements Initializable {
     }
     @FXML
     void NauticaClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Nautica-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(NauticaController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/TiposActividades/Nautica-view.fxml"));
+        NauticaController nauticaController = fxmlLoader.getController();
+        nauticaController.setMail(mail);
+        nauticaController.getEmpleado();
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -217,7 +222,11 @@ public class ActividadesController implements Initializable {
     }
     @FXML
     void GimnasiosClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Usuario/TiposActividades/Gimnasios-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(GimnasiosController.class.getResourceAsStream("/com/example/usuario/usuario/Usuario/TiposActividades/Gimnasios-view.fxml"));
+        GimnasiosController gimnasiosController = fxmlLoader.getController();
+        gimnasiosController.setMail(mail);
+        gimnasiosController.getEmpleado();
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -355,7 +364,6 @@ public class ActividadesController implements Initializable {
 
     }
 
-
     public String getMail() {
         return mail;
     }
@@ -386,7 +394,7 @@ public class ActividadesController implements Initializable {
 
         empleado = empleadosList.get(0);
         usuario_saldo.setText(String.valueOf(empleadosList.get(0).getSaldo()));
-
+        usuario_nombre.setText(empleadosList.get(0).getNombre());
     }
 
 

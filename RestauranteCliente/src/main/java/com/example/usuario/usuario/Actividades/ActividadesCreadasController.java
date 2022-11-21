@@ -60,6 +60,8 @@ public class ActividadesCreadasController implements Initializable {
     @FXML
     private Button borrar_button;
 
+    String mail;
+
     @FXML
     void BorrarActividadClickedButton(ActionEvent event)throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/BorrarActividad-view.fxml"));
@@ -124,10 +126,11 @@ public class ActividadesCreadasController implements Initializable {
         stage.show();
     }
 
-    public List<Actividades> getData() {
+    public List<Actividades> getData1() {
+        System.out.println(mail);
         List<Actividades> actividadesList =null;
         try{
-            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades")
+            GetRequest apiResponse = Unirest.get("http://localhost:8080/api/v1/gimnasio/actividades/mail/")
                     .header("Content-Type", "application/json");
             String temp = apiResponse.asJson().getBody().toString();
             System.out.println(temp);
@@ -143,7 +146,7 @@ public class ActividadesCreadasController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        actividades.addAll(getData());
+        actividades.addAll(getData1());
         System.out.println(actividades);
 
         int row = 1;
@@ -182,6 +185,13 @@ public class ActividadesCreadasController implements Initializable {
 
     }
 
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
 }
 
 

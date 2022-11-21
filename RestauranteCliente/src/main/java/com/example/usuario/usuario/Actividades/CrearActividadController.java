@@ -29,6 +29,7 @@ import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.imageio.ImageIO;
 import java.awt.event.MouseEvent;
@@ -126,6 +127,9 @@ public class CrearActividadController {
     public List<Imagen> imagenes = new ArrayList<>();
 
     public List<HorarioKey> horarios = new ArrayList<>();
+
+    @Autowired
+    ActividadesCreadasController actividadesCreadasController;
     @FXML
     void FileChooserClickedButton(ActionEvent event) throws IOException {
         File file = null;
@@ -283,7 +287,11 @@ public class CrearActividadController {
 
     @FXML
     void CreadosClickedButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/usuario/usuario/Actividades/ActividadesCreadas-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(ActividadesCreadasController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/ActividadesCreadas-view.fxml"));
+        ActividadesCreadasController actividadesCreadasController = fxmlLoader.getController();
+        actividadesCreadasController.setMail(mail);
+        actividadesCreadasController.getData1();
         Stage stage;
         Scene scene;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

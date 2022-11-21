@@ -42,6 +42,7 @@ public class LogInController implements Initializable {
     String contraseña_;
 
 
+
     @FXML
     private AnchorPane LogInButton;
 
@@ -100,7 +101,6 @@ public class LogInController implements Initializable {
                     Parent root = fxmlLoader.load(LogInController.class.getResourceAsStream("/com/example/usuario/usuario/Actividades/CrearActividad-view.fxml"));
                     CrearActividadController controller = fxmlLoader.getController();
                     controller.setMail(listUser.getMail());
-
                     stage1.setUserData(listUser);
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
@@ -137,7 +137,6 @@ public class LogInController implements Initializable {
 
                     ActividadesController actividadesController = fxmlLoader.getController();
                     actividadesController.setMail(listUser.getMail());
-                    actividadesController.getUsuario_nombre().setText(listUser.getMail());
                     actividadesController.getEmpleado();
 
 
@@ -165,4 +164,11 @@ public class LogInController implements Initializable {
 
     }
 
+    public String getEmail_() {
+        return email_;
+    }
+
+    public void setEmail_(String email_) {
+        this.email_ = email_;
+    }
 }
